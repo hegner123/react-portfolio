@@ -1,1 +1,2 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+# Michael Hegner's Portfolio
+## Made with React and Next
