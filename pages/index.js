@@ -1,54 +1,50 @@
 import Head from 'next/head'
 
+
 export default function Home() {
   return (
     <div className="container">
       <Head>
         <title>Michael Henger</title>
         <link rel="icon" href="/favicon.ico" />
-      </Head>
+      </Head> 
 
-      <main>
-        <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+      <main className="container">
 
+      <nav>
+        <div className="logo">
+          <h3>Michael Hegner</h3>
+          </div>
+        </nav>
 
-        <div className="grid">
-          <a href="https://nextjs.org/docs" className="card">
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+        <div className="row">
+          <div className="col-6">
+            <div className="row">
+              <div className="col-6">
+                </div>
+                <div className="col-6">
+                  <h1>Michael Hegner</h1>
+                </div>
+              </div>
+            </div>
 
-          <a href="https://nextjs.org/learn" className="card">
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="card"
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="card"
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
+            <div className="col-6">
+              <div className="row">
+                <div className="col-12"> 
+                  <h2>My Work</h2>
+                  <div className="row">
+                  <div className="col-4">
+                  </div>
+                  <div className="col-4">
+                  </div>
+                  <div className="col-4">
+                  </div>
+                  </div>
+                </div>
+            </div>
+            </div>
+          </div>
       </main>
-
-      <footer>
-       <span>&copy; 2021 Michael Hegner</span>
-      </footer>
-
     </div>
   )
 }
