@@ -1,0 +1,21 @@
+.container{
+    display:flex;
+    flex-direction: column;
+}
+
+.row, nav{
+    display:flex;
+    width:100%;
+}
+
+.col-12{
+    width:100%;
+}
+
+.col-6{
+    width:50%;
+}
+
+.container{
+    height:500px;
+}
