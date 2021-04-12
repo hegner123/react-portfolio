@@ -1,5 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
+import Project from '../Components/project'
+import Projects from '../public/assets/projects/projects.json'
 
 
 export default function Home() {
@@ -29,9 +31,6 @@ export default function Home() {
                 </div>
                 </div>
                 </div>
-                
-              
-            
 
             <div className="col-6">
               <div className="row">
@@ -39,10 +38,22 @@ export default function Home() {
                   <h2>My Work</h2>
                   <div className="row">
                   <div className="col-4">
+                    <Project
+                    projectName={Projects.project1.projectName}
+                    projectUrl ={Projects.project1.projectUrl}
+                    />
                   </div>
                   <div className="col-4">
+                  <Project
+                    projectName={Projects.project1.projectName}
+                    projectUrl ={Projects.project1.projectUrl}
+                    />
                   </div>
                   <div className="col-4">
+                  <Project
+                    projectName={Projects.project1.projectName}
+                    projectUrl ={Projects.project1.projectUrl}
+                    />
                   </div>
                   </div>
                 </div>
