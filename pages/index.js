@@ -22,34 +22,35 @@ export default function Home() {
 
 
             <div className="row">
-              <div className="col-6">
+              <div className="col-12 col-lg-6">
                 <div className="row">
-              <div className="col-6">
+              <div className="col-12 col-lg-6">
                 </div>
-                <div className="col-6">
+                <div className="col-12 col-lg-6">
                   <h1>Michael Hegner</h1>
+                  <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. A explicabo corporis error suscipit quaerat autem vitae nisi nulla maiores dignissimos similique consequatur, atque officiis dolor aperiam itaque fugiat saepe accusantium voluptatem earum dolorum sed veritatis! Illum provident, quae deleniti illo eligendi sunt eaque quasi! Rem harum consequatur voluptatem fuga voluptatibus mollitia inventore qui, dolor, exercitationem eveniet enim distinctio hic. Aperiam magnam culpa ad possimus repellat? Aut magni saepe delectus sunt cumque nobis, nesciunt voluptas cum. </p>
                 </div>
                 </div>
                 </div>
 
-            <div className="col-6">
+            <div className="col-12 col-lg-6">
               <div className="row">
                 <div className="col-12"> 
                   <h2>My Work</h2>
                   <div className="row">
-                  <div className="col-4">
+                  <div className="col-12 col-lg-6">
                     <Project
                     projectName={Projects.project1.projectName}
                     projectUrl ={Projects.project1.projectUrl}
                     />
                   </div>
-                  <div className="col-4">
+                  <div className="col-12 col-lg-6">
                   <Project
                     projectName={Projects.project1.projectName}
                     projectUrl ={Projects.project1.projectUrl}
                     />
                   </div>
-                  <div className="col-4">
+                  <div className="col-12 col-lg-6">
                   <Project
                     projectName={Projects.project1.projectName}
                     projectUrl ={Projects.project1.projectUrl}
