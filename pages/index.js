@@ -47,14 +47,14 @@ export default function Home() {
                   </div>
                   <div className="col-12 col-lg-6">
                   <Project
-                    projectName={Projects.project1.projectName}
-                    projectUrl ={Projects.project1.projectUrl}
+                    projectName={Projects.project2.projectName}
+                    projectUrl ={Projects.project2.projectUrl}
                     />
                   </div>
                   <div className="col-12 col-lg-6">
                   <Project
-                    projectName={Projects.project1.projectName}
-                    projectUrl ={Projects.project1.projectUrl}
+                    projectName={Projects.project3.projectName}
+                    projectUrl ={Projects.project3.projectUrl}
                     />
                   </div>
                   </div>
