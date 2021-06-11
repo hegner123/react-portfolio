@@ -1,21 +1,16 @@
 import React from 'react';
-import { render } from 'react-dom';
-import { Provider } from 'react-redux';
-import { store } from './_helpers';
-import { App } from './App';
-
-render(
-    <Provider store={store}>
-        <App />
-    </Provider>,
-    document.getElementById('app')
-);
-
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { HomePage } from './homepage';
+import { css } from 'styled-components'
 
 function App() {
   return (
     <div className="App">
-      nav
+       <BrowserRouter>
+          <Switch>
+              <Route path="/" component={HomePage} />
+          </Switch>
+      </BrowserRouter>
 
     </div>
   );
