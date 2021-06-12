@@ -1,5 +1,4 @@
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-var RemarkHTML = require ("remark-html");
 
 module.exports = {
     mode: 'development',
@@ -24,24 +23,6 @@ module.exports = {
             test: /\.css$/i,
             use: ["style-loader", "css-loader"],
             },
-            
-                {
-                  test: /\.md$/,
-                  use: [
-                    {
-                      loader: "html-loader",
-                    },
-                    {
-                      loader: "remark-loader",
-                      options: {
-                        remarkOptions: {
-                          plugins: [RemarkHTML],
-                        },
-                      },
-                    },
-                  ],
-                },
-              
         ]
     },
     plugins: [new HtmlWebpackPlugin({
