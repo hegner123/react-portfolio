@@ -1,7 +1,6 @@
 import React from 'react';
 import { css } from 'styled-components';
-import profilePic from '../../public/mlh-crop.jpg';
-import homepagePic from '../../public/homepage.png';
+
 import {About} from '../components/about';
 import { Projects } from '../components/projects';
 
@@ -9,14 +8,29 @@ import { Projects } from '../components/projects';
 export function HomePage(props){
 
         return (
-         <div css={"width:100%;"}>
-             <header css={"width:100%;font-family:Roboto;padding:20px 0;margin-left:25px;"}>
-                <a href="/" css={"text-decoration:none;"}>Michael Hegner</a>
-                 </header>
-             <main css={"display:flex; width:100%;"}>
+         <div >
+            <header css={"font-family:Roboto;padding:20px 25px;"}>
+                <div css={"display:flex;"}>
+                    <div>
+                        <a href="/" css={"color:var(--text-color);text-decoration:none;font-size:var(--font-size)"}>Michael Hegner</a>
+                    </div>
+                    <ul css={"display:flex;"}>
+                        <li css={"margin-left:20px;"}>
+                            <a href="https://github.com/hegner123" target="_none" css={"color:var(--text-color);text-decoration:none;font-size:var(--font-size)"}>Github</a>
+                        </li>
+                        <li css={"margin-left:20px;"}>
+                            <a href="https://www.linkedin.com/in/michaelhegner/" target="_none" css={"color:var(--text-color);text-decoration:none;font-size:var(--font-size)"}>LinkedIn</a>
+                        </li>
+                        <li css={"margin-left:20px;"}>
+                            <a href="public/Resume.pdf" target="_none" css={"color:var(--text-color);text-decoration:none;font-size:var(--font-size)"}>Resume</a>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+            <main css={"display:flex;"}>
                 <About/>
                 <Projects/>
-             </main>
+            </main>
         </div>
         )
     }

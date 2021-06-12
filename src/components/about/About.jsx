@@ -4,16 +4,21 @@ import profilePic from '../../../public/mlh-crop.jpg';
 
 
 export function About(props){
-
         return (
-            <section css={"width:50%; background:#f7f7f7;"}>
+        <section css={"width:50%;"}>
             <div css={"display:flex;"}>
-                <div css={"display:flex; justify-content:center;"}>
-                    <img src={profilePic} alt="Michael Hegner" css={"padding:25px;width:75%"} />
+                <div css={"padding:25px;width:50%;"}>
+                    <img src={profilePic} alt="Michael Hegner" css={"width:100%; border-radius:5px;overflow:hidden"} />
                 </div>
-                <div css={"padding:25px;"}>
-                    <h2>Full Stack Developer</h2>
-                    <h3>Audio Engineer</h3>
+                <div css={"width:50%;padding:25px;"}>
+                    <div>
+                        <h1 css={"font-size:30px;"}>Michael Hegner</h1>
+                        <h2 css={"font-size:20px;margin-top:10px;"}>Full Stack Developer</h2>
+                        <h3 css={"font-size:20px;margin-top:10px;"}>Audio Engineer</h3>
+                    </div>
+                    <div css={"margin-top:10px;"}>
+                        <p>MERN Full Stack Web Developer with a background in Audio Engineering and a passion for problem solving. Experienced with creative troubleshooting under pressure. Valued for a detailed approach to learning new skills and an adaptable mindset, switching between tasks quickly and efficiently.</p>
+                    </div>
                 </div>
             </div>
          </section>

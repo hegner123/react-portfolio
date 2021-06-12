@@ -1,7 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import { HomePage } from './homepage';
-import { css } from 'styled-components'
+import { css } from 'styled-components';
+import './App.css'
 
 function App() {
   return (
