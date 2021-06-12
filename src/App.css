@@ -44,8 +44,15 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-	background:var(--bg);
+	background-image:linear-gradient(to bottom, #7DBCDF, #3568bf);
 }
+
+@media(min-width: 768px) {
+	body{
+		background-image:linear-gradient(to right, #7DBCDF, #3568bf);
+	}
+	
+	}
 ol, ul {
 	list-style: none;
 }

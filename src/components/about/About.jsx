@@ -1,27 +1,57 @@
 import React from 'react';
 import { css } from 'styled-components';
+import {ResourceImg, InfoBlock, AboutImgContainer, AboutImg, AboutBody, AboutListItem, Title1, Title2, Title3, AboutBio} from './style';
 import profilePic from '../../../public/mlh-crop.jpg';
+import w3schools from '../../../public/w3.png'
+import htmlatt from '../../../public/htmlatt.png';
+import jw from '../../../public/jw.jpeg';
+
 
 
 export function About(props){
         return (
-        <section css={"width:50%;"}>
-            <div css={"display:flex;"}>
-                <div css={"padding:25px;width:50%;"}>
-                    <img src={profilePic} alt="Michael Hegner" css={"width:100%; border-radius:5px;overflow:hidden"} />
-                </div>
-                <div css={"width:50%;padding:25px;"}>
+            <InfoBlock>
+                <AboutImgContainer >
+                    <AboutImg src={profilePic} alt="Michael Hegner" css={""} />
+                </AboutImgContainer>
+                <AboutBody>
                     <div>
-                        <h1 css={"font-size:30px;"}>Michael Hegner</h1>
-                        <h2 css={"font-size:20px;margin-top:10px;"}>Full Stack Developer</h2>
-                        <h3 css={"font-size:20px;margin-top:10px;"}>Audio Engineer</h3>
+                        <Title1>Michael Hegner</Title1>
+                        <Title2>Full Stack Developer</Title2>
+                        <Title3>Audio Engineer</Title3>
                     </div>
-                    <div css={"margin-top:10px;"}>
+                    <AboutBio >
                         <p>MERN Full Stack Web Developer with a background in Audio Engineering and a passion for problem solving. Experienced with creative troubleshooting under pressure. Valued for a detailed approach to learning new skills and an adaptable mindset, switching between tasks quickly and efficiently.</p>
-                    </div>
-                </div>
-            </div>
-         </section>
+                    </AboutBio>
+                    <AboutBio css={"margin-top:10px;"}>
+                        <h4 css={"font-size:20px;"}>I learn from:</h4>
+                        <div>
+                            <ul css={"display:flex; justify-content:flex-start; flex-wrap:wrap;"}>
+                                <AboutListItem>
+                                    <a href="https://syntax.fm/">
+                                        <ResourceImg src="https://syntax.fm/static/logo.png" alt="Syntax podcast" css={"width:100%"}/>
+                                    </a>
+                                </AboutListItem>
+                                <AboutListItem>
+                                    <a href="https://www.w3schools.com/">
+                                        <ResourceImg src={w3schools} alt="w3 Schools" css={"width:100%"}/>
+                                    </a>
+                                </AboutListItem>
+                                <AboutListItem>
+                                    <a href={"https://podcast.htmlallthethings.com/"}>
+                                        <ResourceImg src={htmlatt} alt="html all the things podcast" css={"width:100%"}/>
+                                    </a>
+                                </AboutListItem>
+                                <AboutListItem>
+                                    <a href="https://jasonwatmore.com/">
+                                        <ResourceImg src={jw} alt="Jason Watmore" css={"width:100%"}/>
+                                    </a>
+                                </AboutListItem>
+                            </ul>
+                        </div>
+                    </AboutBio>
+                </AboutBody>
+            </InfoBlock>
         )
     }
 
