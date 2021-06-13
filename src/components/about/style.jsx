@@ -83,6 +83,7 @@ margin-top:10px;
 width:75%;
 margin-left:auto;
 margin-right:auto;
+
 @media(min-width: 768px) {
     margin-top:10px;
     width:100%;
