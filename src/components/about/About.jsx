@@ -1,10 +1,11 @@
 import React from 'react';
 import { css } from 'styled-components';
 import {ResourceImg, InfoBlock, AboutImgContainer, AboutImg, AboutBody, AboutListItem, Title1, Title2, Title3, AboutBio} from './style';
-import profilePic from '../../../public/mlh-crop.jpg';
-import w3schools from '../../../public/w3.png'
-import htmlatt from '../../../public/htmlatt.png';
-import jw from '../../../public/jw.jpeg';
+import profilePic from 'url:../../../public/mlh-crop.jpg';
+import w3schools from 'url:../../../public/w3.png'
+import htmlatt from 'url:../../../public/htmlatt.png';
+import jw from 'url:../../../public/jw.jpeg';
+import syntax from 'url:../../../public/logo.png';
 
 
 
@@ -23,13 +24,13 @@ export function About(props){
                     <AboutBio >
                         <p>MERN Full Stack Web Developer with a background in Audio Engineering and a passion for problem solving. Experienced with creative troubleshooting under pressure. Valued for a detailed approach to learning new skills and an adaptable mindset, switching between tasks quickly and efficiently.</p>
                     </AboutBio>
-                    <AboutBio css={"margin-top:10px;"}>
+                    <AboutBio css={"margin-top:10px;width:50%"}>
                         <h4 css={"font-size:20px;"}>I learn from:</h4>
                         <div>
                             <ul css={"display:flex; justify-content:flex-start; flex-wrap:wrap;"}>
                                 <AboutListItem>
                                     <a href="https://syntax.fm/">
-                                        <ResourceImg src="https://syntax.fm/static/logo.png" alt="Syntax podcast" css={"width:100%"}/>
+                                        <ResourceImg src={syntax} alt="Syntax podcast" css={"width:100%"}/>
                                     </a>
                                 </AboutListItem>
                                 <AboutListItem>

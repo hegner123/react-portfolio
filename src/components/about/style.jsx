@@ -2,12 +2,10 @@ import styled from "styled-components";
 
 
 export const ResourceImg = styled.img`
-filter:grayscale(1);
 transition-duration:300ms;
 border-radius:15px;
 overflow: hidden;
 &:hover{
-    filter: grayscale(0);
     transform:scale(1.2);
     overflow: hidden;
 }
