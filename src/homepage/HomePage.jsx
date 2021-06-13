@@ -26,6 +26,9 @@ export function HomePage(props){
                             <NavItem>
                                 <a href="public/Resume.pdf" target="_none" css={"color:var(--text-color);text-decoration:none;"}>Resume</a>
                             </NavItem>
+                            <NavItem>
+                                <a href="mailto:hegner123@gmail.com" target="_none" css={"color:var(--text-color);text-decoration:none;"}>Email</a>
+                            </NavItem>
                         </NavList>
                     </NavBar>
                 </nav>
