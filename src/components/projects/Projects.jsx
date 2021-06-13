@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import { css } from 'styled-components';
 import {ResourceImg, InfoBlock, ProjectImgContainer, ProjectImg, ProjectBody, Title1, Title2, Title3, ProjectList, ProjectListItem, ProjectDescription, ProjectLinkList, ProjectLink} from './style';
-import homepagePic from '../../../public/homepage.png';
+import homepagePic from 'url:../../../public/homepage.png';
 
 
 export function Projects(props){
