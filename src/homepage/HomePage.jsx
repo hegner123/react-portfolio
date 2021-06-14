@@ -9,7 +9,7 @@ import { Main, NavBar, NavList, NavItem } from './style';
 export function HomePage(props){
 
         return (
-         <div >
+         <div className="homepage">
             <header css={"font-family:Roboto;padding:20px 25px;"}>
                 <nav>
                     <NavBar css={"display:flex;"}>
@@ -27,7 +27,7 @@ export function HomePage(props){
                                 <a href="public/Resume.pdf" target="_none" css={"color:var(--text-color);text-decoration:none;"}>Resume</a>
                             </NavItem>
                             <NavItem>
-                                <a href="mailto:hegner123@gmail.com" target="_none" css={"color:var(--text-color);text-decoration:none;"}>Email</a>
+                                <a href="mailto:hegner123@gmail.com" css={"color:var(--text-color);text-decoration:none;"}>Email</a>
                             </NavItem>
                         </NavList>
                     </NavBar>

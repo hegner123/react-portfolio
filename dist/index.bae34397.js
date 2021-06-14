@@ -28048,7 +28048,9 @@ var _StyledMain = _styledComponents.default(_style.Main).withConfig({
 });
 _c8 = _StyledMain;
 function HomePage(props) {
-    return(/*#__PURE__*/ _react.default.createElement("div", null, /*#__PURE__*/ _react.default.createElement(_StyledHeader, {
+    return(/*#__PURE__*/ _react.default.createElement("div", {
+        className: "homepage"
+    }, /*#__PURE__*/ _react.default.createElement(_StyledHeader, {
         _css: "font-family:Roboto;padding:20px 25px;"
     }, /*#__PURE__*/ _react.default.createElement("nav", null, /*#__PURE__*/ _react.default.createElement(_StyledNavBar, {
         _css2: "display:flex;"
@@ -28071,7 +28073,6 @@ function HomePage(props) {
         _css7: "color:var(--text-color);text-decoration:none;"
     }, "Resume")), /*#__PURE__*/ _react.default.createElement(_style.NavItem, null, /*#__PURE__*/ _react.default.createElement(_StyledA5, {
         href: "mailto:hegner123@gmail.com",
-        target: "_none",
         _css8: "color:var(--text-color);text-decoration:none;"
     }, "Email")))))), /*#__PURE__*/ _react.default.createElement(_StyledMain, {
         _css9: "display:flex;width:100%"
@@ -30707,7 +30708,9 @@ _c = _StyledFooter;
 function Footer(props) {
     return(/*#__PURE__*/ _react.default.createElement(_StyledFooter, {
         _css: "display:flex;justify-content:center; align-items:flex-end;"
-    }, /*#__PURE__*/ _react.default.createElement("p", null, "\xA9 Michael Hegner 2021 All Rights Resereved")));
+    }, /*#__PURE__*/ _react.default.createElement("p", {
+        className: "footer"
+    }, "\xA9 Michael Hegner 2021 All Rights Resereved")));
 }
 _c1 = Footer;
 var _c, _c1;
