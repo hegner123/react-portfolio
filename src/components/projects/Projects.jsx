@@ -1,19 +1,15 @@
 import React from 'react';
-import { render } from 'react-dom';
-import { css } from 'styled-components';
 import {ResourceImg, InfoBlock, ProjectImgContainer, ProjectImg, ProjectBody, Title1, Title2, Title3, ProjectList, ProjectListItem, ProjectDescription, ProjectLinkList, ProjectLink} from './style';
 import homepagePic from 'url:../../../public/homepage.png';
 
 
-export function Projects(props){
+export const Projects = props => {
 
         return (
                     <InfoBlock >
                         <ProjectBody >
-                            <div>
-                                
-                                <Title3>Current Projects</Title3>
                                 <ProjectList>
+                                <Title3>Current Projects</Title3>
                                     <ProjectListItem>
                                         <ProjectDescription>
                                             <Title3 >
@@ -33,7 +29,6 @@ export function Projects(props){
                                         </ProjectImgContainer>
                                     </ProjectListItem>
                                 </ProjectList>
-                            </div>
                         </ProjectBody>
                     </InfoBlock>
         )

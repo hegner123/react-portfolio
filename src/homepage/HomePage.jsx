@@ -1,6 +1,13 @@
 import React from 'react';
-import {About} from '../components/about';
+import { About } from "../components/about";
+import { Bio } from '../components/bio';
+import { Footer } from "../components/footer";
 import { Projects } from '../components/projects';
+import { Resources } from '../components/resources';
+import { Title } from '../components/title';
+
+
+
 import { Main, NavBar, NavList, NavItem } from './style';
 
 
@@ -25,10 +32,13 @@ export function HomePage(){
                     </NavBar>
                 </nav>
             </header>
-            <Main css={"display:flex;width:100%"}>
-                
-                <About />
-                <Projects/>
+            <Main css={"width:100%;display:block;"}>
+            <Title/>
+            <Bio/>
+            <Projects/>
+            <About/>
+            <Resources/>
+            <Footer/>
             </Main>
         </div>
         )
