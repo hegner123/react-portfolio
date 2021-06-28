@@ -1,14 +1,32 @@
 import React from 'react';
+import { render } from 'react-dom';
 import { About } from "../components/about";
 import { Bio } from '../components/bio';
 import { Footer } from "../components/footer";
 import { Projects } from '../components/projects';
 import { Resources } from '../components/resources';
 import { Title } from '../components/title';
-
-
-
 import { Main, NavBar, NavList, NavItem } from './style';
+import styled, { keyframes } from 'styled-components';
+
+const rotate = keyframes`
+from {
+  transform: rotate(0deg);
+}
+
+to {
+  transform: rotate(360deg);
+}
+`;
+
+// Here we create a component that will rotate everything we pass in over two seconds
+const Rotate = styled.div`
+display: inline-block;
+animation: ${rotate} 2s linear infinite;
+padding: 2rem 1rem;
+font-size: 1.2rem;
+`;
+
 
 
 export function HomePage(){
@@ -36,10 +54,11 @@ export function HomePage(){
             <Title/>
             <Bio/>
             <Projects/>
-            <About/>
             <Resources/>
+            <About/>
             <Footer/>
             </Main>
         </div>
         )
     }
+

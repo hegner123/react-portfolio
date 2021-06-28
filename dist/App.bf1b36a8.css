@@ -1,15 +1,9 @@
 :root{
-	--bg:#7dbcdf;
-	--accent-slate:#363635;
-	--accent-red:#db3069;
-	--accent-khaki:#bbb193;
-	--accent-yellow:#ffcb47;
+	--bg:#f7f7f7;
 	--font-size:18px;
-	--text-color:var(--accent-slate);
+	--text-color:#000;
 	--section-bg:#fff;
-	--bg-tile:url("pattern.43a03124.png");
-	--bg-gradient: linear-gradient(to right, #7DBCDF, #74b9df);
-	--bg-tile-gradient:linear-gradient(to right, #7dbddf8f, #3568bf8f),url("pattern.43a03124.png" );
+	--bg-tile:url("App.bf1b36a8.css")
 }
 
 
@@ -36,7 +30,6 @@ time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-	color:var(--text-color);
 	vertical-align: baseline;
 }
 
@@ -49,16 +42,14 @@ footer, header, hgroup, menu, nav, section {
 
 body {
 	line-height: 1;
+	background-image:linear-gradient(to bottom, #7DBCDF, #3568bf);
 	min-height:100vh;
 }
 
 
 @media(min-width: 768px) {
 	body{
-		background-image:var(--bg-gradient);
-		background-position: center center;
-		background-size:auto;
-		background-repeat:repeat;
+		background-image:linear-gradient(to right, #7DBCDF, #3568bf);
 	}
 	}
 
@@ -105,4 +96,4 @@ table {
 .footer{
 	font-family: 'Roboto', sans-serif;
 }
-/*# sourceMappingURL=index.bf1b36a8.css.map */
+/*# sourceMappingURL=App.bf1b36a8.css.map */

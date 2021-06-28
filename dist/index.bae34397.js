@@ -27915,6 +27915,7 @@ var _styledComponents = require("styled-components");
 var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactDom = require("react-dom");
 var _about = require("../components/about");
 var _bio = require("../components/bio");
 var _footer = require("../components/footer");
@@ -27922,9 +27923,17 @@ var _projects = require("../components/projects");
 var _resources = require("../components/resources");
 var _title = require("../components/title");
 var _style = require("./style");
+const rotate = _styledComponents.keyframes`\nfrom {\n  transform: rotate(0deg);\n}\n\nto {\n  transform: rotate(360deg);\n}\n`; // Here we create a component that will rotate everything we pass in over two seconds
+const Rotate = _styledComponentsDefault.default.div.withConfig({
+    displayName: "HomePage__Rotate",
+    componentId: "sc-12bfo3c-0"
+})([
+    "display:inline-block;animation:",
+    " 2s linear infinite;padding:2rem 1rem;font-size:1.2rem;"
+], rotate);
 var _StyledHeader = _styledComponentsDefault.default("header").withConfig({
     displayName: "HomePage___StyledHeader",
-    componentId: "sc-12bfo3c-0"
+    componentId: "sc-12bfo3c-1"
 })([
     "",
     ""
@@ -27933,7 +27942,7 @@ var _StyledHeader = _styledComponentsDefault.default("header").withConfig({
 _c = _StyledHeader;
 var _StyledNavBar = _styledComponentsDefault.default(_style.NavBar).withConfig({
     displayName: "HomePage___StyledNavBar",
-    componentId: "sc-12bfo3c-1"
+    componentId: "sc-12bfo3c-2"
 })([
     "",
     ""
@@ -27942,7 +27951,7 @@ var _StyledNavBar = _styledComponentsDefault.default(_style.NavBar).withConfig({
 _c1 = _StyledNavBar;
 var _StyledA = _styledComponentsDefault.default("a").withConfig({
     displayName: "HomePage___StyledA",
-    componentId: "sc-12bfo3c-2"
+    componentId: "sc-12bfo3c-3"
 })([
     "",
     ""
@@ -27951,7 +27960,7 @@ var _StyledA = _styledComponentsDefault.default("a").withConfig({
 _c2 = _StyledA;
 var _StyledNavList = _styledComponentsDefault.default(_style.NavList).withConfig({
     displayName: "HomePage___StyledNavList",
-    componentId: "sc-12bfo3c-3"
+    componentId: "sc-12bfo3c-4"
 })([
     "",
     ""
@@ -27960,7 +27969,7 @@ var _StyledNavList = _styledComponentsDefault.default(_style.NavList).withConfig
 _c3 = _StyledNavList;
 var _StyledA2 = _styledComponentsDefault.default("a").withConfig({
     displayName: "HomePage___StyledA2",
-    componentId: "sc-12bfo3c-4"
+    componentId: "sc-12bfo3c-5"
 })([
     "",
     ""
@@ -27969,7 +27978,7 @@ var _StyledA2 = _styledComponentsDefault.default("a").withConfig({
 _c4 = _StyledA2;
 var _StyledA3 = _styledComponentsDefault.default("a").withConfig({
     displayName: "HomePage___StyledA3",
-    componentId: "sc-12bfo3c-5"
+    componentId: "sc-12bfo3c-6"
 })([
     "",
     ""
@@ -27978,7 +27987,7 @@ var _StyledA3 = _styledComponentsDefault.default("a").withConfig({
 _c5 = _StyledA3;
 var _StyledMain = _styledComponentsDefault.default(_style.Main).withConfig({
     displayName: "HomePage___StyledMain",
-    componentId: "sc-12bfo3c-6"
+    componentId: "sc-12bfo3c-7"
 })([
     "",
     ""
@@ -28007,7 +28016,7 @@ function HomePage() {
         _css6: "color:var(--text-color);text-decoration:none;"
     }, "LinkedIn")))))), /*#__PURE__*/ _reactDefault.default.createElement(_StyledMain, {
         _css7: "width:100%;display:block;"
-    }, /*#__PURE__*/ _reactDefault.default.createElement(_title.Title, null), /*#__PURE__*/ _reactDefault.default.createElement(_bio.Bio, null), /*#__PURE__*/ _reactDefault.default.createElement(_projects.Projects, null), /*#__PURE__*/ _reactDefault.default.createElement(_about.About, null), /*#__PURE__*/ _reactDefault.default.createElement(_resources.Resources, null), /*#__PURE__*/ _reactDefault.default.createElement(_footer.Footer, null))));
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_title.Title, null), /*#__PURE__*/ _reactDefault.default.createElement(_bio.Bio, null), /*#__PURE__*/ _reactDefault.default.createElement(_projects.Projects, null), /*#__PURE__*/ _reactDefault.default.createElement(_resources.Resources, null), /*#__PURE__*/ _reactDefault.default.createElement(_about.About, null), /*#__PURE__*/ _reactDefault.default.createElement(_footer.Footer, null))));
 }
 _c7 = HomePage;
 var _c, _c1, _c2, _c3, _c4, _c5, _c6, _c7;
@@ -28025,7 +28034,7 @@ $RefreshReg$(_c7, "HomePage");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"styled-components":"gqYCY","react":"juP7B","../components/about":"3Rx77","../components/projects":"3QoBt","./style":"b7lZC","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN","../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6e8vO","../components/bio":"ctkft","../components/footer":"6sPhD","../components/resources":"gIUS3","../components/title":"eOqF1"}],"gqYCY":[function(require,module,exports) {
+},{"styled-components":"gqYCY","react":"juP7B","../components/about":"3Rx77","../components/projects":"3QoBt","./style":"b7lZC","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN","../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6e8vO","../components/bio":"ctkft","../components/footer":"6sPhD","../components/resources":"gIUS3","../components/title":"eOqF1","react-dom":"4Xkib"}],"gqYCY":[function(require,module,exports) {
 var process = require("process");
 "use strict";
 function e(e1) {
@@ -29817,8 +29826,9 @@ parcelHelpers.export(exports, "About", ()=>About
 );
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
+var _style = require("./style");
 const About = (props)=>{
-    return(/*#__PURE__*/ _reactDefault.default.createElement("div", null));
+    return(/*#__PURE__*/ _reactDefault.default.createElement(_style.Section, null, /*#__PURE__*/ _reactDefault.default.createElement("h3", null, "Hobbies"), /*#__PURE__*/ _reactDefault.default.createElement("ul", null, /*#__PURE__*/ _reactDefault.default.createElement("li", null, "music"), /*#__PURE__*/ _reactDefault.default.createElement("li", null, "anime"), /*#__PURE__*/ _reactDefault.default.createElement("li", null, "video games"), /*#__PURE__*/ _reactDefault.default.createElement("li", null, "sci fi"), /*#__PURE__*/ _reactDefault.default.createElement("li", null, "fantasy"), /*#__PURE__*/ _reactDefault.default.createElement("li", null, "novels"), /*#__PURE__*/ _reactDefault.default.createElement("li", null, "history"), /*#__PURE__*/ _reactDefault.default.createElement("li", null, "science"), /*#__PURE__*/ _reactDefault.default.createElement("li", null, "art"), /*#__PURE__*/ _reactDefault.default.createElement("li", null, "design"), /*#__PURE__*/ _reactDefault.default.createElement("li", null, "cooking"))));
 };
 _c = About;
 var _c;
@@ -29829,7 +29839,7 @@ $RefreshReg$(_c, "About");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"juP7B","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6e8vO"}],"6e8vO":[function(require,module,exports) {
+},{"react":"juP7B","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6e8vO","./style":"bq3YO"}],"6e8vO":[function(require,module,exports) {
 "use strict";
 var Refresh = require('react-refresh/runtime');
 function debounce(func, delay) {
@@ -29949,7 +29959,21 @@ function registerExportsForReactRefresh(module) {
     }
 }
 
-},{"react-refresh/runtime":"fi779"}],"3QoBt":[function(require,module,exports) {
+},{"react-refresh/runtime":"fi779"}],"bq3YO":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Section", ()=>Section
+);
+var _styledComponents = require("styled-components");
+var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
+const Section = _styledComponentsDefault.default.section.withConfig({
+    displayName: "style__Section",
+    componentId: "sc-8kfvs0-0"
+})([
+    "height:50rem;"
+]);
+
+},{"styled-components":"gqYCY","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN"}],"3QoBt":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _projects = require("./Projects");
@@ -29992,7 +30016,7 @@ var _StyledProjectImg = _styledComponentsDefault.default(_style.ProjectImg).with
 );
 _c1 = _StyledProjectImg;
 const Projects = (props)=>{
-    return(/*#__PURE__*/ _reactDefault.default.createElement(_style.InfoBlock, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectBody, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectList, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.Title3, null, "Current Projects"), /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectListItem, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectDescription, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.Title3, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectLink, {
+    return(/*#__PURE__*/ _reactDefault.default.createElement(_style.InfoBlock, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectBody, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectList, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.Title3, null, "Current Projects"), /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectListItem, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectWrapper, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectDescription, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.Title3, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectLink, {
         href: "https://proprojectstudio.com"
     }, "ProProject Studio")), /*#__PURE__*/ _reactDefault.default.createElement(_StyledP, {
         _css: "margin-top:10px;"
@@ -30000,11 +30024,11 @@ const Projects = (props)=>{
         href: "https://github.com/hegner123/pps-front"
     }, "Front-End Repo"), /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectLink, {
         href: "https://github.com/hegner123/pps-back"
-    }, "Back-End Repo"))), /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectImgContainer, null, /*#__PURE__*/ _reactDefault.default.createElement(_StyledProjectImg, {
+    }, "Back-End Repo")))), /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectWrapper, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectImgContainer, null, /*#__PURE__*/ _reactDefault.default.createElement(_StyledProjectImg, {
         src: _homepagePngDefault.default,
         alt: "ProProject Studio",
         _css2: "width:100%;border-radius:5px;overflow:hidden"
-    })))))));
+    }))))))));
 };
 _c2 = Projects;
 var _c, _c1, _c2;
@@ -30020,6 +30044,12 @@ $RefreshReg$(_c2, "Projects");
 },{"styled-components":"gqYCY","react":"juP7B","./style":"5tW3c","url:../../../public/homepage.png":"9tKu6","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6e8vO"}],"5tW3c":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Title1", ()=>Title1
+);
+parcelHelpers.export(exports, "Title2", ()=>Title2
+);
+parcelHelpers.export(exports, "Title3", ()=>Title3
+);
 parcelHelpers.export(exports, "ResourceImg", ()=>ResourceImg
 );
 parcelHelpers.export(exports, "InfoBlock", ()=>InfoBlock
@@ -30029,12 +30059,6 @@ parcelHelpers.export(exports, "ProjectImgContainer", ()=>ProjectImgContainer
 parcelHelpers.export(exports, "ProjectImg", ()=>ProjectImg
 );
 parcelHelpers.export(exports, "ProjectBody", ()=>ProjectBody
-);
-parcelHelpers.export(exports, "Title1", ()=>Title1
-);
-parcelHelpers.export(exports, "Title2", ()=>Title2
-);
-parcelHelpers.export(exports, "Title3", ()=>Title3
 );
 parcelHelpers.export(exports, "ProjectBio", ()=>ProjectBio
 );
@@ -30048,55 +30072,57 @@ parcelHelpers.export(exports, "ProjectLink", ()=>ProjectLink
 );
 parcelHelpers.export(exports, "ProjectLinkList", ()=>ProjectLinkList
 );
+parcelHelpers.export(exports, "ProjectWrapper", ()=>ProjectWrapper
+);
 var _styledComponents = require("styled-components");
 var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
-const ResourceImg = _styledComponentsDefault.default.img.withConfig({
-    displayName: "style__ResourceImg",
-    componentId: "tawnlc-0"
-})([
-    "filter:grayscale(1);transition-duration:300ms;&:hover{filter:grayscale(0);}"
-]);
-const InfoBlock = _styledComponentsDefault.default.div.withConfig({
-    displayName: "style__InfoBlock",
-    componentId: "tawnlc-1"
-})([
-    "display:flex;flex-direction:column;width:100%;@media(min-width:768px){flex-direction:row;}"
-]);
-const ProjectImgContainer = _styledComponentsDefault.default.div.withConfig({
-    displayName: "style__ProjectImgContainer",
-    componentId: "tawnlc-2"
-})([
-    "width:50%;margin-left:auto;margin-right:auto;margin-top:20px;@media(min-width:768px){margin-left:0;margin-right:0;margin-top:0;}"
-]);
-const ProjectImg = _styledComponentsDefault.default.img.withConfig({
-    displayName: "style__ProjectImg",
-    componentId: "tawnlc-3"
-})([
-    "width:100%;border-radius:5px;overflow:hidden;"
-]);
-const ProjectBody = _styledComponentsDefault.default.div.withConfig({
-    displayName: "style__ProjectBody",
-    componentId: "tawnlc-4"
-})([
-    "margin-top:20px;margin-left:auto;margin-right:auto;display:flex;flex-direction:column;width:100%;"
-]);
 const Title1 = _styledComponentsDefault.default.h1.withConfig({
     displayName: "style__Title1",
-    componentId: "tawnlc-5"
+    componentId: "tawnlc-0"
 })([
     "font-size:30px;text-align:center;@media(min-width:768px){text-align:left;}"
 ]);
 const Title2 = _styledComponentsDefault.default.h2.withConfig({
     displayName: "style__Title2",
-    componentId: "tawnlc-6"
+    componentId: "tawnlc-1"
 })([
     "font-size:20px;margin-top:10px;text-align:center;@media(min-width:768px){text-align:left;}"
 ]);
 const Title3 = _styledComponentsDefault.default.h3.withConfig({
     displayName: "style__Title3",
-    componentId: "tawnlc-7"
+    componentId: "tawnlc-2"
 })([
     "font-size:20px;margin-top:10px;text-align:center;@media(min-width:768px){text-align:left;}"
+]);
+const ResourceImg = _styledComponentsDefault.default.img.withConfig({
+    displayName: "style__ResourceImg",
+    componentId: "tawnlc-3"
+})([
+    "filter:grayscale(1);transition-duration:300ms;&:hover{filter:grayscale(0);}"
+]);
+const InfoBlock = _styledComponentsDefault.default.div.withConfig({
+    displayName: "style__InfoBlock",
+    componentId: "tawnlc-4"
+})([
+    "display:flex;flex-direction:column;width:100%;@media(min-width:768px){flex-direction:row;}"
+]);
+const ProjectImgContainer = _styledComponentsDefault.default.div.withConfig({
+    displayName: "style__ProjectImgContainer",
+    componentId: "tawnlc-5"
+})([
+    "width:100%;margin-left:auto;margin-right:auto;margin-top:20px;@media(min-width:768px){margin-left:0;margin-right:0;margin-top:0;}"
+]);
+const ProjectImg = _styledComponentsDefault.default.img.withConfig({
+    displayName: "style__ProjectImg",
+    componentId: "tawnlc-6"
+})([
+    "width:100%;border-radius:5px;overflow:hidden;"
+]);
+const ProjectBody = _styledComponentsDefault.default.div.withConfig({
+    displayName: "style__ProjectBody",
+    componentId: "tawnlc-7"
+})([
+    "margin-top:20px;margin-left:auto;margin-right:auto;display:flex;flex-direction:column;width:100%;"
 ]);
 const ProjectBio = _styledComponentsDefault.default.div.withConfig({
     displayName: "style__ProjectBio",
@@ -30114,13 +30140,13 @@ const ProjectListItem = _styledComponentsDefault.default.li.withConfig({
     displayName: "style__ProjectListItem",
     componentId: "tawnlc-10"
 })([
-    "display:flex;flex-direction:column;@media(min-width:768px){flex-direction:row;}"
+    "display:flex;flex-direction:column;@media(min-width:768px){flex-direction:row;justify-content:space-between;}"
 ]);
 const ProjectDescription = _styledComponentsDefault.default.div.withConfig({
     displayName: "style__ProjectDescription",
     componentId: "tawnlc-11"
 })([
-    "width:75%;margin-left:auto;margin-right:auto;@media(min-width:768px){margin-top:10px;width:50%;margin-left:0;margin-right:0;}"
+    "width:75%;margin-left:auto;margin-right:auto;@media(min-width:768px){margin-top:10px;width:100%;margin-left:0;margin-right:0;}"
 ]);
 const ProjectLink = _styledComponentsDefault.default.a.withConfig({
     displayName: "style__ProjectLink",
@@ -30133,6 +30159,12 @@ const ProjectLinkList = _styledComponentsDefault.default.ul.withConfig({
     componentId: "tawnlc-13"
 })([
     "display:flex;flex-direction:row;justify-content:space-around;margin-top:20px;"
+]);
+const ProjectWrapper = _styledComponentsDefault.default.div.withConfig({
+    displayName: "style__ProjectWrapper",
+    componentId: "tawnlc-14"
+})([
+    "margin:0 60px;"
 ]);
 
 },{"styled-components":"gqYCY","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN"}],"9tKu6":[function(require,module,exports) {
@@ -30376,7 +30408,7 @@ var _StyledFooter = _styledComponentsDefault.default("footer").withConfig({
 _c = _StyledFooter;
 const Footer = (props)=>{
     return(/*#__PURE__*/ _reactDefault.default.createElement(_StyledFooter, {
-        _css: "display:flex;justify-content:center; align-items:flex-end;"
+        _css: "display:flex;justify-content:center; align-items:flex-end;padding:100px 100px 10px;"
     }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
         className: "footer"
     }, "\xA9 Michael Hegner 2021 All Rights Resereved")));
@@ -30485,12 +30517,12 @@ var _StyledResourceImg4 = _styledComponentsDefault.default(_style.ResourceImg).w
 );
 _c6 = _StyledResourceImg4;
 const Resources = (props)=>{
-    return(/*#__PURE__*/ _reactDefault.default.createElement(_StyledAboutBio, {
+    return(/*#__PURE__*/ _reactDefault.default.createElement("div", null, /*#__PURE__*/ _reactDefault.default.createElement(_StyledAboutBio, {
         _css: "margin-top:10px;width:50%"
     }, /*#__PURE__*/ _reactDefault.default.createElement(_StyledH, {
         _css2: "font-size:20px;"
     }, "I learn from:"), /*#__PURE__*/ _reactDefault.default.createElement("div", null, /*#__PURE__*/ _reactDefault.default.createElement(_StyledUl, {
-        _css3: "display:flex; justify-content:flex-start; flex-wrap:wrap;"
+        _css3: "display:flex; justify-content:flex-start; flex-wrap:wrap;width:50%;"
     }, /*#__PURE__*/ _reactDefault.default.createElement(_style.AboutListItem, null, /*#__PURE__*/ _reactDefault.default.createElement("a", {
         href: "https://syntax.fm/"
     }, /*#__PURE__*/ _reactDefault.default.createElement(_StyledResourceImg, {
@@ -30515,7 +30547,7 @@ const Resources = (props)=>{
         src: _jwJpegDefault.default,
         alt: "Jason Watmore",
         _css7: "width:100%"
-    })))))));
+    }))))))));
 };
 _c7 = Resources;
 var _c, _c1, _c2, _c3, _c4, _c5, _c6, _c7;
@@ -30648,83 +30680,51 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Title", ()=>Title
 );
-var _styledComponents = require("styled-components");
-var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
-var _StyledDiv = _styledComponentsDefault.default("div").withConfig({
-    displayName: "Title___StyledDiv",
-    componentId: "sc-1pt4qys-0"
-})([
-    "",
-    ""
-], (p)=>p._css
-);
-_c = _StyledDiv;
-var _StyledH = _styledComponentsDefault.default("h1").withConfig({
-    displayName: "Title___StyledH",
-    componentId: "sc-1pt4qys-1"
-})([
-    "",
-    ""
-], (p)=>p._css2
-);
-_c1 = _StyledH;
-var _StyledH2 = _styledComponentsDefault.default("h2").withConfig({
-    displayName: "Title___StyledH2",
-    componentId: "sc-1pt4qys-2"
-})([
-    "",
-    ""
-], (p)=>p._css3
-);
-_c2 = _StyledH2;
-var _StyledH3 = _styledComponentsDefault.default("h3").withConfig({
-    displayName: "Title___StyledH3",
-    componentId: "sc-1pt4qys-3"
-})([
-    "",
-    ""
-], (p)=>p._css4
-);
-_c3 = _StyledH3;
-var _StyledA = _styledComponentsDefault.default("a").withConfig({
-    displayName: "Title___StyledA",
-    componentId: "sc-1pt4qys-4"
-})([
-    "",
-    ""
-], (p)=>p._css5
-);
-_c4 = _StyledA;
+var _style = require("./style");
 const Title = (props)=>{
-    return(/*#__PURE__*/ _reactDefault.default.createElement(_StyledDiv, {
-        _css: "min-width:100%;min-height:100vh;display:flex;justify-content:center;align-items:center;margin-top:-50px"
-    }, /*#__PURE__*/ _reactDefault.default.createElement("div", null, /*#__PURE__*/ _reactDefault.default.createElement(_StyledH, {
-        _css2: "text-align:center; font-size:7rem;"
-    }, "Michael Hegner"), /*#__PURE__*/ _reactDefault.default.createElement(_StyledH2, {
-        _css3: "text-align:center; font-size:5rem;"
-    }, "Full Stack Developer"), /*#__PURE__*/ _reactDefault.default.createElement(_StyledH3, {
-        _css4: "text-align:center; "
-    }, /*#__PURE__*/ _reactDefault.default.createElement(_StyledA, {
-        href: "https://github.com/hegner123",
-        _css5: "text-decoration:none;font-size:2rem;color:var(--text-color)"
-    }, "Git Hub")))));
+    return(/*#__PURE__*/ _reactDefault.default.createElement(_style.TitleSection, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.Name, null, "Michael Hegner"), /*#__PURE__*/ _reactDefault.default.createElement(_style.Position, null, "Full Stack Developer")));
 };
-_c5 = Title;
-var _c, _c1, _c2, _c3, _c4, _c5;
-$RefreshReg$(_c, "_StyledDiv");
-$RefreshReg$(_c1, "_StyledH");
-$RefreshReg$(_c2, "_StyledH2");
-$RefreshReg$(_c3, "_StyledH3");
-$RefreshReg$(_c4, "_StyledA");
-$RefreshReg$(_c5, "Title");
+_c = Title;
+var _c;
+$RefreshReg$(_c, "Title");
 
   helpers.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"juP7B","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6e8vO","styled-components":"gqYCY"}],"iM7ZX":[function() {},{}]},["bk2Y7","6qa0z","hFylh"], "hFylh", "parcelRequire21c5")
+},{"react":"juP7B","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6e8vO","./style":"3VRHT"}],"3VRHT":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Name", ()=>Name
+);
+parcelHelpers.export(exports, "Position", ()=>Position
+);
+parcelHelpers.export(exports, "TitleSection", ()=>TitleSection
+);
+var _styledComponents = require("styled-components");
+var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
+const Name = _styledComponentsDefault.default.h1.withConfig({
+    displayName: "style__Name",
+    componentId: "sc-2iaba3-0"
+})([
+    "font-size:4rem;text-align:center;"
+]);
+const Position = _styledComponentsDefault.default.h2.withConfig({
+    displayName: "style__Position",
+    componentId: "sc-2iaba3-1"
+})([
+    "font-size:2rem;text-align:center;"
+]);
+const TitleSection = _styledComponentsDefault.default.div.withConfig({
+    displayName: "style__TitleSection",
+    componentId: "sc-2iaba3-2"
+})([
+    "margin-top:-50px;min-width:100%;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;"
+]);
+
+},{"styled-components":"gqYCY","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN"}],"iM7ZX":[function() {},{}]},["bk2Y7","6qa0z","hFylh"], "hFylh", "parcelRequire21c5")
 
 //# sourceMappingURL=index.bae34397.js.map

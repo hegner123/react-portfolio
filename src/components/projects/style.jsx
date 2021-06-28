@@ -1,52 +1,7 @@
 import styled from "styled-components";
 
 
-export const ResourceImg = styled.img`
-filter:grayscale(1);
-transition-duration:300ms;
-&:hover{
-    filter: grayscale(0);
-}
-`
 
-export const InfoBlock = styled.div`
-display: flex;
-flex-direction: column;
-width:100%;
-@media(min-width: 768px) {
-flex-direction:row;
-}
-`
-
-export const ProjectImgContainer = styled.div`
-width:50%;
-margin-left:auto;
-margin-right:auto;
-margin-top:20px;
-@media(min-width: 768px) {
-margin-left:0;
-margin-right:0;
-margin-top:0;
-}
-
-`
-
-export const ProjectImg = styled.img`
-width:100%;
-border-radius:5px;
-overflow:hidden;
-`
-
-
-export const ProjectBody = styled.div`
-margin-top:20px;
-margin-left:auto;
-margin-right:auto;
-display:flex;
-flex-direction: column;
-width:100%;
-
-`
 
 export const Title1 = styled.h1`
 font-size:30px;
@@ -72,6 +27,51 @@ text-align:center;
     text-align:left;
 }
 `
+export const ResourceImg = styled.img`
+filter:grayscale(1);
+transition-duration:300ms;
+&:hover{
+    filter: grayscale(0);
+}
+`
+
+export const InfoBlock = styled.div`
+display: flex;
+flex-direction: column;
+width:100%;
+@media(min-width: 768px) {
+flex-direction:row;
+}
+`
+
+export const ProjectImgContainer = styled.div`
+width:100%;
+margin-left:auto;
+margin-right:auto;
+margin-top:20px;
+@media(min-width: 768px) {
+margin-left:0;
+margin-right:0;
+margin-top:0;
+}
+
+`
+
+export const ProjectImg = styled.img`
+width:100%;
+border-radius:5px;
+overflow:hidden;
+`
+
+
+export const ProjectBody = styled.div`
+margin-top:20px;
+margin-left:auto;
+margin-right:auto;
+display:flex;
+flex-direction: column;
+width:100%;
+`
 
 export const ProjectBio = styled.div`
 margin-top:10px;
@@ -96,6 +96,7 @@ display:flex;
 flex-direction: column;
 @media(min-width: 768px) {
 flex-direction: row;
+justify-content: space-between;
 }
     `
 
@@ -105,7 +106,7 @@ margin-left:auto;
 margin-right:auto;
 @media(min-width: 768px) {
     margin-top:10px;
-    width:50%;
+    width:100%;
     margin-left:0;
     margin-right:0;
 }
@@ -125,4 +126,8 @@ display:flex;
 flex-direction:row;
 justify-content: space-around;
 margin-top:20px;
+`
+
+export const ProjectWrapper = styled.div`
+margin:0 60px;
 `

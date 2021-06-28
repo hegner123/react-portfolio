@@ -1,14 +1,21 @@
 :root{
-	--bg:#f7f7f7;
+	--bg:#7dbcdf;
+	--accent-slate:#363635;
+	--accent-red:#db3069;
+	--accent-khaki:#bbb193;
+	--accent-yellow:#ffcb47;
 	--font-size:18px;
-	--text-color:#000;
+	--text-color:var(--accent-slate);
+	--section-bg:#fff;
+	--bg-tile:url("/public/pattern.png");
+	--bg-gradient: linear-gradient(to right, #7DBCDF, #74b9df);
+	--bg-tile-gradient:linear-gradient(to right, #7dbddf8f, #3568bf8f),url("/public/pattern.png" );
 }
 
 
 .App{
 	width:100%;
 }
-
 
 
 
@@ -35,6 +42,7 @@ time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
+	color:var(--text-color);
 	vertical-align: baseline;
 }
 
@@ -44,13 +52,15 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-	background-image:linear-gradient(to bottom, #7DBCDF, #3568bf);
 	min-height:100vh;
 }
 
 @media(min-width: 768px) {
 	body{
-		background-image:linear-gradient(to right, #7DBCDF, #3568bf);
+		background-image:var(--bg-gradient);
+		background-position: center center;
+		background-size:auto;
+		background-repeat:repeat;
 	}
 	}
 ol, ul {
@@ -74,11 +84,12 @@ table {
 }
 
 .App{
-	height:100%;
+	min-height:100%;
 }
 
 .homepage{
-	height:95%;
+	margin-left:60px;
+	margin-right:60px
 }
 
 .footer{
