@@ -1,97 +1,171 @@
-:root{
-	--bg:#7dbcdf;
-	--accent-slate:#363635;
-	--accent-red:#db3069;
-	--accent-khaki:#bbb193;
-	--accent-yellow:#ffcb47;
-	--font-size:18px;
-	--text-color:var(--accent-slate);
-	--section-bg:#fff;
-	--bg-tile:url("/public/pattern.png");
-	--bg-gradient: linear-gradient(to right, #7DBCDF, #74b9df);
-	--bg-tile-gradient:linear-gradient(to right, #7dbddf8f, #3568bf8f),url("/public/pattern.png" );
+:root {
+  --bg: #7dbcdf;
+  --accent-slate: #363635;
+  --accent-red: #db3069;
+  --accent-khaki: #bbb193;
+  --accent-yellow: #ffcb47;
+  --font-size: 18px;
+  --text-color: var(--accent-slate);
+  --section-bg: #fff;
+  --bg-tile: url("/public/pattern.png");
+  --bg-gradient: linear-gradient(to right, #7dbcdf, #74b9df);
+  --bg-tile-gradient: linear-gradient(to right, #7dbddf8f, #3568bf8f),
+    url("/public/pattern.png");
 }
 
-
-.App{
-	width:100%;
+.App {
+  width: 100%;
 }
 
-
-
-
-
-
-
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	color:var(--text-color);
-	vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  color: var(--text-color);
+  vertical-align: baseline;
 }
 
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 body {
-	line-height: 1;
-	min-height:100vh;
+  line-height: 1;
+  min-height: 100vh;
 }
 
-@media(min-width: 768px) {
-	body{
-		background-image:var(--bg-gradient);
-		background-position: center center;
-		background-size:auto;
-		background-repeat:repeat;
-	}
-	}
-ol, ul {
-	list-style: none;
+@media (min-width: 768px) {
+  body {
+    background-image: var(--bg-gradient);
+    background-position: center center;
+    background-size: auto;
+    background-repeat: repeat;
+  }
 }
-blockquote, q {
-	quotes: none;
+ol,
+ul {
+  list-style: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 * {
-    font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
-.App{
-	min-height:100%;
+.App {
+  min-height: 100%;
 }
 
-.homepage{
-	margin-left:60px;
-	margin-right:60px
+.homepage {
+  margin-left: 60px;
+  margin-right: 60px;
 }
 
-.footer{
-	font-family: 'Roboto', sans-serif;
+.footer {
+  font-family: "Roboto", sans-serif;
 }
