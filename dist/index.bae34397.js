@@ -30098,14 +30098,14 @@ _c4 = _StyledChevRight;
 const Projects = (props)=>{
     _s();
     const [image, setImage] = _react.useState(_homepagePngDefault.default);
-    const [counter, setCounter] = _react.useState(0);
+    const [counter, setCounter] = _react.useState(1);
     const imgs = [_homepagePngDefault.default, _ppsExample1PngDefault.default, _ppsExample2PngDefault.default];
-    function changeImage(i) {
-        setCounter(counter + i);
-        if (counter === 2) setCounter(0);
-        else if (counter < 0) setCounter(2);
-        console.log(counter);
+    function changeImg(n) {
+        if (counter + n < 0) setCounter(imgs.length - 1);
+        else if (counter + n > imgs.length - 1) setCounter(0);
+        else setCounter(counter + n);
         setImage(imgs[counter]);
+        console.log(counter);
     }
     return(/*#__PURE__*/ _reactDefault.default.createElement(_style.InfoBlock, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectBody, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectList, null, /*#__PURE__*/ _reactDefault.default.createElement(_StyledDiv, {
         _css: "padding:0 150px;"
@@ -30118,20 +30118,20 @@ const Projects = (props)=>{
     }, "Front-End Repo"), /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectLink, {
         href: "https://github.com/hegner123/pps-back"
     }, "Back-End Repo")))), /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectWrapper, null, /*#__PURE__*/ _reactDefault.default.createElement(_StyledChevLeft, {
-        onClick: ()=>changeImage(-1)
+        onClick: ()=>changeImg(-1)
         ,
-        _css3: "fill:#000;height:100px;width:100px;"
+        _css3: "fill:#000;height:100px;width:100px; cursor:pointer"
     }), /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectImgContainer, null, /*#__PURE__*/ _reactDefault.default.createElement(_StyledProjectImg, {
         src: image,
         alt: "ProProject Studio",
         _css4: "width:100%;border-radius:5px;overflow:hidden"
     })), /*#__PURE__*/ _reactDefault.default.createElement(_StyledChevRight, {
-        onClick: ()=>changeImage(1)
+        onClick: ()=>changeImg(1)
         ,
-        _css5: "fill:#000;height:100px;width:100px;"
+        _css5: "fill:#000;height:100px;width:100px;cursor:pointer"
     })))))));
 };
-_s(Projects, "DPQ4YiNGGitWdV516qec8a42PpI=");
+_s(Projects, "7bPY3mPvB8dJ+yWRTUg38884CUs=");
 _c5 = Projects;
 var _c, _c1, _c2, _c3, _c4, _c5;
 $RefreshReg$(_c, "_StyledDiv");

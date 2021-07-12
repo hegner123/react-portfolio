@@ -20,19 +20,20 @@ import chevRight from "url:../../../public/icons/chevron_right.svg";
 
 export const Projects = (props) => {
   const [image, setImage] = useState(homepagePic);
-  const [counter, setCounter] = useState(0);
+  const [counter, setCounter] = useState(1);
   const imgs = [homepagePic, pps1, pps2];
 
-  function changeImage(i) {
-    setCounter(counter + i);
-
-    if (counter === 2) {
+  function changeImg(n) {
+    if (counter + n < 0) {
+      setCounter(imgs.length - 1);
+    } else if (counter + n > imgs.length - 1) {
       setCounter(0);
-    } else if (counter < 0) {
-      setCounter(2);
+    } else {
+      setCounter(counter + n);
     }
-    console.log(counter);
+
     setImage(imgs[counter]);
+    console.log(counter);
   }
 
   return (
@@ -69,8 +70,8 @@ export const Projects = (props) => {
             </ProjectWrapper>
             <ProjectWrapper>
               <chevLeft
-                css={"fill:#000;height:100px;width:100px;"}
-                onClick={() => changeImage(-1)}
+                css={"fill:#000;height:100px;width:100px; cursor:pointer"}
+                onClick={() => changeImg(-1)}
               />
               <ProjectImgContainer>
                 <ProjectImg
@@ -80,8 +81,8 @@ export const Projects = (props) => {
                 />
               </ProjectImgContainer>
               <chevRight
-                css={"fill:#000;height:100px;width:100px;"}
-                onClick={() => changeImage(1)}
+                css={"fill:#000;height:100px;width:100px;cursor:pointer"}
+                onClick={() => changeImg(1)}
               />
             </ProjectWrapper>
           </ProjectListItem>
