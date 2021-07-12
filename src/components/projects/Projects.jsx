@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   InfoBlock,
   ProjectWrapper,
@@ -13,8 +13,28 @@ import {
   ProjectLink,
 } from "./style";
 import homepagePic from "url:../../../public/homepage.png";
+import pps1 from "url:../../../public/pps-example1.png";
+import pps2 from "url:../../../public/pps-example2.png";
+import chevLeft from "url:../../../public/icons/chevron_left.svg";
+import chevRight from "url:../../../public/icons/chevron_right.svg";
 
 export const Projects = (props) => {
+  const [image, setImage] = useState(homepagePic);
+  const [counter, setCounter] = useState(0);
+  const imgs = [homepagePic, pps1, pps2];
+
+  function changeImage(i) {
+    setCounter(counter + i);
+
+    if (counter === 2) {
+      setCounter(0);
+    } else if (counter < 0) {
+      setCounter(2);
+    }
+    console.log(counter);
+    setImage(imgs[counter]);
+  }
+
   return (
     <InfoBlock>
       <ProjectBody>
@@ -48,13 +68,21 @@ export const Projects = (props) => {
               </ProjectDescription>
             </ProjectWrapper>
             <ProjectWrapper>
+              <chevLeft
+                css={"fill:#000;height:100px;width:100px;"}
+                onClick={() => changeImage(-1)}
+              />
               <ProjectImgContainer>
                 <ProjectImg
-                  src={homepagePic}
+                  src={image}
                   alt="ProProject Studio"
                   css={"width:100%;border-radius:5px;overflow:hidden"}
                 />
               </ProjectImgContainer>
+              <chevRight
+                css={"fill:#000;height:100px;width:100px;"}
+                onClick={() => changeImage(1)}
+              />
             </ProjectWrapper>
           </ProjectListItem>
         </ProjectList>

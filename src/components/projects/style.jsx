@@ -94,7 +94,8 @@ export const ProjectLinkList = styled.ul`
 `;
 
 export const ProjectWrapper = styled.div`
-
+display:flex;
+align-items: center;
 `;
 
 export const Title1 = styled.h1`

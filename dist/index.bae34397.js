@@ -30021,6 +30021,35 @@ var _reactDefault = parcelHelpers.interopDefault(_react);
 var _style = require("./style");
 var _homepagePng = require("url:../../../public/homepage.png");
 var _homepagePngDefault = parcelHelpers.interopDefault(_homepagePng);
+var _ppsExample1Png = require("url:../../../public/pps-example1.png");
+var _ppsExample1PngDefault = parcelHelpers.interopDefault(_ppsExample1Png);
+var _ppsExample2Png = require("url:../../../public/pps-example2.png");
+var _ppsExample2PngDefault = parcelHelpers.interopDefault(_ppsExample2Png);
+var _s = $RefreshSig$();
+var chevLeft = function chevLeft1(props) {
+    return(/*#__PURE__*/ _reactDefault.default.createElement("svg", props, /*#__PURE__*/ _reactDefault.default.createElement("path", {
+        d: "M0 0h24v24H0V0z",
+        fill: "none"
+    }), /*#__PURE__*/ _reactDefault.default.createElement("path", {
+        d: "M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12l4.58-4.59z"
+    })));
+};
+chevLeft.defaultProps = {
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 24 24"
+};
+var chevRight = function chevRight1(props) {
+    return(/*#__PURE__*/ _reactDefault.default.createElement("svg", props, /*#__PURE__*/ _reactDefault.default.createElement("path", {
+        d: "M0 0h24v24H0V0z",
+        fill: "none"
+    }), /*#__PURE__*/ _reactDefault.default.createElement("path", {
+        d: "M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6-6-6z"
+    })));
+};
+chevRight.defaultProps = {
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 24 24"
+};
 var _StyledDiv = _styledComponentsDefault.default("div").withConfig({
     displayName: "Projects___StyledDiv",
     componentId: "ato3y0-0"
@@ -30039,16 +30068,45 @@ var _StyledP = _styledComponentsDefault.default("p").withConfig({
 ], (p)=>p._css2
 );
 _c1 = _StyledP;
-var _StyledProjectImg = _styledComponentsDefault.default(_style.ProjectImg).withConfig({
-    displayName: "Projects___StyledProjectImg",
+var _StyledChevLeft = _styledComponentsDefault.default(chevLeft).withConfig({
+    displayName: "Projects___StyledChevLeft",
     componentId: "ato3y0-2"
 })([
     "",
     ""
 ], (p)=>p._css3
 );
-_c2 = _StyledProjectImg;
+_c2 = _StyledChevLeft;
+var _StyledProjectImg = _styledComponentsDefault.default(_style.ProjectImg).withConfig({
+    displayName: "Projects___StyledProjectImg",
+    componentId: "ato3y0-3"
+})([
+    "",
+    ""
+], (p)=>p._css4
+);
+_c3 = _StyledProjectImg;
+var _StyledChevRight = _styledComponentsDefault.default(chevRight).withConfig({
+    displayName: "Projects___StyledChevRight",
+    componentId: "ato3y0-4"
+})([
+    "",
+    ""
+], (p)=>p._css5
+);
+_c4 = _StyledChevRight;
 const Projects = (props)=>{
+    _s();
+    const [image, setImage] = _react.useState(_homepagePngDefault.default);
+    const [counter, setCounter] = _react.useState(0);
+    const imgs = [_homepagePngDefault.default, _ppsExample1PngDefault.default, _ppsExample2PngDefault.default];
+    function changeImage(i) {
+        setCounter(counter + i);
+        if (counter === 2) setCounter(0);
+        else if (counter < 0) setCounter(2);
+        console.log(counter);
+        setImage(imgs[counter]);
+    }
     return(/*#__PURE__*/ _reactDefault.default.createElement(_style.InfoBlock, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectBody, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectList, null, /*#__PURE__*/ _reactDefault.default.createElement(_StyledDiv, {
         _css: "padding:0 150px;"
     }, /*#__PURE__*/ _reactDefault.default.createElement(_style.Title3, null, "Current Projects")), /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectListItem, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectWrapper, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectDescription, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.Title3, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectLink, {
@@ -30059,25 +30117,36 @@ const Projects = (props)=>{
         href: "https://github.com/hegner123/pps-front"
     }, "Front-End Repo"), /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectLink, {
         href: "https://github.com/hegner123/pps-back"
-    }, "Back-End Repo")))), /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectWrapper, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectImgContainer, null, /*#__PURE__*/ _reactDefault.default.createElement(_StyledProjectImg, {
-        src: _homepagePngDefault.default,
+    }, "Back-End Repo")))), /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectWrapper, null, /*#__PURE__*/ _reactDefault.default.createElement(_StyledChevLeft, {
+        onClick: ()=>changeImage(-1)
+        ,
+        _css3: "fill:#000;height:100px;width:100px;"
+    }), /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectImgContainer, null, /*#__PURE__*/ _reactDefault.default.createElement(_StyledProjectImg, {
+        src: image,
         alt: "ProProject Studio",
-        _css3: "width:100%;border-radius:5px;overflow:hidden"
-    }))))))));
+        _css4: "width:100%;border-radius:5px;overflow:hidden"
+    })), /*#__PURE__*/ _reactDefault.default.createElement(_StyledChevRight, {
+        onClick: ()=>changeImage(1)
+        ,
+        _css5: "fill:#000;height:100px;width:100px;"
+    })))))));
 };
-_c3 = Projects;
-var _c, _c1, _c2, _c3;
+_s(Projects, "DPQ4YiNGGitWdV516qec8a42PpI=");
+_c5 = Projects;
+var _c, _c1, _c2, _c3, _c4, _c5;
 $RefreshReg$(_c, "_StyledDiv");
 $RefreshReg$(_c1, "_StyledP");
-$RefreshReg$(_c2, "_StyledProjectImg");
-$RefreshReg$(_c3, "Projects");
+$RefreshReg$(_c2, "_StyledChevLeft");
+$RefreshReg$(_c3, "_StyledProjectImg");
+$RefreshReg$(_c4, "_StyledChevRight");
+$RefreshReg$(_c5, "Projects");
 
   helpers.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"styled-components":"gqYCY","react":"juP7B","./style":"5tW3c","url:../../../public/homepage.png":"9tKu6","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6e8vO"}],"5tW3c":[function(require,module,exports) {
+},{"styled-components":"gqYCY","react":"juP7B","./style":"5tW3c","url:../../../public/homepage.png":"9tKu6","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6e8vO","url:../../../public/pps-example1.png":"lRi4u","url:../../../public/pps-example2.png":"fqsiz"}],"5tW3c":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "ResourceImg", ()=>ResourceImg
@@ -30182,7 +30251,7 @@ const ProjectWrapper = _styledComponentsDefault.default.div.withConfig({
     displayName: "style__ProjectWrapper",
     componentId: "tawnlc-11"
 })([
-    ""
+    "display:flex;align-items:center;"
 ]);
 const Title1 = _styledComponentsDefault.default.h1.withConfig({
     displayName: "style__Title1",
@@ -30234,7 +30303,13 @@ exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
 exports.getOrigin = getOrigin;
 
-},{}],"b7lZC":[function(require,module,exports) {
+},{}],"lRi4u":[function(require,module,exports) {
+module.exports = require('./bundle-url').getBundleURL() + "pps-example1.47610a73.png";
+
+},{"./bundle-url":"kGdAt"}],"fqsiz":[function(require,module,exports) {
+module.exports = require('./bundle-url').getBundleURL() + "pps-example2.2f13fbdf.png";
+
+},{"./bundle-url":"kGdAt"}],"b7lZC":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Main", ()=>Main
