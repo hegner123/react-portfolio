@@ -4,7 +4,7 @@ export const Footer = (props) => {
   return (
     <footer
       css={
-        "display:flex;justify-content:center; align-items:flex-end;padding:100px 100px 10px;"
+        "display:flex;justify-content:center; align-items:flex-end;padding:10px; background:var(--bg-footer)"
       }
     >
       <p className="footer">© Michael Hegner 2021 All Rights Resereved</p>

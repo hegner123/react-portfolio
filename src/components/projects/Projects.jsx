@@ -19,7 +19,9 @@ export const Projects = (props) => {
     <InfoBlock>
       <ProjectBody>
         <ProjectList>
-          <Title3>Current Projects</Title3>
+          <div css={"padding:0 150px;"}>
+            <Title3>Current Projects</Title3>
+          </div>
           <ProjectListItem>
             <ProjectWrapper>
               <ProjectDescription>

@@ -4,6 +4,7 @@ export const InfoBlock = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+  background: var(--bg-accent);
   @media (min-width: 768px) {
     flex-direction: row;
   }
@@ -34,11 +35,25 @@ export const AboutBody = styled.div`
   }
 `;
 
+export const AboutBio = styled.div`
+  margin-top: 10px;
+  width: 75%;
+  padding: 50px;
+
+  @media (min-width: 768px) {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 100px;
+  }
+`;
+
 export const Title1 = styled.h1`
   font-size: 30px;
   text-align: center;
   @media (min-width: 768px) {
     text-align: left;
+    padding: 0 50px;
   }
 `;
 
@@ -59,16 +74,4 @@ export const Title3 = styled.h3`
   }
 `;
 
-export const AboutBio = styled.div`
-  margin-top: 10px;
-  width: 75%;
-  margin-left: auto;
-  margin-right: auto;
 
-  @media (min-width: 768px) {
-    margin-top: 10px;
-    width: 100%;
-    margin-left: 50px;
-    margin-right: 50px;
-  }
-`;

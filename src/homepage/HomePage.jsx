@@ -4,7 +4,7 @@ import { About } from "../components/about";
 import { Bio } from "../components/bio";
 import { Footer } from "../components/footer";
 import { Projects } from "../components/projects";
-import { Resources } from "../components/resources";
+import { Resource } from "../components/resources";
 import { Title } from "../components/title";
 import { Main, NavBar, NavList, NavItem } from "./style";
 import styled, { keyframes } from "styled-components";
@@ -70,7 +70,7 @@ export function HomePage() {
         <Title />
         <Bio />
         <Projects />
-        <Resources />
+        <Resource />
         <About />
         <Footer />
       </Main>

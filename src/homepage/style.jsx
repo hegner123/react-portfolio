@@ -13,7 +13,6 @@ export const NavList = styled.ul`
   width: 25%;
   > * {
     margin-left: 20px;
-    margin-top: 10px;
 
     &:first-child {
       margin-left: 0;
@@ -41,7 +40,6 @@ export const NavItem = styled.li`
 export const NavBar = styled.div`
   display: flex;
   flex-direction: column;
-
   @media (min-width: 768px) {
     flex-direction: row;
   }

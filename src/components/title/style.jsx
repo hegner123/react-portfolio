@@ -11,9 +11,9 @@ export const Position = styled.h2`
 `;
 
 export const TitleSection = styled.div`
-  margin-top: -50px;
+  background: var(--bg);
   min-width: 100%;
-  min-height: 100vh;
+  min-height: calc(100vh - 58px);
   display: flex;
   flex-direction: column;
   justify-content: center;

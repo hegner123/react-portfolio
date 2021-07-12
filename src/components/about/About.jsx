@@ -1,23 +1,30 @@
 import React from "react";
-import { Section } from "./style";
+import { Section, Title1, Title2, Title3 } from "./style";
+
 
 export const About = (props) => {
   return (
     <Section>
-      <h3>Hobbies</h3>
-      <ul>
-        <li>music</li>
-        <li>anime</li>
-        <li>video games</li>
-        <li>sci fi</li>
-        <li>fantasy</li>
-        <li>novels</li>
-        <li>history</li>
-        <li>science</li>
-        <li>art</li>
-        <li>design</li>
-        <li>cooking</li>
-      </ul>
+      <div>
+        <div>
+          <Title3>Hobbies</Title3>
+        </div>
+        <div>
+          <ul>
+            <li>Music</li>
+            <li>Anime</li>
+            <li>Video games</li>
+            <li>Sci fi</li>
+            <li>Fantasy</li>
+            <li>Novels</li>
+            <li>History</li>
+            <li>Science</li>
+            <li>Art</li>
+            <li>Design</li>
+            <li>Cooking</li>
+          </ul>
+        </div>
+      </div>
     </Section>
   );
 };

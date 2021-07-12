@@ -1,29 +1,6 @@
 import styled from "styled-components";
 
-export const Title1 = styled.h1`
-  font-size: 30px;
-  text-align: center;
-  @media (min-width: 768px) {
-    text-align: left;
-  }
-`;
 
-export const Title2 = styled.h2`
-  font-size: 20px;
-  margin-top: 10px;
-  text-align: center;
-  @media (min-width: 768px) {
-    text-align: left;
-  }
-`;
-export const Title3 = styled.h3`
-  font-size: 20px;
-  margin-top: 10px;
-  text-align: center;
-  @media (min-width: 768px) {
-    text-align: left;
-  }
-`;
 export const ResourceImg = styled.img`
   filter: grayscale(1);
   transition-duration: 300ms;
@@ -33,6 +10,7 @@ export const ResourceImg = styled.img`
 `;
 
 export const InfoBlock = styled.div`
+background:var(--bg);
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -61,8 +39,6 @@ export const ProjectImg = styled.img`
 
 export const ProjectBody = styled.div`
   margin-top: 20px;
-  margin-left: auto;
-  margin-right: auto;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -71,13 +47,9 @@ export const ProjectBody = styled.div`
 export const ProjectBio = styled.div`
   margin-top: 10px;
   width: 75%;
-  margin-left: auto;
-  margin-right: auto;
   @media (min-width: 768px) {
     margin-top: 10px;
     width: 50%;
-    margin-left: 0;
-    margin-right: 0;
   }
 `;
 
@@ -88,6 +60,7 @@ export const ProjectList = styled.ul`
 export const ProjectListItem = styled.li`
   display: flex;
   flex-direction: column;
+  padding:0 50px;
   @media (min-width: 768px) {
     flex-direction: row;
     justify-content: space-between;
@@ -96,13 +69,11 @@ export const ProjectListItem = styled.li`
 
 export const ProjectDescription = styled.div`
   width: 75%;
-  margin-left: auto;
-  margin-right: auto;
+  padding:100px;
   @media (min-width: 768px) {
     margin-top: 10px;
     width: 100%;
-    margin-left: 0;
-    margin-right: 0;
+
   }
 `;
 
@@ -123,5 +94,30 @@ export const ProjectLinkList = styled.ul`
 `;
 
 export const ProjectWrapper = styled.div`
-  margin: 0 60px;
+
+`;
+
+export const Title1 = styled.h1`
+  font-size: 30px;
+  text-align: center;
+  @media (min-width: 768px) {
+    text-align: left;
+  }
+`;
+
+export const Title2 = styled.h2`
+  font-size: 20px;
+  margin-top: 10px;
+  text-align: center;
+  @media (min-width: 768px) {
+    text-align: left;
+  }
+`;
+export const Title3 = styled.h3`
+  font-size: 20px;
+  margin-top: 10px;
+  text-align: center;
+  @media (min-width: 768px) {
+    text-align: left;
+  }
 `;

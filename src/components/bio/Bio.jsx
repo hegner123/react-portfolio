@@ -18,7 +18,7 @@ export const Bio = (props) => {
           <div>
             <Title1>Michael Hegner</Title1>
           </div>
-          <p>
+          <p css={"padding:50px;"}>
             MERN Full Stack Web Developer with a background in Audio Engineering
             and a passion for problem solving. Experienced with creative
             troubleshooting under pressure. Valued for a detailed approach to
@@ -26,7 +26,7 @@ export const Bio = (props) => {
             tasks quickly and efficiently.
           </p>
         </AboutBio>
-        <div css={"width:50%;"}>
+        <AboutBio css={"width:50%;"}>
           <ul>
             <TechItem>
               <TechText>React</TechText>
@@ -41,7 +41,7 @@ export const Bio = (props) => {
               <TechText>MongoDB</TechText>
             </TechItem>
           </ul>
-        </div>
+        </AboutBio>
       </AboutBody>
     </InfoBlock>
   );
