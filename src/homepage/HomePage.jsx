@@ -1,57 +1,80 @@
-import React from 'react';
-import { css } from 'styled-components';
+import React from "react";
+import { render } from "react-dom";
+import { About } from "../components/about";
+import { Bio } from "../components/bio";
+import { Footer } from "../components/footer";
+import { Projects } from "../components/projects";
+import { Resource } from "../components/resources";
+import { Title } from "../components/title";
+import { Main, NavBar, NavList, NavItem, MenuBar } from "./style";
+import styled, { keyframes } from "styled-components";
 
-import {About} from '../components/about';
-import { Projects } from '../components/projects';
-import { Main, NavBar, NavList, NavItem } from './style';
+const rotate = keyframes`
+from {
+  transform: rotate(0deg);
+}
 
+to {
+  transform: rotate(360deg);
+}
+`;
 
-export function HomePage(props){
+// Here we create a component that will rotate everything we pass in over two seconds
+const Rotate = styled.div`
+  display: inline-block;
+  animation: ${rotate} 2s linear infinite;
+  padding: 2rem 1rem;
+  font-size: 1.2rem;
+`;
 
-        return (
-         <div className="homepage">
-            <header css={"font-family:Roboto;padding:20px 25px;"}>
-                <nav>
-                    <NavBar css={"display:flex;"}>
-                        <div>
-                            <a href="/" css={"color:var(--text-color);text-decoration:none;font-size:var(--font-size)"}>Michael Hegner</a>
-                        </div>
-                        <NavList css={"display:flex;"}>
-                            <NavItem>
-                                <a href="https://github.com/hegner123" target="_none" css={"color:var(--text-color);text-decoration:none;"}>Github</a>
-                            </NavItem>
-                            <NavItem>
-                                <a href="https://www.linkedin.com/in/michaelhegner/" target="_none" css={"color:var(--text-color);text-decoration:none;"}>LinkedIn</a>
-                            </NavItem>
-                            <NavItem>
-                                <a href="public/Resume.pdf" target="_none" css={"color:var(--text-color);text-decoration:none;"}>Resume</a>
-                            </NavItem>
-                            <NavItem>
-                                <a href="mailto:hegner123@gmail.com" css={"color:var(--text-color);text-decoration:none;"}>Email</a>
-                            </NavItem>
-                        </NavList>
-                    </NavBar>
-                </nav>
-            </header>
-            <Main css={"display:flex;width:100%"}>
-                <About />
-                <Projects/>
-            </Main>
-        </div>
-        )
-    }
-
-
-// function mapState(state) {
-//     const { users, authentication } = state;
-//     const { user } = authentication;
-//     return { user, users };
-// }
-
-// const actionCreators = {
-//     getUsers: userActions.getAll,
-//     deleteUser: userActions.delete
-// }
-
-// const connectedHomePage = connect(mapState, actionCreators)(HomePage);
-// export { connectedHomePage as HomePage };
+export function HomePage() {
+  return (
+    <div>
+      <MenuBar
+        css={"font-family:Roboto;padding:20px 25px;background: var(--white);"}
+      >
+        <nav>
+          <NavBar css={"display:flex;"}>
+            <div>
+              <a
+                href="/"
+                css={
+                  "color: var(--text-color);text-decoration:none;font-size:var(--font-size)"
+                }
+              >
+                Michael Hegner
+              </a>
+            </div>
+            <NavList css={"display:flex;"}>
+              <NavItem>
+                <a
+                  href="https://github.com/hegner123"
+                  target="_none"
+                  css={"color: var(--text-color);text-decoration:none;"}
+                >
+                  Github
+                </a>
+              </NavItem>
+              <NavItem>
+                <a
+                  href="https://www.linkedin.com/in/michaelhegner/"
+                  target="_none"
+                  css={"color: var(--text-color);text-decoration:none;"}
+                >
+                  LinkedIn
+                </a>
+              </NavItem>
+            </NavList>
+          </NavBar>
+        </nav>
+      </MenuBar>
+      <Main css={"width:100%;display:block;"}>
+        <Title />
+        <Bio />
+        <Projects />
+        <Resource />
+        <Footer />
+      </Main>
+    </div>
+  );
+}
