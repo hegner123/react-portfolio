@@ -1,27 +1,26 @@
 import styled from "styled-components";
 
 export const InfoBlock = styled.div`
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: var(--grid);
   width: 100%;
   background: var(--bg-accent);
-  @media (min-width: 768px) {
-    flex-direction: row;
-  }
+`;
+
+export const TechList = styled.ul`
+  display: grid;
+  grid-template-columns: var(--grid);
 `;
 
 export const TechItem = styled.li`
-  margin: 10px 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin: 10px auto;
 `;
 
 export const TechText = styled.p`
-  padding: 15px;
-  background: #fff;
+  padding: 15px 0;
+  background: var(--white);
   text-align: center;
-  width: 20%;
+  min-width: 10em;
 `;
 
 export const AboutBody = styled.div`
@@ -29,7 +28,6 @@ export const AboutBody = styled.div`
   margin-left: auto;
   margin-right: auto;
   display: flex;
-  flex-direction: row;
   width: 100%;
   @media (min-width: 768px) {
   }
@@ -38,12 +36,11 @@ export const AboutBody = styled.div`
 export const AboutBio = styled.div`
   margin-top: 10px;
   width: 75%;
-  padding: 50px;
-
+  padding: 0 20px;
   @media (min-width: 768px) {
     margin-top: 10px;
     margin-bottom: 10px;
-    width: 100%;
+    width: 50%;
     padding: 100px;
   }
 `;
@@ -73,5 +70,3 @@ export const Title3 = styled.h3`
     text-align: left;
   }
 `;
-
-

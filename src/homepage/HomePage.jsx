@@ -6,7 +6,7 @@ import { Footer } from "../components/footer";
 import { Projects } from "../components/projects";
 import { Resource } from "../components/resources";
 import { Title } from "../components/title";
-import { Main, NavBar, NavList, NavItem } from "./style";
+import { Main, NavBar, NavList, NavItem, MenuBar } from "./style";
 import styled, { keyframes } from "styled-components";
 
 const rotate = keyframes`
@@ -29,15 +29,17 @@ const Rotate = styled.div`
 
 export function HomePage() {
   return (
-    <div className="homepage">
-      <header css={"font-family:Roboto;padding:20px 25px;"}>
+    <div>
+      <MenuBar
+        css={"font-family:Roboto;padding:20px 25px;background: var(--white);"}
+      >
         <nav>
           <NavBar css={"display:flex;"}>
             <div>
               <a
                 href="/"
                 css={
-                  "color:var(--text-color);text-decoration:none;font-size:var(--font-size)"
+                  "color: var(--text-color);text-decoration:none;font-size:var(--font-size)"
                 }
               >
                 Michael Hegner
@@ -48,7 +50,7 @@ export function HomePage() {
                 <a
                   href="https://github.com/hegner123"
                   target="_none"
-                  css={"color:var(--text-color);text-decoration:none;"}
+                  css={"color: var(--text-color);text-decoration:none;"}
                 >
                   Github
                 </a>
@@ -57,7 +59,7 @@ export function HomePage() {
                 <a
                   href="https://www.linkedin.com/in/michaelhegner/"
                   target="_none"
-                  css={"color:var(--text-color);text-decoration:none;"}
+                  css={"color: var(--text-color);text-decoration:none;"}
                 >
                   LinkedIn
                 </a>
@@ -65,13 +67,12 @@ export function HomePage() {
             </NavList>
           </NavBar>
         </nav>
-      </header>
+      </MenuBar>
       <Main css={"width:100%;display:block;"}>
         <Title />
         <Bio />
         <Projects />
         <Resource />
-        <About />
         <Footer />
       </Main>
     </div>

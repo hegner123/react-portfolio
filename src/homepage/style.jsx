@@ -8,6 +8,12 @@ export const Main = styled.main`
   }
 `;
 
+export const MenuBar = styled.header`
+  font-family: Roboto;
+  padding: 20px 25px;
+  background: var(--white);
+`;
+
 export const NavList = styled.ul`
   display: flex;
   width: 25%;

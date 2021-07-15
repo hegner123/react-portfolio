@@ -4,7 +4,8 @@ import {
   ResourceImg,
   ResourcesListItem,
   ResourcesBio,
-  Title4,
+  ResourcesImgContainer,
+  ResourcesList,
 } from "./style";
 import w3schools from "url:../../../public/w3.png";
 import htmlatt from "url:../../../public/htmlatt.png";
@@ -14,47 +15,42 @@ import syntax from "url:../../../public/logo.png";
 export const Resource = (props) => {
   return (
     <Resources>
-      <ResourcesBio css={"width:50%;padding:0 150px"}>
-        <Title4 css={"font-size:20px;"}>I learn from:</Title4>
+      <ResourcesBio>
+        <h4 css={"font-size:20px;"}>I learn from:</h4>
         <div>
-          <ul
-            css={
-              "display:flex; justify-content:flex-start; flex-wrap:wrap;width:50%;"
-            }
-          >
+          <ResourcesList>
             <ResourcesListItem>
-              <a href="https://syntax.fm/">
-                <ResourceImg
-                  src={syntax}
-                  alt="Syntax podcast"
-                  css={"width:100%"}
-                />
-              </a>
+              <ResourcesImgContainer>
+                <a href="https://syntax.fm/">
+                  <ResourceImg src={syntax} alt="Syntax podcast" />
+                </a>
+              </ResourcesImgContainer>
             </ResourcesListItem>
             <ResourcesListItem>
-              <a href="https://www.w3schools.com/">
-                <ResourceImg
-                  src={w3schools}
-                  alt="w3 Schools"
-                  css={"width:100%"}
-                />
-              </a>
+              <ResourcesImgContainer>
+                <a href="https://www.w3schools.com/">
+                  <ResourceImg src={w3schools} alt="w3 Schools" />
+                </a>
+              </ResourcesImgContainer>
             </ResourcesListItem>
             <ResourcesListItem>
-              <a href={"https://podcast.htmlallthethings.com/"}>
-                <ResourceImg
-                  src={htmlatt}
-                  alt="html all the things podcast"
-                  css={"width:100%"}
-                />
-              </a>
+              <ResourcesImgContainer>
+                <a href={"https://podcast.htmlallthethings.com/"}>
+                  <ResourceImg
+                    src={htmlatt}
+                    alt="html all the things podcast"
+                  />
+                </a>
+              </ResourcesImgContainer>
             </ResourcesListItem>
             <ResourcesListItem>
-              <a href="https://jasonwatmore.com/">
-                <ResourceImg src={jw} alt="Jason Watmore" css={"width:100%"} />
-              </a>
+              <ResourcesImgContainer>
+                <a href="https://jasonwatmore.com/">
+                  <ResourceImg src={jw} alt="Jason Watmore" />
+                </a>
+              </ResourcesImgContainer>
             </ResourcesListItem>
-          </ul>
+          </ResourcesList>
         </div>
       </ResourcesBio>
     </Resources>

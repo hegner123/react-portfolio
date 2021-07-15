@@ -51,7 +51,7 @@ export const Projects = (props) => {
                     ProProject Studio
                   </ProjectLink>
                 </Title3>
-                <p css={"margin-top:10px;"}>
+                <p>
                   ProProject Studio (PPS) is a project management tool created
                   for recording engineers, mixing engineers, mastering
                   engineers, and their respective clients. PPS focuses on three

@@ -2,6 +2,7 @@ import React from "react";
 import {
   InfoBlock,
   AboutBody,
+  TechList,
   Title1,
   Title2,
   Title3,
@@ -14,11 +15,11 @@ export const Bio = (props) => {
   return (
     <InfoBlock css={"min-height:50vh;"}>
       <AboutBody>
-        <AboutBio css={"width:50%;"}>
+        <AboutBio >
           <div>
-            <Title1>Michael Hegner</Title1>
+            <h2>Michael Hegner</h2>
           </div>
-          <p css={"padding:50px;"}>
+          <p css={"max-width:40em;"}>
             MERN Full Stack Web Developer with a background in Audio Engineering
             and a passion for problem solving. Experienced with creative
             troubleshooting under pressure. Valued for a detailed approach to
@@ -26,8 +27,9 @@ export const Bio = (props) => {
             tasks quickly and efficiently.
           </p>
         </AboutBio>
-        <AboutBio css={"width:50%;"}>
-          <ul>
+
+        <AboutBio>
+          <TechList>
             <TechItem>
               <TechText>React</TechText>
             </TechItem>
@@ -40,7 +42,7 @@ export const Bio = (props) => {
             <TechItem>
               <TechText>MongoDB</TechText>
             </TechItem>
-          </ul>
+          </TechList>
         </AboutBio>
       </AboutBody>
     </InfoBlock>
