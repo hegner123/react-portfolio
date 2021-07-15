@@ -69,10 +69,10 @@ export const Projects = (props) => {
               </ProjectDescription>
             </ProjectWrapper>
             <ProjectWrapper>
-              <chevLeft
+              {/* <chevLeft
                 css={"fill:#000;height:100px;width:100px; cursor:pointer"}
                 onClick={() => changeImg(-1)}
-              />
+              /> */}
               <ProjectImgContainer>
                 <ProjectImg
                   src={image}
@@ -80,10 +80,10 @@ export const Projects = (props) => {
                   css={"width:100%;border-radius:5px;overflow:hidden"}
                 />
               </ProjectImgContainer>
-              <chevRight
+              {/* <chevRight
                 css={"fill:#000;height:100px;width:100px;cursor:pointer"}
                 onClick={() => changeImg(1)}
-              />
+              /> */}
             </ProjectWrapper>
           </ProjectListItem>
         </ProjectList>

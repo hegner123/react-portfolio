@@ -30074,33 +30074,15 @@ var _StyledDiv = _styledComponentsDefault.default("div").withConfig({
 ], (p)=>p._css
 );
 _c = _StyledDiv;
-var _StyledChevLeft = _styledComponentsDefault.default(chevLeft).withConfig({
-    displayName: "Projects___StyledChevLeft",
+var _StyledProjectImg = _styledComponentsDefault.default(_style.ProjectImg).withConfig({
+    displayName: "Projects___StyledProjectImg",
     componentId: "ato3y0-1"
 })([
     "",
     ""
 ], (p)=>p._css2
 );
-_c1 = _StyledChevLeft;
-var _StyledProjectImg = _styledComponentsDefault.default(_style.ProjectImg).withConfig({
-    displayName: "Projects___StyledProjectImg",
-    componentId: "ato3y0-2"
-})([
-    "",
-    ""
-], (p)=>p._css3
-);
-_c2 = _StyledProjectImg;
-var _StyledChevRight = _styledComponentsDefault.default(chevRight).withConfig({
-    displayName: "Projects___StyledChevRight",
-    componentId: "ato3y0-3"
-})([
-    "",
-    ""
-], (p)=>p._css4
-);
-_c3 = _StyledChevRight;
+_c1 = _StyledProjectImg;
 const Projects = (props)=>{
     _s();
     const [image, setImage] = _react.useState(_homepagePngDefault.default);
@@ -30121,28 +30103,18 @@ const Projects = (props)=>{
         href: "https://github.com/hegner123/pps-front"
     }, "Front-End Repo"), /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectLink, {
         href: "https://github.com/hegner123/pps-back"
-    }, "Back-End Repo")))), /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectWrapper, null, /*#__PURE__*/ _reactDefault.default.createElement(_StyledChevLeft, {
-        onClick: ()=>changeImg(-1)
-        ,
-        _css2: "fill:#000;height:100px;width:100px; cursor:pointer"
-    }), /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectImgContainer, null, /*#__PURE__*/ _reactDefault.default.createElement(_StyledProjectImg, {
+    }, "Back-End Repo")))), /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectWrapper, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectImgContainer, null, /*#__PURE__*/ _reactDefault.default.createElement(_StyledProjectImg, {
         src: image,
         alt: "ProProject Studio",
-        _css3: "width:100%;border-radius:5px;overflow:hidden"
-    })), /*#__PURE__*/ _reactDefault.default.createElement(_StyledChevRight, {
-        onClick: ()=>changeImg(1)
-        ,
-        _css4: "fill:#000;height:100px;width:100px;cursor:pointer"
-    })))))));
+        _css2: "width:100%;border-radius:5px;overflow:hidden"
+    }))))))));
 };
 _s(Projects, "7bPY3mPvB8dJ+yWRTUg38884CUs=");
-_c4 = Projects;
-var _c, _c1, _c2, _c3, _c4;
+_c2 = Projects;
+var _c, _c1, _c2;
 $RefreshReg$(_c, "_StyledDiv");
-$RefreshReg$(_c1, "_StyledChevLeft");
-$RefreshReg$(_c2, "_StyledProjectImg");
-$RefreshReg$(_c3, "_StyledChevRight");
-$RefreshReg$(_c4, "Projects");
+$RefreshReg$(_c1, "_StyledProjectImg");
+$RefreshReg$(_c2, "Projects");
 
   helpers.postlude(module);
 } finally {
