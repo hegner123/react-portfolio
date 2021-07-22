@@ -45,7 +45,7 @@ export function HomePage() {
                 Michael Hegner
               </a>
             </div>
-            <NavList css={"display:flex;"}>
+            <NavList>
               <NavItem>
                 <a
                   href="https://github.com/hegner123"
@@ -72,7 +72,6 @@ export function HomePage() {
         <Title />
         <Bio />
         <Projects />
-        <Resource />
         <Footer />
       </Main>
     </div>

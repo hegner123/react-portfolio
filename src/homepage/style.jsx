@@ -15,17 +15,16 @@ export const MenuBar = styled.header`
 `;
 
 export const NavList = styled.ul`
-  display: flex;
-  width: 25%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   > * {
-    margin-left: 20px;
-
     &:first-child {
       margin-left: 0;
     }
   }
 
   @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
     > * {
       margin-left: 20px;
       margin-top: 0;

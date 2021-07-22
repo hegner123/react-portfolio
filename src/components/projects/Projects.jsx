@@ -13,7 +13,7 @@ import {
   ProjectLink,
   ProjectLinkItems,
   Text,
-} from "../style/style-projects";
+} from "../style/style";
 import homepagePic from "url:../../../public/homepage.png";
 import pps1 from "url:../../../public/pps-example1.png";
 import pps2 from "url:../../../public/pps-example2.png";
@@ -39,63 +39,61 @@ export const Projects = (props) => {
   }
 
   return (
-    <InfoBlock>
-      <ProjectBody>
-        <ProjectList>
-          <div css={"padding:0 150px;"}>
-            <Title3>Current Projects</Title3>
-          </div>
-          <ProjectListItem>
-            <ProjectWrapper>
-              <ProjectDescription>
-                <Title3>
-                  <ProjectLink href="https://proprojectstudio.com">
-                    ProProject Studio
+    <ProjectBody bg={"var(--bg)"}>
+      <ProjectList>
+        <div>
+          <Title3>Current Projects</Title3>
+        </div>
+        <ProjectListItem>
+          <ProjectWrapper>
+            <ProjectDescription>
+              <Title3>
+                <ProjectLink href="https://proprojectstudio.com">
+                  ProProject Studio
+                </ProjectLink>
+              </Title3>
+              <Text>
+                <p>
+                  ProProject Studio (PPS) is a project management tool created
+                  for recording engineers, mixing engineers, mastering
+                  engineers, and their respective clients. PPS focuses on three
+                  main asspects of the recording or mixing process. These steps
+                  are Pre-production, Tracking, and Mixing.
+                </p>
+              </Text>
+              <ProjectLinkList>
+                <ProjectLinkItems>
+                  <ProjectLink href="https://github.com/hegner123/pps-front">
+                    Front-End Repo
                   </ProjectLink>
-                </Title3>
-                <Text>
-                  <p>
-                    ProProject Studio (PPS) is a project management tool created
-                    for recording engineers, mixing engineers, mastering
-                    engineers, and their respective clients. PPS focuses on
-                    three main asspects of the recording or mixing process.
-                    These steps are Pre-production, Tracking, and Mixing.
-                  </p>
-                </Text>
-                <ProjectLinkList>
-                  <ProjectLinkItems>
-                    <ProjectLink href="https://github.com/hegner123/pps-front">
-                      Front-End Repo
-                    </ProjectLink>
-                  </ProjectLinkItems>
-                  <ProjectLinkItems>
-                    <ProjectLink href="https://github.com/hegner123/pps-back">
-                      Back-End Repo
-                    </ProjectLink>
-                  </ProjectLinkItems>
-                </ProjectLinkList>
-              </ProjectDescription>
-            </ProjectWrapper>
-            <ProjectWrapper>
-              {/* <chevLeft
+                </ProjectLinkItems>
+                <ProjectLinkItems>
+                  <ProjectLink href="https://github.com/hegner123/pps-back">
+                    Back-End Repo
+                  </ProjectLink>
+                </ProjectLinkItems>
+              </ProjectLinkList>
+            </ProjectDescription>
+          </ProjectWrapper>
+          <ProjectWrapper>
+            {/* <chevLeft
                 css={"fill:#000;height:100px;width:100px; cursor:pointer"}
                 onClick={() => changeImg(-1)}
               /> */}
-              <ProjectImgContainer>
-                <ProjectImg
-                  src={image}
-                  alt="ProProject Studio"
-                  css={"width:100%;border-radius:5px;overflow:hidden"}
-                />
-              </ProjectImgContainer>
-              {/* <chevRight
+            <ProjectImgContainer>
+              <ProjectImg
+                src={image}
+                alt="ProProject Studio"
+                css={"width:100%;border-radius:5px;overflow:hidden"}
+              />
+            </ProjectImgContainer>
+            {/* <chevRight
                 css={"fill:#000;height:100px;width:100px;cursor:pointer"}
                 onClick={() => changeImg(1)}
               /> */}
-            </ProjectWrapper>
-          </ProjectListItem>
-        </ProjectList>
-      </ProjectBody>
-    </InfoBlock>
+          </ProjectWrapper>
+        </ProjectListItem>
+      </ProjectList>
+    </ProjectBody>
   );
 };

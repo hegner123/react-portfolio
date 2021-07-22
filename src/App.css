@@ -3,8 +3,6 @@
   box-sizing: border-box;
 }
 :root {
-  --grid-cols: 2;
-  --grid: repeat(var(--gridcols), 1fr);
   --white: #fbfbff;
   --grey-blue-lt: #a6b6c7;
   --grey-blue-drk: #9eadbe;
@@ -165,4 +163,8 @@ table {
 
 .footer {
   font-family: "Roboto", sans-serif;
+}
+
+a:hover {
+  color: var(--indigo);
 }
