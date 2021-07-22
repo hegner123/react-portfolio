@@ -28,7 +28,9 @@ export const AboutBody = styled.div`
   margin-left: auto;
   margin-right: auto;
   display: flex;
+  align-items: center;
   width: 100%;
+  padding: 20px;
   @media (min-width: 768px) {
   }
 `;
@@ -63,7 +65,7 @@ export const Title2 = styled.h2`
   }
 `;
 export const Title3 = styled.h3`
-  font-size: 20px;
+  font-size: 2rem;
   margin-top: 10px;
   text-align: center;
   @media (min-width: 768px) {

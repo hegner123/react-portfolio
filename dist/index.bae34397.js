@@ -29841,9 +29841,9 @@ parcelHelpers.export(exports, "About", ()=>About
 );
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
-var _style = require("./style");
+var _styleAbout = require("../style/style-about");
 const About = (props)=>{
-    return(/*#__PURE__*/ _reactDefault.default.createElement(_style.Section, null, /*#__PURE__*/ _reactDefault.default.createElement("div", null, /*#__PURE__*/ _reactDefault.default.createElement("div", null, /*#__PURE__*/ _reactDefault.default.createElement(_style.Title3, null, "Hobbies")), /*#__PURE__*/ _reactDefault.default.createElement("div", null, /*#__PURE__*/ _reactDefault.default.createElement("ul", null, /*#__PURE__*/ _reactDefault.default.createElement("li", null, "Music"), /*#__PURE__*/ _reactDefault.default.createElement("li", null, "Anime"), /*#__PURE__*/ _reactDefault.default.createElement("li", null, "Video games"), /*#__PURE__*/ _reactDefault.default.createElement("li", null, "Sci fi"), /*#__PURE__*/ _reactDefault.default.createElement("li", null, "Fantasy"), /*#__PURE__*/ _reactDefault.default.createElement("li", null, "Novels"), /*#__PURE__*/ _reactDefault.default.createElement("li", null, "History"), /*#__PURE__*/ _reactDefault.default.createElement("li", null, "Science"), /*#__PURE__*/ _reactDefault.default.createElement("li", null, "Art"), /*#__PURE__*/ _reactDefault.default.createElement("li", null, "Design"), /*#__PURE__*/ _reactDefault.default.createElement("li", null, "Cooking"))))));
+    return(/*#__PURE__*/ _reactDefault.default.createElement(_styleAbout.Section, null, /*#__PURE__*/ _reactDefault.default.createElement("div", null, /*#__PURE__*/ _reactDefault.default.createElement("div", null, /*#__PURE__*/ _reactDefault.default.createElement(_styleAbout.Title3, null, "Hobbies")), /*#__PURE__*/ _reactDefault.default.createElement("div", null, /*#__PURE__*/ _reactDefault.default.createElement("ul", null, /*#__PURE__*/ _reactDefault.default.createElement("li", null, "Music"), /*#__PURE__*/ _reactDefault.default.createElement("li", null, "Anime"), /*#__PURE__*/ _reactDefault.default.createElement("li", null, "Video games"), /*#__PURE__*/ _reactDefault.default.createElement("li", null, "Sci fi"), /*#__PURE__*/ _reactDefault.default.createElement("li", null, "Fantasy"), /*#__PURE__*/ _reactDefault.default.createElement("li", null, "Novels"), /*#__PURE__*/ _reactDefault.default.createElement("li", null, "History"), /*#__PURE__*/ _reactDefault.default.createElement("li", null, "Science"), /*#__PURE__*/ _reactDefault.default.createElement("li", null, "Art"), /*#__PURE__*/ _reactDefault.default.createElement("li", null, "Design"), /*#__PURE__*/ _reactDefault.default.createElement("li", null, "Cooking"))))));
 };
 _c = About;
 var _c;
@@ -29854,7 +29854,7 @@ $RefreshReg$(_c, "About");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"juP7B","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6e8vO","./style":"bq3YO"}],"6e8vO":[function(require,module,exports) {
+},{"react":"juP7B","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6e8vO","../style/style-about":"gWd4a"}],"6e8vO":[function(require,module,exports) {
 "use strict";
 var Refresh = require('react-refresh/runtime');
 function debounce(func, delay) {
@@ -29974,7 +29974,7 @@ function registerExportsForReactRefresh(module) {
     }
 }
 
-},{"react-refresh/runtime":"fi779"}],"bq3YO":[function(require,module,exports) {
+},{"react-refresh/runtime":"fi779"}],"gWd4a":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Section", ()=>Section
@@ -29988,26 +29988,26 @@ parcelHelpers.export(exports, "Title3", ()=>Title3
 var _styledComponents = require("styled-components");
 var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
 const Section = _styledComponentsDefault.default.section.withConfig({
-    displayName: "style__Section",
-    componentId: "sc-8kfvs0-0"
+    displayName: "style-about__Section",
+    componentId: "sc-18cudkb-0"
 })([
     "background:var(--bg);min-height:400px;padding:0 150px;display:flex;justify-content:flex-start;align-items:center;"
 ]);
 const Title1 = _styledComponentsDefault.default.h1.withConfig({
-    displayName: "style__Title1",
-    componentId: "sc-8kfvs0-1"
+    displayName: "style-about__Title1",
+    componentId: "sc-18cudkb-1"
 })([
     "font-size:30px;text-align:center;@media (min-width:768px){text-align:left;}"
 ]);
 const Title2 = _styledComponentsDefault.default.h2.withConfig({
-    displayName: "style__Title2",
-    componentId: "sc-8kfvs0-2"
+    displayName: "style-about__Title2",
+    componentId: "sc-18cudkb-2"
 })([
     "font-size:20px;margin-top:10px;text-align:center;@media (min-width:768px){text-align:left;}"
 ]);
 const Title3 = _styledComponentsDefault.default.h3.withConfig({
-    displayName: "style__Title3",
-    componentId: "sc-8kfvs0-3"
+    displayName: "style-about__Title3",
+    componentId: "sc-18cudkb-3"
 })([
     "font-size:20px;margin-top:10px;text-align:center;@media (min-width:768px){text-align:left;}"
 ]);
@@ -30033,7 +30033,7 @@ var _styledComponents = require("styled-components");
 var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
-var _style = require("./style");
+var _styleProjects = require("../style/style-projects");
 var _homepagePng = require("url:../../../public/homepage.png");
 var _homepagePngDefault = parcelHelpers.interopDefault(_homepagePng);
 var _ppsExample1Png = require("url:../../../public/pps-example1.png");
@@ -30074,7 +30074,7 @@ var _StyledDiv = _styledComponentsDefault.default("div").withConfig({
 ], (p)=>p._css
 );
 _c = _StyledDiv;
-var _StyledProjectImg = _styledComponentsDefault.default(_style.ProjectImg).withConfig({
+var _StyledProjectImg = _styledComponentsDefault.default(_styleProjects.ProjectImg).withConfig({
     displayName: "Projects___StyledProjectImg",
     componentId: "ato3y0-1"
 })([
@@ -30095,15 +30095,15 @@ const Projects = (props)=>{
         setImage(imgs[counter]);
         console.log(counter);
     }
-    return(/*#__PURE__*/ _reactDefault.default.createElement(_style.InfoBlock, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectBody, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectList, null, /*#__PURE__*/ _reactDefault.default.createElement(_StyledDiv, {
+    return(/*#__PURE__*/ _reactDefault.default.createElement(_styleProjects.InfoBlock, null, /*#__PURE__*/ _reactDefault.default.createElement(_styleProjects.ProjectBody, null, /*#__PURE__*/ _reactDefault.default.createElement(_styleProjects.ProjectList, null, /*#__PURE__*/ _reactDefault.default.createElement(_StyledDiv, {
         _css: "padding:0 150px;"
-    }, /*#__PURE__*/ _reactDefault.default.createElement(_style.Title3, null, "Current Projects")), /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectListItem, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectWrapper, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectDescription, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.Title3, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectLink, {
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_styleProjects.Title3, null, "Current Projects")), /*#__PURE__*/ _reactDefault.default.createElement(_styleProjects.ProjectListItem, null, /*#__PURE__*/ _reactDefault.default.createElement(_styleProjects.ProjectWrapper, null, /*#__PURE__*/ _reactDefault.default.createElement(_styleProjects.ProjectDescription, null, /*#__PURE__*/ _reactDefault.default.createElement(_styleProjects.Title3, null, /*#__PURE__*/ _reactDefault.default.createElement(_styleProjects.ProjectLink, {
         href: "https://proprojectstudio.com"
-    }, "ProProject Studio")), /*#__PURE__*/ _reactDefault.default.createElement("p", null, "ProProject Studio (PPS) is a project management tool created for recording engineers, mixing engineers, mastering engineers, and their respective clients. PPS focuses on three main asspects of the recording or mixing process. These steps are Pre-production, Tracking, and Mixing."), /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectLinkList, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectLink, {
+    }, "ProProject Studio")), /*#__PURE__*/ _reactDefault.default.createElement(_styleProjects.Text, null, /*#__PURE__*/ _reactDefault.default.createElement("p", null, "ProProject Studio (PPS) is a project management tool created for recording engineers, mixing engineers, mastering engineers, and their respective clients. PPS focuses on three main asspects of the recording or mixing process. These steps are Pre-production, Tracking, and Mixing.")), /*#__PURE__*/ _reactDefault.default.createElement(_styleProjects.ProjectLinkList, null, /*#__PURE__*/ _reactDefault.default.createElement(_styleProjects.ProjectLinkItems, null, /*#__PURE__*/ _reactDefault.default.createElement(_styleProjects.ProjectLink, {
         href: "https://github.com/hegner123/pps-front"
-    }, "Front-End Repo"), /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectLink, {
+    }, "Front-End Repo")), /*#__PURE__*/ _reactDefault.default.createElement(_styleProjects.ProjectLinkItems, null, /*#__PURE__*/ _reactDefault.default.createElement(_styleProjects.ProjectLink, {
         href: "https://github.com/hegner123/pps-back"
-    }, "Back-End Repo")))), /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectWrapper, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectImgContainer, null, /*#__PURE__*/ _reactDefault.default.createElement(_StyledProjectImg, {
+    }, "Back-End Repo"))))), /*#__PURE__*/ _reactDefault.default.createElement(_styleProjects.ProjectWrapper, null, /*#__PURE__*/ _reactDefault.default.createElement(_styleProjects.ProjectImgContainer, null, /*#__PURE__*/ _reactDefault.default.createElement(_StyledProjectImg, {
         src: image,
         alt: "ProProject Studio",
         _css2: "width:100%;border-radius:5px;overflow:hidden"
@@ -30121,133 +30121,7 @@ $RefreshReg$(_c2, "Projects");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"styled-components":"gqYCY","react":"juP7B","./style":"5tW3c","url:../../../public/homepage.png":"9tKu6","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6e8vO","url:../../../public/pps-example1.png":"lRi4u","url:../../../public/pps-example2.png":"fqsiz"}],"5tW3c":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "ResourceImg", ()=>ResourceImg
-);
-parcelHelpers.export(exports, "InfoBlock", ()=>InfoBlock
-);
-parcelHelpers.export(exports, "ProjectImgContainer", ()=>ProjectImgContainer
-);
-parcelHelpers.export(exports, "ProjectImg", ()=>ProjectImg
-);
-parcelHelpers.export(exports, "ProjectBody", ()=>ProjectBody
-);
-parcelHelpers.export(exports, "ProjectBio", ()=>ProjectBio
-);
-parcelHelpers.export(exports, "ProjectList", ()=>ProjectList
-);
-parcelHelpers.export(exports, "ProjectListItem", ()=>ProjectListItem
-);
-parcelHelpers.export(exports, "ProjectDescription", ()=>ProjectDescription
-);
-parcelHelpers.export(exports, "ProjectLink", ()=>ProjectLink
-);
-parcelHelpers.export(exports, "ProjectLinkList", ()=>ProjectLinkList
-);
-parcelHelpers.export(exports, "ProjectWrapper", ()=>ProjectWrapper
-);
-parcelHelpers.export(exports, "Title1", ()=>Title1
-);
-parcelHelpers.export(exports, "Title2", ()=>Title2
-);
-parcelHelpers.export(exports, "Title3", ()=>Title3
-);
-var _styledComponents = require("styled-components");
-var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
-const ResourceImg = _styledComponentsDefault.default.img.withConfig({
-    displayName: "style__ResourceImg",
-    componentId: "tawnlc-0"
-})([
-    "filter:grayscale(1);transition-duration:300ms;&:hover{filter:grayscale(0);}"
-]);
-const InfoBlock = _styledComponentsDefault.default.div.withConfig({
-    displayName: "style__InfoBlock",
-    componentId: "tawnlc-1"
-})([
-    "background:var(--bg);display:flex;flex-direction:column;width:100%;@media (min-width:768px){flex-direction:row;}"
-]);
-const ProjectImgContainer = _styledComponentsDefault.default.div.withConfig({
-    displayName: "style__ProjectImgContainer",
-    componentId: "tawnlc-2"
-})([
-    "width:100%;margin-left:auto;margin-right:auto;margin-top:20px;@media (min-width:768px){margin-left:0;margin-right:0;margin-top:0;}"
-]);
-const ProjectImg = _styledComponentsDefault.default.img.withConfig({
-    displayName: "style__ProjectImg",
-    componentId: "tawnlc-3"
-})([
-    "width:100%;border-radius:5px;overflow:hidden;"
-]);
-const ProjectBody = _styledComponentsDefault.default.div.withConfig({
-    displayName: "style__ProjectBody",
-    componentId: "tawnlc-4"
-})([
-    "margin-top:20px;display:flex;flex-direction:column;width:100%;"
-]);
-const ProjectBio = _styledComponentsDefault.default.div.withConfig({
-    displayName: "style__ProjectBio",
-    componentId: "tawnlc-5"
-})([
-    "margin-top:10px;width:75%;@media (min-width:768px){margin-top:10px;width:100%;}"
-]);
-const ProjectList = _styledComponentsDefault.default.ul.withConfig({
-    displayName: "style__ProjectList",
-    componentId: "tawnlc-6"
-})([
-    "padding:20px;"
-]);
-const ProjectListItem = _styledComponentsDefault.default.li.withConfig({
-    displayName: "style__ProjectListItem",
-    componentId: "tawnlc-7"
-})([
-    "display:flex;flex-direction:column;padding:0 50px;@media (min-width:768px){flex-direction:row;}"
-]);
-const ProjectDescription = _styledComponentsDefault.default.div.withConfig({
-    displayName: "style__ProjectDescription",
-    componentId: "tawnlc-8"
-})([
-    "width:75%;padding:100px;@media (max-width:768px){margin-top:10px;width:100%;padding:0;}"
-]);
-const ProjectLink = _styledComponentsDefault.default.a.withConfig({
-    displayName: "style__ProjectLink",
-    componentId: "tawnlc-9"
-})([
-    "color:var(--text-color);text-decoration:none;&:hover{color:#707070;cursor:pointer;}"
-]);
-const ProjectLinkList = _styledComponentsDefault.default.ul.withConfig({
-    displayName: "style__ProjectLinkList",
-    componentId: "tawnlc-10"
-})([
-    "display:flex;flex-direction:row;justify-content:space-around;margin-top:20px;"
-]);
-const ProjectWrapper = _styledComponentsDefault.default.div.withConfig({
-    displayName: "style__ProjectWrapper",
-    componentId: "tawnlc-11"
-})([
-    "display:flex;align-items:center;"
-]);
-const Title1 = _styledComponentsDefault.default.h1.withConfig({
-    displayName: "style__Title1",
-    componentId: "tawnlc-12"
-})([
-    "font-size:30px;text-align:center;@media (min-width:768px){text-align:left;}"
-]);
-const Title2 = _styledComponentsDefault.default.h2.withConfig({
-    displayName: "style__Title2",
-    componentId: "tawnlc-13"
-})([
-    "font-size:20px;margin-top:10px;text-align:center;@media (min-width:768px){text-align:left;}"
-]);
-const Title3 = _styledComponentsDefault.default.h3.withConfig({
-    displayName: "style__Title3",
-    componentId: "tawnlc-14"
-})([
-    "font-size:20px;margin-top:10px;text-align:center;@media (min-width:768px){text-align:left;}"
-]);
-
-},{"styled-components":"gqYCY","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN"}],"9tKu6":[function(require,module,exports) {
+},{"styled-components":"gqYCY","react":"juP7B","url:../../../public/homepage.png":"9tKu6","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6e8vO","url:../../../public/pps-example1.png":"lRi4u","url:../../../public/pps-example2.png":"fqsiz","../style/style-projects":"jMFf4"}],"9tKu6":[function(require,module,exports) {
 module.exports = require('./bundle-url').getBundleURL() + "homepage.62b0ddaf.png";
 
 },{"./bundle-url":"kGdAt"}],"kGdAt":[function(require,module,exports) {
@@ -30284,7 +30158,149 @@ module.exports = require('./bundle-url').getBundleURL() + "pps-example1.47610a73
 },{"./bundle-url":"kGdAt"}],"fqsiz":[function(require,module,exports) {
 module.exports = require('./bundle-url').getBundleURL() + "pps-example2.2f13fbdf.png";
 
-},{"./bundle-url":"kGdAt"}],"b7lZC":[function(require,module,exports) {
+},{"./bundle-url":"kGdAt"}],"jMFf4":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "ResourceImg", ()=>ResourceImg
+);
+parcelHelpers.export(exports, "InfoBlock", ()=>InfoBlock
+);
+parcelHelpers.export(exports, "ProjectImgContainer", ()=>ProjectImgContainer
+);
+parcelHelpers.export(exports, "ProjectImg", ()=>ProjectImg
+);
+parcelHelpers.export(exports, "ProjectBody", ()=>ProjectBody
+);
+parcelHelpers.export(exports, "ProjectBio", ()=>ProjectBio
+);
+parcelHelpers.export(exports, "ProjectList", ()=>ProjectList
+);
+parcelHelpers.export(exports, "ProjectLinkItems", ()=>ProjectLinkItems
+);
+parcelHelpers.export(exports, "ProjectListItem", ()=>ProjectListItem
+);
+parcelHelpers.export(exports, "ProjectDescription", ()=>ProjectDescription
+);
+parcelHelpers.export(exports, "ProjectLink", ()=>ProjectLink
+);
+parcelHelpers.export(exports, "ProjectLinkList", ()=>ProjectLinkList
+);
+parcelHelpers.export(exports, "ProjectWrapper", ()=>ProjectWrapper
+);
+parcelHelpers.export(exports, "Title1", ()=>Title1
+);
+parcelHelpers.export(exports, "Title2", ()=>Title2
+);
+parcelHelpers.export(exports, "Title3", ()=>Title3
+);
+parcelHelpers.export(exports, "Text", ()=>Text1
+);
+var _styledComponents = require("styled-components");
+var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
+const ResourceImg = _styledComponentsDefault.default.img.withConfig({
+    displayName: "style-projects__ResourceImg",
+    componentId: "yxo986-0"
+})([
+    "filter:grayscale(1);transition-duration:300ms;&:hover{filter:grayscale(0);}"
+]);
+const InfoBlock = _styledComponentsDefault.default.div.withConfig({
+    displayName: "style-projects__InfoBlock",
+    componentId: "yxo986-1"
+})([
+    "background:var(--bg);display:flex;flex-direction:column;width:100%;@media (min-width:768px){flex-direction:row;}"
+]);
+const ProjectImgContainer = _styledComponentsDefault.default.div.withConfig({
+    displayName: "style-projects__ProjectImgContainer",
+    componentId: "yxo986-2"
+})([
+    "width:100%;margin-left:auto;margin-right:auto;margin-top:20px;@media (min-width:768px){margin-left:0;margin-right:0;margin-top:0;}"
+]);
+const ProjectImg = _styledComponentsDefault.default.img.withConfig({
+    displayName: "style-projects__ProjectImg",
+    componentId: "yxo986-3"
+})([
+    "width:100%;border-radius:5px;overflow:hidden;"
+]);
+const ProjectBody = _styledComponentsDefault.default.div.withConfig({
+    displayName: "style-projects__ProjectBody",
+    componentId: "yxo986-4"
+})([
+    "margin-top:20px;display:flex;flex-direction:column;width:100%;"
+]);
+const ProjectBio = _styledComponentsDefault.default.div.withConfig({
+    displayName: "style-projects__ProjectBio",
+    componentId: "yxo986-5"
+})([
+    "margin-top:10px;width:75%;@media (min-width:768px){margin-top:10px;width:100%;}"
+]);
+const ProjectList = _styledComponentsDefault.default.ul.withConfig({
+    displayName: "style-projects__ProjectList",
+    componentId: "yxo986-6"
+})([
+    "padding:20px;"
+]);
+const ProjectLinkItems = _styledComponentsDefault.default.li.withConfig({
+    displayName: "style-projects__ProjectLinkItems",
+    componentId: "yxo986-7"
+})([
+    "margin-left:1rem;&:first-child{margin-left:0px;}"
+]);
+const ProjectListItem = _styledComponentsDefault.default.li.withConfig({
+    displayName: "style-projects__ProjectListItem",
+    componentId: "yxo986-8"
+})([
+    "display:flex;flex-direction:column;padding:0 50px;@media (min-width:768px){flex-direction:row;}"
+]);
+const ProjectDescription = _styledComponentsDefault.default.div.withConfig({
+    displayName: "style-projects__ProjectDescription",
+    componentId: "yxo986-9"
+})([
+    "width:75%;padding:100px;@media (max-width:768px){margin-top:10px;width:100%;padding:0;}"
+]);
+const ProjectLink = _styledComponentsDefault.default.a.withConfig({
+    displayName: "style-projects__ProjectLink",
+    componentId: "yxo986-10"
+})([
+    "color:var(--text-color);text-decoration:none;border-bottom:2px solid var(--indigo);margin-bottom:10px;&:hover{color:#707070;cursor:pointer;}"
+]);
+const ProjectLinkList = _styledComponentsDefault.default.ul.withConfig({
+    displayName: "style-projects__ProjectLinkList",
+    componentId: "yxo986-11"
+})([
+    "display:flex;flex-direction:row;margin-top:20px;"
+]);
+const ProjectWrapper = _styledComponentsDefault.default.div.withConfig({
+    displayName: "style-projects__ProjectWrapper",
+    componentId: "yxo986-12"
+})([
+    "display:flex;align-items:center;"
+]);
+const Title1 = _styledComponentsDefault.default.h1.withConfig({
+    displayName: "style-projects__Title1",
+    componentId: "yxo986-13"
+})([
+    "font-size:30px;text-align:center;@media (min-width:768px){text-align:left;}"
+]);
+const Title2 = _styledComponentsDefault.default.h2.withConfig({
+    displayName: "style-projects__Title2",
+    componentId: "yxo986-14"
+})([
+    "font-size:20px;margin-top:10px;text-align:center;@media (min-width:768px){text-align:left;}"
+]);
+const Title3 = _styledComponentsDefault.default.h3.withConfig({
+    displayName: "style-projects__Title3",
+    componentId: "yxo986-15"
+})([
+    "font-size:2rem;margin-top:10px;text-align:center;@media (min-width:768px){text-align:left;}"
+]);
+const Text1 = _styledComponentsDefault.default.div.withConfig({
+    displayName: "style-projects__Text",
+    componentId: "yxo986-16"
+})([
+    "margin-top:1rem;margin-bottom:1rem;"
+]);
+
+},{"styled-components":"gqYCY","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN"}],"b7lZC":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Main", ()=>Main
@@ -30351,8 +30367,8 @@ var _styledComponents = require("styled-components");
 var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
-var _style = require("./style");
-var _StyledInfoBlock = _styledComponentsDefault.default(_style.InfoBlock).withConfig({
+var _styleBio = require("../style/style-bio");
+var _StyledInfoBlock = _styledComponentsDefault.default(_styleBio.InfoBlock).withConfig({
     displayName: "Bio___StyledInfoBlock",
     componentId: "sc-1eezgdg-0"
 })([
@@ -30373,9 +30389,9 @@ _c1 = _StyledP;
 const Bio = (props)=>{
     return(/*#__PURE__*/ _reactDefault.default.createElement(_StyledInfoBlock, {
         _css: "min-height:50vh;"
-    }, /*#__PURE__*/ _reactDefault.default.createElement(_style.AboutBody, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.AboutBio, null, /*#__PURE__*/ _reactDefault.default.createElement("div", null, /*#__PURE__*/ _reactDefault.default.createElement("h2", null, "Michael Hegner")), /*#__PURE__*/ _reactDefault.default.createElement(_StyledP, {
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_styleBio.AboutBody, null, /*#__PURE__*/ _reactDefault.default.createElement(_styleBio.AboutBio, null, /*#__PURE__*/ _reactDefault.default.createElement("div", null, /*#__PURE__*/ _reactDefault.default.createElement(_styleBio.Title3, null, "Michael Hegner")), /*#__PURE__*/ _reactDefault.default.createElement(_StyledP, {
         _css2: "max-width:40em;"
-    }, "MERN Full Stack Web Developer with a background in Audio Engineering and a passion for problem solving. Experienced with creative troubleshooting under pressure. Valued for a detailed approach to learning new skills and an adaptable mindset, switching between tasks quickly and efficiently.")), /*#__PURE__*/ _reactDefault.default.createElement(_style.AboutBio, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.TechList, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.TechItem, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.TechText, null, "React")), /*#__PURE__*/ _reactDefault.default.createElement(_style.TechItem, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.TechText, null, "Express")), /*#__PURE__*/ _reactDefault.default.createElement(_style.TechItem, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.TechText, null, "Node")), /*#__PURE__*/ _reactDefault.default.createElement(_style.TechItem, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.TechText, null, "MongoDB")))))));
+    }, "MERN Full Stack Web Developer with a background in Audio Engineering and a passion for problem solving. Experienced with creative troubleshooting under pressure. Valued for a detailed approach to learning new skills and an adaptable mindset, switching between tasks quickly and efficiently.")), /*#__PURE__*/ _reactDefault.default.createElement(_styleBio.AboutBio, null, /*#__PURE__*/ _reactDefault.default.createElement(_styleBio.TechList, null, /*#__PURE__*/ _reactDefault.default.createElement(_styleBio.TechItem, null, /*#__PURE__*/ _reactDefault.default.createElement(_styleBio.TechText, null, "React")), /*#__PURE__*/ _reactDefault.default.createElement(_styleBio.TechItem, null, /*#__PURE__*/ _reactDefault.default.createElement(_styleBio.TechText, null, "Express")), /*#__PURE__*/ _reactDefault.default.createElement(_styleBio.TechItem, null, /*#__PURE__*/ _reactDefault.default.createElement(_styleBio.TechText, null, "Node")), /*#__PURE__*/ _reactDefault.default.createElement(_styleBio.TechItem, null, /*#__PURE__*/ _reactDefault.default.createElement(_styleBio.TechText, null, "MongoDB")))))));
 };
 _c2 = Bio;
 var _c, _c1, _c2;
@@ -30388,7 +30404,7 @@ $RefreshReg$(_c2, "Bio");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"styled-components":"gqYCY","react":"juP7B","./style":"gvqaa","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6e8vO"}],"gvqaa":[function(require,module,exports) {
+},{"styled-components":"gqYCY","react":"juP7B","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6e8vO","../style/style-bio":"5ExqE"}],"5ExqE":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "InfoBlock", ()=>InfoBlock
@@ -30412,58 +30428,58 @@ parcelHelpers.export(exports, "Title3", ()=>Title3
 var _styledComponents = require("styled-components");
 var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
 const InfoBlock = _styledComponentsDefault.default.div.withConfig({
-    displayName: "style__InfoBlock",
-    componentId: "sc-1n143b3-0"
+    displayName: "style-bio__InfoBlock",
+    componentId: "qz26iv-0"
 })([
     "display:grid;grid-template-columns:var(--grid);width:100%;background:var(--bg-accent);"
 ]);
 const TechList = _styledComponentsDefault.default.ul.withConfig({
-    displayName: "style__TechList",
-    componentId: "sc-1n143b3-1"
+    displayName: "style-bio__TechList",
+    componentId: "qz26iv-1"
 })([
     "display:grid;grid-template-columns:var(--grid);"
 ]);
 const TechItem = _styledComponentsDefault.default.li.withConfig({
-    displayName: "style__TechItem",
-    componentId: "sc-1n143b3-2"
+    displayName: "style-bio__TechItem",
+    componentId: "qz26iv-2"
 })([
     "margin:10px auto;"
 ]);
 const TechText = _styledComponentsDefault.default.p.withConfig({
-    displayName: "style__TechText",
-    componentId: "sc-1n143b3-3"
+    displayName: "style-bio__TechText",
+    componentId: "qz26iv-3"
 })([
     "padding:15px 0;background:var(--white);text-align:center;min-width:10em;"
 ]);
 const AboutBody = _styledComponentsDefault.default.div.withConfig({
-    displayName: "style__AboutBody",
-    componentId: "sc-1n143b3-4"
+    displayName: "style-bio__AboutBody",
+    componentId: "qz26iv-4"
 })([
-    "margin-top:20px;margin-left:auto;margin-right:auto;display:flex;width:100%;@media (min-width:768px){}"
+    "margin-top:20px;margin-left:auto;margin-right:auto;display:flex;align-items:center;width:100%;padding:20px;@media (min-width:768px){}"
 ]);
 const AboutBio = _styledComponentsDefault.default.div.withConfig({
-    displayName: "style__AboutBio",
-    componentId: "sc-1n143b3-5"
+    displayName: "style-bio__AboutBio",
+    componentId: "qz26iv-5"
 })([
     "margin-top:10px;width:75%;padding:0 20px;@media (min-width:768px){margin-top:10px;margin-bottom:10px;width:50%;padding:100px;}"
 ]);
 const Title1 = _styledComponentsDefault.default.h1.withConfig({
-    displayName: "style__Title1",
-    componentId: "sc-1n143b3-6"
+    displayName: "style-bio__Title1",
+    componentId: "qz26iv-6"
 })([
     "font-size:30px;text-align:center;@media (min-width:768px){text-align:left;padding:0 50px;}"
 ]);
 const Title2 = _styledComponentsDefault.default.h2.withConfig({
-    displayName: "style__Title2",
-    componentId: "sc-1n143b3-7"
+    displayName: "style-bio__Title2",
+    componentId: "qz26iv-7"
 })([
     "font-size:20px;margin-top:10px;text-align:center;@media (min-width:768px){text-align:left;}"
 ]);
 const Title3 = _styledComponentsDefault.default.h3.withConfig({
-    displayName: "style__Title3",
-    componentId: "sc-1n143b3-8"
+    displayName: "style-bio__Title3",
+    componentId: "qz26iv-8"
 })([
-    "font-size:20px;margin-top:10px;text-align:center;@media (min-width:768px){text-align:left;}"
+    "font-size:2rem;margin-top:10px;text-align:center;@media (min-width:768px){text-align:left;}"
 ]);
 
 },{"styled-components":"gqYCY","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN"}],"6sPhD":[function(require,module,exports) {
@@ -30534,7 +30550,7 @@ var _styledComponents = require("styled-components");
 var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
-var _style = require("./style");
+var _styleResources = require("../style/style-resources");
 var _w3Png = require("url:../../../public/w3.png");
 var _w3PngDefault = parcelHelpers.interopDefault(_w3Png);
 var _htmlattPng = require("url:../../../public/htmlatt.png");
@@ -30553,26 +30569,26 @@ var _StyledH = _styledComponentsDefault.default("h4").withConfig({
 );
 _c = _StyledH;
 const Resource = (props)=>{
-    return(/*#__PURE__*/ _reactDefault.default.createElement(_style.Resources, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ResourcesBio, null, /*#__PURE__*/ _reactDefault.default.createElement(_StyledH, {
+    return(/*#__PURE__*/ _reactDefault.default.createElement(_styleResources.Resources, null, /*#__PURE__*/ _reactDefault.default.createElement(_styleResources.ResourcesBio, null, /*#__PURE__*/ _reactDefault.default.createElement(_StyledH, {
         _css: "font-size:20px;"
-    }, "I learn from:"), /*#__PURE__*/ _reactDefault.default.createElement("div", null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ResourcesList, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ResourcesListItem, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ResourcesImgContainer, null, /*#__PURE__*/ _reactDefault.default.createElement("a", {
+    }, "I learn from:"), /*#__PURE__*/ _reactDefault.default.createElement("div", null, /*#__PURE__*/ _reactDefault.default.createElement(_styleResources.ResourcesList, null, /*#__PURE__*/ _reactDefault.default.createElement(_styleResources.ResourcesListItem, null, /*#__PURE__*/ _reactDefault.default.createElement(_styleResources.ResourcesImgContainer, null, /*#__PURE__*/ _reactDefault.default.createElement("a", {
         href: "https://syntax.fm/"
-    }, /*#__PURE__*/ _reactDefault.default.createElement(_style.ResourceImg, {
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_styleResources.ResourceImg, {
         src: _logoPngDefault.default,
         alt: "Syntax podcast"
-    })))), /*#__PURE__*/ _reactDefault.default.createElement(_style.ResourcesListItem, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ResourcesImgContainer, null, /*#__PURE__*/ _reactDefault.default.createElement("a", {
+    })))), /*#__PURE__*/ _reactDefault.default.createElement(_styleResources.ResourcesListItem, null, /*#__PURE__*/ _reactDefault.default.createElement(_styleResources.ResourcesImgContainer, null, /*#__PURE__*/ _reactDefault.default.createElement("a", {
         href: "https://www.w3schools.com/"
-    }, /*#__PURE__*/ _reactDefault.default.createElement(_style.ResourceImg, {
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_styleResources.ResourceImg, {
         src: _w3PngDefault.default,
         alt: "w3 Schools"
-    })))), /*#__PURE__*/ _reactDefault.default.createElement(_style.ResourcesListItem, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ResourcesImgContainer, null, /*#__PURE__*/ _reactDefault.default.createElement("a", {
+    })))), /*#__PURE__*/ _reactDefault.default.createElement(_styleResources.ResourcesListItem, null, /*#__PURE__*/ _reactDefault.default.createElement(_styleResources.ResourcesImgContainer, null, /*#__PURE__*/ _reactDefault.default.createElement("a", {
         href: "https://podcast.htmlallthethings.com/"
-    }, /*#__PURE__*/ _reactDefault.default.createElement(_style.ResourceImg, {
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_styleResources.ResourceImg, {
         src: _htmlattPngDefault.default,
         alt: "html all the things podcast"
-    })))), /*#__PURE__*/ _reactDefault.default.createElement(_style.ResourcesListItem, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ResourcesImgContainer, null, /*#__PURE__*/ _reactDefault.default.createElement("a", {
+    })))), /*#__PURE__*/ _reactDefault.default.createElement(_styleResources.ResourcesListItem, null, /*#__PURE__*/ _reactDefault.default.createElement(_styleResources.ResourcesImgContainer, null, /*#__PURE__*/ _reactDefault.default.createElement("a", {
         href: "https://jasonwatmore.com/"
-    }, /*#__PURE__*/ _reactDefault.default.createElement(_style.ResourceImg, {
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_styleResources.ResourceImg, {
         src: _jwJpegDefault.default,
         alt: "Jason Watmore"
     })))))))));
@@ -30587,10 +30603,7 @@ $RefreshReg$(_c1, "Resource");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"juP7B","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6e8vO","styled-components":"gqYCY","url:../../../public/w3.png":"c2unq","url:../../../public/htmlatt.png":"bAfzj","url:../../../public/jw.jpeg":"bL9US","url:../../../public/logo.png":"ZJUkd","./style":"lHhWF"}],"c2unq":[function(require,module,exports) {
-module.exports = require('./bundle-url').getBundleURL() + "w3.fb7d5dc8.png";
-
-},{"./bundle-url":"kGdAt"}],"bAfzj":[function(require,module,exports) {
+},{"react":"juP7B","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6e8vO","styled-components":"gqYCY","url:../../../public/htmlatt.png":"bAfzj","url:../../../public/jw.jpeg":"bL9US","url:../../../public/logo.png":"ZJUkd","url:../../../public/w3.png":"c2unq","../style/style-resources":"6Xcu7"}],"bAfzj":[function(require,module,exports) {
 module.exports = require('./bundle-url').getBundleURL() + "htmlatt.68f4e58f.png";
 
 },{"./bundle-url":"kGdAt"}],"bL9US":[function(require,module,exports) {
@@ -30599,7 +30612,10 @@ module.exports = require('./bundle-url').getBundleURL() + "jw.08107012.jpeg";
 },{"./bundle-url":"kGdAt"}],"ZJUkd":[function(require,module,exports) {
 module.exports = require('./bundle-url').getBundleURL() + "logo.65be624e.png";
 
-},{"./bundle-url":"kGdAt"}],"lHhWF":[function(require,module,exports) {
+},{"./bundle-url":"kGdAt"}],"c2unq":[function(require,module,exports) {
+module.exports = require('./bundle-url').getBundleURL() + "w3.fb7d5dc8.png";
+
+},{"./bundle-url":"kGdAt"}],"6Xcu7":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Resources", ()=>Resources
@@ -30619,44 +30635,44 @@ parcelHelpers.export(exports, "ResourcesImgContainer", ()=>ResourcesImgContainer
 var _styledComponents = require("styled-components");
 var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
 const Resources = _styledComponentsDefault.default.div.withConfig({
-    displayName: "style__Resources",
-    componentId: "sc-9wkdfk-0"
+    displayName: "style-resources__Resources",
+    componentId: "xu6w95-0"
 })([
     "background:var(--bg-accent);min-height:400px;display:flex;align-items:center;padding:40px;"
 ]);
 const ResourcesBody = _styledComponentsDefault.default.div.withConfig({
-    displayName: "style__ResourcesBody",
-    componentId: "sc-9wkdfk-1"
+    displayName: "style-resources__ResourcesBody",
+    componentId: "xu6w95-1"
 })([
     "margin-left:auto;margin-right:auto;display:flex;flex-direction:column;width:100%;@media (min-width:768px){}"
 ]);
 const ResourcesBio = _styledComponentsDefault.default.div.withConfig({
-    displayName: "style__ResourcesBio",
-    componentId: "sc-9wkdfk-2"
+    displayName: "style-resources__ResourcesBio",
+    componentId: "xu6w95-2"
 })([
     "width:75%;margin-left:auto;margin-right:auto;@media (max-width:768px){width:100%;}"
 ]);
 const ResourcesList = _styledComponentsDefault.default.ul.withConfig({
-    displayName: "style__ResourcesList",
-    componentId: "sc-9wkdfk-3"
+    displayName: "style-resources__ResourcesList",
+    componentId: "xu6w95-3"
 })([
     "display:grid;grid-template-columns:repeat(2,1fr);padding:20px;"
 ]);
 const ResourcesListItem = _styledComponentsDefault.default.li.withConfig({
-    displayName: "style__ResourcesListItem",
-    componentId: "sc-9wkdfk-4"
+    displayName: "style-resources__ResourcesListItem",
+    componentId: "xu6w95-4"
 })([
     "width:100%;overflow:hidden;border-radius:15px;"
 ]);
 const ResourceImg = _styledComponentsDefault.default.img.withConfig({
-    displayName: "style__ResourceImg",
-    componentId: "sc-9wkdfk-5"
+    displayName: "style-resources__ResourceImg",
+    componentId: "xu6w95-5"
 })([
     "width:100%;transition-duration:300ms;border-radius:15px;overflow:hidden;&:hover{transform:scale(1.2);overflow:hidden;}"
 ]);
 const ResourcesImgContainer = _styledComponentsDefault.default.div.withConfig({
-    displayName: "style__ResourcesImgContainer",
-    componentId: "sc-9wkdfk-6"
+    displayName: "style-resources__ResourcesImgContainer",
+    componentId: "xu6w95-6"
 })([
     "width:100%;@media (min-width:768px){width:50%;}"
 ]);

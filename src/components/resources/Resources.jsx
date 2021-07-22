@@ -6,7 +6,7 @@ import {
   ResourcesBio,
   ResourcesImgContainer,
   ResourcesList,
-} from "./style";
+} from "../style/style-resources";
 import w3schools from "url:../../../public/w3.png";
 import htmlatt from "url:../../../public/htmlatt.png";
 import jw from "url:../../../public/jw.jpeg";

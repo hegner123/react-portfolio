@@ -11,7 +11,9 @@ import {
   ProjectDescription,
   ProjectLinkList,
   ProjectLink,
-} from "./style";
+  ProjectLinkItems,
+  Text,
+} from "../style/style-projects";
 import homepagePic from "url:../../../public/homepage.png";
 import pps1 from "url:../../../public/pps-example1.png";
 import pps2 from "url:../../../public/pps-example2.png";
@@ -51,20 +53,26 @@ export const Projects = (props) => {
                     ProProject Studio
                   </ProjectLink>
                 </Title3>
-                <p>
-                  ProProject Studio (PPS) is a project management tool created
-                  for recording engineers, mixing engineers, mastering
-                  engineers, and their respective clients. PPS focuses on three
-                  main asspects of the recording or mixing process. These steps
-                  are Pre-production, Tracking, and Mixing.
-                </p>
+                <Text>
+                  <p>
+                    ProProject Studio (PPS) is a project management tool created
+                    for recording engineers, mixing engineers, mastering
+                    engineers, and their respective clients. PPS focuses on
+                    three main asspects of the recording or mixing process.
+                    These steps are Pre-production, Tracking, and Mixing.
+                  </p>
+                </Text>
                 <ProjectLinkList>
-                  <ProjectLink href="https://github.com/hegner123/pps-front">
-                    Front-End Repo
-                  </ProjectLink>
-                  <ProjectLink href="https://github.com/hegner123/pps-back">
-                    Back-End Repo
-                  </ProjectLink>
+                  <ProjectLinkItems>
+                    <ProjectLink href="https://github.com/hegner123/pps-front">
+                      Front-End Repo
+                    </ProjectLink>
+                  </ProjectLinkItems>
+                  <ProjectLinkItems>
+                    <ProjectLink href="https://github.com/hegner123/pps-back">
+                      Back-End Repo
+                    </ProjectLink>
+                  </ProjectLinkItems>
                 </ProjectLinkList>
               </ProjectDescription>
             </ProjectWrapper>

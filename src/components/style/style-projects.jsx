@@ -56,6 +56,13 @@ export const ProjectList = styled.ul`
   padding: 20px;
 `;
 
+export const ProjectLinkItems = styled.li`
+  margin-left: 1rem;
+  &:first-child {
+    margin-left: 0px;
+  }
+`;
+
 export const ProjectListItem = styled.li`
   display: flex;
   flex-direction: column;
@@ -78,6 +85,8 @@ export const ProjectDescription = styled.div`
 export const ProjectLink = styled.a`
   color: var(--text-color);
   text-decoration: none;
+  border-bottom: 2px solid var(--indigo);
+  margin-bottom: 10px;
   &:hover {
     color: #707070;
     cursor: pointer;
@@ -87,7 +96,7 @@ export const ProjectLink = styled.a`
 export const ProjectLinkList = styled.ul`
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+
   margin-top: 20px;
 `;
 
@@ -113,10 +122,15 @@ export const Title2 = styled.h2`
   }
 `;
 export const Title3 = styled.h3`
-  font-size: 20px;
+  font-size: 2rem;
   margin-top: 10px;
   text-align: center;
   @media (min-width: 768px) {
     text-align: left;
   }
+`;
+
+export const Text = styled.div`
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 `;

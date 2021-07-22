@@ -9,15 +9,15 @@ import {
   AboutBio,
   TechItem,
   TechText,
-} from "./style";
+} from "../style/style-bio";
 
 export const Bio = (props) => {
   return (
     <InfoBlock css={"min-height:50vh;"}>
       <AboutBody>
-        <AboutBio >
+        <AboutBio>
           <div>
-            <h2>Michael Hegner</h2>
+            <Title3>Michael Hegner</Title3>
           </div>
           <p css={"max-width:40em;"}>
             MERN Full Stack Web Developer with a background in Audio Engineering
