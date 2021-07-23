@@ -1,5 +1,5 @@
 import React from "react";
-import { TitleSection, Name, Position, Button } from "./style";
+import { TitleSection, Name, Position } from "./style";
 
 export const Title = (props) => {
   return (
