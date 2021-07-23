@@ -25417,14 +25417,18 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactRouterDom = require("react-router-dom");
 var _homepage = require("./homepage");
-var _appCss = require("./App.css");
+var _styledComponents = require("styled-components");
+var _global = require("./global");
+var _theme = require("./theme");
 function App() {
     return(/*#__PURE__*/ _reactDefault.default.createElement("div", {
         className: "app"
-    }, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.BrowserRouter, null, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Switch, null, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_styledComponents.ThemeProvider, {
+        theme: _theme.theme
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_global.GlobalStyles, null), /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.BrowserRouter, null, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Switch, null, /*#__PURE__*/ _reactDefault.default.createElement(_reactRouterDom.Route, {
         path: "/",
         component: _homepage.HomePage
-    })))));
+    }))))));
 }
 _c = App;
 exports.default = App;
@@ -25436,7 +25440,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"juP7B","react-router-dom":"9MXpQ","./homepage":"lhcDM","./App.css":"iM7ZX","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN","../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6e8vO"}],"9MXpQ":[function(require,module,exports) {
+},{"react":"juP7B","react-router-dom":"9MXpQ","./homepage":"lhcDM","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN","../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6e8vO","styled-components":"gqYCY","./global":"8illH","./theme":"3nQyE"}],"9MXpQ":[function(require,module,exports) {
 "use strict";
 module.exports = require("./cjs/react-router-dom.js");
 
@@ -30804,6 +30808,26 @@ const StyledMenu = _styledComponentsDefault.default.nav.withConfig({
 ], ({ open  })=>open ? "translateX(0)" : "translateX(-100%)"
 );
 
-},{"styled-components":"gqYCY","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN"}],"iM7ZX":[function() {},{}]},["bk2Y7","6qa0z","hFylh"], "hFylh", "parcelRequire21c5")
+},{"styled-components":"gqYCY","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN"}],"8illH":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "GlobalStyles", ()=>GlobalStyles
+);
+var _styledComponents = require("styled-components");
+const GlobalStyles = _styledComponents.createGlobalStyle`\n  *, *::after, *::before {\n    font-family: "Roboto Mono", monospace;\n    box-sizing: border-box;\n  }\n:root {\n  --white: #fbfbff;\n  --grey-blue-lt: #a6b6c7;\n  --grey-blue-drk: #9eadbe;\n  --slate: #363635;\n  --dark-blue: #303a46;\n  --red: #db3069;\n  --red2: #d11149;\n  --yellow: #ffcb47;\n  --yellow2: #e6c229;\n  --khaki: #bbb193;\n  --indigo: #6610f2;\n  --pumpkin: #f17105;\n  --bg: var(--grey-blue-lt);\n  --bg-accent: var(--grey-blue-drk);\n  --bg-footer: var(--slate);\n  --dark: var(--slate);\n  --danger: var(--red);\n  --warn: var(--yellow);\n  --bland: var(--khaki);\n  --font-size: 18px;\n  --text-color: var(--dark);\n  --section-bg: var(--indigo);\n}\n\n\n.app {\n  min-height: 100%;\n  width: 100%;\n}\n\nfooter {\n  background-color: var(--bg-footer);\n}\n\nfooter p {\n  font-family: "Roboto Mono", monospace;\n  font-weight: 200;\n  color: var(--white);\n}\n\n\n\n  body {\n    min-height: 100vh;\n    text-rendering: optimizeLegibility;\n  }\n  `;
+
+},{"styled-components":"gqYCY","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN"}],"3nQyE":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "theme", ()=>theme
+);
+const theme = {
+    primaryDark: "#0D0C1D",
+    primaryLight: "#EFFFFA",
+    primaryHover: "#343078",
+    mobile: "576px"
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN"}]},["bk2Y7","6qa0z","hFylh"], "hFylh", "parcelRequire21c5")
 
 //# sourceMappingURL=index.bae34397.js.map

@@ -1,5 +1,4 @@
 {
   "presets": ["@babel/preset-react"],
-  "plugins": ["babel-plugin-styled-components",
-  "inline-react-svg"]
+  "plugins": ["babel-plugin-styled-components", "inline-react-svg"]
 }

@@ -26,12 +26,15 @@ export const Section = styled.section`
   justify-content: center;
 
   @media (min-width: 768px) {
-    padding: 0 150px;
     align-items: flex-start;
+  }
+  @media (min-width: 1200px) {
+    padding: 0 150px;
   }
 `;
 
 export const Title1 = styled.h1`
+  color: var(--dark);
   font-size: 50px;
   text-align: center;
   @media (min-width: 768px) {
@@ -40,6 +43,7 @@ export const Title1 = styled.h1`
 `;
 
 export const Title2 = styled.h2`
+  color: var(--dark);
   font-size: 40px;
   padding: 3rem 0;
   text-align: left;
@@ -48,6 +52,7 @@ export const Title2 = styled.h2`
   }
 `;
 export const Title3 = styled.h3`
+  color: var(--dark);
   font-size: 30px;
 
   text-align: left;
@@ -80,6 +85,8 @@ export const TechList = styled.ul`
 `;
 
 export const TechItem = styled.li`
+  display: flex;
+  justify-content: center;
   margin: 10px 0;
   background: var(--white);
   border-radius: 4px;
@@ -107,7 +114,7 @@ export const ProjectBody = styled.div`
 
 export const ProjectList = styled.ul`
   padding: 0 50px;
-  @media (min-width: 768px) {
+  @media (min-width: 1200px) {
     padding: 0 150px;
   }
 `;
