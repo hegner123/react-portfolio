@@ -14,12 +14,11 @@ export const Bio = (props) => {
     <InfoBlock>
       <Section>
         <Title3>Michael Hegner</Title3>
+        <p css={"margin-top:0.75rem;"}>Looking for new challenges!</p>
         <Text>
-          MERN Full Stack Web Developer with a background in Audio Engineering
-          and a passion for problem solving. Experienced with creative
-          troubleshooting under pressure. Valued for a detailed approach to
-          learning new skills and an adaptable mindset, switching between tasks
-          quickly and efficiently.
+          I'm a full stack developer with a background in audio engineering. I
+          love problem solving and making applications to make my life easier.
+          You can find some examples of my work on my github or below.
         </Text>
       </Section>
       <Section>

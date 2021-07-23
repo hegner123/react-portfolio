@@ -90,11 +90,11 @@ export const TechItem = styled.li`
   margin: 10px 0;
   background: var(--white);
   border-radius: 4px;
+  box-shadow: 2px 2px 2px var(--dark);
 `;
 
 export const TechText = styled.p`
   padding: 15px 0;
-
   text-align: center;
   min-width: 10em;
 `;

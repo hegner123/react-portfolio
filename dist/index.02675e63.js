@@ -35545,7 +35545,7 @@ const TechList = _styledComponentsDefault.default.ul.withConfig({
 const TechItem = _styledComponentsDefault.default.li.withConfig({
   displayName: "style__TechItem",
   componentId: "sc-1uen8k0-9"
-})(["display:flex;justify-content:center;margin:10px 0;background:var(--white);border-radius:4px;"]);
+})(["display:flex;justify-content:center;margin:10px 0;background:var(--white);border-radius:4px;box-shadow:2px 2px 2px var(--dark);"]);
 const TechText = _styledComponentsDefault.default.p.withConfig({
   displayName: "style__TechText",
   componentId: "sc-1uen8k0-10"
@@ -35797,15 +35797,23 @@ try {
   _parcelHelpers.export(exports, "Bio", function () {
     return Bio;
   });
+  var _styledComponents = require("styled-components");
+  var _styledComponentsDefault = _parcelHelpers.interopDefault(_styledComponents);
   var _react = require("react");
   var _reactDefault = _parcelHelpers.interopDefault(_react);
   var _styleStyle = require("../style/style");
   const Bio = props => {
     return (
-      /*#__PURE__*/_reactDefault.default.createElement(_styleStyle.InfoBlock, null, /*#__PURE__*/_reactDefault.default.createElement(_styleStyle.Section, null, /*#__PURE__*/_reactDefault.default.createElement(_styleStyle.Title3, null, "Michael Hegner"), /*#__PURE__*/_reactDefault.default.createElement(_styleStyle.Text, null, "MERN Full Stack Web Developer with a background in Audio Engineering and a passion for problem solving. Experienced with creative troubleshooting under pressure. Valued for a detailed approach to learning new skills and an adaptable mindset, switching between tasks quickly and efficiently.")), /*#__PURE__*/_reactDefault.default.createElement(_styleStyle.Section, null, /*#__PURE__*/_reactDefault.default.createElement(_styleStyle.TechList, null, /*#__PURE__*/_reactDefault.default.createElement(_styleStyle.TechItem, null, /*#__PURE__*/_reactDefault.default.createElement(_styleStyle.TechText, null, "MongoDB")), /*#__PURE__*/_reactDefault.default.createElement(_styleStyle.TechItem, null, /*#__PURE__*/_reactDefault.default.createElement(_styleStyle.TechText, null, "Express")), /*#__PURE__*/_reactDefault.default.createElement(_styleStyle.TechItem, null, /*#__PURE__*/_reactDefault.default.createElement(_styleStyle.TechText, null, "React")), /*#__PURE__*/_reactDefault.default.createElement(_styleStyle.TechItem, null, /*#__PURE__*/_reactDefault.default.createElement(_styleStyle.TechText, null, "Node")))))
+      /*#__PURE__*/_reactDefault.default.createElement(_styleStyle.InfoBlock, null, /*#__PURE__*/_reactDefault.default.createElement(_styleStyle.Section, null, /*#__PURE__*/_reactDefault.default.createElement(_styleStyle.Title3, null, "Michael Hegner"), /*#__PURE__*/_reactDefault.default.createElement(_StyledP, {
+        $_css: "margin-top:0.75rem;"
+      }, "Looking for new challenges!"), /*#__PURE__*/_reactDefault.default.createElement(_styleStyle.Text, null, "I'm a full stack developer with a background in audio engineering. I love problem solving and making applications to make my life easier. You can find some examples of my work on my github or below.")), /*#__PURE__*/_reactDefault.default.createElement(_styleStyle.Section, null, /*#__PURE__*/_reactDefault.default.createElement(_styleStyle.TechList, null, /*#__PURE__*/_reactDefault.default.createElement(_styleStyle.TechItem, null, /*#__PURE__*/_reactDefault.default.createElement(_styleStyle.TechText, null, "MongoDB")), /*#__PURE__*/_reactDefault.default.createElement(_styleStyle.TechItem, null, /*#__PURE__*/_reactDefault.default.createElement(_styleStyle.TechText, null, "Express")), /*#__PURE__*/_reactDefault.default.createElement(_styleStyle.TechItem, null, /*#__PURE__*/_reactDefault.default.createElement(_styleStyle.TechText, null, "React")), /*#__PURE__*/_reactDefault.default.createElement(_styleStyle.TechItem, null, /*#__PURE__*/_reactDefault.default.createElement(_styleStyle.TechText, null, "Node")))))
     );
   };
   _c = Bio;
+  var _StyledP = _styledComponentsDefault.default("p").withConfig({
+    displayName: "Bio___StyledP",
+    componentId: "sc-1eezgdg-0"
+  })(["", ""], p => p.$_css);
   var _c;
   $RefreshReg$(_c, "Bio");
   helpers.postlude(module);
@@ -35814,7 +35822,7 @@ try {
   window.$RefreshSig$ = prevRefreshSig;
 }
 
-},{"react":"3b2NM","../style/style":"5TQQr","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f"}],"s9o87":[function(require,module,exports) {
+},{"react":"3b2NM","../style/style":"5TQQr","@parcel/transformer-js/lib/esmodule-helpers.js":"5gA8y","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"4Jj4f","styled-components":"4eiLw"}],"s9o87":[function(require,module,exports) {
 var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
 _parcelHelpers.defineInteropFlag(exports);
 var _Footer = require("./Footer");
