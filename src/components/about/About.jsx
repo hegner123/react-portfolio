@@ -1,6 +1,5 @@
 import React from "react";
-import { Section, Title1, Title2, Title3 } from "./style";
-
+import { Section, Title1, Title2, Title3 } from "../style/style";
 
 export const About = (props) => {
   return (

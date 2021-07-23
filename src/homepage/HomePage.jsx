@@ -1,15 +1,16 @@
-import React from "react";
-import { render } from "react-dom";
+import React, { useState } from "react";
 import { About } from "../components/about";
 import { Bio } from "../components/bio";
 import { Footer } from "../components/footer";
 import { Projects } from "../components/projects";
 import { Resource } from "../components/resources";
 import { Title } from "../components/title";
-import { Main, NavBar, NavList, NavItem, MenuBar } from "./style";
+import { Main, NavBar, NavList, NavItem, MenuBar, NavLink, Logo } from "./style";
 import styled, { keyframes } from "styled-components";
+import { Burger, Menu } from "../components/";
 
 const rotate = keyframes`
+
 from {
   transform: rotate(0deg);
 }
@@ -27,54 +28,47 @@ const Rotate = styled.div`
   font-size: 1.2rem;
 `;
 
-export function HomePage() {
+export const HomePage = () => {
+  const [isOpen, setOpen] = useState(false);
   return (
     <div>
-      <MenuBar
-        css={"font-family:Roboto;padding:20px 25px;background: var(--white);"}
-      >
+      <MenuBar>
         <nav>
-          <NavBar css={"display:flex;"}>
-            <div>
-              <a
-                href="/"
-                css={
-                  "color: var(--text-color);text-decoration:none;font-size:var(--font-size)"
-                }
-              >
+          <NavBar>
+            <Logo>
+              <NavLink href="/" css={""}>
                 Michael Hegner
-              </a>
-            </div>
-            <NavList css={"display:flex;"}>
-              <NavItem>
-                <a
-                  href="https://github.com/hegner123"
-                  target="_none"
-                  css={"color: var(--text-color);text-decoration:none;"}
-                >
+              </NavLink>
+            </Logo>
+            <NavList>
+              <NavItem desktop>
+                <NavLink href="https://github.com/hegner123" target="_none">
                   Github
-                </a>
+                </NavLink>
               </NavItem>
-              <NavItem>
-                <a
+              <NavItem desktop>
+                <NavLink
                   href="https://www.linkedin.com/in/michaelhegner/"
                   target="_none"
-                  css={"color: var(--text-color);text-decoration:none;"}
                 >
                   LinkedIn
-                </a>
+                </NavLink>
+              </NavItem>
+              <NavItem mobile>
+                <Burger open={isOpen} setOpen={setOpen} />
+                <Menu open={isOpen} setOpen={setOpen} />
               </NavItem>
             </NavList>
           </NavBar>
         </nav>
       </MenuBar>
+
       <Main css={"width:100%;display:block;"}>
         <Title />
         <Bio />
         <Projects />
-        <Resource />
         <Footer />
       </Main>
     </div>
   );
-}
+};
