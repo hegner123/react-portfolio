@@ -4,7 +4,8 @@ export const StyledMenu = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: #fff;
+  align-items: center;
+  background: var(--white);
   height: 100vh;
   text-align: left;
   padding: 2rem;
@@ -19,22 +20,28 @@ export const StyledMenu = styled.nav`
   }
 
   a {
+    display: flex;
+    width: 50%;
     font-size: 2rem;
     text-transform: uppercase;
-    padding: 2rem 0;
-    font-weight: bold;
+    margin: 2rem 0;
+    font-weight: 400;
     letter-spacing: 0.5rem;
-    color: #000;
+    color: var(--dark);
     text-decoration: none;
-    transition: color 0.3s linear;
+    border-bottom: 1px solid transparent;
 
     @media (max-width: 600px) {
       font-size: 1.5rem;
-      text-align: center;
+      text-align: left;
+    }
+
+    a span {
+      margin: 2rem;
     }
 
     &:hover {
-      color: #fff;
+      border-bottom: 1px solid var(--warn);
     }
   }
 `;

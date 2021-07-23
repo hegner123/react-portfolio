@@ -30684,46 +30684,111 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Menu", ()=>Menu
 );
+var _styledComponents = require("styled-components");
+var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
 // Menu.js
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _propTypes = require("prop-types");
 var _style = require("./style");
+var Github = function Github1(props) {
+    return(/*#__PURE__*/ _reactDefault.default.createElement("svg", props, /*#__PURE__*/ _reactDefault.default.createElement("path", {
+        d: "M19 0H5a5 5 0 0 0-5 5v14a5 5 0 0 0 5 5h14a5 5 0 0 0 5-5V5a5 5 0 0 0-5-5zm-4.466 19.59c-.405.078-.534-.171-.534-.384v-2.195c0-.747-.262-1.233-.55-1.481 1.782-.198 3.654-.875 3.654-3.947 0-.874-.312-1.588-.823-2.147.082-.202.356-1.016-.079-2.117 0 0-.671-.215-2.198.82A7.616 7.616 0 0 0 12 7.868a7.643 7.643 0 0 0-2.003.269c-1.528-1.035-2.2-.82-2.2-.82-.434 1.102-.16 1.915-.077 2.118a3.092 3.092 0 0 0-.824 2.147c0 3.064 1.867 3.751 3.645 3.954-.229.2-.436.552-.508 1.07-.457.204-1.614.557-2.328-.666 0 0-.423-.768-1.227-.825 0 0-.78-.01-.055.487 0 0 .525.246.889 1.17 0 0 .463 1.428 2.688.944v1.489c0 .211-.129.459-.528.385A8 8 0 0 1 12 4a8 8 0 0 1 2.534 15.59z"
+    })));
+};
+_c = Github;
+Github.defaultProps = {
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 24 24"
+};
+var Linkedin = function Linkedin1(props) {
+    return(/*#__PURE__*/ _reactDefault.default.createElement("svg", props, /*#__PURE__*/ _reactDefault.default.createElement("path", {
+        d: "M19 0H5a5 5 0 0 0-5 5v14a5 5 0 0 0 5 5h14a5 5 0 0 0 5-5V5a5 5 0 0 0-5-5zM8 19H5V8h3v11zM6.5 6.732c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zM20 19h-3v-5.604c0-3.368-4-3.113-4 0V19h-3V8h3v1.765c1.396-2.586 7-2.777 7 2.476V19z"
+    })));
+};
+_c1 = Linkedin;
+Linkedin.defaultProps = {
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 24 24"
+};
+var _StyledSpan = _styledComponentsDefault.default("span").withConfig({
+    displayName: "Menu___StyledSpan",
+    componentId: "hcsrke-0"
+})([
+    "",
+    ""
+], (p)=>p._css
+);
+_c2 = _StyledSpan;
+var _StyledGithub = _styledComponentsDefault.default(Github).withConfig({
+    displayName: "Menu___StyledGithub",
+    componentId: "hcsrke-1"
+})([
+    "",
+    ""
+], (p)=>p._css2
+);
+_c3 = _StyledGithub;
+var _StyledSpan2 = _styledComponentsDefault.default("span").withConfig({
+    displayName: "Menu___StyledSpan2",
+    componentId: "hcsrke-2"
+})([
+    "",
+    ""
+], (p)=>p._css3
+);
+_c4 = _StyledSpan2;
+var _StyledLinkedin = _styledComponentsDefault.default(Linkedin).withConfig({
+    displayName: "Menu___StyledLinkedin",
+    componentId: "hcsrke-3"
+})([
+    "",
+    ""
+], (p)=>p._css4
+);
+_c5 = _StyledLinkedin;
 const Menu = ({ open  })=>{
     return(/*#__PURE__*/ _reactDefault.default.createElement(_style.StyledMenu, {
         open: open
     }, /*#__PURE__*/ _reactDefault.default.createElement("a", {
         href: "https://github.com/hegner123",
         target: "_none"
-    }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_StyledSpan, {
         role: "img",
-        "aria-label": "about us"
-    }, "\uD83D\uDC81\uD83C\uDFFB\u200D\u2642\uFE0F"), "Github"), /*#__PURE__*/ _reactDefault.default.createElement("a", {
+        "aria-label": "github",
+        _css: "margin-right:10px;"
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_StyledGithub, {
+        _css2: "height:1.5rem;width:1.5rem;"
+    })), /*#__PURE__*/ _reactDefault.default.createElement("span", null, "Github")), /*#__PURE__*/ _reactDefault.default.createElement("a", {
         href: "https://www.linkedin.com/in/michaelhegner/",
         target: "_none"
-    }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_StyledSpan2, {
         role: "img",
-        "aria-label": "price"
-    }, "\uD83D\uDCB8"), "LinkedIn"), /*#__PURE__*/ _reactDefault.default.createElement("a", {
-        href: "/"
-    }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
-        role: "img",
-        "aria-label": "contact"
-    }, "\uD83D\uDCE9"), "Contact")));
+        "aria-label": "linkedin",
+        _css3: "margin-right:10px;"
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_StyledLinkedin, {
+        _css4: "height:1.5rem;width:1.5rem;"
+    })), /*#__PURE__*/ _reactDefault.default.createElement("span", null, "LinkedIn"))));
 };
-_c = Menu;
+_c6 = Menu;
 Menu.propTypes = {
     open: _propTypes.bool.isRequired
 };
-var _c;
-$RefreshReg$(_c, "Menu");
+var _c, _c1, _c2, _c3, _c4, _c5, _c6;
+$RefreshReg$(_c, "Github");
+$RefreshReg$(_c1, "Linkedin");
+$RefreshReg$(_c2, "_StyledSpan");
+$RefreshReg$(_c3, "_StyledGithub");
+$RefreshReg$(_c4, "_StyledSpan2");
+$RefreshReg$(_c5, "_StyledLinkedin");
+$RefreshReg$(_c6, "Menu");
 
   helpers.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"juP7B","prop-types":"jEh18","./style":"5cHAN","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6e8vO"}],"5cHAN":[function(require,module,exports) {
+},{"react":"juP7B","prop-types":"jEh18","./style":"5cHAN","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6e8vO","styled-components":"gqYCY"}],"5cHAN":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "StyledMenu", ()=>StyledMenu
@@ -30734,8 +30799,8 @@ const StyledMenu = _styledComponentsDefault.default.nav.withConfig({
     displayName: "style__StyledMenu",
     componentId: "mkxfsi-0"
 })([
-    "display:flex;flex-direction:column;justify-content:center;background:#fff;height:100vh;text-align:left;padding:2rem;position:absolute;top:0;left:0;transition:transform 0.3s ease-in-out;transform:",
-    ";@media (max-width:600px){width:100%;}a{font-size:2rem;text-transform:uppercase;padding:2rem 0;font-weight:bold;letter-spacing:0.5rem;color:#000;text-decoration:none;transition:color 0.3s linear;@media (max-width:600px){font-size:1.5rem;text-align:center;}&:hover{color:#fff;}}"
+    "display:flex;flex-direction:column;justify-content:center;align-items:center;background:var(--white);height:100vh;text-align:left;padding:2rem;position:absolute;top:0;left:0;transition:transform 0.3s ease-in-out;transform:",
+    ";@media (max-width:600px){width:100%;}a{display:flex;width:50%;font-size:2rem;text-transform:uppercase;margin:2rem 0;font-weight:400;letter-spacing:0.5rem;color:var(--dark);text-decoration:none;border-bottom:1px solid transparent;@media (max-width:600px){font-size:1.5rem;text-align:left;}a span{margin:2rem;}&:hover{border-bottom:1px solid var(--warn);}}"
 ], ({ open  })=>open ? "translateX(0)" : "translateX(-100%)"
 );
 
