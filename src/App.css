@@ -1,5 +1,5 @@
 * {
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto Mono", monospace;
   box-sizing: border-box;
 }
 :root {
@@ -7,6 +7,7 @@
   --grey-blue-lt: #a6b6c7;
   --grey-blue-drk: #9eadbe;
   --slate: #363635;
+  --dark-blue: #303a46;
   --red: #db3069;
   --red2: #d11149;
   --yellow: #ffcb47;
@@ -16,7 +17,7 @@
   --pumpkin: #f17105;
   --bg: var(--grey-blue-lt);
   --bg-accent: var(--grey-blue-drk);
-  --bg-footer: #768697;
+  --bg-footer: var(--slate);
   --dark: var(--slate);
   --danger: var(--red);
   --warn: var(--yellow);
@@ -161,10 +162,12 @@ table {
   width: 100%;
 }
 
-.footer {
-  font-family: "Roboto", sans-serif;
+footer {
+  background-color: var(--bg-footer);
 }
 
-a:hover {
-  color: var(--indigo);
+footer p {
+  font-family: "Roboto Mono", monospace;
+  font-weight: 200;
+  color: var(--white);
 }

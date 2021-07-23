@@ -11,12 +11,18 @@ export const Main = styled.main`
 export const MenuBar = styled.header`
   font-family: Roboto;
   padding: 20px 25px;
-  background: var(--white);
+  background: var(--dark-blue);
+`;
+
+export const Logo = styled.div`
+  display: flex;
+  align-items: center;
 `;
 
 export const NavList = styled.ul`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
+  margin-left: 20px;
   > * {
     &:first-child {
       margin-left: 0;
@@ -34,18 +40,22 @@ export const NavList = styled.ul`
     }
   }
 `;
+export const NavBar = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
 
 export const NavItem = styled.li`
-  display: flex;
+  display: ${(props) => (props.mobile ? "flex" : "none")};
   font-size: var(--font-size);
   @media (min-width: 768px) {
+    display: ${(props) => (props.desktop ? "flex" : "none")};
   }
 `;
 
-export const NavBar = styled.div`
-  display: flex;
-  flex-direction: column;
-  @media (min-width: 768px) {
-    flex-direction: row;
-  }
+export const NavLink = styled.a`
+  color: var(--white);
+  text-decoration: none;
+  font-size: var(--font-size);
+  font-weight: 300;
 `;

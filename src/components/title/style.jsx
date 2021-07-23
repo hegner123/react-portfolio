@@ -13,7 +13,7 @@ export const Position = styled.h2`
 export const TitleSection = styled.div`
   background: var(--bg);
   min-width: 100%;
-  min-height: calc(100vh - 58px);
+  min-height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;

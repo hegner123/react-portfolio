@@ -27930,7 +27930,6 @@ var _styledComponents = require("styled-components");
 var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
-var _reactDom = require("react-dom");
 var _about = require("../components/about");
 var _bio = require("../components/bio");
 var _footer = require("../components/footer");
@@ -27938,6 +27937,8 @@ var _projects = require("../components/projects");
 var _resources = require("../components/resources");
 var _title = require("../components/title");
 var _style = require("./style");
+var _ = require("../components/");
+var _s = $RefreshSig$();
 const rotate = _styledComponents.keyframes([
     "from{transform:rotate(0deg);}to{transform:rotate(360deg);}"
 ]); // Here we create a component that will rotate everything we pass in over two seconds
@@ -27948,96 +27949,65 @@ const Rotate = _styledComponentsDefault.default.div.withConfig({
     "display:inline-block;animation:",
     " 2s linear infinite;padding:2rem 1rem;font-size:1.2rem;"
 ], rotate);
-var _StyledMenuBar = _styledComponentsDefault.default(_style.MenuBar).withConfig({
-    displayName: "HomePage___StyledMenuBar",
+var _StyledNavLink = _styledComponentsDefault.default(_style.NavLink).withConfig({
+    displayName: "HomePage___StyledNavLink",
     componentId: "sc-12bfo3c-1"
 })([
     "",
     ""
 ], (p)=>p._css
 );
-_c = _StyledMenuBar;
-var _StyledNavBar = _styledComponentsDefault.default(_style.NavBar).withConfig({
-    displayName: "HomePage___StyledNavBar",
+_c = _StyledNavLink;
+var _StyledMain = _styledComponentsDefault.default(_style.Main).withConfig({
+    displayName: "HomePage___StyledMain",
     componentId: "sc-12bfo3c-2"
 })([
     "",
     ""
 ], (p)=>p._css2
 );
-_c1 = _StyledNavBar;
-var _StyledA = _styledComponentsDefault.default("a").withConfig({
-    displayName: "HomePage___StyledA",
-    componentId: "sc-12bfo3c-3"
-})([
-    "",
-    ""
-], (p)=>p._css3
-);
-_c2 = _StyledA;
-var _StyledA2 = _styledComponentsDefault.default("a").withConfig({
-    displayName: "HomePage___StyledA2",
-    componentId: "sc-12bfo3c-4"
-})([
-    "",
-    ""
-], (p)=>p._css4
-);
-_c3 = _StyledA2;
-var _StyledA3 = _styledComponentsDefault.default("a").withConfig({
-    displayName: "HomePage___StyledA3",
-    componentId: "sc-12bfo3c-5"
-})([
-    "",
-    ""
-], (p)=>p._css5
-);
-_c4 = _StyledA3;
-var _StyledMain = _styledComponentsDefault.default(_style.Main).withConfig({
-    displayName: "HomePage___StyledMain",
-    componentId: "sc-12bfo3c-6"
-})([
-    "",
-    ""
-], (p)=>p._css6
-);
-_c5 = _StyledMain;
-function HomePage() {
-    return(/*#__PURE__*/ _reactDefault.default.createElement("div", null, /*#__PURE__*/ _reactDefault.default.createElement(_StyledMenuBar, {
-        _css: "font-family:Roboto;padding:20px 25px;background: var(--white);"
-    }, /*#__PURE__*/ _reactDefault.default.createElement("nav", null, /*#__PURE__*/ _reactDefault.default.createElement(_StyledNavBar, {
-        _css2: "display:flex;"
-    }, /*#__PURE__*/ _reactDefault.default.createElement("div", null, /*#__PURE__*/ _reactDefault.default.createElement(_StyledA, {
+_c1 = _StyledMain;
+const HomePage = ()=>{
+    _s();
+    const [isOpen, setOpen] = _react.useState(false);
+    return(/*#__PURE__*/ _reactDefault.default.createElement("div", null, /*#__PURE__*/ _reactDefault.default.createElement(_style.MenuBar, null, /*#__PURE__*/ _reactDefault.default.createElement("nav", null, /*#__PURE__*/ _reactDefault.default.createElement(_style.NavBar, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.Logo, null, /*#__PURE__*/ _reactDefault.default.createElement(_StyledNavLink, {
         href: "/",
-        _css3: "color: var(--text-color);text-decoration:none;font-size:var(--font-size)"
-    }, "Michael Hegner")), /*#__PURE__*/ _reactDefault.default.createElement(_style.NavList, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.NavItem, null, /*#__PURE__*/ _reactDefault.default.createElement(_StyledA2, {
+        _css: ""
+    }, "Michael Hegner")), /*#__PURE__*/ _reactDefault.default.createElement(_style.NavList, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.NavItem, {
+        desktop: true
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_style.NavLink, {
         href: "https://github.com/hegner123",
-        target: "_none",
-        _css4: "color: var(--text-color);text-decoration:none;"
-    }, "Github")), /*#__PURE__*/ _reactDefault.default.createElement(_style.NavItem, null, /*#__PURE__*/ _reactDefault.default.createElement(_StyledA3, {
+        target: "_none"
+    }, "Github")), /*#__PURE__*/ _reactDefault.default.createElement(_style.NavItem, {
+        desktop: true
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_style.NavLink, {
         href: "https://www.linkedin.com/in/michaelhegner/",
-        target: "_none",
-        _css5: "color: var(--text-color);text-decoration:none;"
-    }, "LinkedIn")))))), /*#__PURE__*/ _reactDefault.default.createElement(_StyledMain, {
-        _css6: "width:100%;display:block;"
+        target: "_none"
+    }, "LinkedIn")), /*#__PURE__*/ _reactDefault.default.createElement(_style.NavItem, {
+        mobile: true
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_.Burger, {
+        open: isOpen,
+        setOpen: setOpen
+    }), /*#__PURE__*/ _reactDefault.default.createElement(_.Menu, {
+        open: isOpen,
+        setOpen: setOpen
+    })))))), /*#__PURE__*/ _reactDefault.default.createElement(_StyledMain, {
+        _css2: "width:100%;display:block;"
     }, /*#__PURE__*/ _reactDefault.default.createElement(_title.Title, null), /*#__PURE__*/ _reactDefault.default.createElement(_bio.Bio, null), /*#__PURE__*/ _reactDefault.default.createElement(_projects.Projects, null), /*#__PURE__*/ _reactDefault.default.createElement(_footer.Footer, null))));
-}
-_c6 = HomePage;
-var _c, _c1, _c2, _c3, _c4, _c5, _c6;
-$RefreshReg$(_c, "_StyledMenuBar");
-$RefreshReg$(_c1, "_StyledNavBar");
-$RefreshReg$(_c2, "_StyledA");
-$RefreshReg$(_c3, "_StyledA2");
-$RefreshReg$(_c4, "_StyledA3");
-$RefreshReg$(_c5, "_StyledMain");
-$RefreshReg$(_c6, "HomePage");
+};
+_s(HomePage, "WPi2qa4HrijmrT7XyqmH7MkbZuo=");
+_c2 = HomePage;
+var _c, _c1, _c2;
+$RefreshReg$(_c, "_StyledNavLink");
+$RefreshReg$(_c1, "_StyledMain");
+$RefreshReg$(_c2, "HomePage");
 
   helpers.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"styled-components":"gqYCY","react":"juP7B","../components/about":"3Rx77","../components/projects":"3QoBt","./style":"b7lZC","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN","../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6e8vO","../components/bio":"ctkft","../components/footer":"6sPhD","../components/resources":"gIUS3","../components/title":"eOqF1","react-dom":"4Xkib"}],"gqYCY":[function(require,module,exports) {
+},{"styled-components":"gqYCY","react":"juP7B","../components/about":"3Rx77","../components/projects":"3QoBt","./style":"b7lZC","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN","../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6e8vO","../components/bio":"ctkft","../components/footer":"6sPhD","../components/resources":"gIUS3","../components/title":"eOqF1","../components/":"1EbxM"}],"gqYCY":[function(require,module,exports) {
 var process = require("process");
 "use strict";
 function e(e1) {
@@ -29981,8 +29951,6 @@ parcelHelpers.export(exports, "Text", ()=>Text1
 );
 parcelHelpers.export(exports, "SectionBody", ()=>SectionBody
 );
-parcelHelpers.export(exports, "Biog", ()=>Biog
-);
 parcelHelpers.export(exports, "TechList", ()=>TechList
 );
 parcelHelpers.export(exports, "TechItem", ()=>TechItem
@@ -30045,7 +30013,7 @@ const Section = _styledComponentsDefault.default.section.withConfig({
     displayName: "style__Section",
     componentId: "sc-1uen8k0-2"
 })([
-    "margin:0;padding:0 150px;display:flex;flex-direction:column;justify-content:center;"
+    "margin:0;padding:0 50px;display:flex;flex-direction:column;justify-content:center;@media (min-width:768px){padding:0 150px;align-items:flex-start;}"
 ]);
 const Title1 = _styledComponentsDefault.default.h1.withConfig({
     displayName: "style__Title1",
@@ -30057,19 +30025,19 @@ const Title2 = _styledComponentsDefault.default.h2.withConfig({
     displayName: "style__Title2",
     componentId: "sc-1uen8k0-4"
 })([
-    "font-size:40px;margin-top:10px;text-align:center;@media (min-width:768px){text-align:left;}"
+    "font-size:40px;padding:3rem 0;text-align:left;@media (min-width:768px){text-align:left;}"
 ]);
 const Title3 = _styledComponentsDefault.default.h3.withConfig({
     displayName: "style__Title3",
     componentId: "sc-1uen8k0-5"
 })([
-    "font-size:30px;padding-top:3rem;text-align:center;@media (min-width:768px){text-align:left;}"
+    "font-size:30px;text-align:left;@media (min-width:768px){text-align:left;}"
 ]);
 const Text1 = _styledComponentsDefault.default.div.withConfig({
     displayName: "style__Text",
     componentId: "sc-1uen8k0-6"
 })([
-    "margin-top:1rem;margin-bottom:1rem;"
+    "line-height:1.25rem;margin-top:1rem;margin-bottom:1rem;"
 ]);
 const SectionBody = _styledComponentsDefault.default.div.withConfig({
     displayName: "style__SectionBody",
@@ -30077,137 +30045,131 @@ const SectionBody = _styledComponentsDefault.default.div.withConfig({
 })([
     "margin-top:20px;display:flex;flex-direction:column;width:100%;"
 ]); //Sections
-const Biog = _styledComponentsDefault.default.div.withConfig({
-    displayName: "style__Biog",
-    componentId: "sc-1uen8k0-8"
-})([
-    "display:flex;flex-direction:column;justify-content:center;width:50%;padding-left:170px;"
-]);
 const TechList = _styledComponentsDefault.default.ul.withConfig({
     displayName: "style__TechList",
-    componentId: "sc-1uen8k0-9"
+    componentId: "sc-1uen8k0-8"
 })([
-    "width:50%;display:grid;grid-template-columns:var(--grid);"
+    "width:50%;display:flex;flex-direction:column;justify-content:center;"
 ]);
 const TechItem = _styledComponentsDefault.default.li.withConfig({
     displayName: "style__TechItem",
-    componentId: "sc-1uen8k0-10"
+    componentId: "sc-1uen8k0-9"
 })([
-    "margin:10px auto;"
+    "margin:10px 0;background:var(--white);border-radius:4px;"
 ]);
 const TechText = _styledComponentsDefault.default.p.withConfig({
     displayName: "style__TechText",
-    componentId: "sc-1uen8k0-11"
+    componentId: "sc-1uen8k0-10"
 })([
-    "padding:15px 0;background:var(--white);text-align:center;min-width:10em;"
+    "padding:15px 0;text-align:center;min-width:10em;"
 ]); //Project
 const ProjectWrapper = _styledComponentsDefault.default.div.withConfig({
     displayName: "style__ProjectWrapper",
-    componentId: "sc-1uen8k0-12"
+    componentId: "sc-1uen8k0-11"
 })([
     "display:flex;align-items:center;"
 ]);
 const ProjectBody = _styledComponentsDefault.default.div.withConfig({
     displayName: "style__ProjectBody",
-    componentId: "sc-1uen8k0-13"
+    componentId: "sc-1uen8k0-12"
 })([
     "width:100%;background:",
-    ";"
+    ";padding:0 0 100px 0;"
 ], (props)=>props.bg || "var(--bg-accent)"
 );
 const ProjectList = _styledComponentsDefault.default.ul.withConfig({
     displayName: "style__ProjectList",
-    componentId: "sc-1uen8k0-14"
+    componentId: "sc-1uen8k0-13"
 })([
-    "padding:0 150px;"
+    "padding:0 50px;@media (min-width:768px){padding:0 150px;}"
 ]);
 const ProjectListItem = _styledComponentsDefault.default.li.withConfig({
     displayName: "style__ProjectListItem",
-    componentId: "sc-1uen8k0-15"
+    componentId: "sc-1uen8k0-14"
 })([
     "display:grid;grid-template-columns:repeat(1,1fr);@media (min-width:768px){grid-template-columns:repeat(2,1fr);}"
 ]);
 const ProjectDescription = _styledComponentsDefault.default.div.withConfig({
     displayName: "style__ProjectDescription",
-    componentId: "sc-1uen8k0-16"
+    componentId: "sc-1uen8k0-15"
 })([
     "width:75%;@media (max-width:768px){margin-top:10px;width:100%;padding:0;}"
 ]);
 const ProjectBio = _styledComponentsDefault.default.div.withConfig({
     displayName: "style__ProjectBio",
-    componentId: "sc-1uen8k0-17"
+    componentId: "sc-1uen8k0-16"
 })([
     "margin-top:10px;width:75%;@media (min-width:768px){margin-top:10px;width:100%;}"
 ]);
 const ProjectLinkItems = _styledComponentsDefault.default.li.withConfig({
     displayName: "style__ProjectLinkItems",
-    componentId: "sc-1uen8k0-18"
+    componentId: "sc-1uen8k0-17"
 })([
     "margin-left:1rem;&:first-child{margin-left:0px;}"
 ]);
 const ProjectLink = _styledComponentsDefault.default.a.withConfig({
     displayName: "style__ProjectLink",
-    componentId: "sc-1uen8k0-19"
+    componentId: "sc-1uen8k0-18"
 })([
     "color:var(--text-color);text-decoration:none;border-bottom:2px solid var(--white);margin-bottom:10px;&:hover{color:#707070;cursor:pointer;}"
 ]);
 const ProjectLinkList = _styledComponentsDefault.default.ul.withConfig({
     displayName: "style__ProjectLinkList",
-    componentId: "sc-1uen8k0-20"
+    componentId: "sc-1uen8k0-19"
 })([
     "display:flex;flex-direction:row;margin-top:20px;"
 ]);
 const ProjectImgContainer = _styledComponentsDefault.default.div.withConfig({
     displayName: "style__ProjectImgContainer",
-    componentId: "sc-1uen8k0-21"
+    componentId: "sc-1uen8k0-20"
 })([
     "width:100%;margin-left:auto;margin-right:auto;margin-top:20px;@media (min-width:768px){margin-left:0;margin-right:0;margin-top:0;}"
 ]);
 const ProjectImg = _styledComponentsDefault.default.img.withConfig({
     displayName: "style__ProjectImg",
-    componentId: "sc-1uen8k0-22"
+    componentId: "sc-1uen8k0-21"
 })([
     "width:100%;border-radius:5px;overflow:hidden;"
 ]); //Resources
 const Resources = _styledComponentsDefault.default.div.withConfig({
     displayName: "style__Resources",
-    componentId: "sc-1uen8k0-23"
+    componentId: "sc-1uen8k0-22"
 })([
     "background:var(--bg-accent);min-height:400px;display:flex;align-items:center;padding:40px;"
 ]);
 const ResourcesBody = _styledComponentsDefault.default.div.withConfig({
     displayName: "style__ResourcesBody",
-    componentId: "sc-1uen8k0-24"
+    componentId: "sc-1uen8k0-23"
 })([
     "margin-left:auto;margin-right:auto;display:flex;flex-direction:column;width:100%;@media (min-width:768px){}"
 ]);
 const ResourcesBio = _styledComponentsDefault.default.div.withConfig({
     displayName: "style__ResourcesBio",
-    componentId: "sc-1uen8k0-25"
+    componentId: "sc-1uen8k0-24"
 })([
     "width:75%;margin-left:auto;margin-right:auto;@media (max-width:768px){width:100%;}"
 ]);
 const ResourcesList = _styledComponentsDefault.default.ul.withConfig({
     displayName: "style__ResourcesList",
-    componentId: "sc-1uen8k0-26"
+    componentId: "sc-1uen8k0-25"
 })([
     "display:grid;grid-template-columns:repeat(2,1fr);padding:20px;"
 ]);
 const ResourcesListItem = _styledComponentsDefault.default.li.withConfig({
     displayName: "style__ResourcesListItem",
-    componentId: "sc-1uen8k0-27"
+    componentId: "sc-1uen8k0-26"
 })([
     "width:100%;overflow:hidden;border-radius:15px;"
 ]);
 const ResourceImg = _styledComponentsDefault.default.img.withConfig({
     displayName: "style__ResourceImg",
-    componentId: "sc-1uen8k0-28"
+    componentId: "sc-1uen8k0-27"
 })([
     "width:100%;transition-duration:300ms;border-radius:15px;overflow:hidden;&:hover{transform:scale(1.2);overflow:hidden;}"
 ]);
 const ResourcesImgContainer = _styledComponentsDefault.default.div.withConfig({
     displayName: "style__ResourcesImgContainer",
-    componentId: "sc-1uen8k0-29"
+    componentId: "sc-1uen8k0-28"
 })([
     "width:100%;@media (min-width:768px){width:50%;}"
 ]);
@@ -30288,12 +30250,15 @@ const Projects = (props)=>{
     }
     return(/*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectBody, {
         bg: "var(--bg)"
-    }, /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectList, null, /*#__PURE__*/ _reactDefault.default.createElement("div", null, /*#__PURE__*/ _reactDefault.default.createElement(_style.Title3, null, "Current Projects")), /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectListItem, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectWrapper, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectDescription, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.Title3, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectLink, {
-        href: "https://proprojectstudio.com"
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectList, null, /*#__PURE__*/ _reactDefault.default.createElement("div", null, /*#__PURE__*/ _reactDefault.default.createElement(_style.Title2, null, "Current Projects")), /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectListItem, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectWrapper, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectDescription, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.Title3, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectLink, {
+        href: "https://proprojectstudio.com",
+        target: "_none"
     }, "ProProject Studio")), /*#__PURE__*/ _reactDefault.default.createElement(_style.Text, null, /*#__PURE__*/ _reactDefault.default.createElement("p", null, "ProProject Studio (PPS) is a project management tool created for recording engineers, mixing engineers, mastering engineers, and their respective clients. PPS focuses on three main asspects of the recording or mixing process. These steps are Pre-production, Tracking, and Mixing.")), /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectLinkList, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectLinkItems, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectLink, {
-        href: "https://github.com/hegner123/pps-front"
+        href: "https://github.com/hegner123/pps-front",
+        target: "_none"
     }, "Front-End Repo")), /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectLinkItems, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectLink, {
-        href: "https://github.com/hegner123/pps-back"
+        href: "https://github.com/hegner123/pps-back",
+        target: "_none"
     }, "Back-End Repo"))))), /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectWrapper, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectImgContainer, null, /*#__PURE__*/ _reactDefault.default.createElement(_StyledProjectImg, {
         src: image,
         alt: "ProProject Studio",
@@ -30355,11 +30320,15 @@ parcelHelpers.export(exports, "Main", ()=>Main
 );
 parcelHelpers.export(exports, "MenuBar", ()=>MenuBar
 );
+parcelHelpers.export(exports, "Logo", ()=>Logo
+);
 parcelHelpers.export(exports, "NavList", ()=>NavList
+);
+parcelHelpers.export(exports, "NavBar", ()=>NavBar
 );
 parcelHelpers.export(exports, "NavItem", ()=>NavItem
 );
-parcelHelpers.export(exports, "NavBar", ()=>NavBar
+parcelHelpers.export(exports, "NavLink", ()=>NavLink
 );
 var _styledComponents = require("styled-components");
 var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
@@ -30373,25 +30342,41 @@ const MenuBar = _styledComponentsDefault.default.header.withConfig({
     displayName: "style__MenuBar",
     componentId: "sc-16dtlqw-1"
 })([
-    "font-family:Roboto;padding:20px 25px;background:var(--white);"
+    "font-family:Roboto;padding:20px 25px;background:var(--dark-blue);"
+]);
+const Logo = _styledComponentsDefault.default.div.withConfig({
+    displayName: "style__Logo",
+    componentId: "sc-16dtlqw-2"
+})([
+    "display:flex;align-items:center;"
 ]);
 const NavList = _styledComponentsDefault.default.ul.withConfig({
     displayName: "style__NavList",
-    componentId: "sc-16dtlqw-2"
-})([
-    "display:grid;grid-template-columns:repeat(2,1fr);> *{&:first-child{margin-left:0;}}@media (min-width:768px){grid-template-columns:repeat(2,1fr);> *{margin-left:20px;margin-top:0;&:first-child{margin-left:20px;}}}"
-]);
-const NavItem = _styledComponentsDefault.default.li.withConfig({
-    displayName: "style__NavItem",
     componentId: "sc-16dtlqw-3"
 })([
-    "display:flex;font-size:var(--font-size);@media (min-width:768px){}"
+    "display:grid;grid-template-columns:repeat(1,1fr);margin-left:20px;> *{&:first-child{margin-left:0;}}@media (min-width:768px){grid-template-columns:repeat(2,1fr);> *{margin-left:20px;margin-top:0;&:first-child{margin-left:20px;}}}"
 ]);
 const NavBar = _styledComponentsDefault.default.div.withConfig({
     displayName: "style__NavBar",
     componentId: "sc-16dtlqw-4"
 })([
-    "display:flex;flex-direction:column;@media (min-width:768px){flex-direction:row;}"
+    "display:flex;justify-content:space-between;"
+]);
+const NavItem = _styledComponentsDefault.default.li.withConfig({
+    displayName: "style__NavItem",
+    componentId: "sc-16dtlqw-5"
+})([
+    "display:",
+    ";font-size:var(--font-size);@media (min-width:768px){display:",
+    ";}"
+], (props)=>props.mobile ? "flex" : "none"
+, (props)=>props.desktop ? "flex" : "none"
+);
+const NavLink = _styledComponentsDefault.default.a.withConfig({
+    displayName: "style__NavLink",
+    componentId: "sc-16dtlqw-6"
+})([
+    "color:var(--white);text-decoration:none;font-size:var(--font-size);font-weight:300;"
 ]);
 
 },{"styled-components":"gqYCY","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN"}],"ctkft":[function(require,module,exports) {
@@ -30415,7 +30400,7 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _style = require("../style/style");
 const Bio = (props)=>{
-    return(/*#__PURE__*/ _reactDefault.default.createElement(_style.InfoBlock, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.Section, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.Title3, null, "Michael Hegner"), /*#__PURE__*/ _reactDefault.default.createElement(_style.Text, null, "MERN Full Stack Web Developer with a background in Audio Engineering and a passion for problem solving. Experienced with creative troubleshooting under pressure. Valued for a detailed approach to learning new skills and an adaptable mindset, switching between tasks quickly and efficiently.")), /*#__PURE__*/ _reactDefault.default.createElement(_style.Section, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.TechList, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.TechItem, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.TechText, null, "React")), /*#__PURE__*/ _reactDefault.default.createElement(_style.TechItem, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.TechText, null, "Express")), /*#__PURE__*/ _reactDefault.default.createElement(_style.TechItem, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.TechText, null, "Node")), /*#__PURE__*/ _reactDefault.default.createElement(_style.TechItem, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.TechText, null, "MongoDB"))))));
+    return(/*#__PURE__*/ _reactDefault.default.createElement(_style.InfoBlock, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.Section, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.Title3, null, "Michael Hegner"), /*#__PURE__*/ _reactDefault.default.createElement(_style.Text, null, "MERN Full Stack Web Developer with a background in Audio Engineering and a passion for problem solving. Experienced with creative troubleshooting under pressure. Valued for a detailed approach to learning new skills and an adaptable mindset, switching between tasks quickly and efficiently.")), /*#__PURE__*/ _reactDefault.default.createElement(_style.Section, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.TechList, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.TechItem, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.TechText, null, "MongoDB")), /*#__PURE__*/ _reactDefault.default.createElement(_style.TechItem, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.TechText, null, "Express")), /*#__PURE__*/ _reactDefault.default.createElement(_style.TechItem, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.TechText, null, "React")), /*#__PURE__*/ _reactDefault.default.createElement(_style.TechItem, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.TechText, null, "Node"))))));
 };
 _c = Bio;
 var _c;
@@ -30458,7 +30443,7 @@ var _StyledFooter = _styledComponentsDefault.default("footer").withConfig({
 _c = _StyledFooter;
 const Footer = (props)=>{
     return(/*#__PURE__*/ _reactDefault.default.createElement(_StyledFooter, {
-        _css: "display:flex;justify-content:center; align-items:flex-end;padding:10px; background:var(--bg-footer)"
+        _css: "display:flex;justify-content:center; align-items:flex-end;padding:10px; "
     }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
         className: "footer"
     }, "\xA9 Michael Hegner 2021 All Rights Resereved")));
@@ -30618,8 +30603,141 @@ const TitleSection = _styledComponentsDefault.default.div.withConfig({
     displayName: "style__TitleSection",
     componentId: "sc-2iaba3-2"
 })([
-    "background:var(--bg);min-width:100%;min-height:calc(100vh - 58px);display:flex;flex-direction:column;justify-content:center;align-items:center;"
+    "background:var(--bg);min-width:100%;min-height:400px;display:flex;flex-direction:column;justify-content:center;align-items:center;"
 ]);
+
+},{"styled-components":"gqYCY","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN"}],"1EbxM":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _burger = require("./burger/Burger");
+parcelHelpers.exportAll(_burger, exports);
+var _menu = require("./menu/Menu");
+parcelHelpers.exportAll(_menu, exports);
+
+},{"./burger/Burger":"chVg3","./menu/Menu":"ku7Qk","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN"}],"chVg3":[function(require,module,exports) {
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Burger", ()=>Burger
+);
+// Burger.js
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _propTypes = require("prop-types");
+var _style = require("./style");
+const Burger = ({ open , setOpen  })=>{
+    return(/*#__PURE__*/ _reactDefault.default.createElement(_style.StyledBurger, {
+        open: open,
+        onClick: ()=>setOpen(!open)
+    }, /*#__PURE__*/ _reactDefault.default.createElement("div", null), /*#__PURE__*/ _reactDefault.default.createElement("div", null), /*#__PURE__*/ _reactDefault.default.createElement("div", null)));
+};
+_c = Burger;
+Burger.propTypes = {
+    open: _propTypes.bool.isRequired,
+    setOpen: _propTypes.func.isRequired
+};
+var _c;
+$RefreshReg$(_c, "Burger");
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"juP7B","prop-types":"jEh18","./style":"deFZy","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6e8vO"}],"deFZy":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "StyledBurger", ()=>StyledBurger
+);
+var _styledComponents = require("styled-components");
+var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
+const StyledBurger = _styledComponentsDefault.default.button.withConfig({
+    displayName: "style__StyledBurger",
+    componentId: "y5ilio-0"
+})([
+    "display:flex;flex-direction:column;justify-content:space-around;width:2rem;height:2rem;background:transparent;border:none;cursor:pointer;padding:0;z-index:10;&:focus{outline:none;}div{width:2rem;height:0.05rem;background:",
+    ";transition:all 0.3s linear;position:relative;transform-origin:1px;:first-child{transform:",
+    ";}:nth-child(2){opacity:",
+    ";transform:",
+    ";}:nth-child(3){transform:",
+    ";}}"
+], (props)=>props.open ? "var(--dark)" : "var(--white)"
+, (props)=>props.open ? "rotate(45deg)" : "rotate(0)"
+, (props)=>props.open ? "0" : "1"
+, (props)=>props.open ? "translateX(20px)" : "translateX(0)"
+, (props)=>props.open ? "rotate(-45deg)" : "rotate(0)"
+);
+
+},{"styled-components":"gqYCY","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN"}],"ku7Qk":[function(require,module,exports) {
+var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Menu", ()=>Menu
+);
+// Menu.js
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _propTypes = require("prop-types");
+var _style = require("./style");
+const Menu = ({ open  })=>{
+    return(/*#__PURE__*/ _reactDefault.default.createElement(_style.StyledMenu, {
+        open: open
+    }, /*#__PURE__*/ _reactDefault.default.createElement("a", {
+        href: "https://github.com/hegner123",
+        target: "_none"
+    }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
+        role: "img",
+        "aria-label": "about us"
+    }, "\uD83D\uDC81\uD83C\uDFFB\u200D\u2642\uFE0F"), "Github"), /*#__PURE__*/ _reactDefault.default.createElement("a", {
+        href: "https://www.linkedin.com/in/michaelhegner/",
+        target: "_none"
+    }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
+        role: "img",
+        "aria-label": "price"
+    }, "\uD83D\uDCB8"), "LinkedIn"), /*#__PURE__*/ _reactDefault.default.createElement("a", {
+        href: "/"
+    }, /*#__PURE__*/ _reactDefault.default.createElement("span", {
+        role: "img",
+        "aria-label": "contact"
+    }, "\uD83D\uDCE9"), "Contact")));
+};
+_c = Menu;
+Menu.propTypes = {
+    open: _propTypes.bool.isRequired
+};
+var _c;
+$RefreshReg$(_c, "Menu");
+
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"juP7B","prop-types":"jEh18","./style":"5cHAN","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6e8vO"}],"5cHAN":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "StyledMenu", ()=>StyledMenu
+);
+var _styledComponents = require("styled-components");
+var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
+const StyledMenu = _styledComponentsDefault.default.nav.withConfig({
+    displayName: "style__StyledMenu",
+    componentId: "mkxfsi-0"
+})([
+    "display:flex;flex-direction:column;justify-content:center;background:#fff;height:100vh;text-align:left;padding:2rem;position:absolute;top:0;left:0;transition:transform 0.3s ease-in-out;transform:",
+    ";@media (max-width:600px){width:100%;}a{font-size:2rem;text-transform:uppercase;padding:2rem 0;font-weight:bold;letter-spacing:0.5rem;color:#000;text-decoration:none;transition:color 0.3s linear;@media (max-width:600px){font-size:1.5rem;text-align:center;}&:hover{color:#fff;}}"
+], ({ open  })=>open ? "translateX(0)" : "translateX(-100%)"
+);
 
 },{"styled-components":"gqYCY","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN"}],"iM7ZX":[function() {},{}]},["bk2Y7","6qa0z","hFylh"], "hFylh", "parcelRequire21c5")
 

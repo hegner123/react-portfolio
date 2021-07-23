@@ -11,7 +11,7 @@ import {
 
 export const Bio = (props) => {
   return (
-    <InfoBlock >
+    <InfoBlock>
       <Section>
         <Title3>Michael Hegner</Title3>
         <Text>
@@ -25,16 +25,16 @@ export const Bio = (props) => {
       <Section>
         <TechList>
           <TechItem>
-            <TechText>React</TechText>
+            <TechText>MongoDB</TechText>
           </TechItem>
           <TechItem>
             <TechText>Express</TechText>
           </TechItem>
           <TechItem>
-            <TechText>Node</TechText>
+            <TechText>React</TechText>
           </TechItem>
           <TechItem>
-            <TechText>MongoDB</TechText>
+            <TechText>Node</TechText>
           </TechItem>
         </TechList>
       </Section>

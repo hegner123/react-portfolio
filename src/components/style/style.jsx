@@ -20,10 +20,15 @@ export const InfoBlock = styled.div`
 
 export const Section = styled.section`
   margin: 0;
-  padding: 0 150px;
+  padding: 0 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @media (min-width: 768px) {
+    padding: 0 150px;
+    align-items: flex-start;
+  }
 `;
 
 export const Title1 = styled.h1`
@@ -36,22 +41,23 @@ export const Title1 = styled.h1`
 
 export const Title2 = styled.h2`
   font-size: 40px;
-  margin-top: 10px;
-  text-align: center;
+  padding: 3rem 0;
+  text-align: left;
   @media (min-width: 768px) {
     text-align: left;
   }
 `;
 export const Title3 = styled.h3`
   font-size: 30px;
-  padding-top: 3rem;
-  text-align: center;
+
+  text-align: left;
   @media (min-width: 768px) {
     text-align: left;
   }
 `;
 
 export const Text = styled.div`
+  line-height: 1.25rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
 `;
@@ -65,26 +71,23 @@ export const SectionBody = styled.div`
 //Sections
 
 //Bio
-export const Biog = styled.div`
+
+export const TechList = styled.ul`
+  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 50%;
-  padding-left: 170px;
-`;
-export const TechList = styled.ul`
-  width: 50%;
-  display: grid;
-  grid-template-columns: var(--grid);
 `;
 
 export const TechItem = styled.li`
-  margin: 10px auto;
+  margin: 10px 0;
+  background: var(--white);
+  border-radius: 4px;
 `;
 
 export const TechText = styled.p`
   padding: 15px 0;
-  background: var(--white);
+
   text-align: center;
   min-width: 10em;
 `;
@@ -99,10 +102,14 @@ export const ProjectWrapper = styled.div`
 export const ProjectBody = styled.div`
   width: 100%;
   background: ${(props) => props.bg || "var(--bg-accent)"};
+  padding: 0 0 100px 0;
 `;
 
 export const ProjectList = styled.ul`
-  padding: 0 150px;
+  padding: 0 50px;
+  @media (min-width: 768px) {
+    padding: 0 150px;
+  }
 `;
 
 export const ProjectListItem = styled.li`

@@ -5,6 +5,7 @@ import {
   ProjectImgContainer,
   ProjectImg,
   ProjectBody,
+  Title2,
   Title3,
   ProjectList,
   ProjectListItem,
@@ -42,13 +43,13 @@ export const Projects = (props) => {
     <ProjectBody bg={"var(--bg)"}>
       <ProjectList>
         <div>
-          <Title3>Current Projects</Title3>
+          <Title2>Current Projects</Title2>
         </div>
         <ProjectListItem>
           <ProjectWrapper>
             <ProjectDescription>
               <Title3>
-                <ProjectLink href="https://proprojectstudio.com">
+                <ProjectLink href="https://proprojectstudio.com" target="_none">
                   ProProject Studio
                 </ProjectLink>
               </Title3>
@@ -63,12 +64,18 @@ export const Projects = (props) => {
               </Text>
               <ProjectLinkList>
                 <ProjectLinkItems>
-                  <ProjectLink href="https://github.com/hegner123/pps-front">
+                  <ProjectLink
+                    href="https://github.com/hegner123/pps-front"
+                    target="_none"
+                  >
                     Front-End Repo
                   </ProjectLink>
                 </ProjectLinkItems>
                 <ProjectLinkItems>
-                  <ProjectLink href="https://github.com/hegner123/pps-back">
+                  <ProjectLink
+                    href="https://github.com/hegner123/pps-back"
+                    target="_none"
+                  >
                     Back-End Repo
                   </ProjectLink>
                 </ProjectLinkItems>
