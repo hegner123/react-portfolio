@@ -1,16 +1,21 @@
 import React from "react";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import { HomePage } from "./homepage";
-import "./App.css";
+import { ThemeProvider } from "styled-components";
+import { GlobalStyles } from "./global";
+import { theme } from "./theme";
 
 function App() {
   return (
     <div className="app">
-      <BrowserRouter>
-        <Switch>
-          <Route path="/" component={HomePage} />
-        </Switch>
-      </BrowserRouter>
+      <ThemeProvider theme={theme}>
+        <GlobalStyles />
+        <BrowserRouter>
+          <Switch>
+            <Route path="/" component={HomePage} />
+          </Switch>
+        </BrowserRouter>
+      </ThemeProvider>
     </div>
   );
 }

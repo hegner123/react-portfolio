@@ -17,6 +17,11 @@ export const MenuBar = styled.header`
 export const Logo = styled.div`
   display: flex;
   align-items: center;
+
+  a {
+    font-weight: 500;
+    font-size: 1.5rem;
+  }
 `;
 
 export const NavList = styled.ul`

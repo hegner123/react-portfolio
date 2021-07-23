@@ -4,24 +4,24 @@ export const StyledMenu = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+
   background: var(--white);
   height: 100vh;
   text-align: left;
-  padding: 2rem;
+
   position: absolute;
   top: 0;
   left: 0;
   transition: transform 0.3s ease-in-out;
   transform: ${({ open }) => (open ? "translateX(0)" : "translateX(-100%)")};
 
-  @media (max-width: 600px) {
+  @media (max-width: 768px) {
     width: 100%;
   }
 
   a {
-    display: flex;
-    width: 50%;
+    position: relative;
+    left: 15%;
     font-size: 2rem;
     text-transform: uppercase;
     margin: 2rem 0;
