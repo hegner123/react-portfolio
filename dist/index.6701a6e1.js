@@ -73,7 +73,7 @@
         localRequire,
         module,
         module.exports,
-        this,
+        this
       );
     }
 
@@ -140,7 +140,7 @@
       this[globalName] = mainExports;
     }
   }
-})({"bk2Y7":[function(require,module,exports) {
+})({"2rAXy":[function(require,module,exports) {
 var Refresh = require('react-refresh/runtime');
 Refresh.injectIntoGlobalHook(window);
 window.$RefreshReg$ = function() {
@@ -151,11 +151,11 @@ window.$RefreshSig$ = function() {
     };
 };
 
-},{"react-refresh/runtime":"fi779"}],"fi779":[function(require,module,exports) {
+},{"react-refresh/runtime":"fNmB3"}],"fNmB3":[function(require,module,exports) {
 'use strict';
 module.exports = require('./cjs/react-refresh-runtime.development.js');
 
-},{"./cjs/react-refresh-runtime.development.js":"fx5u7"}],"fx5u7":[function(require,module,exports) {
+},{"./cjs/react-refresh-runtime.development.js":"1CJiQ"}],"1CJiQ":[function(require,module,exports) {
 /** @license React v0.9.0
  * react-refresh-runtime.development.js
  *
@@ -321,7 +321,7 @@ module.exports = require('./cjs/react-refresh-runtime.development.js');
             var update = {
                 updatedFamilies: updatedFamilies,
                 // Families that will re-render preserving state
-                staleFamilies: staleFamilies
+                staleFamilies: staleFamilies // Families that will be remounted
             };
             helpersByRendererID.forEach(function(helpers) {
                 // Even if there are no roots, set the handler on first update.
@@ -618,12 +618,76 @@ module.exports = require('./cjs/react-refresh-runtime.development.js');
     exports.setSignature = setSignature;
 })();
 
-},{}],"6qa0z":[function(require,module,exports) {
+},{}],"6a0zu":[function(require,module,exports) {
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
-var HMR_ENV_HASH = "aa9dba8ca27d5955";
-module.bundle.HMR_BUNDLE_ID = "99a47c80bae34397"; // @flow
+var HMR_ENV_HASH = "69f74e7f31319ffd";
+module.bundle.HMR_BUNDLE_ID = "2dba8b266701a6e1";
+"use strict";
+function _createForOfIteratorHelper(o, allowArrayLike) {
+    var it;
+    if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) {
+        if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") {
+            if (it) o = it;
+            var i = 0;
+            var F = function F1() {
+            };
+            return {
+                s: F,
+                n: function n() {
+                    if (i >= o.length) return {
+                        done: true
+                    };
+                    return {
+                        done: false,
+                        value: o[i++]
+                    };
+                },
+                e: function e(_e) {
+                    throw _e;
+                },
+                f: F
+            };
+        }
+        throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+    }
+    var normalCompletion = true, didErr = false, err;
+    return {
+        s: function s() {
+            it = o[Symbol.iterator]();
+        },
+        n: function n() {
+            var step = it.next();
+            normalCompletion = step.done;
+            return step;
+        },
+        e: function e(_e2) {
+            didErr = true;
+            err = _e2;
+        },
+        f: function f() {
+            try {
+                if (!normalCompletion && it.return != null) it.return();
+            } finally{
+                if (didErr) throw err;
+            }
+        }
+    };
+}
+function _unsupportedIterableToArray(o, minLen) {
+    if (!o) return;
+    if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+    var n = Object.prototype.toString.call(o).slice(8, -1);
+    if (n === "Object" && o.constructor) n = o.constructor.name;
+    if (n === "Map" || n === "Set") return Array.from(o);
+    if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
+}
+function _arrayLikeToArray(arr, len) {
+    if (len == null || len > arr.length) len = arr.length;
+    for(var i = 0, arr2 = new Array(len); i < len; i++)arr2[i] = arr[i];
+    return arr2;
+}
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE */ /*::
 import type {
   HMRAsset,
@@ -664,33 +728,31 @@ function Module(moduleName) {
         data: module.bundle.hotData,
         _acceptCallbacks: [],
         _disposeCallbacks: [],
-        accept: function(fn) {
+        accept: function accept(fn) {
             this._acceptCallbacks.push(fn || function() {
             });
         },
-        dispose: function(fn) {
+        dispose: function dispose(fn) {
             this._disposeCallbacks.push(fn);
         }
     };
     module.bundle.hotData = undefined;
 }
 module.bundle.Module = Module;
-var checkedAssets/*: {|[string]: boolean|} */ , acceptedAssets/*: {|[string]: boolean|} */ , assetsToAccept/*: Array<[ParcelRequire, string]> */ ;
+var checkedAssets, acceptedAssets, assetsToAccept;
 function getHostname() {
     return HMR_HOST || (location.protocol.indexOf('http') === 0 ? location.hostname : 'localhost');
 }
 function getPort() {
     return HMR_PORT || location.port;
-}
-// eslint-disable-next-line no-redeclare
+} // eslint-disable-next-line no-redeclare
 var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
     var hostname = getHostname();
     var port = getPort();
     var protocol = HMR_SECURE || location.protocol == 'https:' && !/localhost|127.0.0.1|0.0.0.0/.test(hostname) ? 'wss' : 'ws';
-    var ws = new WebSocket(protocol + '://' + hostname + (port ? ':' + port : '') + '/');
-    // $FlowFixMe
-    ws.onmessage = function(event/*: {data: string, ...} */ ) {
+    var ws = new WebSocket(protocol + '://' + hostname + (port ? ':' + port : '') + '/'); // $FlowFixMe
+    ws.onmessage = function(event) {
         checkedAssets = {
         };
         acceptedAssets = {
@@ -700,13 +762,11 @@ if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
         if (data.type === 'update') {
             // Remove error overlay if there is one
             removeErrorOverlay();
-            let assets = data.assets.filter((asset)=>asset.envHash === HMR_ENV_HASH
-            );
-            // Handle HMR Update
-            var handled = false;
-            assets.forEach((asset)=>{
-                var didAccept = asset.type === 'css' || asset.type === 'js' && hmrAcceptCheck(module.bundle.root, asset.id, asset.depsByBundle);
-                if (didAccept) handled = true;
+            var assets = data.assets.filter(function(asset) {
+                return asset.envHash === HMR_ENV_HASH;
+            }); // Handle HMR Update
+            var handled = assets.every(function(asset) {
+                return asset.type === 'css' || asset.type === 'js' && hmrAcceptCheck(module.bundle.root, asset.id, asset.depsByBundle);
             });
             if (handled) {
                 console.clear();
@@ -721,21 +781,27 @@ if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
         }
         if (data.type === 'error') {
             // Log parcel errors to console
-            for (let ansiDiagnostic of data.diagnostics.ansi){
-                let stack = ansiDiagnostic.codeframe ? ansiDiagnostic.codeframe : ansiDiagnostic.stack;
-                console.error('🚨 [parcel]: ' + ansiDiagnostic.message + '\n' + stack + '\n\n' + ansiDiagnostic.hints.join('\n'));
+            var _iterator = _createForOfIteratorHelper(data.diagnostics.ansi), _step;
+            try {
+                for(_iterator.s(); !(_step = _iterator.n()).done;){
+                    var ansiDiagnostic = _step.value;
+                    var stack = ansiDiagnostic.codeframe ? ansiDiagnostic.codeframe : ansiDiagnostic.stack;
+                    console.error('🚨 [parcel]: ' + ansiDiagnostic.message + '\n' + stack + '\n\n' + ansiDiagnostic.hints.join('\n'));
+                } // Render the fancy html overlay
+            } catch (err) {
+                _iterator.e(err);
+            } finally{
+                _iterator.f();
             }
-            // Render the fancy html overlay
             removeErrorOverlay();
-            var overlay = createErrorOverlay(data.diagnostics.html);
-            // $FlowFixMe
+            var overlay = createErrorOverlay(data.diagnostics.html); // $FlowFixMe
             document.body.appendChild(overlay);
         }
     };
     ws.onerror = function(e) {
         console.error(e.message);
     };
-    ws.onclose = function(e) {
+    ws.onclose = function() {
         console.warn('[parcel] 🚨 Connection to the HMR server was lost');
     };
 }
@@ -749,11 +815,20 @@ function removeErrorOverlay() {
 function createErrorOverlay(diagnostics) {
     var overlay = document.createElement('div');
     overlay.id = OVERLAY_ID;
-    let errorHTML = '<div style="background: black; opacity: 0.85; font-size: 16px; color: white; position: fixed; height: 100%; width: 100%; top: 0px; left: 0px; padding: 30px; font-family: Menlo, Consolas, monospace; z-index: 9999;">';
-    for (let diagnostic of diagnostics){
-        let stack = diagnostic.codeframe ? diagnostic.codeframe : diagnostic.stack;
-        errorHTML += `\n      <div>\n        <div style="font-size: 18px; font-weight: bold; margin-top: 20px;">\n          🚨 ${diagnostic.message}\n        </div>\n        <pre>\n          ${stack}\n        </pre>\n        <div>\n          ${diagnostic.hints.map((hint)=>'<div>' + hint + '</div>'
-        ).join('')}\n        </div>\n      </div>\n    `;
+    var errorHTML = '<div style="background: black; opacity: 0.85; font-size: 16px; color: white; position: fixed; height: 100%; width: 100%; top: 0px; left: 0px; padding: 30px; font-family: Menlo, Consolas, monospace; z-index: 9999;">';
+    var _iterator2 = _createForOfIteratorHelper(diagnostics), _step2;
+    try {
+        for(_iterator2.s(); !(_step2 = _iterator2.n()).done;){
+            var diagnostic = _step2.value;
+            var stack = diagnostic.codeframe ? diagnostic.codeframe : diagnostic.stack;
+            errorHTML += "\n      <div>\n        <div style=\"font-size: 18px; font-weight: bold; margin-top: 20px;\">\n          \uD83D\uDEA8 ".concat(diagnostic.message, "\n        </div>\n        <pre>\n          ").concat(stack, "\n        </pre>\n        <div>\n          ").concat(diagnostic.hints.map(function(hint) {
+                return '<div>' + hint + '</div>';
+            }).join(''), "\n        </div>\n      </div>\n    ");
+        }
+    } catch (err) {
+        _iterator2.e(err);
+    } finally{
+        _iterator2.f();
     }
     errorHTML += '</div>';
     overlay.innerHTML = errorHTML;
@@ -780,9 +855,7 @@ function updateLink(link) {
         if (link.parentNode !== null) // $FlowFixMe
         link.parentNode.removeChild(link);
     };
-    newLink.setAttribute('href', // $FlowFixMe
-    link.getAttribute('href').split('?')[0] + '?' + Date.now());
-    // $FlowFixMe
+    newLink.setAttribute('href', link.getAttribute('href').split('?')[0] + '?' + Date.now()); // $FlowFixMe
     link.parentNode.insertBefore(newLink, link.nextSibling);
 }
 var cssTimeout = null;
@@ -801,14 +874,14 @@ function reloadCSS() {
         cssTimeout = null;
     }, 50);
 }
-function hmrApply(bundle/*: ParcelRequire */ , asset/*:  HMRAsset */ ) {
+function hmrApply(bundle, asset) {
     var modules = bundle.modules;
     if (!modules) return;
     if (asset.type === 'css') {
         reloadCSS();
         return;
     }
-    let deps = asset.depsByBundle[bundle.HMR_BUNDLE_ID];
+    var deps = asset.depsByBundle[bundle.HMR_BUNDLE_ID];
     if (deps) {
         var fn = new Function('require', 'module', 'exports', asset.output);
         modules[asset.id] = [
@@ -817,7 +890,7 @@ function hmrApply(bundle/*: ParcelRequire */ , asset/*:  HMRAsset */ ) {
         ];
     } else if (bundle.parent) hmrApply(bundle.parent, asset);
 }
-function hmrAcceptCheck(bundle/*: ParcelRequire */ , id/*: string */ , depsByBundle/*: ?{ [string]: { [string]: string } }*/ ) {
+function hmrAcceptCheck(bundle, id, depsByBundle) {
     var modules = bundle.modules;
     if (!modules) return;
     if (depsByBundle && !depsByBundle[bundle.HMR_BUNDLE_ID]) {
@@ -838,7 +911,7 @@ function hmrAcceptCheck(bundle/*: ParcelRequire */ , id/*: string */ , depsByBun
         return hmrAcceptCheck(v[0], v[1], null);
     });
 }
-function hmrAcceptRun(bundle/*: ParcelRequire */ , id/*: string */ ) {
+function hmrAcceptRun(bundle, id) {
     var cached = bundle.cache[id];
     bundle.hotData = {
     };
@@ -853,16 +926,17 @@ function hmrAcceptRun(bundle/*: ParcelRequire */ , id/*: string */ ) {
         var assetsToAlsoAccept = cb(function() {
             return getParents(module.bundle.root, id);
         });
-        if (assetsToAlsoAccept && assetsToAccept.length) assetsToAccept.push.apply(assetsToAccept, assetsToAlsoAccept);
+        if (assetsToAlsoAccept && assetsToAccept.length) // $FlowFixMe[method-unbinding]
+        assetsToAccept.push.apply(assetsToAccept, assetsToAlsoAccept);
     });
     acceptedAssets[id] = true;
 }
 
-},{}],"hFylh":[function(require,module,exports) {
-var helpers = require("../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{}],"dLPEP":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$b058 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
-helpers.prelude(module);
+$parcel$ReactRefreshHelpers$b058.prelude(module);
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -877,16 +951,16 @@ _reactDom.render(/*#__PURE__*/ _reactDefault.default.createElement(_reactRedux.P
     store: _store.store
 }, /*#__PURE__*/ _reactDefault.default.createElement(_appDefault.default, null)), document.getElementById("root"));
 
-  helpers.postlude(module);
+  $parcel$ReactRefreshHelpers$b058.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"juP7B","react-dom":"4Xkib","react-redux":"20feV","./_helpers/store":"decTA","./App":"lfJJs","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN","../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6e8vO"}],"juP7B":[function(require,module,exports) {
+},{"react":"6TuXu","react-dom":"gkWJK","react-redux":"2L0if","./_helpers/store":"aXFLK","./App":"8xI7B","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"6TuXu":[function(require,module,exports) {
 'use strict';
 module.exports = require('./cjs/react.development.js');
 
-},{"./cjs/react.development.js":"6qYIj"}],"6qYIj":[function(require,module,exports) {
+},{"./cjs/react.development.js":"9WG5J"}],"9WG5J":[function(require,module,exports) {
 /** @license React v17.0.2
  * react.development.js
  *
@@ -2485,7 +2559,7 @@ module.exports = require('./cjs/react.development.js');
     exports.version = ReactVersion;
 })();
 
-},{"object-assign":"1r2yO"}],"1r2yO":[function(require,module,exports) {
+},{"object-assign":"jzTFF"}],"jzTFF":[function(require,module,exports) {
 /*
 object-assign
 (c) Sindre Sorhus
@@ -2543,7 +2617,7 @@ module.exports = shouldUseNative() ? Object.assign : function(target, source) {
     return to;
 };
 
-},{}],"4Xkib":[function(require,module,exports) {
+},{}],"gkWJK":[function(require,module,exports) {
 'use strict';
 function checkDCE() {
     /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === 'undefined' || typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE !== 'function') return;
@@ -2559,7 +2633,7 @@ function checkDCE() {
 }
 module.exports = require('./cjs/react-dom.development.js');
 
-},{"./cjs/react-dom.development.js":"kBjiN"}],"kBjiN":[function(require,module,exports) {
+},{"./cjs/react-dom.development.js":"uMwNA"}],"uMwNA":[function(require,module,exports) {
 /** @license React v17.0.2
  * react-dom.development.js
  *
@@ -2848,14 +2922,14 @@ module.exports = require('./cjs/react-dom.development.js');
         // disabled with `removeAttribute`. We have special logic for handling this.
         'multiple',
         'muted',
-        'selected'
+        'selected' // NOTE: if you add a camelCased prop to this list,
     ].forEach(function(name) {
         properties[name] = new PropertyInfoRecord(name, BOOLEAN, true, name, null, false, false);
     }); // These are HTML attributes that are "overloaded booleans": they behave like
     // booleans, but can also accept a string value.
     [
         'capture',
-        'download'
+        'download' // NOTE: if you add a camelCased prop to this list,
     ].forEach(function(name) {
         properties[name] = new PropertyInfoRecord(name, OVERLOADED_BOOLEAN, false, name, null, false, false);
     }); // These are HTML attributes that must be positive numbers.
@@ -2863,7 +2937,7 @@ module.exports = require('./cjs/react-dom.development.js');
         'cols',
         'rows',
         'size',
-        'span'
+        'span' // NOTE: if you add a camelCased prop to this list,
     ].forEach(function(name) {
         properties[name] = new PropertyInfoRecord(name, POSITIVE_NUMERIC, false, name, null, false, false);
     }); // These are HTML attributes that must be numbers.
@@ -2954,7 +3028,7 @@ module.exports = require('./cjs/react-dom.development.js');
         'word-spacing',
         'writing-mode',
         'xmlns:xlink',
-        'x-height'
+        'x-height' // NOTE: if you add a camelCased prop to this list,
     ].forEach(function(attributeName) {
         var name = attributeName.replace(CAMELIZE, capitalize);
         properties[name] = new PropertyInfoRecord(name, STRING, false, attributeName, null, false, false);
@@ -2965,7 +3039,7 @@ module.exports = require('./cjs/react-dom.development.js');
         'xlink:role',
         'xlink:show',
         'xlink:title',
-        'xlink:type'
+        'xlink:type' // NOTE: if you add a camelCased prop to this list,
     ].forEach(function(attributeName) {
         var name = attributeName.replace(CAMELIZE, capitalize);
         properties[name] = new PropertyInfoRecord(name, STRING, false, attributeName, 'http://www.w3.org/1999/xlink', false, false);
@@ -2973,7 +3047,7 @@ module.exports = require('./cjs/react-dom.development.js');
     [
         'xml:base',
         'xml:lang',
-        'xml:space'
+        'xml:space' // NOTE: if you add a camelCased prop to this list,
     ].forEach(function(attributeName) {
         var name = attributeName.replace(CAMELIZE, capitalize);
         properties[name] = new PropertyInfoRecord(name, STRING, false, attributeName, 'http://www.w3.org/XML/1998/namespace', false, false);
@@ -4715,7 +4789,7 @@ module.exports = require('./cjs/react-dom.development.js');
         param: true,
         source: true,
         track: true,
-        wbr: true
+        wbr: true // NOTE: menuitem's close tag should be omitted, but that causes problems.
     };
     // `omittedCloseTags` except that `menuitem` should still have its closing tag.
     var voidElementTags = _assign({
@@ -8419,7 +8493,8 @@ module.exports = require('./cjs/react-dom.development.js');
  * inlined Object.is polyfill to avoid requiring consumers ship their own
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
  */ function is(x, y) {
-        return x === y && (x !== 0 || 1 / x === 1 / y) || x !== x && y !== y;
+        return x === y && (x !== 0 || 1 / x === 1 / y) || x !== x && y !== y // eslint-disable-line no-self-compare
+        ;
     }
     var objectIs = typeof Object.is === 'function' ? Object.is : is;
     var hasOwnProperty$2 = Object.prototype.hasOwnProperty;
@@ -12653,7 +12728,7 @@ module.exports = require('./cjs/react-dom.development.js');
                         knownKeys.add(key);
                         break;
                     }
-                    error("Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted \u2014 the behavior is unsupported and could change in a future version.", key);
+                    error("Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.", key);
                     break;
             }
             return knownKeys;
@@ -16920,7 +16995,8 @@ module.exports = require('./cjs/react-dom.development.js');
                                 workInProgress.flags |= Update;
                             }
                             cutOffTailIfNeeded(renderState, true); // This might have been modified.
-                            if (renderState.tail === null && renderState.tailMode === 'hidden' && !renderedTail.alternate && !getIsHydrating()) {
+                            if (renderState.tail === null && renderState.tailMode === 'hidden' && !renderedTail.alternate && !getIsHydrating() // We don't cut it if we're hydrating.
+                            ) {
                                 // We need to delete the row we just rendered.
                                 // Reset the effect list to what it was before we rendered this
                                 // child. The nested children have already appended themselves.
@@ -21098,11 +21174,11 @@ module.exports = require('./cjs/react-dom.development.js');
     exports.version = ReactVersion;
 })();
 
-},{"react":"juP7B","object-assign":"1r2yO","scheduler":"k5Ld8","scheduler/tracing":"l67yL"}],"k5Ld8":[function(require,module,exports) {
+},{"react":"6TuXu","object-assign":"jzTFF","scheduler":"lS3J3","scheduler/tracing":"aEthe"}],"lS3J3":[function(require,module,exports) {
 'use strict';
 module.exports = require('./cjs/scheduler.development.js');
 
-},{"./cjs/scheduler.development.js":"60Mdc"}],"60Mdc":[function(require,module,exports) {
+},{"./cjs/scheduler.development.js":"9ljDM"}],"9ljDM":[function(require,module,exports) {
 /** @license React v0.20.2
  * scheduler.development.js
  *
@@ -21575,11 +21651,11 @@ module.exports = require('./cjs/scheduler.development.js');
     exports.unstable_wrapCallback = unstable_wrapCallback;
 })();
 
-},{}],"l67yL":[function(require,module,exports) {
+},{}],"aEthe":[function(require,module,exports) {
 'use strict';
 module.exports = require('./cjs/scheduler-tracing.development.js');
 
-},{"./cjs/scheduler-tracing.development.js":"jTE9r"}],"jTE9r":[function(require,module,exports) {
+},{"./cjs/scheduler-tracing.development.js":"jlVvF"}],"jlVvF":[function(require,module,exports) {
 /** @license React v0.20.2
  * scheduler-tracing.development.js
  *
@@ -21831,58 +21907,64 @@ module.exports = require('./cjs/scheduler-tracing.development.js');
     exports.unstable_wrap = unstable_wrap;
 })();
 
-},{}],"20feV":[function(require,module,exports) {
-"use strict";
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-exports.__esModule = true;
-var _Provider = _interopRequireDefault(require("./components/Provider"));
-exports.Provider = _Provider["default"];
-var _connectAdvanced = _interopRequireDefault(require("./components/connectAdvanced"));
-exports.connectAdvanced = _connectAdvanced["default"];
-var _Context = require("./components/Context");
-exports.ReactReduxContext = _Context.ReactReduxContext;
-var _connect = _interopRequireDefault(require("./connect/connect"));
-exports.connect = _connect["default"];
+},{}],"2L0if":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Provider", ()=>_providerDefault.default
+);
+parcelHelpers.export(exports, "connectAdvanced", ()=>_connectAdvancedDefault.default
+);
+parcelHelpers.export(exports, "ReactReduxContext", ()=>_context.ReactReduxContext
+);
+parcelHelpers.export(exports, "connect", ()=>_connectDefault.default
+);
+parcelHelpers.export(exports, "batch", ()=>_reactBatchedUpdates.unstable_batchedUpdates
+);
+parcelHelpers.export(exports, "useDispatch", ()=>_useDispatch.useDispatch
+);
+parcelHelpers.export(exports, "createDispatchHook", ()=>_useDispatch.createDispatchHook
+);
+parcelHelpers.export(exports, "useSelector", ()=>_useSelector.useSelector
+);
+parcelHelpers.export(exports, "createSelectorHook", ()=>_useSelector.createSelectorHook
+);
+parcelHelpers.export(exports, "useStore", ()=>_useStore.useStore
+);
+parcelHelpers.export(exports, "createStoreHook", ()=>_useStore.createStoreHook
+);
+parcelHelpers.export(exports, "shallowEqual", ()=>_shallowEqualDefault.default
+);
+var _provider = require("./components/Provider");
+var _providerDefault = parcelHelpers.interopDefault(_provider);
+var _connectAdvanced = require("./components/connectAdvanced");
+var _connectAdvancedDefault = parcelHelpers.interopDefault(_connectAdvanced);
+var _context = require("./components/Context");
+var _connect = require("./connect/connect");
+var _connectDefault = parcelHelpers.interopDefault(_connect);
 var _useDispatch = require("./hooks/useDispatch");
-exports.useDispatch = _useDispatch.useDispatch;
-exports.createDispatchHook = _useDispatch.createDispatchHook;
 var _useSelector = require("./hooks/useSelector");
-exports.useSelector = _useSelector.useSelector;
-exports.createSelectorHook = _useSelector.createSelectorHook;
 var _useStore = require("./hooks/useStore");
-exports.useStore = _useStore.useStore;
-exports.createStoreHook = _useStore.createStoreHook;
 var _batch = require("./utils/batch");
 var _reactBatchedUpdates = require("./utils/reactBatchedUpdates");
-exports.batch = _reactBatchedUpdates.unstable_batchedUpdates;
-var _shallowEqual = _interopRequireDefault(require("./utils/shallowEqual"));
-exports.shallowEqual = _shallowEqual["default"];
+var _shallowEqual = require("./utils/shallowEqual");
+var _shallowEqualDefault = parcelHelpers.interopDefault(_shallowEqual);
 _batch.setBatch(_reactBatchedUpdates.unstable_batchedUpdates);
 
-},{"@babel/runtime/helpers/interopRequireDefault":"bvlQW","./components/Provider":"fu3PR","./components/connectAdvanced":"3lGJg","./components/Context":"h4Jv2","./connect/connect":"e4K9Z","./hooks/useDispatch":"cAWgm","./hooks/useSelector":"aDm2n","./hooks/useStore":"betkh","./utils/batch":"3aMml","./utils/reactBatchedUpdates":"gQAq2","./utils/shallowEqual":"dDeE0"}],"bvlQW":[function(require,module,exports) {
-function _interopRequireDefault(obj) {
-    return obj && obj.__esModule ? obj : {
-        "default": obj
-    };
-}
-module.exports = _interopRequireDefault;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
-
-},{}],"fu3PR":[function(require,module,exports) {
-"use strict";
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");
-exports.__esModule = true;
-exports["default"] = void 0;
-var _react = _interopRequireWildcard(require("react"));
-var _propTypes = _interopRequireDefault(require("prop-types"));
-var _Context = require("./Context");
-var _Subscription = _interopRequireDefault(require("../utils/Subscription"));
+},{"./components/Provider":"efEZ1","./components/connectAdvanced":"5cRBV","./components/Context":"gT1Jg","./connect/connect":"9zpXe","./hooks/useDispatch":"2CDvn","./hooks/useSelector":"27k1i","./hooks/useStore":"fDPAT","./utils/batch":"2g3ZY","./utils/reactBatchedUpdates":"kaP8a","./utils/shallowEqual":"leLul","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"efEZ1":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _context = require("./Context");
+var _subscription = require("../utils/Subscription");
+var _subscriptionDefault = parcelHelpers.interopDefault(_subscription);
 var _useIsomorphicLayoutEffect = require("../utils/useIsomorphicLayoutEffect");
 function Provider(_ref) {
     var store = _ref.store, context = _ref.context, children = _ref.children;
     var contextValue = _react.useMemo(function() {
-        var subscription = new _Subscription["default"](store);
+        var subscription = new _subscriptionDefault.default(store);
         subscription.onStateChange = subscription.notifyNestedSubs;
         return {
             store: store,
@@ -21908,85 +21990,34 @@ function Provider(_ref) {
         contextValue,
         previousState
     ]);
-    var Context = context || _Context.ReactReduxContext;
-    return(/*#__PURE__*/ _react["default"].createElement(Context.Provider, {
+    var Context = context || _context.ReactReduxContext;
+    return(/*#__PURE__*/ _reactDefault.default.createElement(Context.Provider, {
         value: contextValue
     }, children));
 }
 Provider.propTypes = {
-    store: _propTypes["default"].shape({
-        subscribe: _propTypes["default"].func.isRequired,
-        dispatch: _propTypes["default"].func.isRequired,
-        getState: _propTypes["default"].func.isRequired
+    store: _propTypesDefault.default.shape({
+        subscribe: _propTypesDefault.default.func.isRequired,
+        dispatch: _propTypesDefault.default.func.isRequired,
+        getState: _propTypesDefault.default.func.isRequired
     }),
-    context: _propTypes["default"].object,
-    children: _propTypes["default"].any
+    context: _propTypesDefault.default.object,
+    children: _propTypesDefault.default.any
 };
-var _default = Provider;
-exports["default"] = _default;
+exports.default = Provider;
 
-},{"@babel/runtime/helpers/interopRequireDefault":"bvlQW","@babel/runtime/helpers/interopRequireWildcard":"i4nsF","react":"juP7B","prop-types":"jEh18","./Context":"h4Jv2","../utils/Subscription":"6xrs7","../utils/useIsomorphicLayoutEffect":"c7HGb"}],"i4nsF":[function(require,module,exports) {
-var _typeof = require("@babel/runtime/helpers/typeof")["default"];
-function _getRequireWildcardCache(nodeInterop) {
-    if (typeof WeakMap !== "function") return null;
-    var cacheBabelInterop = new WeakMap();
-    var cacheNodeInterop = new WeakMap();
-    return (_getRequireWildcardCache = function _getRequireWildcardCache1(nodeInterop1) {
-        return nodeInterop1 ? cacheNodeInterop : cacheBabelInterop;
-    })(nodeInterop);
-}
-function _interopRequireWildcard(obj, nodeInterop) {
-    if (!nodeInterop && obj && obj.__esModule) return obj;
-    if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") return {
-        "default": obj
-    };
-    var cache = _getRequireWildcardCache(nodeInterop);
-    if (cache && cache.has(obj)) return cache.get(obj);
-    var newObj = {
-    };
-    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
-    for(var key in obj)if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
-        var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
-        if (desc && (desc.get || desc.set)) Object.defineProperty(newObj, key, desc);
-        else newObj[key] = obj[key];
-    }
-    newObj["default"] = obj;
-    if (cache) cache.set(obj, newObj);
-    return newObj;
-}
-module.exports = _interopRequireWildcard;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
-
-},{"@babel/runtime/helpers/typeof":"aSXHe"}],"aSXHe":[function(require,module,exports) {
-function _typeof(obj) {
-    if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
-        module.exports = _typeof = function _typeof1(obj1) {
-            return typeof obj1;
-        };
-        module.exports["default"] = module.exports, module.exports.__esModule = true;
-    } else {
-        module.exports = _typeof = function _typeof1(obj1) {
-            return obj1 && typeof Symbol === "function" && obj1.constructor === Symbol && obj1 !== Symbol.prototype ? "symbol" : typeof obj1;
-        };
-        module.exports["default"] = module.exports, module.exports.__esModule = true;
-    }
-    return _typeof(obj);
-}
-module.exports = _typeof;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
-
-},{}],"jEh18":[function(require,module,exports) {
+},{"react":"6TuXu","prop-types":"1tgq3","./Context":"gT1Jg","../utils/Subscription":"6rtcC","../utils/useIsomorphicLayoutEffect":"2TWoQ","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"1tgq3":[function(require,module,exports) {
 var ReactIs = require('react-is');
 // By explicitly using `prop-types` you are opting into new development behavior.
 // http://fb.me/prop-types-in-prod
 var throwOnDirectAccess = true;
 module.exports = require('./factoryWithTypeCheckers')(ReactIs.isElement, throwOnDirectAccess);
 
-},{"react-is":"lojKr","./factoryWithTypeCheckers":"5wvny"}],"lojKr":[function(require,module,exports) {
+},{"react-is":"28l8L","./factoryWithTypeCheckers":"gMSjX"}],"28l8L":[function(require,module,exports) {
 'use strict';
 module.exports = require('./cjs/react-is.development.js');
 
-},{"./cjs/react-is.development.js":"6Ekzc"}],"6Ekzc":[function(require,module,exports) {
+},{"./cjs/react-is.development.js":"7bhig"}],"7bhig":[function(require,module,exports) {
 /** @license React v16.13.1
  * react-is.development.js
  *
@@ -22141,7 +22172,7 @@ module.exports = require('./cjs/react-is.development.js');
     exports.typeOf = typeOf;
 })();
 
-},{}],"5wvny":[function(require,module,exports) {
+},{}],"gMSjX":[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -22572,7 +22603,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
     return ReactPropTypes;
 };
 
-},{"react-is":"lojKr","object-assign":"1r2yO","./lib/ReactPropTypesSecret":"5jv4F","./checkPropTypes":"1Ht4F"}],"5jv4F":[function(require,module,exports) {
+},{"react-is":"28l8L","object-assign":"jzTFF","./lib/ReactPropTypesSecret":"lYuBM","./checkPropTypes":"3evPV"}],"lYuBM":[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -22582,7 +22613,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 module.exports = ReactPropTypesSecret;
 
-},{}],"1Ht4F":[function(require,module,exports) {
+},{}],"3evPV":[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -22654,24 +22685,55 @@ printWarning = function(text) {
 };
 module.exports = checkPropTypes;
 
-},{"./lib/ReactPropTypesSecret":"5jv4F"}],"h4Jv2":[function(require,module,exports) {
-"use strict";
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-exports.__esModule = true;
-exports["default"] = exports.ReactReduxContext = void 0;
-var _react = _interopRequireDefault(require("react"));
-var ReactReduxContext = /*#__PURE__*/ _react["default"].createContext(null);
-exports.ReactReduxContext = ReactReduxContext;
+},{"./lib/ReactPropTypesSecret":"lYuBM"}],"gT1Jg":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "ReactReduxContext", ()=>ReactReduxContext
+);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var ReactReduxContext = /*#__PURE__*/ _reactDefault.default.createContext(null);
 ReactReduxContext.displayName = 'ReactRedux';
-var _default = ReactReduxContext;
-exports["default"] = _default;
+exports.default = ReactReduxContext;
 
-},{"@babel/runtime/helpers/interopRequireDefault":"bvlQW","react":"juP7B"}],"6xrs7":[function(require,module,exports) {
-"use strict";
-exports.__esModule = true;
-exports["default"] = void 0;
-var _batch = require("./batch");
-// encapsulates the subscription logic for connecting a component to the redux store, as
+},{"react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"JacNc":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, '__esModule', {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === 'default' || key === '__esModule') return;
+        // Skip duplicate re-exports when they have the same value.
+        if (key in dest && dest[key] === source[key]) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}],"6rtcC":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>Subscription
+);
+var _batch = require("./batch"); // encapsulates the subscription logic for connecting a component to the redux store, as
 // well as nesting subscriptions of descendant components, so that we can ensure the
 // ancestor components re-render before descendants
 var nullListeners = {
@@ -22763,12 +22825,14 @@ var Subscription = /*#__PURE__*/ function() {
     };
     return Subscription1;
 }();
-exports["default"] = Subscription;
 
-},{"./batch":"3aMml"}],"3aMml":[function(require,module,exports) {
-"use strict";
-exports.__esModule = true;
-exports.getBatch = exports.setBatch = void 0;
+},{"./batch":"2g3ZY","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"2g3ZY":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "setBatch", ()=>setBatch
+);
+parcelHelpers.export(exports, "getBatch", ()=>getBatch
+);
 // Default to a dummy "batch" implementation that just runs the callback
 function defaultNoopBatch(callback) {
     callback();
@@ -22777,43 +22841,34 @@ var batch = defaultNoopBatch; // Allow injecting another batching function later
 var setBatch = function setBatch1(newBatch) {
     return batch = newBatch;
 }; // Supply a getter just to skip dealing with ESM bindings
-exports.setBatch = setBatch;
 var getBatch = function getBatch1() {
     return batch;
 };
-exports.getBatch = getBatch;
 
-},{}],"c7HGb":[function(require,module,exports) {
-"use strict";
-exports.__esModule = true;
-exports.useIsomorphicLayoutEffect = void 0;
-var _react = require("react");
-// React currently throws a warning when using useLayoutEffect on the server.
-// To get around it, we can conditionally useEffect on the server (no-op) and
-// useLayoutEffect in the browser. We need useLayoutEffect to ensure the store
-// subscription callback always has the selector from the latest render commit
-// available, otherwise a store update may happen between render and the effect,
-// which may cause missed updates; we also must ensure the store subscription
-// is created synchronously, otherwise a store update may occur before the
-// subscription is created and an inconsistent state may be observed
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"2TWoQ":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useIsomorphicLayoutEffect", ()=>useIsomorphicLayoutEffect
+);
+var _react = require("react"); // React currently throws a warning when using useLayoutEffect on the server.
 var useIsomorphicLayoutEffect = typeof window !== 'undefined' && typeof window.document !== 'undefined' && typeof window.document.createElement !== 'undefined' ? _react.useLayoutEffect : _react.useEffect;
-exports.useIsomorphicLayoutEffect = useIsomorphicLayoutEffect;
 
-},{"react":"juP7B"}],"3lGJg":[function(require,module,exports) {
-"use strict";
-var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-exports.__esModule = true;
-exports["default"] = connectAdvanced;
-var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
-var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
-var _hoistNonReactStatics = _interopRequireDefault(require("hoist-non-react-statics"));
-var _react = _interopRequireWildcard(require("react"));
+},{"react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"5cRBV":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _extends = require("@babel/runtime/helpers/esm/extends");
+var _extendsDefault = parcelHelpers.interopDefault(_extends);
+var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
+var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
+var _hoistNonReactStatics = require("hoist-non-react-statics");
+var _hoistNonReactStaticsDefault = parcelHelpers.interopDefault(_hoistNonReactStatics);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactIs = require("react-is");
-var _Subscription = _interopRequireDefault(require("../utils/Subscription"));
+var _subscription = require("../utils/Subscription");
+var _subscriptionDefault = parcelHelpers.interopDefault(_subscription);
 var _useIsomorphicLayoutEffect = require("../utils/useIsomorphicLayoutEffect");
-var _Context = require("./Context");
-// Define some constant arrays just to avoid re-creating these
+var _context = require("./Context"); // Define some constant arrays just to avoid re-creating these
 var EMPTY_ARRAY = [];
 var NO_SUBSCRIPTION_ARRAY = [
     null,
@@ -22928,7 +22983,7 @@ function connectAdvanced(/*
     };
     var _ref2 = _ref, _ref2$getDisplayName = _ref2.getDisplayName, getDisplayName = _ref2$getDisplayName === void 0 ? function(name) {
         return "ConnectAdvanced(" + name + ")";
-    } : _ref2$getDisplayName, _ref2$methodName = _ref2.methodName, methodName = _ref2$methodName === void 0 ? 'connectAdvanced' : _ref2$methodName, _ref2$renderCountProp = _ref2.renderCountProp, renderCountProp = _ref2$renderCountProp === void 0 ? undefined : _ref2$renderCountProp, _ref2$shouldHandleSta = _ref2.shouldHandleStateChanges, shouldHandleStateChanges = _ref2$shouldHandleSta === void 0 ? true : _ref2$shouldHandleSta, _ref2$storeKey = _ref2.storeKey, storeKey = _ref2$storeKey === void 0 ? 'store' : _ref2$storeKey, _ref2$withRef = _ref2.withRef, withRef = _ref2$withRef === void 0 ? false : _ref2$withRef, _ref2$forwardRef = _ref2.forwardRef, forwardRef = _ref2$forwardRef === void 0 ? false : _ref2$forwardRef, _ref2$context = _ref2.context, context = _ref2$context === void 0 ? _Context.ReactReduxContext : _ref2$context, connectOptions = _objectWithoutPropertiesLoose2["default"](_ref2, [
+    } : _ref2$getDisplayName, _ref2$methodName = _ref2.methodName, methodName = _ref2$methodName === void 0 ? 'connectAdvanced' : _ref2$methodName, _ref2$renderCountProp = _ref2.renderCountProp, renderCountProp = _ref2$renderCountProp === void 0 ? undefined : _ref2$renderCountProp, _ref2$shouldHandleSta = _ref2.shouldHandleStateChanges, shouldHandleStateChanges = _ref2$shouldHandleSta === void 0 ? true : _ref2$shouldHandleSta, _ref2$storeKey = _ref2.storeKey, storeKey = _ref2$storeKey === void 0 ? 'store' : _ref2$storeKey, _ref2$withRef = _ref2.withRef, withRef = _ref2$withRef === void 0 ? false : _ref2$withRef, _ref2$forwardRef = _ref2.forwardRef, forwardRef = _ref2$forwardRef === void 0 ? false : _ref2$forwardRef, _ref2$context = _ref2.context, context = _ref2$context === void 0 ? _context.ReactReduxContext : _ref2$context, connectOptions = _objectWithoutPropertiesLooseDefault.default(_ref2, [
         "getDisplayName",
         "methodName",
         "renderCountProp",
@@ -22947,7 +23002,7 @@ function connectAdvanced(/*
         if (!_reactIs.isValidElementType(WrappedComponent)) throw new Error("You must pass a component to the function returned by " + (methodName + ". Instead received " + stringifyComponent(WrappedComponent)));
         var wrappedComponentName = WrappedComponent.displayName || WrappedComponent.name || 'Component';
         var displayName = getDisplayName(wrappedComponentName);
-        var selectorFactoryOptions = _extends2["default"]({
+        var selectorFactoryOptions = _extendsDefault.default({
         }, connectOptions, {
             getDisplayName: getDisplayName,
             methodName: methodName,
@@ -22972,7 +23027,7 @@ function connectAdvanced(/*
                 // Distinguish between actual "data" props that were passed to the wrapper component,
                 // and values needed to control behavior (forwarded refs, alternate context instances).
                 // To maintain the wrapperProps object reference, memoize this destructuring.
-                var reactReduxForwardedRef = props.reactReduxForwardedRef, wrapperProps = _objectWithoutPropertiesLoose2["default"](props, [
+                var reactReduxForwardedRef = props.reactReduxForwardedRef, wrapperProps = _objectWithoutPropertiesLooseDefault.default(props, [
                     "reactReduxForwardedRef"
                 ]);
                 return [
@@ -22986,7 +23041,7 @@ function connectAdvanced(/*
             var ContextToUse = _react.useMemo(function() {
                 // Users may optionally pass in a custom context instance to use instead of our ReactReduxContext.
                 // Memoize the check that determines which context instance we should use.
-                return propsContext && propsContext.Consumer && _reactIs.isContextConsumer(/*#__PURE__*/ _react["default"].createElement(propsContext.Consumer, null)) ? propsContext : Context;
+                return propsContext && propsContext.Consumer && _reactIs.isContextConsumer(/*#__PURE__*/ _reactDefault.default.createElement(propsContext.Consumer, null)) ? propsContext : Context;
             }, [
                 propsContext,
                 Context
@@ -23009,7 +23064,7 @@ function connectAdvanced(/*
             var _useMemo2 = _react.useMemo(function() {
                 if (!shouldHandleStateChanges) return NO_SUBSCRIPTION_ARRAY; // This Subscription's source should match where store came from: props vs. context. A component
                 // connected to the store via props shouldn't use subscription from context, or vice versa.
-                var subscription = new _Subscription["default"](store, didStoreComeFromProps ? null : contextValue.subscription); // `notifyNestedSubs` is duplicated to handle the case where the component is unmounted in
+                var subscription = new _subscriptionDefault.default(store, didStoreComeFromProps ? null : contextValue.subscription); // `notifyNestedSubs` is duplicated to handle the case where the component is unmounted in
                 // the middle of the notification loop, where `subscription` will then be null. This can
                 // probably be avoided if Subscription's listeners logic is changed to not call listeners
                 // that have been unsubscribed in the  middle of the notification loop.
@@ -23031,7 +23086,7 @@ function connectAdvanced(/*
                 return contextValue;
                  // Otherwise, put this component's subscription instance into context, so that
                 // connected descendants won't update until after this component is done
-                return _extends2["default"]({
+                return _extendsDefault.default({
                 }, contextValue, {
                     subscription: subscription
                 });
@@ -23095,7 +23150,7 @@ function connectAdvanced(/*
             ]); // Now that all that's done, we can finally try to actually render the child component.
             // We memoize the elements for the rendered child component as an optimization.
             var renderedWrappedComponent = _react.useMemo(function() {
-                return(/*#__PURE__*/ _react["default"].createElement(WrappedComponent, _extends2["default"]({
+                return(/*#__PURE__*/ _reactDefault.default.createElement(WrappedComponent, _extendsDefault.default({
                 }, actualChildProps, {
                     ref: reactReduxForwardedRef
                 })));
@@ -23109,7 +23164,7 @@ function connectAdvanced(/*
                 if (shouldHandleStateChanges) // If this component is subscribed to store updates, we need to pass its own
                 // subscription instance down to our descendants. That means rendering the same
                 // Context instance, and putting a different value into the context.
-                return(/*#__PURE__*/ _react["default"].createElement(ContextToUse.Provider, {
+                return(/*#__PURE__*/ _reactDefault.default.createElement(ContextToUse.Provider, {
                     value: overriddenContextValue
                 }, renderedWrappedComponent));
                 return renderedWrappedComponent;
@@ -23120,40 +23175,43 @@ function connectAdvanced(/*
             ]);
             return renderedChild;
         } // If we're in "pure" mode, ensure our wrapper component only re-renders when incoming props have changed.
-        var Connect = pure ? _react["default"].memo(ConnectFunction) : ConnectFunction;
+        var Connect = pure ? _reactDefault.default.memo(ConnectFunction) : ConnectFunction;
         Connect.WrappedComponent = WrappedComponent;
         Connect.displayName = ConnectFunction.displayName = displayName;
         if (forwardRef) {
-            var forwarded = _react["default"].forwardRef(function forwardConnectRef(props, ref) {
-                return(/*#__PURE__*/ _react["default"].createElement(Connect, _extends2["default"]({
+            var forwarded = _reactDefault.default.forwardRef(function forwardConnectRef(props, ref) {
+                return(/*#__PURE__*/ _reactDefault.default.createElement(Connect, _extendsDefault.default({
                 }, props, {
                     reactReduxForwardedRef: ref
                 })));
             });
             forwarded.displayName = displayName;
             forwarded.WrappedComponent = WrappedComponent;
-            return _hoistNonReactStatics["default"](forwarded, WrappedComponent);
+            return _hoistNonReactStaticsDefault.default(forwarded, WrappedComponent);
         }
-        return _hoistNonReactStatics["default"](Connect, WrappedComponent);
+        return _hoistNonReactStaticsDefault.default(Connect, WrappedComponent);
     };
 }
+exports.default = connectAdvanced;
 
-},{"@babel/runtime/helpers/interopRequireWildcard":"i4nsF","@babel/runtime/helpers/interopRequireDefault":"bvlQW","@babel/runtime/helpers/extends":"7L19l","@babel/runtime/helpers/objectWithoutPropertiesLoose":"1r4Gr","hoist-non-react-statics":"dL3Vu","react":"juP7B","react-is":"a7sQZ","../utils/Subscription":"6xrs7","../utils/useIsomorphicLayoutEffect":"c7HGb","./Context":"h4Jv2"}],"7L19l":[function(require,module,exports) {
+},{"@babel/runtime/helpers/esm/extends":"bKAu6","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"3Rubg","hoist-non-react-statics":"jfzb6","react":"6TuXu","react-is":"bCfxJ","../utils/Subscription":"6rtcC","../utils/useIsomorphicLayoutEffect":"2TWoQ","./Context":"gT1Jg","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"bKAu6":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
 function _extends() {
-    module.exports = _extends = Object.assign || function(target) {
+    _extends = Object.assign || function(target) {
         for(var i = 1; i < arguments.length; i++){
             var source = arguments[i];
             for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
         }
         return target;
     };
-    module.exports["default"] = module.exports, module.exports.__esModule = true;
     return _extends.apply(this, arguments);
 }
-module.exports = _extends;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
+exports.default = _extends;
 
-},{}],"1r4Gr":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"3Rubg":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
 function _objectWithoutPropertiesLoose(source, excluded) {
     if (source == null) return {
     };
@@ -23168,10 +23226,9 @@ function _objectWithoutPropertiesLoose(source, excluded) {
     }
     return target;
 }
-module.exports = _objectWithoutPropertiesLoose;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
+exports.default = _objectWithoutPropertiesLoose;
 
-},{}],"dL3Vu":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"jfzb6":[function(require,module,exports) {
 'use strict';
 var reactIs = require('react-is');
 /**
@@ -23257,11 +23314,11 @@ function hoistNonReactStatics(targetComponent, sourceComponent, blacklist) {
 }
 module.exports = hoistNonReactStatics;
 
-},{"react-is":"03oxP"}],"03oxP":[function(require,module,exports) {
+},{"react-is":"ajJdr"}],"ajJdr":[function(require,module,exports) {
 'use strict';
 module.exports = require('./cjs/react-is.development.js');
 
-},{"./cjs/react-is.development.js":"k1X49"}],"k1X49":[function(require,module,exports) {
+},{"./cjs/react-is.development.js":"ccpo1"}],"ccpo1":[function(require,module,exports) {
 /** @license React v16.13.1
  * react-is.development.js
  *
@@ -23416,11 +23473,11 @@ module.exports = require('./cjs/react-is.development.js');
     exports.typeOf = typeOf;
 })();
 
-},{}],"a7sQZ":[function(require,module,exports) {
+},{}],"bCfxJ":[function(require,module,exports) {
 'use strict';
 module.exports = require('./cjs/react-is.development.js');
 
-},{"./cjs/react-is.development.js":"dCKpG"}],"dCKpG":[function(require,module,exports) {
+},{"./cjs/react-is.development.js":"eyUIi"}],"eyUIi":[function(require,module,exports) {
 /** @license React v16.13.1
  * react-is.development.js
  *
@@ -23575,20 +23632,28 @@ module.exports = require('./cjs/react-is.development.js');
     exports.typeOf = typeOf;
 })();
 
-},{}],"e4K9Z":[function(require,module,exports) {
-"use strict";
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-exports.__esModule = true;
-exports.createConnect = createConnect;
-exports["default"] = void 0;
-var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
-var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
-var _connectAdvanced = _interopRequireDefault(require("../components/connectAdvanced"));
-var _shallowEqual = _interopRequireDefault(require("../utils/shallowEqual"));
-var _mapDispatchToProps = _interopRequireDefault(require("./mapDispatchToProps"));
-var _mapStateToProps = _interopRequireDefault(require("./mapStateToProps"));
-var _mergeProps = _interopRequireDefault(require("./mergeProps"));
-var _selectorFactory = _interopRequireDefault(require("./selectorFactory"));
+},{}],"9zpXe":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+// different options opens up some testing and extensibility scenarios
+parcelHelpers.export(exports, "createConnect", ()=>createConnect
+);
+var _extends = require("@babel/runtime/helpers/esm/extends");
+var _extendsDefault = parcelHelpers.interopDefault(_extends);
+var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
+var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
+var _connectAdvanced = require("../components/connectAdvanced");
+var _connectAdvancedDefault = parcelHelpers.interopDefault(_connectAdvanced);
+var _shallowEqual = require("../utils/shallowEqual");
+var _shallowEqualDefault = parcelHelpers.interopDefault(_shallowEqual);
+var _mapDispatchToProps = require("./mapDispatchToProps");
+var _mapDispatchToPropsDefault = parcelHelpers.interopDefault(_mapDispatchToProps);
+var _mapStateToProps = require("./mapStateToProps");
+var _mapStateToPropsDefault = parcelHelpers.interopDefault(_mapStateToProps);
+var _mergeProps = require("./mergeProps");
+var _mergePropsDefault = parcelHelpers.interopDefault(_mergeProps);
+var _selectorFactory = require("./selectorFactory");
+var _selectorFactoryDefault = parcelHelpers.interopDefault(_selectorFactory);
 /*
   connect is a facade over connectAdvanced. It turns its args into a compatible
   selectorFactory, which has the signature:
@@ -23616,14 +23681,13 @@ var _selectorFactory = _interopRequireDefault(require("./selectorFactory"));
 function strictEqual(a, b) {
     return a === b;
 } // createConnect with default args builds the 'official' connect behavior. Calling it with
-// different options opens up some testing and extensibility scenarios
 function createConnect(_temp) {
     var _ref = _temp === void 0 ? {
-    } : _temp, _ref$connectHOC = _ref.connectHOC, connectHOC = _ref$connectHOC === void 0 ? _connectAdvanced["default"] : _ref$connectHOC, _ref$mapStateToPropsF = _ref.mapStateToPropsFactories, mapStateToPropsFactories = _ref$mapStateToPropsF === void 0 ? _mapStateToProps["default"] : _ref$mapStateToPropsF, _ref$mapDispatchToPro = _ref.mapDispatchToPropsFactories, mapDispatchToPropsFactories = _ref$mapDispatchToPro === void 0 ? _mapDispatchToProps["default"] : _ref$mapDispatchToPro, _ref$mergePropsFactor = _ref.mergePropsFactories, mergePropsFactories = _ref$mergePropsFactor === void 0 ? _mergeProps["default"] : _ref$mergePropsFactor, _ref$selectorFactory = _ref.selectorFactory, selectorFactory = _ref$selectorFactory === void 0 ? _selectorFactory["default"] : _ref$selectorFactory;
+    } : _temp, _ref$connectHOC = _ref.connectHOC, connectHOC = _ref$connectHOC === void 0 ? _connectAdvancedDefault.default : _ref$connectHOC, _ref$mapStateToPropsF = _ref.mapStateToPropsFactories, mapStateToPropsFactories = _ref$mapStateToPropsF === void 0 ? _mapStateToPropsDefault.default : _ref$mapStateToPropsF, _ref$mapDispatchToPro = _ref.mapDispatchToPropsFactories, mapDispatchToPropsFactories = _ref$mapDispatchToPro === void 0 ? _mapDispatchToPropsDefault.default : _ref$mapDispatchToPro, _ref$mergePropsFactor = _ref.mergePropsFactories, mergePropsFactories = _ref$mergePropsFactor === void 0 ? _mergePropsDefault.default : _ref$mergePropsFactor, _ref$selectorFactory = _ref.selectorFactory, selectorFactory = _ref$selectorFactory === void 0 ? _selectorFactoryDefault.default : _ref$selectorFactory;
     return function connect(mapStateToProps, mapDispatchToProps, mergeProps, _ref2) {
         if (_ref2 === void 0) _ref2 = {
         };
-        var _ref3 = _ref2, _ref3$pure = _ref3.pure, pure = _ref3$pure === void 0 ? true : _ref3$pure, _ref3$areStatesEqual = _ref3.areStatesEqual, areStatesEqual = _ref3$areStatesEqual === void 0 ? strictEqual : _ref3$areStatesEqual, _ref3$areOwnPropsEqua = _ref3.areOwnPropsEqual, areOwnPropsEqual = _ref3$areOwnPropsEqua === void 0 ? _shallowEqual["default"] : _ref3$areOwnPropsEqua, _ref3$areStatePropsEq = _ref3.areStatePropsEqual, areStatePropsEqual = _ref3$areStatePropsEq === void 0 ? _shallowEqual["default"] : _ref3$areStatePropsEq, _ref3$areMergedPropsE = _ref3.areMergedPropsEqual, areMergedPropsEqual = _ref3$areMergedPropsE === void 0 ? _shallowEqual["default"] : _ref3$areMergedPropsE, extraOptions = _objectWithoutPropertiesLoose2["default"](_ref3, [
+        var _ref3 = _ref2, _ref3$pure = _ref3.pure, pure = _ref3$pure === void 0 ? true : _ref3$pure, _ref3$areStatesEqual = _ref3.areStatesEqual, areStatesEqual = _ref3$areStatesEqual === void 0 ? strictEqual : _ref3$areStatesEqual, _ref3$areOwnPropsEqua = _ref3.areOwnPropsEqual, areOwnPropsEqual = _ref3$areOwnPropsEqua === void 0 ? _shallowEqualDefault.default : _ref3$areOwnPropsEqua, _ref3$areStatePropsEq = _ref3.areStatePropsEqual, areStatePropsEqual = _ref3$areStatePropsEq === void 0 ? _shallowEqualDefault.default : _ref3$areStatePropsEq, _ref3$areMergedPropsE = _ref3.areMergedPropsEqual, areMergedPropsEqual = _ref3$areMergedPropsE === void 0 ? _shallowEqualDefault.default : _ref3$areMergedPropsE, extraOptions = _objectWithoutPropertiesLooseDefault.default(_ref3, [
             "pure",
             "areStatesEqual",
             "areOwnPropsEqual",
@@ -23633,7 +23697,7 @@ function createConnect(_temp) {
         var initMapStateToProps = match(mapStateToProps, mapStateToPropsFactories, 'mapStateToProps');
         var initMapDispatchToProps = match(mapDispatchToProps, mapDispatchToPropsFactories, 'mapDispatchToProps');
         var initMergeProps = match(mergeProps, mergePropsFactories, 'mergeProps');
-        return connectHOC(selectorFactory, _extends2["default"]({
+        return connectHOC(selectorFactory, _extendsDefault.default({
             // used in error messages
             methodName: 'connect',
             // used to compute Connect's displayName from the wrapped component's displayName.
@@ -23654,13 +23718,11 @@ function createConnect(_temp) {
         }, extraOptions));
     };
 }
-var _default = /*#__PURE__*/ createConnect();
-exports["default"] = _default;
+exports.default = /*#__PURE__*/ createConnect();
 
-},{"@babel/runtime/helpers/interopRequireDefault":"bvlQW","@babel/runtime/helpers/extends":"7L19l","@babel/runtime/helpers/objectWithoutPropertiesLoose":"1r4Gr","../components/connectAdvanced":"3lGJg","../utils/shallowEqual":"dDeE0","./mapDispatchToProps":"bBG9B","./mapStateToProps":"7trj3","./mergeProps":"9JM0M","./selectorFactory":"dWvbU"}],"dDeE0":[function(require,module,exports) {
-"use strict";
-exports.__esModule = true;
-exports["default"] = shallowEqual;
+},{"@babel/runtime/helpers/esm/extends":"bKAu6","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"3Rubg","../components/connectAdvanced":"5cRBV","../utils/shallowEqual":"leLul","./mapDispatchToProps":"5WOJW","./mapStateToProps":"fi6QF","./mergeProps":"j48TE","./selectorFactory":"2XZ1a","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"leLul":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
 function is(x, y) {
     if (x === y) return x !== 0 || y !== 0 || 1 / x === 1 / y;
     else return x !== x && y !== y;
@@ -23676,16 +23738,19 @@ function shallowEqual(objA, objB) {
     }
     return true;
 }
+exports.default = shallowEqual;
 
-},{}],"bBG9B":[function(require,module,exports) {
-"use strict";
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-exports.__esModule = true;
-exports.whenMapDispatchToPropsIsFunction = whenMapDispatchToPropsIsFunction;
-exports.whenMapDispatchToPropsIsMissing = whenMapDispatchToPropsIsMissing;
-exports.whenMapDispatchToPropsIsObject = whenMapDispatchToPropsIsObject;
-exports["default"] = void 0;
-var _bindActionCreators = _interopRequireDefault(require("../utils/bindActionCreators"));
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"5WOJW":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "whenMapDispatchToPropsIsFunction", ()=>whenMapDispatchToPropsIsFunction
+);
+parcelHelpers.export(exports, "whenMapDispatchToPropsIsMissing", ()=>whenMapDispatchToPropsIsMissing
+);
+parcelHelpers.export(exports, "whenMapDispatchToPropsIsObject", ()=>whenMapDispatchToPropsIsObject
+);
+var _bindActionCreators = require("../utils/bindActionCreators");
+var _bindActionCreatorsDefault = parcelHelpers.interopDefault(_bindActionCreators);
 var _wrapMapToProps = require("./wrapMapToProps");
 function whenMapDispatchToPropsIsFunction(mapDispatchToProps) {
     return typeof mapDispatchToProps === 'function' ? _wrapMapToProps.wrapMapToPropsFunc(mapDispatchToProps, 'mapDispatchToProps') : undefined;
@@ -23699,20 +23764,18 @@ function whenMapDispatchToPropsIsMissing(mapDispatchToProps) {
 }
 function whenMapDispatchToPropsIsObject(mapDispatchToProps) {
     return mapDispatchToProps && typeof mapDispatchToProps === 'object' ? _wrapMapToProps.wrapMapToPropsConstant(function(dispatch) {
-        return _bindActionCreators["default"](mapDispatchToProps, dispatch);
+        return _bindActionCreatorsDefault.default(mapDispatchToProps, dispatch);
     }) : undefined;
 }
-var _default = [
+exports.default = [
     whenMapDispatchToPropsIsFunction,
     whenMapDispatchToPropsIsMissing,
     whenMapDispatchToPropsIsObject
 ];
-exports["default"] = _default;
 
-},{"@babel/runtime/helpers/interopRequireDefault":"bvlQW","../utils/bindActionCreators":"6WJWS","./wrapMapToProps":"gfOty"}],"6WJWS":[function(require,module,exports) {
-"use strict";
-exports.__esModule = true;
-exports["default"] = bindActionCreators;
+},{"../utils/bindActionCreators":"dTgYQ","./wrapMapToProps":"cK0KG","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"dTgYQ":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
 function bindActionCreators(actionCreators, dispatch) {
     var boundActionCreators = {
     };
@@ -23725,34 +23788,23 @@ function bindActionCreators(actionCreators, dispatch) {
     for(var key in actionCreators)_loop(key);
     return boundActionCreators;
 }
+exports.default = bindActionCreators;
 
-},{}],"gfOty":[function(require,module,exports) {
-"use strict";
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-exports.__esModule = true;
-exports.wrapMapToPropsConstant = wrapMapToPropsConstant;
-exports.getDependsOnOwnProps = getDependsOnOwnProps;
-exports.wrapMapToPropsFunc = wrapMapToPropsFunc;
-var _verifyPlainObject = _interopRequireDefault(require("../utils/verifyPlainObject"));
-function wrapMapToPropsConstant(getConstant) {
-    return function initConstantSelector(dispatch, options) {
-        var constant = getConstant(dispatch, options);
-        function constantSelector() {
-            return constant;
-        }
-        constantSelector.dependsOnOwnProps = false;
-        return constantSelector;
-    };
-} // dependsOnOwnProps is used by createMapToPropsProxy to determine whether to pass props as args
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"cK0KG":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "wrapMapToPropsConstant", ()=>wrapMapToPropsConstant
+) // dependsOnOwnProps is used by createMapToPropsProxy to determine whether to pass props as args
+;
 // to the mapToProps function being wrapped. It is also used by makePurePropsSelector to determine
 // whether mapToProps needs to be invoked when props have changed.
 //
 // A length of one signals that mapToProps does not depend on props from the parent component.
 // A length of zero is assumed to mean mapToProps is getting args via arguments or ...args and
 // therefore not reporting its length accurately..
-function getDependsOnOwnProps(mapToProps) {
-    return mapToProps.dependsOnOwnProps !== null && mapToProps.dependsOnOwnProps !== undefined ? Boolean(mapToProps.dependsOnOwnProps) : mapToProps.length !== 1;
-} // Used by whenMapStateToPropsIsFunction and whenMapDispatchToPropsIsFunction,
+parcelHelpers.export(exports, "getDependsOnOwnProps", ()=>getDependsOnOwnProps
+) // Used by whenMapStateToPropsIsFunction and whenMapDispatchToPropsIsFunction,
+;
 // this function wraps mapToProps in a proxy function which does several things:
 //
 //  * Detects whether the mapToProps function being called depends on props, which
@@ -23764,6 +23816,23 @@ function getDependsOnOwnProps(mapToProps) {
 //  * On first call, verifies the first result is a plain object, in order to warn
 //    the developer that their mapToProps function is not returning a valid result.
 //
+parcelHelpers.export(exports, "wrapMapToPropsFunc", ()=>wrapMapToPropsFunc
+);
+var _verifyPlainObject = require("../utils/verifyPlainObject");
+var _verifyPlainObjectDefault = parcelHelpers.interopDefault(_verifyPlainObject);
+function wrapMapToPropsConstant(getConstant) {
+    return function initConstantSelector(dispatch, options) {
+        var constant = getConstant(dispatch, options);
+        function constantSelector() {
+            return constant;
+        }
+        constantSelector.dependsOnOwnProps = false;
+        return constantSelector;
+    };
+}
+function getDependsOnOwnProps(mapToProps) {
+    return mapToProps.dependsOnOwnProps !== null && mapToProps.dependsOnOwnProps !== undefined ? Boolean(mapToProps.dependsOnOwnProps) : mapToProps.length !== 1;
+}
 function wrapMapToPropsFunc(mapToProps, methodName) {
     return function initProxySelector(dispatch, _ref) {
         var displayName = _ref.displayName;
@@ -23780,32 +23849,29 @@ function wrapMapToPropsFunc(mapToProps, methodName) {
                 proxy.dependsOnOwnProps = getDependsOnOwnProps(props);
                 props = proxy(stateOrDispatch, ownProps);
             }
-            _verifyPlainObject["default"](props, displayName, methodName);
+            _verifyPlainObjectDefault.default(props, displayName, methodName);
             return props;
         };
         return proxy;
     };
 }
 
-},{"@babel/runtime/helpers/interopRequireDefault":"bvlQW","../utils/verifyPlainObject":"2O1mj"}],"2O1mj":[function(require,module,exports) {
-"use strict";
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-exports.__esModule = true;
-exports["default"] = verifyPlainObject;
-var _isPlainObject = _interopRequireDefault(require("./isPlainObject"));
-var _warning = _interopRequireDefault(require("./warning"));
+},{"../utils/verifyPlainObject":"8txK0","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"8txK0":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _isPlainObject = require("./isPlainObject");
+var _isPlainObjectDefault = parcelHelpers.interopDefault(_isPlainObject);
+var _warning = require("./warning");
+var _warningDefault = parcelHelpers.interopDefault(_warning);
 function verifyPlainObject(value, displayName, methodName) {
-    if (!_isPlainObject["default"](value)) _warning["default"](methodName + "() in " + displayName + " must return a plain object. Instead received " + value + ".");
+    if (!_isPlainObjectDefault.default(value)) _warningDefault.default(methodName + "() in " + displayName + " must return a plain object. Instead received " + value + ".");
 }
+exports.default = verifyPlainObject;
 
-},{"@babel/runtime/helpers/interopRequireDefault":"bvlQW","./isPlainObject":"4mvHR","./warning":"98yYm"}],"4mvHR":[function(require,module,exports) {
-"use strict";
-exports.__esModule = true;
-exports["default"] = isPlainObject;
-/**
- * @param {any} obj The object to inspect.
- * @returns {boolean} True if the argument appears to be a plain object.
- */ function isPlainObject(obj) {
+},{"./isPlainObject":"awooc","./warning":"fl0jd","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"awooc":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+function isPlainObject(obj) {
     if (typeof obj !== 'object' || obj === null) return false;
     var proto = Object.getPrototypeOf(obj);
     if (proto === null) return true;
@@ -23813,17 +23879,12 @@ exports["default"] = isPlainObject;
     while(Object.getPrototypeOf(baseProto) !== null)baseProto = Object.getPrototypeOf(baseProto);
     return proto === baseProto;
 }
+exports.default = isPlainObject;
 
-},{}],"98yYm":[function(require,module,exports) {
-"use strict";
-exports.__esModule = true;
-exports["default"] = warning;
-/**
- * Prints a warning in the console if it exists.
- *
- * @param {String} message The warning message.
- * @returns {void}
- */ function warning(message) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"fl0jd":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+function warning(message) {
     /* eslint-disable no-console */ if (typeof console !== 'undefined' && typeof console.error === 'function') console.error(message);
     /* eslint-enable no-console */ try {
         // This error was thrown as a convenience so that if you enable
@@ -23833,13 +23894,15 @@ exports["default"] = warning;
     /* eslint-disable no-empty */ } catch (e) {
     }
 /* eslint-enable no-empty */ }
+exports.default = warning;
 
-},{}],"7trj3":[function(require,module,exports) {
-"use strict";
-exports.__esModule = true;
-exports.whenMapStateToPropsIsFunction = whenMapStateToPropsIsFunction;
-exports.whenMapStateToPropsIsMissing = whenMapStateToPropsIsMissing;
-exports["default"] = void 0;
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"fi6QF":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "whenMapStateToPropsIsFunction", ()=>whenMapStateToPropsIsFunction
+);
+parcelHelpers.export(exports, "whenMapStateToPropsIsMissing", ()=>whenMapStateToPropsIsMissing
+);
 var _wrapMapToProps = require("./wrapMapToProps");
 function whenMapStateToPropsIsFunction(mapStateToProps) {
     return typeof mapStateToProps === 'function' ? _wrapMapToProps.wrapMapToPropsFunc(mapStateToProps, 'mapStateToProps') : undefined;
@@ -23850,25 +23913,28 @@ function whenMapStateToPropsIsMissing(mapStateToProps) {
         };
     }) : undefined;
 }
-var _default = [
+exports.default = [
     whenMapStateToPropsIsFunction,
     whenMapStateToPropsIsMissing
 ];
-exports["default"] = _default;
 
-},{"./wrapMapToProps":"gfOty"}],"9JM0M":[function(require,module,exports) {
-"use strict";
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-exports.__esModule = true;
-exports.defaultMergeProps = defaultMergeProps;
-exports.wrapMergePropsFunc = wrapMergePropsFunc;
-exports.whenMergePropsIsFunction = whenMergePropsIsFunction;
-exports.whenMergePropsIsOmitted = whenMergePropsIsOmitted;
-exports["default"] = void 0;
-var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
-var _verifyPlainObject = _interopRequireDefault(require("../utils/verifyPlainObject"));
+},{"./wrapMapToProps":"cK0KG","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"j48TE":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "defaultMergeProps", ()=>defaultMergeProps
+);
+parcelHelpers.export(exports, "wrapMergePropsFunc", ()=>wrapMergePropsFunc
+);
+parcelHelpers.export(exports, "whenMergePropsIsFunction", ()=>whenMergePropsIsFunction
+);
+parcelHelpers.export(exports, "whenMergePropsIsOmitted", ()=>whenMergePropsIsOmitted
+);
+var _extends = require("@babel/runtime/helpers/esm/extends");
+var _extendsDefault = parcelHelpers.interopDefault(_extends);
+var _verifyPlainObject = require("../utils/verifyPlainObject");
+var _verifyPlainObjectDefault = parcelHelpers.interopDefault(_verifyPlainObject);
 function defaultMergeProps(stateProps, dispatchProps, ownProps) {
-    return _extends2["default"]({
+    return _extendsDefault.default({
     }, ownProps, stateProps, dispatchProps);
 }
 function wrapMergePropsFunc(mergeProps) {
@@ -23883,7 +23949,7 @@ function wrapMergePropsFunc(mergeProps) {
             } else {
                 hasRunOnce = true;
                 mergedProps = nextMergedProps;
-                _verifyPlainObject["default"](mergedProps, displayName, 'mergeProps');
+                _verifyPlainObjectDefault.default(mergedProps, displayName, 'mergeProps');
             }
             return mergedProps;
         };
@@ -23897,21 +23963,23 @@ function whenMergePropsIsOmitted(mergeProps) {
         return defaultMergeProps;
     } : undefined;
 }
-var _default = [
+exports.default = [
     whenMergePropsIsFunction,
     whenMergePropsIsOmitted
 ];
-exports["default"] = _default;
 
-},{"@babel/runtime/helpers/interopRequireDefault":"bvlQW","@babel/runtime/helpers/extends":"7L19l","../utils/verifyPlainObject":"2O1mj"}],"dWvbU":[function(require,module,exports) {
-"use strict";
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-exports.__esModule = true;
-exports.impureFinalPropsSelectorFactory = impureFinalPropsSelectorFactory;
-exports.pureFinalPropsSelectorFactory = pureFinalPropsSelectorFactory;
-exports["default"] = finalPropsSelectorFactory;
-var _objectWithoutPropertiesLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/objectWithoutPropertiesLoose"));
-var _verifySubselectors = _interopRequireDefault(require("./verifySubselectors"));
+},{"@babel/runtime/helpers/esm/extends":"bKAu6","../utils/verifyPlainObject":"8txK0","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"2XZ1a":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "impureFinalPropsSelectorFactory", ()=>impureFinalPropsSelectorFactory
+);
+parcelHelpers.export(exports, "pureFinalPropsSelectorFactory", ()=>pureFinalPropsSelectorFactory
+) // TODO: Add more comments
+;
+var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
+var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
+var _verifySubselectors = require("./verifySubselectors");
+var _verifySubselectorsDefault = parcelHelpers.interopDefault(_verifySubselectors);
 function impureFinalPropsSelectorFactory(mapStateToProps, mapDispatchToProps, mergeProps, dispatch) {
     return function impureFinalPropsSelector(state, ownProps) {
         return mergeProps(mapStateToProps(state, ownProps), mapDispatchToProps(dispatch, ownProps), ownProps);
@@ -23966,13 +24034,9 @@ function pureFinalPropsSelectorFactory(mapStateToProps, mapDispatchToProps, merg
     return function pureFinalPropsSelector(nextState, nextOwnProps) {
         return hasRunAtLeastOnce ? handleSubsequentCalls(nextState, nextOwnProps) : handleFirstCall(nextState, nextOwnProps);
     };
-} // TODO: Add more comments
-// If pure is true, the selector returned by selectorFactory will memoize its results,
-// allowing connectAdvanced's shouldComponentUpdate to return false if final
-// props have not changed. If false, the selector will always return a new
-// object and shouldComponentUpdate will always return true.
+}
 function finalPropsSelectorFactory(dispatch, _ref2) {
-    var initMapStateToProps = _ref2.initMapStateToProps, initMapDispatchToProps = _ref2.initMapDispatchToProps, initMergeProps = _ref2.initMergeProps, options = _objectWithoutPropertiesLoose2["default"](_ref2, [
+    var initMapStateToProps = _ref2.initMapStateToProps, initMapDispatchToProps = _ref2.initMapDispatchToProps, initMergeProps = _ref2.initMergeProps, options = _objectWithoutPropertiesLooseDefault.default(_ref2, [
         "initMapStateToProps",
         "initMapDispatchToProps",
         "initMergeProps"
@@ -23980,21 +24044,21 @@ function finalPropsSelectorFactory(dispatch, _ref2) {
     var mapStateToProps = initMapStateToProps(dispatch, options);
     var mapDispatchToProps = initMapDispatchToProps(dispatch, options);
     var mergeProps = initMergeProps(dispatch, options);
-    _verifySubselectors["default"](mapStateToProps, mapDispatchToProps, mergeProps, options.displayName);
+    _verifySubselectorsDefault.default(mapStateToProps, mapDispatchToProps, mergeProps, options.displayName);
     var selectorFactory = options.pure ? pureFinalPropsSelectorFactory : impureFinalPropsSelectorFactory;
     return selectorFactory(mapStateToProps, mapDispatchToProps, mergeProps, dispatch, options);
 }
+exports.default = finalPropsSelectorFactory;
 
-},{"@babel/runtime/helpers/interopRequireDefault":"bvlQW","@babel/runtime/helpers/objectWithoutPropertiesLoose":"1r4Gr","./verifySubselectors":"4LQvt"}],"4LQvt":[function(require,module,exports) {
-"use strict";
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-exports.__esModule = true;
-exports["default"] = verifySubselectors;
-var _warning = _interopRequireDefault(require("../utils/warning"));
+},{"@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"3Rubg","./verifySubselectors":"lInRo","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"lInRo":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _warning = require("../utils/warning");
+var _warningDefault = parcelHelpers.interopDefault(_warning);
 function verify(selector, methodName, displayName) {
     if (!selector) throw new Error("Unexpected value for " + methodName + " in " + displayName + ".");
     else if (methodName === 'mapStateToProps' || methodName === 'mapDispatchToProps') {
-        if (!Object.prototype.hasOwnProperty.call(selector, 'dependsOnOwnProps')) _warning["default"]("The selector for " + methodName + " of " + displayName + " did not specify a value for dependsOnOwnProps.");
+        if (!Object.prototype.hasOwnProperty.call(selector, 'dependsOnOwnProps')) _warningDefault.default("The selector for " + methodName + " of " + displayName + " did not specify a value for dependsOnOwnProps.");
     }
 }
 function verifySubselectors(mapStateToProps, mapDispatchToProps, mergeProps, displayName) {
@@ -24002,96 +24066,62 @@ function verifySubselectors(mapStateToProps, mapDispatchToProps, mergeProps, dis
     verify(mapDispatchToProps, 'mapDispatchToProps', displayName);
     verify(mergeProps, 'mergeProps', displayName);
 }
+exports.default = verifySubselectors;
 
-},{"@babel/runtime/helpers/interopRequireDefault":"bvlQW","../utils/warning":"98yYm"}],"cAWgm":[function(require,module,exports) {
-"use strict";
-exports.__esModule = true;
-exports.createDispatchHook = createDispatchHook;
-exports.useDispatch = void 0;
-var _Context = require("../components/Context");
-var _useStore = require("./useStore");
+},{"../utils/warning":"fl0jd","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"2CDvn":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
 /**
  * Hook factory, which creates a `useDispatch` hook bound to a given context.
  *
  * @param {React.Context} [context=ReactReduxContext] Context passed to your `<Provider>`.
  * @returns {Function} A `useDispatch` hook bound to the specified context.
- */ function createDispatchHook(context) {
-    if (context === void 0) context = _Context.ReactReduxContext;
-    var useStore = context === _Context.ReactReduxContext ? _useStore.useStore : _useStore.createStoreHook(context);
+ */ parcelHelpers.export(exports, "createDispatchHook", ()=>createDispatchHook
+);
+parcelHelpers.export(exports, "useDispatch", ()=>useDispatch
+);
+var _context = require("../components/Context");
+var _useStore = require("./useStore");
+function createDispatchHook(context) {
+    if (context === void 0) context = _context.ReactReduxContext;
+    var useStore = context === _context.ReactReduxContext ? _useStore.useStore : _useStore.createStoreHook(context);
     return function useDispatch() {
         var store = useStore();
         return store.dispatch;
     };
 }
-/**
- * A hook to access the redux `dispatch` function.
- *
- * @returns {any|function} redux store's `dispatch` function
- *
- * @example
- *
- * import React, { useCallback } from 'react'
- * import { useDispatch } from 'react-redux'
- *
- * export const CounterComponent = ({ value }) => {
- *   const dispatch = useDispatch()
- *   const increaseCounter = useCallback(() => dispatch({ type: 'increase-counter' }), [])
- *   return (
- *     <div>
- *       <span>{value}</span>
- *       <button onClick={increaseCounter}>Increase counter</button>
- *     </div>
- *   )
- * }
- */ var useDispatch = /*#__PURE__*/ createDispatchHook();
-exports.useDispatch = useDispatch;
+var useDispatch = /*#__PURE__*/ createDispatchHook();
 
-},{"../components/Context":"h4Jv2","./useStore":"betkh"}],"betkh":[function(require,module,exports) {
-"use strict";
-exports.__esModule = true;
-exports.createStoreHook = createStoreHook;
-exports.useStore = void 0;
-var _react = require("react");
-var _Context = require("../components/Context");
-var _useReduxContext2 = require("./useReduxContext");
+},{"../components/Context":"gT1Jg","./useStore":"fDPAT","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"fDPAT":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
 /**
  * Hook factory, which creates a `useStore` hook bound to a given context.
  *
  * @param {React.Context} [context=ReactReduxContext] Context passed to your `<Provider>`.
  * @returns {Function} A `useStore` hook bound to the specified context.
- */ function createStoreHook(context) {
-    if (context === void 0) context = _Context.ReactReduxContext;
-    var useReduxContext = context === _Context.ReactReduxContext ? _useReduxContext2.useReduxContext : function() {
+ */ parcelHelpers.export(exports, "createStoreHook", ()=>createStoreHook
+);
+parcelHelpers.export(exports, "useStore", ()=>useStore
+);
+var _react = require("react");
+var _context = require("../components/Context");
+var _useReduxContext = require("./useReduxContext");
+function createStoreHook(context) {
+    if (context === void 0) context = _context.ReactReduxContext;
+    var useReduxContext = context === _context.ReactReduxContext ? _useReduxContext.useReduxContext : function() {
         return _react.useContext(context);
     };
     return function useStore() {
-        var _useReduxContext = useReduxContext(), store = _useReduxContext.store;
+        var _useReduxContext1 = useReduxContext(), store = _useReduxContext1.store;
         return store;
     };
 }
-/**
- * A hook to access the redux store.
- *
- * @returns {any} the redux store
- *
- * @example
- *
- * import React from 'react'
- * import { useStore } from 'react-redux'
- *
- * export const ExampleComponent = () => {
- *   const store = useStore()
- *   return <div>{store.getState()}</div>
- * }
- */ var useStore = /*#__PURE__*/ createStoreHook();
-exports.useStore = useStore;
+var useStore = /*#__PURE__*/ createStoreHook();
 
-},{"react":"juP7B","../components/Context":"h4Jv2","./useReduxContext":"eJREt"}],"eJREt":[function(require,module,exports) {
-"use strict";
-exports.__esModule = true;
-exports.useReduxContext = useReduxContext;
-var _react = require("react");
-var _Context = require("../components/Context");
+},{"react":"6TuXu","../components/Context":"gT1Jg","./useReduxContext":"516XC","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"516XC":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
 /**
  * A hook to access the value of the `ReactReduxContext`. This is a low-level
  * hook that you should usually not need to call directly.
@@ -24107,23 +24137,34 @@ var _Context = require("../components/Context");
  *   const { store } = useReduxContext()
  *   return <div>{store.getState()}</div>
  * }
- */ function useReduxContext() {
-    var contextValue = _react.useContext(_Context.ReactReduxContext);
+ */ parcelHelpers.export(exports, "useReduxContext", ()=>useReduxContext
+);
+var _react = require("react");
+var _context = require("../components/Context");
+function useReduxContext() {
+    var contextValue = _react.useContext(_context.ReactReduxContext);
     if (!contextValue) throw new Error('could not find react-redux context value; please ensure the component is wrapped in a <Provider>');
     return contextValue;
 }
 
-},{"react":"juP7B","../components/Context":"h4Jv2"}],"aDm2n":[function(require,module,exports) {
-"use strict";
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-exports.__esModule = true;
-exports.createSelectorHook = createSelectorHook;
-exports.useSelector = void 0;
+},{"react":"6TuXu","../components/Context":"gT1Jg","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"27k1i":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+/**
+ * Hook factory, which creates a `useSelector` hook bound to a given context.
+ *
+ * @param {React.Context} [context=ReactReduxContext] Context passed to your `<Provider>`.
+ * @returns {Function} A `useSelector` hook bound to the specified context.
+ */ parcelHelpers.export(exports, "createSelectorHook", ()=>createSelectorHook
+);
+parcelHelpers.export(exports, "useSelector", ()=>useSelector
+);
 var _react = require("react");
-var _useReduxContext2 = require("./useReduxContext");
-var _Subscription = _interopRequireDefault(require("../utils/Subscription"));
+var _useReduxContext = require("./useReduxContext");
+var _subscription = require("../utils/Subscription");
+var _subscriptionDefault = parcelHelpers.interopDefault(_subscription);
 var _useIsomorphicLayoutEffect = require("../utils/useIsomorphicLayoutEffect");
-var _Context = require("../components/Context");
+var _context = require("../components/Context");
 var refEquality = function refEquality1(a, b) {
     return a === b;
 };
@@ -24132,7 +24173,7 @@ function useSelectorWithStoreAndSubscription(selector, equalityFn, store, contex
         return s + 1;
     }, 0), forceRender = _useReducer[1];
     var subscription = _react.useMemo(function() {
-        return new _Subscription["default"](store, contextSub);
+        return new _subscriptionDefault.default(store, contextSub);
     }, [
         store,
         contextSub
@@ -24188,14 +24229,9 @@ function useSelectorWithStoreAndSubscription(selector, equalityFn, store, contex
     ]);
     return selectedState;
 }
-/**
- * Hook factory, which creates a `useSelector` hook bound to a given context.
- *
- * @param {React.Context} [context=ReactReduxContext] Context passed to your `<Provider>`.
- * @returns {Function} A `useSelector` hook bound to the specified context.
- */ function createSelectorHook(context) {
-    if (context === void 0) context = _Context.ReactReduxContext;
-    var useReduxContext = context === _Context.ReactReduxContext ? _useReduxContext2.useReduxContext : function() {
+function createSelectorHook(context) {
+    if (context === void 0) context = _context.ReactReduxContext;
+    var useReduxContext = context === _context.ReactReduxContext ? _useReduxContext.useReduxContext : function() {
         return _react.useContext(context);
     };
     return function useSelector(selector, equalityFn) {
@@ -24203,45 +24239,22 @@ function useSelectorWithStoreAndSubscription(selector, equalityFn, store, contex
         if (!selector) throw new Error("You must pass a selector to useSelector");
         if (typeof selector !== 'function') throw new Error("You must pass a function as a selector to useSelector");
         if (typeof equalityFn !== 'function') throw new Error("You must pass a function as an equality function to useSelector");
-        var _useReduxContext = useReduxContext(), store = _useReduxContext.store, contextSub = _useReduxContext.subscription;
+        var _useReduxContext1 = useReduxContext(), store = _useReduxContext1.store, contextSub = _useReduxContext1.subscription;
         var selectedState = useSelectorWithStoreAndSubscription(selector, equalityFn, store, contextSub);
         _react.useDebugValue(selectedState);
         return selectedState;
     };
 }
-/**
- * A hook to access the redux store's state. This hook takes a selector function
- * as an argument. The selector is called with the store state.
- *
- * This hook takes an optional equality comparison function as the second parameter
- * that allows you to customize the way the selected state is compared to determine
- * whether the component needs to be re-rendered.
- *
- * @param {Function} selector the selector function
- * @param {Function=} equalityFn the function that will be used to determine equality
- *
- * @returns {any} the selected state
- *
- * @example
- *
- * import React from 'react'
- * import { useSelector } from 'react-redux'
- *
- * export const CounterComponent = () => {
- *   const counter = useSelector(state => state.counter)
- *   return <div>{counter}</div>
- * }
- */ var useSelector = /*#__PURE__*/ createSelectorHook();
-exports.useSelector = useSelector;
+var useSelector = /*#__PURE__*/ createSelectorHook();
 
-},{"@babel/runtime/helpers/interopRequireDefault":"bvlQW","react":"juP7B","./useReduxContext":"eJREt","../utils/Subscription":"6xrs7","../utils/useIsomorphicLayoutEffect":"c7HGb","../components/Context":"h4Jv2"}],"gQAq2":[function(require,module,exports) {
-"use strict";
-exports.__esModule = true;
-exports.unstable_batchedUpdates = void 0;
+},{"react":"6TuXu","./useReduxContext":"516XC","../utils/Subscription":"6rtcC","../utils/useIsomorphicLayoutEffect":"2TWoQ","../components/Context":"gT1Jg","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"kaP8a":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+/* eslint-disable import/no-unresolved */ parcelHelpers.export(exports, "unstable_batchedUpdates", ()=>_reactDom.unstable_batchedUpdates
+);
 var _reactDom = require("react-dom");
-exports.unstable_batchedUpdates = _reactDom.unstable_batchedUpdates;
 
-},{"react-dom":"4Xkib"}],"decTA":[function(require,module,exports) {
+},{"react-dom":"gkWJK","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"aXFLK":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "store", ()=>store
@@ -24255,18 +24268,23 @@ var _reducersDefault = parcelHelpers.interopDefault(_reducers);
 const loggerMiddleware = _reduxLogger.createLogger();
 const store = _redux.createStore(_reducersDefault.default, _redux.applyMiddleware(_reduxThunkDefault.default, loggerMiddleware));
 
-},{"redux":"9BEkO","redux-thunk":"lHyzw","redux-logger":"7bSsF","../_reducers":"jrxo9","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN"}],"9BEkO":[function(require,module,exports) {
-'use strict';
-Object.defineProperty(exports, '__esModule', {
-    value: true
-});
-var _objectSpread = require('@babel/runtime/helpers/objectSpread2');
-function _interopDefaultLegacy(e) {
-    return e && typeof e === 'object' && 'default' in e ? e : {
-        'default': e
-    };
-}
-var _objectSpread__default = /*#__PURE__*/ _interopDefaultLegacy(_objectSpread);
+},{"redux":"4d0QS","redux-thunk":"7lPYg","redux-logger":"7p0uN","../_reducers":"2VPDs","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"4d0QS":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "__DO_NOT_USE__ActionTypes", ()=>ActionTypes
+);
+parcelHelpers.export(exports, "applyMiddleware", ()=>applyMiddleware
+);
+parcelHelpers.export(exports, "bindActionCreators", ()=>bindActionCreators
+);
+parcelHelpers.export(exports, "combineReducers", ()=>combineReducers
+);
+parcelHelpers.export(exports, "compose", ()=>compose
+);
+parcelHelpers.export(exports, "createStore", ()=>createStore
+);
+var _objectSpread2 = require("@babel/runtime/helpers/esm/objectSpread2");
+var _objectSpread2Default = parcelHelpers.interopDefault(_objectSpread2);
 /**
  * Adapted from React: https://github.com/facebook/react/blob/master/packages/shared/formatProdErrorMessage.js
  *
@@ -24304,49 +24322,47 @@ var ActionTypes = {
     while(Object.getPrototypeOf(proto) !== null)proto = Object.getPrototypeOf(proto);
     return Object.getPrototypeOf(obj) === proto;
 }
+// Inlined / shortened version of `kindOf` from https://github.com/jonschlinkert/kind-of
+function miniKindOf(val) {
+    if (val === void 0) return 'undefined';
+    if (val === null) return 'null';
+    var type = typeof val;
+    switch(type){
+        case 'boolean':
+        case 'string':
+        case 'number':
+        case 'symbol':
+        case 'function':
+            return type;
+    }
+    if (Array.isArray(val)) return 'array';
+    if (isDate(val)) return 'date';
+    if (isError(val)) return 'error';
+    var constructorName = ctorName(val);
+    switch(constructorName){
+        case 'Symbol':
+        case 'Promise':
+        case 'WeakMap':
+        case 'WeakSet':
+        case 'Map':
+        case 'Set':
+            return constructorName;
+    } // other
+    return type.slice(8, -1).toLowerCase().replace(/\s/g, '');
+}
+function ctorName(val) {
+    return typeof val.constructor === 'function' ? val.constructor.name : null;
+}
+function isError(val) {
+    return val instanceof Error || typeof val.message === 'string' && val.constructor && typeof val.constructor.stackTraceLimit === 'number';
+}
+function isDate(val) {
+    if (val instanceof Date) return true;
+    return typeof val.toDateString === 'function' && typeof val.getDate === 'function' && typeof val.setDate === 'function';
+}
 function kindOf(val) {
     var typeOfVal = typeof val;
-    {
-        // Inlined / shortened version of `kindOf` from https://github.com/jonschlinkert/kind-of
-        function miniKindOf(val1) {
-            if (val1 === void 0) return 'undefined';
-            if (val1 === null) return 'null';
-            var type = typeof val1;
-            switch(type){
-                case 'boolean':
-                case 'string':
-                case 'number':
-                case 'symbol':
-                case 'function':
-                    return type;
-            }
-            if (Array.isArray(val1)) return 'array';
-            if (isDate(val1)) return 'date';
-            if (isError(val1)) return 'error';
-            var constructorName = ctorName(val1);
-            switch(constructorName){
-                case 'Symbol':
-                case 'Promise':
-                case 'WeakMap':
-                case 'WeakSet':
-                case 'Map':
-                case 'Set':
-                    return constructorName;
-            } // other
-            return type.slice(8, -1).toLowerCase().replace(/\s/g, '');
-        }
-        function ctorName(val1) {
-            return typeof val1.constructor === 'function' ? val1.constructor.name : null;
-        }
-        function isError(val1) {
-            return val1 instanceof Error || typeof val1.message === 'string' && val1.constructor && typeof val1.constructor.stackTraceLimit === 'number';
-        }
-        function isDate(val1) {
-            if (val1 instanceof Date) return true;
-            return typeof val1.toDateString === 'function' && typeof val1.getDate === 'function' && typeof val1.setDate === 'function';
-        }
-        typeOfVal = miniKindOf(val);
-    }
+    typeOfVal = miniKindOf(val);
     return typeOfVal;
 }
 /**
@@ -24739,7 +24755,7 @@ function bindActionCreator(actionCreator, dispatch) {
                 return middleware(middlewareAPI);
             });
             _dispatch = compose.apply(void 0, chain)(store.dispatch);
-            return _objectSpread__default['default'](_objectSpread__default['default']({
+            return _objectSpread2Default.default(_objectSpread2Default.default({
             }, store), {
             }, {
                 dispatch: _dispatch
@@ -24753,15 +24769,12 @@ function bindActionCreator(actionCreator, dispatch) {
  */ function isCrushed() {
 }
 if (typeof isCrushed.name === 'string' && isCrushed.name !== 'isCrushed') warning("You are currently using minified code outside of NODE_ENV === \"production\". This means that you are running a slower development build of Redux. You can use loose-envify (https://github.com/zertosh/loose-envify) for browserify or setting mode to production in webpack (https://webpack.js.org/concepts/mode/) to ensure you have the correct code for your production build.");
-exports.__DO_NOT_USE__ActionTypes = ActionTypes;
-exports.applyMiddleware = applyMiddleware;
-exports.bindActionCreators = bindActionCreators;
-exports.combineReducers = combineReducers;
-exports.compose = compose;
-exports.createStore = createStore;
 
-},{"@babel/runtime/helpers/objectSpread2":"cCs1X"}],"cCs1X":[function(require,module,exports) {
-var defineProperty = require("./defineProperty.js");
+},{"@babel/runtime/helpers/esm/objectSpread2":"bSD1u","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"bSD1u":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _definePropertyJs = require("./defineProperty.js");
+var _definePropertyJsDefault = parcelHelpers.interopDefault(_definePropertyJs);
 function ownKeys(object, enumerableOnly) {
     var keys = Object.keys(object);
     if (Object.getOwnPropertySymbols) {
@@ -24778,7 +24791,7 @@ function _objectSpread2(target) {
         var source = arguments[i] != null ? arguments[i] : {
         };
         if (i % 2) ownKeys(Object(source), true).forEach(function(key) {
-            defineProperty(target, key, source[key]);
+            _definePropertyJsDefault.default(target, key, source[key]);
         });
         else if (Object.getOwnPropertyDescriptors) Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
         else ownKeys(Object(source)).forEach(function(key) {
@@ -24787,10 +24800,11 @@ function _objectSpread2(target) {
     }
     return target;
 }
-module.exports = _objectSpread2;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
+exports.default = _objectSpread2;
 
-},{"./defineProperty.js":"ebDJk"}],"ebDJk":[function(require,module,exports) {
+},{"./defineProperty.js":"7s3FO","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"7s3FO":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
 function _defineProperty(obj, key, value) {
     if (key in obj) Object.defineProperty(obj, key, {
         value: value,
@@ -24801,12 +24815,11 @@ function _defineProperty(obj, key, value) {
     else obj[key] = value;
     return obj;
 }
-module.exports = _defineProperty;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
+exports.default = _defineProperty;
 
-},{}],"lHyzw":[function(require,module,exports) {
-'use strict';
-exports.__esModule = true;
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"7lPYg":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
 function createThunkMiddleware(extraArgument) {
     return function(_ref) {
         var dispatch = _ref.dispatch, getState = _ref.getState;
@@ -24820,9 +24833,9 @@ function createThunkMiddleware(extraArgument) {
 }
 var thunk = createThunkMiddleware();
 thunk.withExtraArgument = createThunkMiddleware;
-exports['default'] = thunk;
+exports.default = thunk;
 
-},{}],"7bSsF":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"7p0uN":[function(require,module,exports) {
 var global = arguments[3];
 !function(e, t) {
     "object" == typeof exports && "undefined" != typeof module ? t(exports) : "function" == typeof define && define.amd ? define([
@@ -25347,7 +25360,7 @@ var global = arguments[3];
     });
 });
 
-},{}],"jrxo9":[function(require,module,exports) {
+},{}],"2VPDs":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _redux = require("redux");
@@ -25357,39 +25370,7 @@ const rootReducer = _redux.combineReducers({
 });
 exports.default = rootReducer;
 
-},{"redux":"9BEkO","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN","./ui.reducer":"5RZjN"}],"kcMTN":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, '__esModule', {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === 'default' || key === '__esModule') return;
-        // Skip duplicate re-exports when they have the same value.
-        if (key in dest && dest[key] === source[key]) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
-};
-
-},{}],"5RZjN":[function(require,module,exports) {
+},{"redux":"4d0QS","./ui.reducer":"aQ8DJ","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"aQ8DJ":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "userInterface", ()=>userInterface
@@ -25402,13 +25383,13 @@ function userInterface(state = {
     return state;
 }
 
-},{"../_constants":"67H7p","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN"}],"67H7p":[function(require,module,exports) {
+},{"../_constants":"kS749","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"kS749":[function(require,module,exports) {
 
-},{}],"lfJJs":[function(require,module,exports) {
-var helpers = require("../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{}],"8xI7B":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$baaf = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
-helpers.prelude(module);
+$parcel$ReactRefreshHelpers$baaf.prelude(module);
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -25435,144 +25416,155 @@ exports.default = App;
 var _c;
 $RefreshReg$(_c, "App");
 
-  helpers.postlude(module);
+  $parcel$ReactRefreshHelpers$baaf.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"juP7B","react-router-dom":"9MXpQ","./homepage":"lhcDM","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN","../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6e8vO","styled-components":"gqYCY","./global":"8illH","./theme":"3nQyE"}],"9MXpQ":[function(require,module,exports) {
-"use strict";
-module.exports = require("./cjs/react-router-dom.js");
-
-},{"./cjs/react-router-dom.js":"4xfBD"}],"4xfBD":[function(require,module,exports) {
-'use strict';
-function _interopDefault(ex) {
-    return ex && typeof ex === 'object' && 'default' in ex ? ex['default'] : ex;
-}
-var reactRouter = require('react-router');
-var React = _interopDefault(require('react'));
-var history = require('history');
-var PropTypes = _interopDefault(require('prop-types'));
-var warning = _interopDefault(require('tiny-warning'));
-var invariant = _interopDefault(require('tiny-invariant'));
-function _extends() {
-    _extends = Object.assign || function(target) {
-        for(var i = 1; i < arguments.length; i++){
-            var source = arguments[i];
-            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
-        }
-        return target;
-    };
-    return _extends.apply(this, arguments);
-}
-function _inheritsLoose(subClass, superClass) {
-    subClass.prototype = Object.create(superClass.prototype);
-    subClass.prototype.constructor = subClass;
-    subClass.__proto__ = superClass;
-}
-function _objectWithoutPropertiesLoose(source, excluded) {
-    if (source == null) return {
-    };
-    var target = {
-    };
-    var sourceKeys = Object.keys(source);
-    var key, i;
-    for(i = 0; i < sourceKeys.length; i++){
-        key = sourceKeys[i];
-        if (excluded.indexOf(key) >= 0) continue;
-        target[key] = source[key];
-    }
-    return target;
-}
+},{"react":"6TuXu","react-router-dom":"cpyQW","./homepage":"gS8U6","styled-components":"gkt6C","./global":"eQeeq","./theme":"jQC7B","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"cpyQW":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "MemoryRouter", ()=>_reactRouter.MemoryRouter
+);
+parcelHelpers.export(exports, "Prompt", ()=>_reactRouter.Prompt
+);
+parcelHelpers.export(exports, "Redirect", ()=>_reactRouter.Redirect
+);
+parcelHelpers.export(exports, "Route", ()=>_reactRouter.Route
+);
+parcelHelpers.export(exports, "Router", ()=>_reactRouter.Router
+);
+parcelHelpers.export(exports, "StaticRouter", ()=>_reactRouter.StaticRouter
+);
+parcelHelpers.export(exports, "Switch", ()=>_reactRouter.Switch
+);
+parcelHelpers.export(exports, "generatePath", ()=>_reactRouter.generatePath
+);
+parcelHelpers.export(exports, "matchPath", ()=>_reactRouter.matchPath
+);
+parcelHelpers.export(exports, "useHistory", ()=>_reactRouter.useHistory
+);
+parcelHelpers.export(exports, "useLocation", ()=>_reactRouter.useLocation
+);
+parcelHelpers.export(exports, "useParams", ()=>_reactRouter.useParams
+);
+parcelHelpers.export(exports, "useRouteMatch", ()=>_reactRouter.useRouteMatch
+);
+parcelHelpers.export(exports, "withRouter", ()=>_reactRouter.withRouter
+);
+parcelHelpers.export(exports, "BrowserRouter", ()=>BrowserRouter1
+);
+parcelHelpers.export(exports, "HashRouter", ()=>HashRouter1
+);
+parcelHelpers.export(exports, "Link", ()=>Link
+);
+parcelHelpers.export(exports, "NavLink", ()=>NavLink
+);
+var _reactRouter = require("react-router");
+var _inheritsLoose = require("@babel/runtime/helpers/esm/inheritsLoose");
+var _inheritsLooseDefault = parcelHelpers.interopDefault(_inheritsLoose);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _history = require("history");
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _tinyWarning = require("tiny-warning");
+var _tinyWarningDefault = parcelHelpers.interopDefault(_tinyWarning);
+var _extends = require("@babel/runtime/helpers/esm/extends");
+var _extendsDefault = parcelHelpers.interopDefault(_extends);
+var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
+var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
+var _tinyInvariant = require("tiny-invariant");
+var _tinyInvariantDefault = parcelHelpers.interopDefault(_tinyInvariant);
 /**
  * The public API for a <Router> that uses HTML5 history.
  */ var BrowserRouter1 = /*#__PURE__*/ function(_React$Component) {
-    _inheritsLoose(BrowserRouter2, _React$Component);
+    _inheritsLooseDefault.default(BrowserRouter2, _React$Component);
     function BrowserRouter2() {
         var _this;
         for(var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++)args[_key] = arguments[_key];
         _this = _React$Component.call.apply(_React$Component, [
             this
         ].concat(args)) || this;
-        _this.history = history.createBrowserHistory(_this.props);
+        _this.history = _history.createBrowserHistory(_this.props);
         return _this;
     }
     var _proto = BrowserRouter2.prototype;
     _proto.render = function render() {
-        return React.createElement(reactRouter.Router, {
+        return(/*#__PURE__*/ _reactDefault.default.createElement(_reactRouter.Router, {
             history: this.history,
             children: this.props.children
-        });
+        }));
     };
     return BrowserRouter2;
-}(React.Component);
+}(_reactDefault.default.Component);
 BrowserRouter1.propTypes = {
-    basename: PropTypes.string,
-    children: PropTypes.node,
-    forceRefresh: PropTypes.bool,
-    getUserConfirmation: PropTypes.func,
-    keyLength: PropTypes.number
+    basename: _propTypesDefault.default.string,
+    children: _propTypesDefault.default.node,
+    forceRefresh: _propTypesDefault.default.bool,
+    getUserConfirmation: _propTypesDefault.default.func,
+    keyLength: _propTypesDefault.default.number
 };
 BrowserRouter1.prototype.componentDidMount = function() {
-    warning(!this.props.history, "<BrowserRouter> ignores the history prop. To use a custom history, use `import { Router }` instead of `import { BrowserRouter as Router }`.");
+    _tinyWarningDefault.default(!this.props.history, "<BrowserRouter> ignores the history prop. To use a custom history, use `import { Router }` instead of `import { BrowserRouter as Router }`.");
 };
 /**
  * The public API for a <Router> that uses window.location.hash.
  */ var HashRouter1 = /*#__PURE__*/ function(_React$Component) {
-    _inheritsLoose(HashRouter2, _React$Component);
+    _inheritsLooseDefault.default(HashRouter2, _React$Component);
     function HashRouter2() {
         var _this;
         for(var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++)args[_key] = arguments[_key];
         _this = _React$Component.call.apply(_React$Component, [
             this
         ].concat(args)) || this;
-        _this.history = history.createHashHistory(_this.props);
+        _this.history = _history.createHashHistory(_this.props);
         return _this;
     }
     var _proto = HashRouter2.prototype;
     _proto.render = function render() {
-        return React.createElement(reactRouter.Router, {
+        return(/*#__PURE__*/ _reactDefault.default.createElement(_reactRouter.Router, {
             history: this.history,
             children: this.props.children
-        });
+        }));
     };
     return HashRouter2;
-}(React.Component);
+}(_reactDefault.default.Component);
 HashRouter1.propTypes = {
-    basename: PropTypes.string,
-    children: PropTypes.node,
-    getUserConfirmation: PropTypes.func,
-    hashType: PropTypes.oneOf([
+    basename: _propTypesDefault.default.string,
+    children: _propTypesDefault.default.node,
+    getUserConfirmation: _propTypesDefault.default.func,
+    hashType: _propTypesDefault.default.oneOf([
         "hashbang",
         "noslash",
         "slash"
     ])
 };
 HashRouter1.prototype.componentDidMount = function() {
-    warning(!this.props.history, "<HashRouter> ignores the history prop. To use a custom history, use `import { Router }` instead of `import { HashRouter as Router }`.");
+    _tinyWarningDefault.default(!this.props.history, "<HashRouter> ignores the history prop. To use a custom history, use `import { Router }` instead of `import { HashRouter as Router }`.");
 };
 var resolveToLocation = function resolveToLocation1(to, currentLocation) {
     return typeof to === "function" ? to(currentLocation) : to;
 };
 var normalizeToLocation = function normalizeToLocation1(to, currentLocation) {
-    return typeof to === "string" ? history.createLocation(to, null, null, currentLocation) : to;
+    return typeof to === "string" ? _history.createLocation(to, null, null, currentLocation) : to;
 };
 var forwardRefShim = function forwardRefShim1(C) {
     return C;
 };
-var forwardRef = React.forwardRef;
+var forwardRef = _reactDefault.default.forwardRef;
 if (typeof forwardRef === "undefined") forwardRef = forwardRefShim;
 function isModifiedEvent(event) {
     return !!(event.metaKey || event.altKey || event.ctrlKey || event.shiftKey);
 }
 var LinkAnchor = forwardRef(function(_ref, forwardedRef) {
-    var innerRef = _ref.innerRef, navigate = _ref.navigate, _onClick = _ref.onClick, rest = _objectWithoutPropertiesLoose(_ref, [
+    var innerRef = _ref.innerRef, navigate = _ref.navigate, _onClick = _ref.onClick, rest = _objectWithoutPropertiesLooseDefault.default(_ref, [
         "innerRef",
         "navigate",
         "onClick"
     ]);
     var target = rest.target;
-    var props = _extends({
+    var props = _extendsDefault.default({
     }, rest, {
         onClick: function onClick(event) {
             try {
@@ -25581,7 +25573,8 @@ var LinkAnchor = forwardRef(function(_ref, forwardedRef) {
                 event.preventDefault();
                 throw ex;
             }
-            if (!event.defaultPrevented && event.button === 0 && (!target || target === "_self") && !isModifiedEvent(event)) {
+            if (!event.defaultPrevented && event.button === 0 && (!target || target === "_self") && !isModifiedEvent(event) // ignore clicks with modifier keys
+            ) {
                 event.preventDefault();
                 navigate();
             }
@@ -25589,61 +25582,62 @@ var LinkAnchor = forwardRef(function(_ref, forwardedRef) {
     }); // React 15 compat
     if (forwardRefShim !== forwardRef) props.ref = forwardedRef || innerRef;
     else props.ref = innerRef;
-    /* eslint-disable-next-line jsx-a11y/anchor-has-content */ return React.createElement("a", props);
+    /* eslint-disable-next-line jsx-a11y/anchor-has-content */ return(/*#__PURE__*/ _reactDefault.default.createElement("a", props));
 });
 LinkAnchor.displayName = "LinkAnchor";
 /**
  * The public API for rendering a history-aware <a>.
  */ var Link = forwardRef(function(_ref2, forwardedRef) {
-    var _ref2$component = _ref2.component, component = _ref2$component === void 0 ? LinkAnchor : _ref2$component, replace = _ref2.replace, to = _ref2.to, innerRef = _ref2.innerRef, rest = _objectWithoutPropertiesLoose(_ref2, [
+    var _ref2$component = _ref2.component, component = _ref2$component === void 0 ? LinkAnchor : _ref2$component, replace = _ref2.replace, to = _ref2.to, innerRef = _ref2.innerRef, rest = _objectWithoutPropertiesLooseDefault.default(_ref2, [
         "component",
         "replace",
         "to",
         "innerRef"
     ]);
-    return React.createElement(reactRouter.__RouterContext.Consumer, null, function(context) {
-        !context && invariant(false, "You should not use <Link> outside a <Router>");
-        var history1 = context.history;
+    return(/*#__PURE__*/ _reactDefault.default.createElement(_reactRouter.__RouterContext.Consumer, null, function(context) {
+        !context && _tinyInvariantDefault.default(false, "You should not use <Link> outside a <Router>");
+        var history = context.history;
         var location = normalizeToLocation(resolveToLocation(to, context.location), context.location);
-        var href = location ? history1.createHref(location) : "";
-        var props = _extends({
+        var href = location ? history.createHref(location) : "";
+        var props = _extendsDefault.default({
         }, rest, {
             href: href,
             navigate: function navigate() {
                 var location1 = resolveToLocation(to, context.location);
-                var method = replace ? history1.replace : history1.push;
+                var isDuplicateNavigation = _history.createPath(context.location) === _history.createPath(normalizeToLocation(location1));
+                var method = replace || isDuplicateNavigation ? history.replace : history.push;
                 method(location1);
             }
         }); // React 15 compat
         if (forwardRefShim !== forwardRef) props.ref = forwardedRef || innerRef;
         else props.innerRef = innerRef;
-        return React.createElement(component, props);
-    });
+        return(/*#__PURE__*/ _reactDefault.default.createElement(component, props));
+    }));
 });
-var toType = PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.object,
-    PropTypes.func
+var toType = _propTypesDefault.default.oneOfType([
+    _propTypesDefault.default.string,
+    _propTypesDefault.default.object,
+    _propTypesDefault.default.func
 ]);
-var refType = PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.func,
-    PropTypes.shape({
-        current: PropTypes.any
+var refType = _propTypesDefault.default.oneOfType([
+    _propTypesDefault.default.string,
+    _propTypesDefault.default.func,
+    _propTypesDefault.default.shape({
+        current: _propTypesDefault.default.any
     })
 ]);
 Link.displayName = "Link";
 Link.propTypes = {
     innerRef: refType,
-    onClick: PropTypes.func,
-    replace: PropTypes.bool,
-    target: PropTypes.string,
+    onClick: _propTypesDefault.default.func,
+    replace: _propTypesDefault.default.bool,
+    target: _propTypesDefault.default.string,
     to: toType.isRequired
 };
 var forwardRefShim$1 = function forwardRefShim2(C) {
     return C;
 };
-var forwardRef$1 = React.forwardRef;
+var forwardRef$1 = _reactDefault.default.forwardRef;
 if (typeof forwardRef$1 === "undefined") forwardRef$1 = forwardRefShim$1;
 function joinClassnames() {
     for(var _len = arguments.length, classnames = new Array(_len), _key = 0; _key < _len; _key++)classnames[_key] = arguments[_key];
@@ -25654,7 +25648,7 @@ function joinClassnames() {
 /**
  * A <Link> wrapper that knows if it's "active" or not.
  */ var NavLink = forwardRef$1(function(_ref, forwardedRef) {
-    var _ref$ariaCurrent = _ref["aria-current"], ariaCurrent = _ref$ariaCurrent === void 0 ? "page" : _ref$ariaCurrent, _ref$activeClassName = _ref.activeClassName, activeClassName = _ref$activeClassName === void 0 ? "active" : _ref$activeClassName, activeStyle = _ref.activeStyle, classNameProp = _ref.className, exact = _ref.exact, isActiveProp = _ref.isActive, locationProp = _ref.location, sensitive = _ref.sensitive, strict = _ref.strict, styleProp = _ref.style, to = _ref.to, innerRef = _ref.innerRef, rest = _objectWithoutPropertiesLoose(_ref, [
+    var _ref$ariaCurrent = _ref["aria-current"], ariaCurrent = _ref$ariaCurrent === void 0 ? "page" : _ref$ariaCurrent, _ref$activeClassName = _ref.activeClassName, activeClassName = _ref$activeClassName === void 0 ? "active" : _ref$activeClassName, activeStyle = _ref.activeStyle, classNameProp = _ref.className, exact = _ref.exact, isActiveProp = _ref.isActive, locationProp = _ref.location, sensitive = _ref.sensitive, strict = _ref.strict, styleProp = _ref.style, to = _ref.to, innerRef = _ref.innerRef, rest = _objectWithoutPropertiesLooseDefault.default(_ref, [
         "aria-current",
         "activeClassName",
         "activeStyle",
@@ -25668,24 +25662,27 @@ function joinClassnames() {
         "to",
         "innerRef"
     ]);
-    return React.createElement(reactRouter.__RouterContext.Consumer, null, function(context) {
-        !context && invariant(false, "You should not use <NavLink> outside a <Router>");
+    return(/*#__PURE__*/ _reactDefault.default.createElement(_reactRouter.__RouterContext.Consumer, null, function(context) {
+        !context && _tinyInvariantDefault.default(false, "You should not use <NavLink> outside a <Router>");
         var currentLocation = locationProp || context.location;
         var toLocation = normalizeToLocation(resolveToLocation(to, currentLocation), currentLocation);
         var path = toLocation.pathname; // Regex taken from: https://github.com/pillarjs/path-to-regexp/blob/master/index.js#L202
         var escapedPath = path && path.replace(/([.+*?=^!:${}()[\]|/\\])/g, "\\$1");
-        var match = escapedPath ? reactRouter.matchPath(currentLocation.pathname, {
+        var match = escapedPath ? _reactRouter.matchPath(currentLocation.pathname, {
             path: escapedPath,
             exact: exact,
             sensitive: sensitive,
             strict: strict
         }) : null;
         var isActive = !!(isActiveProp ? isActiveProp(match, currentLocation) : match);
-        var className = isActive ? joinClassnames(classNameProp, activeClassName) : classNameProp;
-        var style = isActive ? _extends({
-        }, styleProp, {
-        }, activeStyle) : styleProp;
-        var props = _extends({
+        var className = typeof classNameProp === "function" ? classNameProp(isActive) : classNameProp;
+        var style = typeof styleProp === "function" ? styleProp(isActive) : styleProp;
+        if (isActive) {
+            className = joinClassnames(className, activeClassName);
+            style = _extendsDefault.default({
+            }, style, activeStyle);
+        }
+        var props = _extendsDefault.default({
             "aria-current": isActive && ariaCurrent || null,
             className: className,
             style: style,
@@ -25693,185 +25690,108 @@ function joinClassnames() {
         }, rest); // React 15 compat
         if (forwardRefShim$1 !== forwardRef$1) props.ref = forwardedRef || innerRef;
         else props.innerRef = innerRef;
-        return React.createElement(Link, props);
-    });
+        return(/*#__PURE__*/ _reactDefault.default.createElement(Link, props));
+    }));
 });
 NavLink.displayName = "NavLink";
-var ariaCurrentType = PropTypes.oneOf([
+var ariaCurrentType = _propTypesDefault.default.oneOf([
     "page",
     "step",
     "location",
     "date",
     "time",
-    "true"
+    "true",
+    "false"
 ]);
-NavLink.propTypes = _extends({
+NavLink.propTypes = _extendsDefault.default({
 }, Link.propTypes, {
     "aria-current": ariaCurrentType,
-    activeClassName: PropTypes.string,
-    activeStyle: PropTypes.object,
-    className: PropTypes.string,
-    exact: PropTypes.bool,
-    isActive: PropTypes.func,
-    location: PropTypes.object,
-    sensitive: PropTypes.bool,
-    strict: PropTypes.bool,
-    style: PropTypes.object
+    activeClassName: _propTypesDefault.default.string,
+    activeStyle: _propTypesDefault.default.object,
+    className: _propTypesDefault.default.oneOfType([
+        _propTypesDefault.default.string,
+        _propTypesDefault.default.func
+    ]),
+    exact: _propTypesDefault.default.bool,
+    isActive: _propTypesDefault.default.func,
+    location: _propTypesDefault.default.object,
+    sensitive: _propTypesDefault.default.bool,
+    strict: _propTypesDefault.default.bool,
+    style: _propTypesDefault.default.oneOfType([
+        _propTypesDefault.default.object,
+        _propTypesDefault.default.func
+    ])
 });
-Object.defineProperty(exports, 'MemoryRouter', {
-    enumerable: true,
-    get: function() {
-        return reactRouter.MemoryRouter;
-    }
-});
-Object.defineProperty(exports, 'Prompt', {
-    enumerable: true,
-    get: function() {
-        return reactRouter.Prompt;
-    }
-});
-Object.defineProperty(exports, 'Redirect', {
-    enumerable: true,
-    get: function() {
-        return reactRouter.Redirect;
-    }
-});
-Object.defineProperty(exports, 'Route', {
-    enumerable: true,
-    get: function() {
-        return reactRouter.Route;
-    }
-});
-Object.defineProperty(exports, 'Router', {
-    enumerable: true,
-    get: function() {
-        return reactRouter.Router;
-    }
-});
-Object.defineProperty(exports, 'StaticRouter', {
-    enumerable: true,
-    get: function() {
-        return reactRouter.StaticRouter;
-    }
-});
-Object.defineProperty(exports, 'Switch', {
-    enumerable: true,
-    get: function() {
-        return reactRouter.Switch;
-    }
-});
-Object.defineProperty(exports, 'generatePath', {
-    enumerable: true,
-    get: function() {
-        return reactRouter.generatePath;
-    }
-});
-Object.defineProperty(exports, 'matchPath', {
-    enumerable: true,
-    get: function() {
-        return reactRouter.matchPath;
-    }
-});
-Object.defineProperty(exports, 'useHistory', {
-    enumerable: true,
-    get: function() {
-        return reactRouter.useHistory;
-    }
-});
-Object.defineProperty(exports, 'useLocation', {
-    enumerable: true,
-    get: function() {
-        return reactRouter.useLocation;
-    }
-});
-Object.defineProperty(exports, 'useParams', {
-    enumerable: true,
-    get: function() {
-        return reactRouter.useParams;
-    }
-});
-Object.defineProperty(exports, 'useRouteMatch', {
-    enumerable: true,
-    get: function() {
-        return reactRouter.useRouteMatch;
-    }
-});
-Object.defineProperty(exports, 'withRouter', {
-    enumerable: true,
-    get: function() {
-        return reactRouter.withRouter;
-    }
-});
-exports.BrowserRouter = BrowserRouter1;
-exports.HashRouter = HashRouter1;
-exports.Link = Link;
-exports.NavLink = NavLink;
 
-},{"react-router":"4j4uH","react":"juP7B","history":"k81xp","prop-types":"jEh18","tiny-warning":"cberx","tiny-invariant":"d4J4y"}],"4j4uH":[function(require,module,exports) {
-"use strict";
-module.exports = require("./cjs/react-router.js");
-
-},{"./cjs/react-router.js":"cg6Vr"}],"cg6Vr":[function(require,module,exports) {
-'use strict';
-function _interopDefault(ex) {
-    return ex && typeof ex === 'object' && 'default' in ex ? ex['default'] : ex;
-}
-var React = _interopDefault(require('react'));
-var PropTypes = _interopDefault(require('prop-types'));
-var history = require('history');
-var warning = _interopDefault(require('tiny-warning'));
-var createContext = _interopDefault(require('mini-create-react-context'));
-var invariant = _interopDefault(require('tiny-invariant'));
-var pathToRegexp = _interopDefault(require('path-to-regexp'));
-var reactIs = require('react-is');
-var hoistStatics = _interopDefault(require('hoist-non-react-statics'));
-function _extends() {
-    _extends = Object.assign || function(target) {
-        for(var i = 1; i < arguments.length; i++){
-            var source = arguments[i];
-            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
-        }
-        return target;
-    };
-    return _extends.apply(this, arguments);
-}
-function _inheritsLoose(subClass, superClass) {
-    subClass.prototype = Object.create(superClass.prototype);
-    subClass.prototype.constructor = subClass;
-    subClass.__proto__ = superClass;
-}
-function _objectWithoutPropertiesLoose(source, excluded) {
-    if (source == null) return {
-    };
-    var target = {
-    };
-    var sourceKeys = Object.keys(source);
-    var key, i;
-    for(i = 0; i < sourceKeys.length; i++){
-        key = sourceKeys[i];
-        if (excluded.indexOf(key) >= 0) continue;
-        target[key] = source[key];
-    }
-    return target;
-}
+},{"react-router":"l4MNa","@babel/runtime/helpers/esm/inheritsLoose":"eO0be","react":"6TuXu","history":"6R8lq","prop-types":"1tgq3","tiny-warning":"4xDJt","@babel/runtime/helpers/esm/extends":"bKAu6","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"3Rubg","tiny-invariant":"kiE0c","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"l4MNa":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "MemoryRouter", ()=>MemoryRouter1
+);
+parcelHelpers.export(exports, "Prompt", ()=>Prompt
+);
+parcelHelpers.export(exports, "Redirect", ()=>Redirect
+);
+parcelHelpers.export(exports, "Route", ()=>Route1
+);
+parcelHelpers.export(exports, "Router", ()=>Router1
+);
+parcelHelpers.export(exports, "StaticRouter", ()=>StaticRouter1
+);
+parcelHelpers.export(exports, "Switch", ()=>Switch1
+);
+parcelHelpers.export(exports, "__HistoryContext", ()=>historyContext
+);
+parcelHelpers.export(exports, "__RouterContext", ()=>context
+);
+parcelHelpers.export(exports, "generatePath", ()=>generatePath
+);
+parcelHelpers.export(exports, "matchPath", ()=>matchPath
+);
+parcelHelpers.export(exports, "useHistory", ()=>useHistory
+);
+parcelHelpers.export(exports, "useLocation", ()=>useLocation
+);
+parcelHelpers.export(exports, "useParams", ()=>useParams
+);
+parcelHelpers.export(exports, "useRouteMatch", ()=>useRouteMatch
+);
+parcelHelpers.export(exports, "withRouter", ()=>withRouter
+);
+var _inheritsLoose = require("@babel/runtime/helpers/esm/inheritsLoose");
+var _inheritsLooseDefault = parcelHelpers.interopDefault(_inheritsLoose);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _history = require("history");
+var _tinyWarning = require("tiny-warning");
+var _tinyWarningDefault = parcelHelpers.interopDefault(_tinyWarning);
+var _miniCreateReactContext = require("mini-create-react-context");
+var _miniCreateReactContextDefault = parcelHelpers.interopDefault(_miniCreateReactContext);
+var _tinyInvariant = require("tiny-invariant");
+var _tinyInvariantDefault = parcelHelpers.interopDefault(_tinyInvariant);
+var _extends = require("@babel/runtime/helpers/esm/extends");
+var _extendsDefault = parcelHelpers.interopDefault(_extends);
+var _pathToRegexp = require("path-to-regexp");
+var _pathToRegexpDefault = parcelHelpers.interopDefault(_pathToRegexp);
+var _reactIs = require("react-is");
+var _objectWithoutPropertiesLoose = require("@babel/runtime/helpers/esm/objectWithoutPropertiesLoose");
+var _objectWithoutPropertiesLooseDefault = parcelHelpers.interopDefault(_objectWithoutPropertiesLoose);
+var _hoistNonReactStatics = require("hoist-non-react-statics");
+var _hoistNonReactStaticsDefault = parcelHelpers.interopDefault(_hoistNonReactStatics);
 // TODO: Replace with React.createContext once we can assume React 16+
 var createNamedContext = function createNamedContext1(name) {
-    var context = createContext();
+    var context = _miniCreateReactContextDefault.default();
     context.displayName = name;
     return context;
 };
 var historyContext = /*#__PURE__*/ createNamedContext("Router-History");
-// TODO: Replace with React.createContext once we can assume React 16+
-var createNamedContext$1 = function createNamedContext2(name) {
-    var context = createContext();
-    context.displayName = name;
-    return context;
-};
-var context = /*#__PURE__*/ createNamedContext$1("Router");
+var context = /*#__PURE__*/ createNamedContext("Router");
 /**
  * The public API for putting history on context.
  */ var Router1 = /*#__PURE__*/ function(_React$Component) {
-    _inheritsLoose(Router2, _React$Component);
+    _inheritsLooseDefault.default(Router2, _React$Component);
     Router2.computeRootMatch = function computeRootMatch(pathname) {
         return {
             path: "/",
@@ -25909,65 +25829,69 @@ var context = /*#__PURE__*/ createNamedContext$1("Router");
         });
     };
     _proto.componentWillUnmount = function componentWillUnmount() {
-        if (this.unlisten) this.unlisten();
+        if (this.unlisten) {
+            this.unlisten();
+            this._isMounted = false;
+            this._pendingLocation = null;
+        }
     };
     _proto.render = function render() {
-        return React.createElement(context.Provider, {
+        return(/*#__PURE__*/ _reactDefault.default.createElement(context.Provider, {
             value: {
                 history: this.props.history,
                 location: this.state.location,
                 match: Router2.computeRootMatch(this.state.location.pathname),
                 staticContext: this.props.staticContext
             }
-        }, React.createElement(historyContext.Provider, {
+        }, /*#__PURE__*/ _reactDefault.default.createElement(historyContext.Provider, {
             children: this.props.children || null,
             value: this.props.history
-        }));
+        })));
     };
     return Router2;
-}(React.Component);
+}(_reactDefault.default.Component);
 Router1.propTypes = {
-    children: PropTypes.node,
-    history: PropTypes.object.isRequired,
-    staticContext: PropTypes.object
+    children: _propTypesDefault.default.node,
+    history: _propTypesDefault.default.object.isRequired,
+    staticContext: _propTypesDefault.default.object
 };
 Router1.prototype.componentDidUpdate = function(prevProps) {
-    warning(prevProps.history === this.props.history, "You cannot change <Router history>");
+    _tinyWarningDefault.default(prevProps.history === this.props.history, "You cannot change <Router history>");
 };
 /**
  * The public API for a <Router> that stores location in memory.
  */ var MemoryRouter1 = /*#__PURE__*/ function(_React$Component) {
-    _inheritsLoose(MemoryRouter2, _React$Component);
+    _inheritsLooseDefault.default(MemoryRouter2, _React$Component);
     function MemoryRouter2() {
         var _this;
         for(var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++)args[_key] = arguments[_key];
         _this = _React$Component.call.apply(_React$Component, [
             this
         ].concat(args)) || this;
-        _this.history = history.createMemoryHistory(_this.props);
+        _this.history = _history.createMemoryHistory(_this.props);
         return _this;
     }
     var _proto = MemoryRouter2.prototype;
     _proto.render = function render() {
-        return React.createElement(Router1, {
+        return(/*#__PURE__*/ _reactDefault.default.createElement(Router1, {
             history: this.history,
             children: this.props.children
-        });
+        }));
     };
     return MemoryRouter2;
-}(React.Component);
+}(_reactDefault.default.Component);
 MemoryRouter1.propTypes = {
-    initialEntries: PropTypes.array,
-    initialIndex: PropTypes.number,
-    getUserConfirmation: PropTypes.func,
-    keyLength: PropTypes.number,
-    children: PropTypes.node
+    initialEntries: _propTypesDefault.default.array,
+    initialIndex: _propTypesDefault.default.number,
+    getUserConfirmation: _propTypesDefault.default.func,
+    keyLength: _propTypesDefault.default.number,
+    children: _propTypesDefault.default.node
 };
 MemoryRouter1.prototype.componentDidMount = function() {
-    warning(!this.props.history, "<MemoryRouter> ignores the history prop. To use a custom history, use `import { Router }` instead of `import { MemoryRouter as Router }`.");
+    _tinyWarningDefault.default(!this.props.history, "<MemoryRouter> ignores the history prop. To use a custom history, use `import { Router }` instead of `import { MemoryRouter as Router }`.");
 };
 var Lifecycle1 = /*#__PURE__*/ function(_React$Component) {
-    _inheritsLoose(Lifecycle2, _React$Component);
+    _inheritsLooseDefault.default(Lifecycle2, _React$Component);
     function Lifecycle2() {
         return _React$Component.apply(this, arguments) || this;
     }
@@ -25985,16 +25909,16 @@ var Lifecycle1 = /*#__PURE__*/ function(_React$Component) {
         return null;
     };
     return Lifecycle2;
-}(React.Component);
+}(_reactDefault.default.Component);
 /**
  * The public API for prompting the user before navigating away from a screen.
  */ function Prompt(_ref) {
     var message = _ref.message, _ref$when = _ref.when, when = _ref$when === void 0 ? true : _ref$when;
-    return React.createElement(context.Consumer, null, function(context1) {
-        !context1 && invariant(false, "You should not use <Prompt> outside a <Router>");
+    return(/*#__PURE__*/ _reactDefault.default.createElement(context.Consumer, null, function(context1) {
+        !context1 && _tinyInvariantDefault.default(false, "You should not use <Prompt> outside a <Router>");
         if (!when || context1.staticContext) return null;
         var method = context1.history.block;
-        return React.createElement(Lifecycle1, {
+        return(/*#__PURE__*/ _reactDefault.default.createElement(Lifecycle1, {
             onMount: function onMount(self) {
                 self.release = method(message);
             },
@@ -26008,15 +25932,15 @@ var Lifecycle1 = /*#__PURE__*/ function(_React$Component) {
                 self.release();
             },
             message: message
-        });
-    });
+        }));
+    }));
 }
-var messageType = PropTypes.oneOfType([
-    PropTypes.func,
-    PropTypes.string
+var messageType = _propTypesDefault.default.oneOfType([
+    _propTypesDefault.default.func,
+    _propTypesDefault.default.string
 ]);
 Prompt.propTypes = {
-    when: PropTypes.bool,
+    when: _propTypesDefault.default.bool,
     message: messageType.isRequired
 };
 var cache = {
@@ -26025,7 +25949,7 @@ var cacheLimit = 10000;
 var cacheCount = 0;
 function compilePath(path) {
     if (cache[path]) return cache[path];
-    var generator = pathToRegexp.compile(path);
+    var generator = _pathToRegexpDefault.default.compile(path);
     if (cacheCount < cacheLimit) {
         cache[path] = generator;
         cacheCount++;
@@ -26046,11 +25970,11 @@ function compilePath(path) {
  * The public API for navigating programmatically with a component.
  */ function Redirect(_ref) {
     var computedMatch = _ref.computedMatch, to = _ref.to, _ref$push = _ref.push, push = _ref$push === void 0 ? false : _ref$push;
-    return React.createElement(context.Consumer, null, function(context1) {
-        !context1 && invariant(false, "You should not use <Redirect> outside a <Router>");
-        var history$1 = context1.history, staticContext = context1.staticContext;
-        var method = push ? history$1.push : history$1.replace;
-        var location = history.createLocation(computedMatch ? typeof to === "string" ? generatePath(to, computedMatch.params) : _extends({
+    return(/*#__PURE__*/ _reactDefault.default.createElement(context.Consumer, null, function(context1) {
+        !context1 && _tinyInvariantDefault.default(false, "You should not use <Redirect> outside a <Router>");
+        var history = context1.history, staticContext = context1.staticContext;
+        var method = push ? history.push : history.replace;
+        var location = _history.createLocation(computedMatch ? typeof to === "string" ? generatePath(to, computedMatch.params) : _extendsDefault.default({
         }, to, {
             pathname: generatePath(to.pathname, computedMatch.params)
         }) : to); // When rendering in a static context,
@@ -26059,27 +25983,27 @@ function compilePath(path) {
             method(location);
             return null;
         }
-        return React.createElement(Lifecycle1, {
+        return(/*#__PURE__*/ _reactDefault.default.createElement(Lifecycle1, {
             onMount: function onMount() {
                 method(location);
             },
             onUpdate: function onUpdate(self, prevProps) {
-                var prevLocation = history.createLocation(prevProps.to);
-                if (!history.locationsAreEqual(prevLocation, _extends({
+                var prevLocation = _history.createLocation(prevProps.to);
+                if (!_history.locationsAreEqual(prevLocation, _extendsDefault.default({
                 }, location, {
                     key: prevLocation.key
                 }))) method(location);
             },
             to: to
-        });
-    });
+        }));
+    }));
 }
 Redirect.propTypes = {
-    push: PropTypes.bool,
-    from: PropTypes.string,
-    to: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.object
+    push: _propTypesDefault.default.bool,
+    from: _propTypesDefault.default.string,
+    to: _propTypesDefault.default.oneOfType([
+        _propTypesDefault.default.string,
+        _propTypesDefault.default.object
     ]).isRequired
 };
 var cache$1 = {
@@ -26092,7 +26016,7 @@ function compilePath$1(path, options) {
     });
     if (pathCache[path]) return pathCache[path];
     var keys = [];
-    var regexp = pathToRegexp(path, keys, options);
+    var regexp = _pathToRegexpDefault.default(path, keys, options);
     var result = {
         regexp: regexp,
         keys: keys
@@ -26142,75 +26066,76 @@ function compilePath$1(path, options) {
     }, null);
 }
 function isEmptyChildren(children) {
-    return React.Children.count(children) === 0;
+    return _reactDefault.default.Children.count(children) === 0;
 }
 function evalChildrenDev(children, props, path) {
     var value = children(props);
-    warning(value !== undefined, "You returned `undefined` from the `children` function of " + ("<Route" + (path ? " path=\"" + path + "\"" : "") + ">, but you ") + "should have returned a React element or `null`");
+    _tinyWarningDefault.default(value !== undefined, "You returned `undefined` from the `children` function of " + ("<Route" + (path ? " path=\"" + path + "\"" : "") + ">, but you ") + "should have returned a React element or `null`");
     return value || null;
 }
 /**
  * The public API for matching a single path and rendering.
  */ var Route1 = /*#__PURE__*/ function(_React$Component) {
-    _inheritsLoose(Route2, _React$Component);
+    _inheritsLooseDefault.default(Route2, _React$Component);
     function Route2() {
         return _React$Component.apply(this, arguments) || this;
     }
     var _proto = Route2.prototype;
     _proto.render = function render() {
         var _this = this;
-        return React.createElement(context.Consumer, null, function(context$1) {
-            !context$1 && invariant(false, "You should not use <Route> outside a <Router>");
+        return(/*#__PURE__*/ _reactDefault.default.createElement(context.Consumer, null, function(context$1) {
+            !context$1 && _tinyInvariantDefault.default(false, "You should not use <Route> outside a <Router>");
             var location = _this.props.location || context$1.location;
-            var match = _this.props.computedMatch ? _this.props.computedMatch : _this.props.path ? matchPath(location.pathname, _this.props) : context$1.match;
-            var props = _extends({
+            var match = _this.props.computedMatch ? _this.props.computedMatch // <Switch> already computed the match for us
+             : _this.props.path ? matchPath(location.pathname, _this.props) : context$1.match;
+            var props = _extendsDefault.default({
             }, context$1, {
                 location: location,
                 match: match
             });
             var _this$props = _this.props, children = _this$props.children, component = _this$props.component, render1 = _this$props.render; // Preact uses an empty array as children by
             // default, so use null if that's the case.
-            if (Array.isArray(children) && children.length === 0) children = null;
-            return React.createElement(context.Provider, {
+            if (Array.isArray(children) && isEmptyChildren(children)) children = null;
+            return(/*#__PURE__*/ _reactDefault.default.createElement(context.Provider, {
                 value: props
-            }, props.match ? children ? typeof children === "function" ? evalChildrenDev(children, props, _this.props.path) : children : component ? React.createElement(component, props) : render1 ? render1(props) : null : typeof children === "function" ? evalChildrenDev(children, props, _this.props.path) : null);
-        });
+            }, props.match ? children ? typeof children === "function" ? evalChildrenDev(children, props, _this.props.path) : children : component ? /*#__PURE__*/ _reactDefault.default.createElement(component, props) : render1 ? render1(props) : null : typeof children === "function" ? evalChildrenDev(children, props, _this.props.path) : null));
+        }));
     };
     return Route2;
-}(React.Component);
+}(_reactDefault.default.Component);
 Route1.propTypes = {
-    children: PropTypes.oneOfType([
-        PropTypes.func,
-        PropTypes.node
+    children: _propTypesDefault.default.oneOfType([
+        _propTypesDefault.default.func,
+        _propTypesDefault.default.node
     ]),
     component: function component(props, propName) {
-        if (props[propName] && !reactIs.isValidElementType(props[propName])) return new Error("Invalid prop 'component' supplied to 'Route': the prop is not a valid React component");
+        if (props[propName] && !_reactIs.isValidElementType(props[propName])) return new Error("Invalid prop 'component' supplied to 'Route': the prop is not a valid React component");
     },
-    exact: PropTypes.bool,
-    location: PropTypes.object,
-    path: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.arrayOf(PropTypes.string)
+    exact: _propTypesDefault.default.bool,
+    location: _propTypesDefault.default.object,
+    path: _propTypesDefault.default.oneOfType([
+        _propTypesDefault.default.string,
+        _propTypesDefault.default.arrayOf(_propTypesDefault.default.string)
     ]),
-    render: PropTypes.func,
-    sensitive: PropTypes.bool,
-    strict: PropTypes.bool
+    render: _propTypesDefault.default.func,
+    sensitive: _propTypesDefault.default.bool,
+    strict: _propTypesDefault.default.bool
 };
 Route1.prototype.componentDidMount = function() {
-    warning(!(this.props.children && !isEmptyChildren(this.props.children) && this.props.component), "You should not use <Route component> and <Route children> in the same route; <Route component> will be ignored");
-    warning(!(this.props.children && !isEmptyChildren(this.props.children) && this.props.render), "You should not use <Route render> and <Route children> in the same route; <Route render> will be ignored");
-    warning(!(this.props.component && this.props.render), "You should not use <Route component> and <Route render> in the same route; <Route render> will be ignored");
+    _tinyWarningDefault.default(!(this.props.children && !isEmptyChildren(this.props.children) && this.props.component), "You should not use <Route component> and <Route children> in the same route; <Route component> will be ignored");
+    _tinyWarningDefault.default(!(this.props.children && !isEmptyChildren(this.props.children) && this.props.render), "You should not use <Route render> and <Route children> in the same route; <Route render> will be ignored");
+    _tinyWarningDefault.default(!(this.props.component && this.props.render), "You should not use <Route component> and <Route render> in the same route; <Route render> will be ignored");
 };
 Route1.prototype.componentDidUpdate = function(prevProps) {
-    warning(!(this.props.location && !prevProps.location), '<Route> elements should not change from uncontrolled to controlled (or vice versa). You initially used no "location" prop and then provided one on a subsequent render.');
-    warning(!(!this.props.location && prevProps.location), '<Route> elements should not change from controlled to uncontrolled (or vice versa). You provided a "location" prop initially but omitted it on a subsequent render.');
+    _tinyWarningDefault.default(!(this.props.location && !prevProps.location), '<Route> elements should not change from uncontrolled to controlled (or vice versa). You initially used no "location" prop and then provided one on a subsequent render.');
+    _tinyWarningDefault.default(!(!this.props.location && prevProps.location), '<Route> elements should not change from controlled to uncontrolled (or vice versa). You provided a "location" prop initially but omitted it on a subsequent render.');
 };
 function addLeadingSlash(path) {
     return path.charAt(0) === "/" ? path : "/" + path;
 }
 function addBasename(basename, location) {
     if (!basename) return location;
-    return _extends({
+    return _extendsDefault.default({
     }, location, {
         pathname: addLeadingSlash(basename) + location.pathname
     });
@@ -26219,17 +26144,17 @@ function stripBasename(basename, location) {
     if (!basename) return location;
     var base = addLeadingSlash(basename);
     if (location.pathname.indexOf(base) !== 0) return location;
-    return _extends({
+    return _extendsDefault.default({
     }, location, {
         pathname: location.pathname.substr(base.length)
     });
 }
 function createURL(location) {
-    return typeof location === "string" ? location : history.createPath(location);
+    return typeof location === "string" ? location : _history.createPath(location);
 }
 function staticHandler(methodName) {
     return function() {
-        invariant(false, "You cannot %s with <StaticRouter>", methodName);
+        _tinyInvariantDefault.default(false, "You cannot %s with <StaticRouter>", methodName);
     };
 }
 function noop() {
@@ -26240,7 +26165,7 @@ function noop() {
  * location changes in a context object. Useful mainly in testing and
  * server-rendering scenarios.
  */ var StaticRouter1 = /*#__PURE__*/ function(_React$Component) {
-    _inheritsLoose(StaticRouter2, _React$Component);
+    _inheritsLooseDefault.default(StaticRouter2, _React$Component);
     function StaticRouter2() {
         var _this;
         for(var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++)args[_key] = arguments[_key];
@@ -26266,22 +26191,22 @@ function noop() {
         var _this$props = this.props, _this$props$basename = _this$props.basename, basename = _this$props$basename === void 0 ? "" : _this$props$basename, _this$props$context = _this$props.context, context1 = _this$props$context === void 0 ? {
         } : _this$props$context;
         context1.action = action;
-        context1.location = addBasename(basename, history.createLocation(location));
+        context1.location = addBasename(basename, _history.createLocation(location));
         context1.url = createURL(context1.location);
     };
     _proto.render = function render() {
         var _this$props2 = this.props, _this$props2$basename = _this$props2.basename, basename = _this$props2$basename === void 0 ? "" : _this$props2$basename, _this$props2$context = _this$props2.context, context1 = _this$props2$context === void 0 ? {
-        } : _this$props2$context, _this$props2$location = _this$props2.location, location = _this$props2$location === void 0 ? "/" : _this$props2$location, rest = _objectWithoutPropertiesLoose(_this$props2, [
+        } : _this$props2$context, _this$props2$location = _this$props2.location, location = _this$props2$location === void 0 ? "/" : _this$props2$location, rest = _objectWithoutPropertiesLooseDefault.default(_this$props2, [
             "basename",
             "context",
             "location"
         ]);
-        var history$1 = {
+        var history = {
             createHref: function createHref(path) {
                 return addLeadingSlash(basename + createURL(path));
             },
             action: "POP",
-            location: stripBasename(basename, history.createLocation(location)),
+            location: stripBasename(basename, _history.createLocation(location)),
             push: this.handlePush,
             replace: this.handleReplace,
             go: staticHandler("go"),
@@ -26290,112 +26215,112 @@ function noop() {
             listen: this.handleListen,
             block: this.handleBlock
         };
-        return React.createElement(Router1, _extends({
+        return(/*#__PURE__*/ _reactDefault.default.createElement(Router1, _extendsDefault.default({
         }, rest, {
-            history: history$1,
+            history: history,
             staticContext: context1
-        }));
+        })));
     };
     return StaticRouter2;
-}(React.Component);
+}(_reactDefault.default.Component);
 StaticRouter1.propTypes = {
-    basename: PropTypes.string,
-    context: PropTypes.object,
-    location: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.object
+    basename: _propTypesDefault.default.string,
+    context: _propTypesDefault.default.object,
+    location: _propTypesDefault.default.oneOfType([
+        _propTypesDefault.default.string,
+        _propTypesDefault.default.object
     ])
 };
 StaticRouter1.prototype.componentDidMount = function() {
-    warning(!this.props.history, "<StaticRouter> ignores the history prop. To use a custom history, use `import { Router }` instead of `import { StaticRouter as Router }`.");
+    _tinyWarningDefault.default(!this.props.history, "<StaticRouter> ignores the history prop. To use a custom history, use `import { Router }` instead of `import { StaticRouter as Router }`.");
 };
 /**
  * The public API for rendering the first <Route> that matches.
  */ var Switch1 = /*#__PURE__*/ function(_React$Component) {
-    _inheritsLoose(Switch2, _React$Component);
+    _inheritsLooseDefault.default(Switch2, _React$Component);
     function Switch2() {
         return _React$Component.apply(this, arguments) || this;
     }
     var _proto = Switch2.prototype;
     _proto.render = function render() {
         var _this = this;
-        return React.createElement(context.Consumer, null, function(context1) {
-            !context1 && invariant(false, "You should not use <Switch> outside a <Router>");
+        return(/*#__PURE__*/ _reactDefault.default.createElement(context.Consumer, null, function(context1) {
+            !context1 && _tinyInvariantDefault.default(false, "You should not use <Switch> outside a <Router>");
             var location = _this.props.location || context1.location;
             var element, match; // We use React.Children.forEach instead of React.Children.toArray().find()
             // here because toArray adds keys to all child elements and we do not want
             // to trigger an unmount/remount for two <Route>s that render the same
             // component at different URLs.
-            React.Children.forEach(_this.props.children, function(child) {
-                if (match == null && React.isValidElement(child)) {
+            _reactDefault.default.Children.forEach(_this.props.children, function(child) {
+                if (match == null && /*#__PURE__*/ _reactDefault.default.isValidElement(child)) {
                     element = child;
                     var path = child.props.path || child.props.from;
-                    match = path ? matchPath(location.pathname, _extends({
+                    match = path ? matchPath(location.pathname, _extendsDefault.default({
                     }, child.props, {
                         path: path
                     })) : context1.match;
                 }
             });
-            return match ? React.cloneElement(element, {
+            return match ? /*#__PURE__*/ _reactDefault.default.cloneElement(element, {
                 location: location,
                 computedMatch: match
             }) : null;
-        });
+        }));
     };
     return Switch2;
-}(React.Component);
+}(_reactDefault.default.Component);
 Switch1.propTypes = {
-    children: PropTypes.node,
-    location: PropTypes.object
+    children: _propTypesDefault.default.node,
+    location: _propTypesDefault.default.object
 };
 Switch1.prototype.componentDidUpdate = function(prevProps) {
-    warning(!(this.props.location && !prevProps.location), '<Switch> elements should not change from uncontrolled to controlled (or vice versa). You initially used no "location" prop and then provided one on a subsequent render.');
-    warning(!(!this.props.location && prevProps.location), '<Switch> elements should not change from controlled to uncontrolled (or vice versa). You provided a "location" prop initially but omitted it on a subsequent render.');
+    _tinyWarningDefault.default(!(this.props.location && !prevProps.location), '<Switch> elements should not change from uncontrolled to controlled (or vice versa). You initially used no "location" prop and then provided one on a subsequent render.');
+    _tinyWarningDefault.default(!(!this.props.location && prevProps.location), '<Switch> elements should not change from controlled to uncontrolled (or vice versa). You provided a "location" prop initially but omitted it on a subsequent render.');
 };
 /**
  * A public higher-order component to access the imperative API
  */ function withRouter(Component) {
     var displayName = "withRouter(" + (Component.displayName || Component.name) + ")";
     var C = function C1(props) {
-        var wrappedComponentRef = props.wrappedComponentRef, remainingProps = _objectWithoutPropertiesLoose(props, [
+        var wrappedComponentRef = props.wrappedComponentRef, remainingProps = _objectWithoutPropertiesLooseDefault.default(props, [
             "wrappedComponentRef"
         ]);
-        return React.createElement(context.Consumer, null, function(context1) {
-            !context1 && invariant(false, "You should not use <" + displayName + " /> outside a <Router>");
-            return React.createElement(Component, _extends({
+        return(/*#__PURE__*/ _reactDefault.default.createElement(context.Consumer, null, function(context1) {
+            !context1 && _tinyInvariantDefault.default(false, "You should not use <" + displayName + " /> outside a <Router>");
+            return(/*#__PURE__*/ _reactDefault.default.createElement(Component, _extendsDefault.default({
             }, remainingProps, context1, {
                 ref: wrappedComponentRef
-            }));
-        });
+            })));
+        }));
     };
     C.displayName = displayName;
     C.WrappedComponent = Component;
     C.propTypes = {
-        wrappedComponentRef: PropTypes.oneOfType([
-            PropTypes.string,
-            PropTypes.func,
-            PropTypes.object
+        wrappedComponentRef: _propTypesDefault.default.oneOfType([
+            _propTypesDefault.default.string,
+            _propTypesDefault.default.func,
+            _propTypesDefault.default.object
         ])
     };
-    return hoistStatics(C, Component);
+    return _hoistNonReactStaticsDefault.default(C, Component);
 }
-var useContext = React.useContext;
+var useContext = _reactDefault.default.useContext;
 function useHistory() {
-    !(typeof useContext === "function") && invariant(false, "You must use React >= 16.8 in order to use useHistory()");
+    !(typeof useContext === "function") && _tinyInvariantDefault.default(false, "You must use React >= 16.8 in order to use useHistory()");
     return useContext(historyContext);
 }
 function useLocation() {
-    !(typeof useContext === "function") && invariant(false, "You must use React >= 16.8 in order to use useLocation()");
+    !(typeof useContext === "function") && _tinyInvariantDefault.default(false, "You must use React >= 16.8 in order to use useLocation()");
     return useContext(context).location;
 }
 function useParams() {
-    !(typeof useContext === "function") && invariant(false, "You must use React >= 16.8 in order to use useParams()");
+    !(typeof useContext === "function") && _tinyInvariantDefault.default(false, "You must use React >= 16.8 in order to use useParams()");
     var match = useContext(context).match;
     return match ? match.params : {
     };
 }
 function useRouteMatch(path) {
-    !(typeof useContext === "function") && invariant(false, "You must use React >= 16.8 in order to use useRouteMatch()");
+    !(typeof useContext === "function") && _tinyInvariantDefault.default(false, "You must use React >= 16.8 in order to use useRouteMatch()");
     var location = useLocation();
     var match = useContext(context).match;
     return path ? matchPath(location.pathname, path) : match;
@@ -26408,57 +26333,66 @@ if (typeof window !== "undefined") {
         esm: "ES modules",
         umd: "UMD"
     };
-    if (global[key] && global[key] !== "cjs") {
+    if (global[key] && global[key] !== "esm") {
         var initialBuildName = buildNames[global[key]];
-        var secondaryBuildName = buildNames["cjs"]; // TODO: Add link to article that explains in detail how to avoid
+        var secondaryBuildName = buildNames["esm"]; // TODO: Add link to article that explains in detail how to avoid
         // loading 2 different builds.
         throw new Error("You are loading the " + secondaryBuildName + " build of React Router " + ("on a page that is already running the " + initialBuildName + " ") + "build, so things won't work right.");
     }
-    global[key] = "cjs";
+    global[key] = "esm";
 }
-exports.MemoryRouter = MemoryRouter1;
-exports.Prompt = Prompt;
-exports.Redirect = Redirect;
-exports.Route = Route1;
-exports.Router = Router1;
-exports.StaticRouter = StaticRouter1;
-exports.Switch = Switch1;
-exports.__HistoryContext = historyContext;
-exports.__RouterContext = context;
-exports.generatePath = generatePath;
-exports.matchPath = matchPath;
-exports.useHistory = useHistory;
-exports.useLocation = useLocation;
-exports.useParams = useParams;
-exports.useRouteMatch = useRouteMatch;
-exports.withRouter = withRouter;
 
-},{"react":"juP7B","prop-types":"jEh18","history":"k81xp","tiny-warning":"cberx","mini-create-react-context":"kV8cf","tiny-invariant":"d4J4y","path-to-regexp":"90vgj","react-is":"2F9yi","hoist-non-react-statics":"dL3Vu"}],"k81xp":[function(require,module,exports) {
-'use strict';
-module.exports = require('./cjs/history.js');
-
-},{"./cjs/history.js":"8TbEC"}],"8TbEC":[function(require,module,exports) {
-'use strict';
-Object.defineProperty(exports, '__esModule', {
-    value: true
-});
-function _interopDefault(ex) {
-    return ex && typeof ex === 'object' && 'default' in ex ? ex['default'] : ex;
+},{"@babel/runtime/helpers/esm/inheritsLoose":"eO0be","react":"6TuXu","prop-types":"1tgq3","history":"6R8lq","tiny-warning":"4xDJt","mini-create-react-context":"bwjcK","tiny-invariant":"kiE0c","@babel/runtime/helpers/esm/extends":"bKAu6","path-to-regexp":"6SN7C","react-is":"9ROSB","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"3Rubg","hoist-non-react-statics":"jfzb6","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"eO0be":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _setPrototypeOfJs = require("./setPrototypeOf.js");
+var _setPrototypeOfJsDefault = parcelHelpers.interopDefault(_setPrototypeOfJs);
+function _inheritsLoose(subClass, superClass) {
+    subClass.prototype = Object.create(superClass.prototype);
+    subClass.prototype.constructor = subClass;
+    _setPrototypeOfJsDefault.default(subClass, superClass);
 }
-var resolvePathname = _interopDefault(require('resolve-pathname'));
-var valueEqual = _interopDefault(require('value-equal'));
-var warning = _interopDefault(require('tiny-warning'));
-var invariant = _interopDefault(require('tiny-invariant'));
-function _extends() {
-    _extends = Object.assign || function(target) {
-        for(var i = 1; i < arguments.length; i++){
-            var source = arguments[i];
-            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
-        }
-        return target;
+exports.default = _inheritsLoose;
+
+},{"./setPrototypeOf.js":"83cMx","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"83cMx":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+function _setPrototypeOf(o, p) {
+    _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf1(o1, p1) {
+        o1.__proto__ = p1;
+        return o1;
     };
-    return _extends.apply(this, arguments);
+    return _setPrototypeOf(o, p);
 }
+exports.default = _setPrototypeOf;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"6R8lq":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "createBrowserHistory", ()=>createBrowserHistory
+);
+parcelHelpers.export(exports, "createHashHistory", ()=>createHashHistory
+);
+parcelHelpers.export(exports, "createMemoryHistory", ()=>createMemoryHistory
+);
+parcelHelpers.export(exports, "createLocation", ()=>createLocation
+);
+parcelHelpers.export(exports, "locationsAreEqual", ()=>locationsAreEqual
+);
+parcelHelpers.export(exports, "parsePath", ()=>parsePath
+);
+parcelHelpers.export(exports, "createPath", ()=>createPath
+);
+var _extends = require("@babel/runtime/helpers/esm/extends");
+var _extendsDefault = parcelHelpers.interopDefault(_extends);
+var _resolvePathname = require("resolve-pathname");
+var _resolvePathnameDefault = parcelHelpers.interopDefault(_resolvePathname);
+var _valueEqual = require("value-equal");
+var _valueEqualDefault = parcelHelpers.interopDefault(_valueEqual);
+var _tinyWarning = require("tiny-warning");
+var _tinyWarningDefault = parcelHelpers.interopDefault(_tinyWarning);
+var _tinyInvariant = require("tiny-invariant");
+var _tinyInvariantDefault = parcelHelpers.interopDefault(_tinyInvariant);
 function addLeadingSlash(path) {
     return path.charAt(0) === '/' ? path : '/' + path;
 }
@@ -26509,7 +26443,7 @@ function createLocation(path, state, key, currentLocation) {
         location.state = state;
     } else {
         // One-arg form: push(location)
-        location = _extends({
+        location = _extendsDefault.default({
         }, path);
         if (location.pathname === undefined) location.pathname = '';
         if (location.search) {
@@ -26530,18 +26464,18 @@ function createLocation(path, state, key, currentLocation) {
     if (currentLocation) {
         // Resolve incomplete/relative pathname relative to current location.
         if (!location.pathname) location.pathname = currentLocation.pathname;
-        else if (location.pathname.charAt(0) !== '/') location.pathname = resolvePathname(location.pathname, currentLocation.pathname);
+        else if (location.pathname.charAt(0) !== '/') location.pathname = _resolvePathnameDefault.default(location.pathname, currentLocation.pathname);
     } else // When there is no prior location and pathname is empty, set it to /
     if (!location.pathname) location.pathname = '/';
     return location;
 }
 function locationsAreEqual(a, b) {
-    return a.pathname === b.pathname && a.search === b.search && a.hash === b.hash && a.key === b.key && valueEqual(a.state, b.state);
+    return a.pathname === b.pathname && a.search === b.search && a.hash === b.hash && a.key === b.key && _valueEqualDefault.default(a.state, b.state);
 }
 function createTransitionManager() {
     var prompt = null;
     function setPrompt(nextPrompt) {
-        warning(prompt == null, 'A history supports only one prompt at a time');
+        _tinyWarningDefault.default(prompt == null, 'A history supports only one prompt at a time');
         prompt = nextPrompt;
         return function() {
             if (prompt === nextPrompt) prompt = null;
@@ -26556,7 +26490,7 @@ function createTransitionManager() {
             if (typeof result === 'string') {
                 if (typeof getUserConfirmation === 'function') getUserConfirmation(result, callback);
                 else {
-                    warning(false, 'A history needs a getUserConfirmation function in order to use a prompt message');
+                    _tinyWarningDefault.default(false, 'A history needs a getUserConfirmation function in order to use a prompt message');
                     callback(true);
                 }
             } else // Return false from a transition hook to cancel the transition.
@@ -26642,7 +26576,7 @@ function getHistoryState() {
  */ function createBrowserHistory(props) {
     if (props === void 0) props = {
     };
-    !canUseDOM && invariant(false, 'Browser history needs a DOM');
+    !canUseDOM && _tinyInvariantDefault.default(false, 'Browser history needs a DOM');
     var globalHistory = window.history;
     var canUseHistory = supportsHistory();
     var needsHashChangeListener = !supportsPopStateOnHashChange();
@@ -26653,7 +26587,7 @@ function getHistoryState() {
         }, key = _ref.key, state = _ref.state;
         var _window$location = window.location, pathname = _window$location.pathname, search = _window$location.search, hash = _window$location.hash;
         var path = pathname + search + hash;
-        warning(!basename || hasBasename(path, basename), "You are attempting to use a basename on a page whose URL path does not begin with the basename. Expected path \"" + path + '" to begin with "' + basename + '".');
+        _tinyWarningDefault.default(!basename || hasBasename(path, basename), "You are attempting to use a basename on a page whose URL path does not begin with the basename. Expected path \"" + path + '" to begin with "' + basename + '".');
         if (basename) path = stripBasename(path, basename);
         return createLocation(path, state, key);
     }
@@ -26662,7 +26596,7 @@ function getHistoryState() {
     }
     var transitionManager = createTransitionManager();
     function setState(nextState) {
-        _extends(history, nextState);
+        _extendsDefault.default(history, nextState);
         history.length = globalHistory.length;
         transitionManager.notifyListeners(history.location, history.action);
     }
@@ -26712,7 +26646,7 @@ function getHistoryState() {
         return basename + createPath(location);
     }
     function push(path, state) {
-        warning(!(typeof path === 'object' && path.state !== undefined && state !== undefined), "You should avoid providing a 2nd state argument to push when the 1st argument is a location-like object that already has state; it is ignored");
+        _tinyWarningDefault.default(!(typeof path === 'object' && path.state !== undefined && state !== undefined), "You should avoid providing a 2nd state argument to push when the 1st argument is a location-like object that already has state; it is ignored");
         var action = 'PUSH';
         var location = createLocation(path, state, createKey(), history.location);
         transitionManager.confirmTransitionTo(location, action, getUserConfirmation, function(ok) {
@@ -26736,13 +26670,13 @@ function getHistoryState() {
                     });
                 }
             } else {
-                warning(state1 === undefined, 'Browser history cannot push state in browsers that do not support HTML5 history');
+                _tinyWarningDefault.default(state1 === undefined, 'Browser history cannot push state in browsers that do not support HTML5 history');
                 window.location.href = href;
             }
         });
     }
     function replace(path, state) {
-        warning(!(typeof path === 'object' && path.state !== undefined && state !== undefined), "You should avoid providing a 2nd state argument to replace when the 1st argument is a location-like object that already has state; it is ignored");
+        _tinyWarningDefault.default(!(typeof path === 'object' && path.state !== undefined && state !== undefined), "You should avoid providing a 2nd state argument to replace when the 1st argument is a location-like object that already has state; it is ignored");
         var action = 'REPLACE';
         var location = createLocation(path, state, createKey(), history.location);
         transitionManager.confirmTransitionTo(location, action, getUserConfirmation, function(ok) {
@@ -26764,7 +26698,7 @@ function getHistoryState() {
                     });
                 }
             } else {
-                warning(state1 === undefined, 'Browser history cannot replace state in browsers that do not support HTML5 history');
+                _tinyWarningDefault.default(state1 === undefined, 'Browser history cannot replace state in browsers that do not support HTML5 history');
                 window.location.replace(href);
             }
         });
@@ -26867,7 +26801,7 @@ function replaceHashPath(path) {
 function createHashHistory(props) {
     if (props === void 0) props = {
     };
-    !canUseDOM && invariant(false, 'Hash history needs a DOM');
+    !canUseDOM && _tinyInvariantDefault.default(false, 'Hash history needs a DOM');
     var globalHistory = window.history;
     var canGoWithoutReload = supportsGoWithoutReloadUsingHash();
     var _props = props, _props$getUserConfirm = _props.getUserConfirmation, getUserConfirmation = _props$getUserConfirm === void 0 ? getConfirmation : _props$getUserConfirm, _props$hashType = _props.hashType, hashType = _props$hashType === void 0 ? 'slash' : _props$hashType;
@@ -26875,13 +26809,13 @@ function createHashHistory(props) {
     var _HashPathCoders$hashT = HashPathCoders[hashType], encodePath = _HashPathCoders$hashT.encodePath, decodePath = _HashPathCoders$hashT.decodePath;
     function getDOMLocation() {
         var path = decodePath(getHashPath());
-        warning(!basename || hasBasename(path, basename), "You are attempting to use a basename on a page whose URL path does not begin with the basename. Expected path \"" + path + '" to begin with "' + basename + '".');
+        _tinyWarningDefault.default(!basename || hasBasename(path, basename), "You are attempting to use a basename on a page whose URL path does not begin with the basename. Expected path \"" + path + '" to begin with "' + basename + '".');
         if (basename) path = stripBasename(path, basename);
         return createLocation(path);
     }
     var transitionManager = createTransitionManager();
     function setState(nextState) {
-        _extends(history, nextState);
+        _extendsDefault.default(history, nextState);
         history.length = globalHistory.length;
         transitionManager.notifyListeners(history.location, history.action);
     }
@@ -26947,7 +26881,7 @@ function createHashHistory(props) {
         return href + '#' + encodePath(basename + createPath(location));
     }
     function push(path1, state) {
-        warning(state === undefined, 'Hash history cannot push state; it is ignored');
+        _tinyWarningDefault.default(state === undefined, 'Hash history cannot push state; it is ignored');
         var action = 'PUSH';
         var location = createLocation(path1, undefined, undefined, history.location);
         transitionManager.confirmTransitionTo(location, action, getUserConfirmation, function(ok) {
@@ -26970,13 +26904,13 @@ function createHashHistory(props) {
                     location: location
                 });
             } else {
-                warning(false, 'Hash history cannot PUSH the same path; a new entry will not be added to the history stack');
+                _tinyWarningDefault.default(false, 'Hash history cannot PUSH the same path; a new entry will not be added to the history stack');
                 setState();
             }
         });
     }
     function replace(path1, state) {
-        warning(state === undefined, 'Hash history cannot replace state; it is ignored');
+        _tinyWarningDefault.default(state === undefined, 'Hash history cannot replace state; it is ignored');
         var action = 'REPLACE';
         var location = createLocation(path1, undefined, undefined, history.location);
         transitionManager.confirmTransitionTo(location, action, getUserConfirmation, function(ok) {
@@ -27000,7 +26934,7 @@ function createHashHistory(props) {
         });
     }
     function go(n) {
-        warning(canGoWithoutReload, 'Hash history go(n) causes a full page reload in this browser');
+        _tinyWarningDefault.default(canGoWithoutReload, 'Hash history go(n) causes a full page reload in this browser');
         globalHistory.go(n);
     }
     function goBack() {
@@ -27067,7 +27001,7 @@ function clamp(n, lowerBound, upperBound) {
     ] : _props$initialEntries, _props$initialIndex = _props.initialIndex, initialIndex = _props$initialIndex === void 0 ? 0 : _props$initialIndex, _props$keyLength = _props.keyLength, keyLength = _props$keyLength === void 0 ? 6 : _props$keyLength;
     var transitionManager = createTransitionManager();
     function setState(nextState) {
-        _extends(history, nextState);
+        _extendsDefault.default(history, nextState);
         history.length = history.entries.length;
         transitionManager.notifyListeners(history.location, history.action);
     }
@@ -27080,7 +27014,7 @@ function clamp(n, lowerBound, upperBound) {
     }); // Public interface
     var createHref = createPath;
     function push(path, state) {
-        warning(!(typeof path === 'object' && path.state !== undefined && state !== undefined), "You should avoid providing a 2nd state argument to push when the 1st argument is a location-like object that already has state; it is ignored");
+        _tinyWarningDefault.default(!(typeof path === 'object' && path.state !== undefined && state !== undefined), "You should avoid providing a 2nd state argument to push when the 1st argument is a location-like object that already has state; it is ignored");
         var action = 'PUSH';
         var location = createLocation(path, state, createKey(), history.location);
         transitionManager.confirmTransitionTo(location, action, getUserConfirmation, function(ok) {
@@ -27099,7 +27033,7 @@ function clamp(n, lowerBound, upperBound) {
         });
     }
     function replace(path, state) {
-        warning(!(typeof path === 'object' && path.state !== undefined && state !== undefined), "You should avoid providing a 2nd state argument to replace when the 1st argument is a location-like object that already has state; it is ignored");
+        _tinyWarningDefault.default(!(typeof path === 'object' && path.state !== undefined && state !== undefined), "You should avoid providing a 2nd state argument to replace when the 1st argument is a location-like object that already has state; it is ignored");
         var action = 'REPLACE';
         var location = createLocation(path, state, createKey(), history.location);
         transitionManager.confirmTransitionTo(location, action, getUserConfirmation, function(ok) {
@@ -27161,20 +27095,10 @@ function clamp(n, lowerBound, upperBound) {
     };
     return history;
 }
-exports.createBrowserHistory = createBrowserHistory;
-exports.createHashHistory = createHashHistory;
-exports.createMemoryHistory = createMemoryHistory;
-exports.createLocation = createLocation;
-exports.locationsAreEqual = locationsAreEqual;
-exports.parsePath = parsePath;
-exports.createPath = createPath;
 
-},{"resolve-pathname":"3n3qA","value-equal":"872s5","tiny-warning":"cberx","tiny-invariant":"d4J4y"}],"3n3qA":[function(require,module,exports) {
-'use strict';
-module.exports = require('./cjs/resolve-pathname.js');
-
-},{"./cjs/resolve-pathname.js":"brXvC"}],"brXvC":[function(require,module,exports) {
-'use strict';
+},{"@babel/runtime/helpers/esm/extends":"bKAu6","resolve-pathname":"8Bknh","value-equal":"j68cW","tiny-warning":"4xDJt","tiny-invariant":"kiE0c","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"8Bknh":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
 function isAbsolute(pathname) {
     return pathname.charAt(0) === '/';
 }
@@ -27222,14 +27146,11 @@ function resolvePathname(to, from) {
     if (hasTrailingSlash && result.substr(-1) !== '/') result += '/';
     return result;
 }
-module.exports = resolvePathname;
+exports.default = resolvePathname;
 
-},{}],"872s5":[function(require,module,exports) {
-'use strict';
-module.exports = require('./cjs/value-equal.js');
-
-},{"./cjs/value-equal.js":"gijEZ"}],"gijEZ":[function(require,module,exports) {
-'use strict';
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"j68cW":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
 function valueOf(obj) {
     return obj.valueOf ? obj.valueOf() : Object.prototype.valueOf.call(obj);
 }
@@ -27252,10 +27173,11 @@ function valueEqual(a, b) {
     }
     return false;
 }
-module.exports = valueEqual;
+exports.default = valueEqual;
 
-},{}],"cberx":[function(require,module,exports) {
-'use strict';
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"4xDJt":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
 var isProduction = false;
 function warning(condition, message) {
     if (!isProduction) {
@@ -27268,13 +27190,11 @@ function warning(condition, message) {
         }
     }
 }
-module.exports = warning;
+exports.default = warning;
 
-},{}],"d4J4y":[function(require,module,exports) {
-'use strict';
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"kiE0c":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
 var isProduction = false;
 var prefix = 'Invariant failed';
 function invariant(condition, message) {
@@ -27284,19 +27204,18 @@ function invariant(condition, message) {
 }
 exports.default = invariant;
 
-},{}],"kV8cf":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"bwjcK":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _inheritsLoose = require("@babel/runtime/helpers/esm/inheritsLoose");
+var _inheritsLooseDefault = parcelHelpers.interopDefault(_inheritsLoose);
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _tinyWarning = require("tiny-warning");
+var _tinyWarningDefault = parcelHelpers.interopDefault(_tinyWarning);
 var global = arguments[3];
-'use strict';
-var React = require('react'), _inheritsLoose = require('@babel/runtime/helpers/inheritsLoose'), PropTypes = require('prop-types'), warning = require('tiny-warning');
-function _interopDefaultLegacy(e) {
-    return e && typeof e === 'object' && 'default' in e ? e : {
-        'default': e
-    };
-}
-var React__default = /*#__PURE__*/ _interopDefaultLegacy(React);
-var _inheritsLoose__default = /*#__PURE__*/ _interopDefaultLegacy(_inheritsLoose);
-var PropTypes__default = /*#__PURE__*/ _interopDefaultLegacy(PropTypes);
-var warning__default = /*#__PURE__*/ _interopDefaultLegacy(warning);
 var MAX_SIGNED_31_BIT_INT = 1073741823;
 var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : {
 };
@@ -27337,7 +27256,7 @@ function createReactContext(defaultValue, calculateChangedBits) {
     var _Provider$childContex, _Consumer$contextType;
     var contextProp = '__create-react-context-' + getUniqueId() + '__';
     var Provider1 = /*#__PURE__*/ function(_Component) {
-        _inheritsLoose__default['default'](Provider2, _Component);
+        _inheritsLooseDefault.default(Provider2, _Component);
         function Provider2() {
             var _this;
             _this = _Component.apply(this, arguments) || this;
@@ -27358,7 +27277,7 @@ function createReactContext(defaultValue, calculateChangedBits) {
                 if (objectIs(oldValue, newValue)) changedBits = 0;
                 else {
                     changedBits = typeof calculateChangedBits === 'function' ? calculateChangedBits(oldValue, newValue) : MAX_SIGNED_31_BIT_INT;
-                    warning__default['default']((changedBits & MAX_SIGNED_31_BIT_INT) === changedBits, "calculateChangedBits: Expected the return value to be a 31-bit integer. Instead received: " + changedBits);
+                    _tinyWarningDefault.default((changedBits & MAX_SIGNED_31_BIT_INT) === changedBits, "calculateChangedBits: Expected the return value to be a 31-bit integer. Instead received: " + changedBits);
                     changedBits |= 0;
                     if (changedBits !== 0) this.emitter.set(nextProps.value, changedBits);
                 }
@@ -27368,11 +27287,11 @@ function createReactContext(defaultValue, calculateChangedBits) {
             return this.props.children;
         };
         return Provider2;
-    }(React.Component);
+    }(_react.Component);
     Provider1.childContextTypes = (_Provider$childContex = {
-    }, _Provider$childContex[contextProp] = PropTypes__default['default'].object.isRequired, _Provider$childContex);
+    }, _Provider$childContex[contextProp] = _propTypesDefault.default.object.isRequired, _Provider$childContex);
     var Consumer1 = /*#__PURE__*/ function(_Component2) {
-        _inheritsLoose__default['default'](Consumer2, _Component2);
+        _inheritsLooseDefault.default(Consumer2, _Component2);
         function Consumer2() {
             var _this2;
             _this2 = _Component2.apply(this, arguments) || this;
@@ -27408,40 +27327,18 @@ function createReactContext(defaultValue, calculateChangedBits) {
             return onlyChild(this.props.children)(this.state.value);
         };
         return Consumer2;
-    }(React.Component);
+    }(_react.Component);
     Consumer1.contextTypes = (_Consumer$contextType = {
-    }, _Consumer$contextType[contextProp] = PropTypes__default['default'].object, _Consumer$contextType);
+    }, _Consumer$contextType[contextProp] = _propTypesDefault.default.object, _Consumer$contextType);
     return {
         Provider: Provider1,
         Consumer: Consumer1
     };
 }
-var index = React__default['default'].createContext || createReactContext;
-module.exports = index;
+var index = _reactDefault.default.createContext || createReactContext;
+exports.default = index;
 
-},{"react":"juP7B","@babel/runtime/helpers/inheritsLoose":"2fCwD","prop-types":"jEh18","tiny-warning":"cberx"}],"2fCwD":[function(require,module,exports) {
-var setPrototypeOf = require("./setPrototypeOf.js");
-function _inheritsLoose(subClass, superClass) {
-    subClass.prototype = Object.create(superClass.prototype);
-    subClass.prototype.constructor = subClass;
-    setPrototypeOf(subClass, superClass);
-}
-module.exports = _inheritsLoose;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
-
-},{"./setPrototypeOf.js":"8Mv38"}],"8Mv38":[function(require,module,exports) {
-function _setPrototypeOf(o, p) {
-    module.exports = _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf1(o1, p1) {
-        o1.__proto__ = p1;
-        return o1;
-    };
-    module.exports["default"] = module.exports, module.exports.__esModule = true;
-    return _setPrototypeOf(o, p);
-}
-module.exports = _setPrototypeOf;
-module.exports["default"] = module.exports, module.exports.__esModule = true;
-
-},{}],"90vgj":[function(require,module,exports) {
+},{"react":"6TuXu","@babel/runtime/helpers/esm/inheritsLoose":"eO0be","prop-types":"1tgq3","tiny-warning":"4xDJt","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"6SN7C":[function(require,module,exports) {
 var isarray = require('isarray');
 /**
  * Expose `pathToRegexp`.
@@ -27749,16 +27646,16 @@ module.exports.tokensToRegExp = tokensToRegExp;
     return stringToRegexp(path, keys, options);
 }
 
-},{"isarray":"8nCEH"}],"8nCEH":[function(require,module,exports) {
+},{"isarray":"1PYkb"}],"1PYkb":[function(require,module,exports) {
 module.exports = Array.isArray || function(arr) {
     return Object.prototype.toString.call(arr) == '[object Array]';
 };
 
-},{}],"2F9yi":[function(require,module,exports) {
+},{}],"9ROSB":[function(require,module,exports) {
 'use strict';
 module.exports = require('./cjs/react-is.development.js');
 
-},{"./cjs/react-is.development.js":"hE7Vu"}],"hE7Vu":[function(require,module,exports) {
+},{"./cjs/react-is.development.js":"feJCv"}],"feJCv":[function(require,module,exports) {
 /** @license React v16.13.1
  * react-is.development.js
  *
@@ -27913,17 +27810,17 @@ module.exports = require('./cjs/react-is.development.js');
     exports.typeOf = typeOf;
 })();
 
-},{}],"lhcDM":[function(require,module,exports) {
+},{}],"gS8U6":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _homePage = require("./HomePage");
 parcelHelpers.exportAll(_homePage, exports);
 
-},{"./HomePage":"gHZ9g","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN"}],"gHZ9g":[function(require,module,exports) {
-var helpers = require("../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{"./HomePage":"6tBMK","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"6tBMK":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$a691 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
-helpers.prelude(module);
+$parcel$ReactRefreshHelpers$a691.prelude(module);
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -27953,30 +27850,12 @@ const Rotate = _styledComponentsDefault.default.div.withConfig({
     "display:inline-block;animation:",
     " 2s linear infinite;padding:2rem 1rem;font-size:1.2rem;"
 ], rotate);
-var _StyledNavLink = _styledComponentsDefault.default(_style.NavLink).withConfig({
-    displayName: "HomePage___StyledNavLink",
-    componentId: "sc-12bfo3c-1"
-})([
-    "",
-    ""
-], (p)=>p._css
-);
-_c = _StyledNavLink;
-var _StyledMain = _styledComponentsDefault.default(_style.Main).withConfig({
-    displayName: "HomePage___StyledMain",
-    componentId: "sc-12bfo3c-2"
-})([
-    "",
-    ""
-], (p)=>p._css2
-);
-_c1 = _StyledMain;
 const HomePage = ()=>{
     _s();
     const [isOpen, setOpen] = _react.useState(false);
     return(/*#__PURE__*/ _reactDefault.default.createElement("div", null, /*#__PURE__*/ _reactDefault.default.createElement(_style.MenuBar, null, /*#__PURE__*/ _reactDefault.default.createElement("nav", null, /*#__PURE__*/ _reactDefault.default.createElement(_style.NavBar, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.Logo, null, /*#__PURE__*/ _reactDefault.default.createElement(_StyledNavLink, {
         href: "/",
-        _css: ""
+        $_css: ""
     }, "Michael Hegner")), /*#__PURE__*/ _reactDefault.default.createElement(_style.NavList, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.NavItem, {
         desktop: true
     }, /*#__PURE__*/ _reactDefault.default.createElement(_style.NavLink, {
@@ -27996,60 +27875,114 @@ const HomePage = ()=>{
         open: isOpen,
         setOpen: setOpen
     })))))), /*#__PURE__*/ _reactDefault.default.createElement(_StyledMain, {
-        _css2: "width:100%;display:block;"
+        $_css2: "width:100%;display:block;"
     }, /*#__PURE__*/ _reactDefault.default.createElement(_title.Title, null), /*#__PURE__*/ _reactDefault.default.createElement(_bio.Bio, null), /*#__PURE__*/ _reactDefault.default.createElement(_projects.Projects, null), /*#__PURE__*/ _reactDefault.default.createElement(_footer.Footer, null))));
 };
 _s(HomePage, "WPi2qa4HrijmrT7XyqmH7MkbZuo=");
-_c2 = HomePage;
+_c = HomePage;
+var _StyledNavLink = _styledComponentsDefault.default(_style.NavLink).withConfig({
+    displayName: "HomePage___StyledNavLink",
+    componentId: "sc-12bfo3c-1"
+})([
+    "",
+    ""
+], (p)=>p.$_css
+);
+_c1 = _StyledNavLink;
+var _StyledMain = _styledComponentsDefault.default(_style.Main).withConfig({
+    displayName: "HomePage___StyledMain",
+    componentId: "sc-12bfo3c-2"
+})([
+    "",
+    ""
+], (p)=>p.$_css2
+);
+_c2 = _StyledMain;
 var _c, _c1, _c2;
-$RefreshReg$(_c, "_StyledNavLink");
-$RefreshReg$(_c1, "_StyledMain");
-$RefreshReg$(_c2, "HomePage");
+$RefreshReg$(_c, "HomePage");
+$RefreshReg$(_c1, "_StyledNavLink");
+$RefreshReg$(_c2, "_StyledMain");
 
-  helpers.postlude(module);
+  $parcel$ReactRefreshHelpers$a691.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"styled-components":"gqYCY","react":"juP7B","../components/about":"3Rx77","../components/projects":"3QoBt","./style":"b7lZC","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN","../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6e8vO","../components/bio":"ctkft","../components/footer":"6sPhD","../components/resources":"gIUS3","../components/title":"eOqF1","../components/":"1EbxM"}],"gqYCY":[function(require,module,exports) {
-var process = require("process");
-"use strict";
-function e(e1) {
-    return e1 && "object" == typeof e1 && "default" in e1 ? e1.default : e1;
-}
-Object.defineProperty(exports, "__esModule", {
-    value: !0
-});
-var t = require("react-is"), n = require("react"), r = e(n), o = e(require("shallowequal")), s = e(require("@emotion/stylis")), i = e(require("@emotion/unitless")), a = e(require("@emotion/is-prop-valid")), u = e(require("hoist-non-react-statics"));
-function c() {
-    return (c = Object.assign || function(e1) {
-        for(var t1 = 1; t1 < arguments.length; t1++){
-            var n1 = arguments[t1];
-            for(var r1 in n1)Object.prototype.hasOwnProperty.call(n1, r1) && (e1[r1] = n1[r1]);
+},{"styled-components":"gkt6C","react":"6TuXu","../components/about":"4pWYW","../components/bio":"hPV5G","../components/footer":"bsCn5","../components/projects":"eFG88","../components/resources":"iRBXD","../components/title":"3MJTm","./style":"1SMb4","../components/":"byhfl","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"gkt6C":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "ServerStyleSheet", ()=>Je
+);
+parcelHelpers.export(exports, "StyleSheetConsumer", ()=>le
+);
+parcelHelpers.export(exports, "StyleSheetContext", ()=>ue
+);
+parcelHelpers.export(exports, "StyleSheetManager", ()=>ye
+);
+parcelHelpers.export(exports, "ThemeConsumer", ()=>Ge
+);
+parcelHelpers.export(exports, "ThemeContext", ()=>Le
+);
+parcelHelpers.export(exports, "ThemeProvider", ()=>Fe
+);
+parcelHelpers.export(exports, "__PRIVATE__", ()=>Ke
+);
+parcelHelpers.export(exports, "createGlobalStyle", ()=>We
+);
+parcelHelpers.export(exports, "css", ()=>Ce
+);
+parcelHelpers.export(exports, "isStyledComponent", ()=>N
+);
+parcelHelpers.export(exports, "keyframes", ()=>Ue
+);
+parcelHelpers.export(exports, "useTheme", ()=>Ze
+);
+parcelHelpers.export(exports, "version", ()=>C
+);
+parcelHelpers.export(exports, "withTheme", ()=>Xe
+);
+var _reactIs = require("react-is");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _shallowequal = require("shallowequal");
+var _shallowequalDefault = parcelHelpers.interopDefault(_shallowequal);
+var _stylis = require("@emotion/stylis");
+var _stylisDefault = parcelHelpers.interopDefault(_stylis);
+var _unitless = require("@emotion/unitless");
+var _unitlessDefault = parcelHelpers.interopDefault(_unitless);
+var _isPropValid = require("@emotion/is-prop-valid");
+var _isPropValidDefault = parcelHelpers.interopDefault(_isPropValid);
+var _hoistNonReactStatics = require("hoist-non-react-statics");
+var _hoistNonReactStaticsDefault = parcelHelpers.interopDefault(_hoistNonReactStatics);
+function v() {
+    return (v = Object.assign || function(e) {
+        for(var t = 1; t < arguments.length; t++){
+            var n = arguments[t];
+            for(var r in n)Object.prototype.hasOwnProperty.call(n, r) && (e[r] = n[r]);
         }
-        return e1;
+        return e;
     }).apply(this, arguments);
 }
-var l = function(e1, t1) {
-    for(var n2 = [
-        e1[0]
-    ], r2 = 0, o1 = t1.length; r2 < o1; r2 += 1)n2.push(t1[r2], e1[r2 + 1]);
-    return n2;
-}, d2 = function(e1) {
-    return null !== e1 && "object" == typeof e1 && "[object Object]" === (e1.toString ? e1.toString() : Object.prototype.toString.call(e1)) && !t.typeOf(e1);
-}, h2 = Object.freeze([]), p = Object.freeze({
+var g = function(e, t) {
+    for(var n = [
+        e[0]
+    ], r = 0, o = t.length; r < o; r += 1)n.push(t[r], e[r + 1]);
+    return n;
+}, S = function(t) {
+    return null !== t && "object" == typeof t && "[object Object]" === (t.toString ? t.toString() : Object.prototype.toString.call(t)) && !_reactIs.typeOf(t);
+}, w = Object.freeze([]), E = Object.freeze({
 });
-function f(e1) {
-    return "function" == typeof e1;
+function b(e) {
+    return "function" == typeof e;
 }
-function m(e1) {
-    return "string" == typeof e1 && e1 || e1.displayName || e1.name || "Component";
+function _(e) {
+    return "string" == typeof e && e || e.displayName || e.name || "Component";
 }
-function y(e1) {
-    return e1 && "string" == typeof e1.styledComponentId;
+function N(e) {
+    return e && "string" == typeof e.styledComponentId;
 }
-var v = "undefined" != typeof process && undefined || "data-styled", g = "undefined" != typeof window && "HTMLElement" in window, S = Boolean("boolean" == typeof SC_DISABLE_SPEEDY ? SC_DISABLE_SPEEDY : "undefined" != typeof process && false && true ? undefined : "undefined" != typeof process && false && true ? undefined : true), w = {
-}, E = {
+var A = "data-styled", C = "5.3.1", I = "undefined" != typeof window && "HTMLElement" in window, P = Boolean("boolean" == typeof SC_DISABLE_SPEEDY ? SC_DISABLE_SPEEDY : true), O = {
+}, R = {
     1: "Cannot create styled-component for component: %s.\n\n",
     2: "Can't collect styles once you've consumed a `ServerStyleSheet`'s styles! `ServerStyleSheet` is a one off instance for each server-side render cycle.\n\n- Are you trying to reuse it across renders?\n- Are you accidentally calling collectStyles twice?\n\n",
     3: "Streaming SSR is only supported in a Node.js environment; Please do not try to call this method in the browser.\n\n",
@@ -28068,520 +28001,555 @@ var v = "undefined" != typeof process && undefined || "data-styled", g = "undefi
     16: "Reached the limit of how many styled components may be created at group %s.\nYou may only create up to 1,073,741,824 components. If you're creating components dynamically,\nas for instance in your render method then you may be running into this limitation.\n\n",
     17: "CSSStyleSheet could not be found on HTMLStyleElement.\nHas styled-components' style tag been unmounted or altered by another script?\n"
 };
-function b() {
-    for(var e1 = arguments.length <= 0 ? void 0 : arguments[0], t1 = [], n2 = 1, r2 = arguments.length; n2 < r2; n2 += 1)t1.push(n2 < 0 || arguments.length <= n2 ? void 0 : arguments[n2]);
-    return t1.forEach(function(t2) {
-        e1 = e1.replace(/%[a-z]/, t2);
-    }), e1;
+function D() {
+    for(var e = arguments.length <= 0 ? void 0 : arguments[0], t = [], n = 1, r = arguments.length; n < r; n += 1)t.push(n < 0 || arguments.length <= n ? void 0 : arguments[n]);
+    return t.forEach(function(t1) {
+        e = e.replace(/%[a-z]/, t1);
+    }), e;
 }
-function _(e1) {
-    for(var t1 = arguments.length, n2 = new Array(t1 > 1 ? t1 - 1 : 0), r2 = 1; r2 < t1; r2++)n2[r2 - 1] = arguments[r2];
-    throw new Error(b.apply(void 0, [
-        E[e1]
-    ].concat(n2)).trim());
+function j(e) {
+    for(var t = arguments.length, n = new Array(t > 1 ? t - 1 : 0), r = 1; r < t; r++)n[r - 1] = arguments[r];
+    throw new Error(D.apply(void 0, [
+        R[e]
+    ].concat(n)).trim());
 }
-var N = function() {
-    function e1(e2) {
-        this.groupSizes = new Uint32Array(512), this.length = 512, this.tag = e2;
+var T = function() {
+    function e(e1) {
+        this.groupSizes = new Uint32Array(512), this.length = 512, this.tag = e1;
     }
-    var t1 = e1.prototype;
-    return t1.indexOfGroup = function(e2) {
-        for(var t2 = 0, n2 = 0; n2 < e2; n2++)t2 += this.groupSizes[n2];
+    var t = e.prototype;
+    return t.indexOfGroup = function(e1) {
+        for(var t1 = 0, n = 0; n < e1; n++)t1 += this.groupSizes[n];
+        return t1;
+    }, t.insertRules = function(e1, t1) {
+        if (e1 >= this.groupSizes.length) {
+            for(var n = this.groupSizes, r = n.length, o = r; e1 >= o;)(o <<= 1) < 0 && j(16, "" + e1);
+            this.groupSizes = new Uint32Array(o), this.groupSizes.set(n), this.length = o;
+            for(var s = r; s < o; s++)this.groupSizes[s] = 0;
+        }
+        for(var i = this.indexOfGroup(e1 + 1), a = 0, c = t1.length; a < c; a++)this.tag.insertRule(i, t1[a]) && (this.groupSizes[e1]++, i++);
+    }, t.clearGroup = function(e1) {
+        if (e1 < this.length) {
+            var t1 = this.groupSizes[e1], n = this.indexOfGroup(e1), r = n + t1;
+            this.groupSizes[e1] = 0;
+            for(var o = n; o < r; o++)this.tag.deleteRule(n);
+        }
+    }, t.getGroup = function(e1) {
+        var t2 = "";
+        if (e1 >= this.length || 0 === this.groupSizes[e1]) return t2;
+        for(var n = this.groupSizes[e1], r = this.indexOfGroup(e1), o = r + n, s = r; s < o; s++)t2 += this.tag.getRule(s) + "/*!sc*/\n";
         return t2;
-    }, t1.insertRules = function(e2, t2) {
-        if (e2 >= this.groupSizes.length) {
-            for(var n2 = this.groupSizes, r2 = n2.length, o1 = r2; e2 >= o1;)(o1 <<= 1) < 0 && _(16, "" + e2);
-            this.groupSizes = new Uint32Array(o1), this.groupSizes.set(n2), this.length = o1;
-            for(var s1 = r2; s1 < o1; s1++)this.groupSizes[s1] = 0;
-        }
-        for(var i1 = this.indexOfGroup(e2 + 1), a1 = 0, u1 = t2.length; a1 < u1; a1++)this.tag.insertRule(i1, t2[a1]) && (this.groupSizes[e2]++, i1++);
-    }, t1.clearGroup = function(e2) {
-        if (e2 < this.length) {
-            var t2 = this.groupSizes[e2], n3 = this.indexOfGroup(e2), r3 = n3 + t2;
-            this.groupSizes[e2] = 0;
-            for(var o2 = n3; o2 < r3; o2++)this.tag.deleteRule(n3);
-        }
-    }, t1.getGroup = function(e2) {
-        var t3 = "";
-        if (e2 >= this.length || 0 === this.groupSizes[e2]) return t3;
-        for(var n4 = this.groupSizes[e2], r4 = this.indexOfGroup(e2), o3 = r4 + n4, s2 = r4; s2 < o3; s2++)t3 += this.tag.getRule(s2) + "/*!sc*/\n";
-        return t3;
-    }, e1;
-}(), C = new Map, A = new Map, I = 1, P = function(e1) {
-    if (C.has(e1)) return C.get(e1);
-    for(; A.has(I);)I++;
-    var t1 = I++;
-    return ((0 | t1) < 0 || t1 > 1073741824) && _(16, "" + t1), C.set(e1, t1), A.set(t1, e1), t1;
-}, O = function(e1) {
-    return A.get(e1);
-}, x = function(e1, t1) {
-    C.set(e1, t1), A.set(t1, e1);
-}, R = "style[" + v + '][data-styled-version="5.3.0"]', D = new RegExp("^" + v + '\\.g(\\d+)\\[id="([\\w\\d-]+)"\\].*?"([^"]*)'), T = function(e1, t1, n4) {
-    for(var r4, o3 = n4.split(","), s2 = 0, i1 = o3.length; s2 < i1; s2++)(r4 = o3[s2]) && e1.registerName(t1, r4);
-}, j = function(e1, t1) {
-    for(var n4 = t1.innerHTML.split("/*!sc*/\n"), r4 = [], o3 = 0, s2 = n4.length; o3 < s2; o3++){
-        var i1 = n4[o3].trim();
-        if (i1) {
-            var a1 = i1.match(D);
-            if (a1) {
-                var u1 = 0 | parseInt(a1[1], 10), c1 = a1[2];
-                0 !== u1 && (x(c1, u1), T(e1, c1, a1[3]), e1.getTag().insertRules(u1, r4)), r4.length = 0;
-            } else r4.push(i1);
+    }, e;
+}(), k = new Map, x = new Map, V = 1, B = function(e) {
+    if (k.has(e)) return k.get(e);
+    for(; x.has(V);)V++;
+    var t2 = V++;
+    return ((0 | t2) < 0 || t2 > 1073741824) && j(16, "" + t2), k.set(e, t2), x.set(t2, e), t2;
+}, M = function(e) {
+    return x.get(e);
+}, z = function(e, t2) {
+    t2 >= V && (V = t2 + 1), k.set(e, t2), x.set(t2, e);
+}, L = "style[" + A + '][data-styled-version="5.3.1"]', G = new RegExp("^" + A + '\\.g(\\d+)\\[id="([\\w\\d-]+)"\\].*?"([^"]*)'), F = function(e, t2, n) {
+    for(var r, o = n.split(","), s = 0, i = o.length; s < i; s++)(r = o[s]) && e.registerName(t2, r);
+}, Y = function(e, t2) {
+    for(var n = (t2.innerHTML || "").split("/*!sc*/\n"), r = [], o = 0, s = n.length; o < s; o++){
+        var i = n[o].trim();
+        if (i) {
+            var a = i.match(G);
+            if (a) {
+                var c = 0 | parseInt(a[1], 10), u = a[2];
+                0 !== c && (z(u, c), F(e, u, a[3]), e.getTag().insertRules(c, r)), r.length = 0;
+            } else r.push(i);
         }
     }
-}, k = function() {
+}, q = function() {
     return "undefined" != typeof window && (void 0) !== window.__webpack_nonce__ ? window.__webpack_nonce__ : null;
-}, V = function(e1) {
-    var t1 = document.head, n4 = e1 || t1, r4 = document.createElement("style"), o3 = function(e2) {
-        for(var t3 = e2.childNodes, n5 = t3.length; n5 >= 0; n5--){
-            var r5 = t3[n5];
-            if (r5 && 1 === r5.nodeType && r5.hasAttribute(v)) return r5;
+}, H = function(e) {
+    var t2 = document.head, n = e || t2, r = document.createElement("style"), o = function(e1) {
+        for(var t3 = e1.childNodes, n1 = t3.length; n1 >= 0; n1--){
+            var r1 = t3[n1];
+            if (r1 && 1 === r1.nodeType && r1.hasAttribute(A)) return r1;
         }
-    }(n4), s2 = (void 0) !== o3 ? o3.nextSibling : null;
-    r4.setAttribute(v, "active"), r4.setAttribute("data-styled-version", "5.3.0");
-    var i2 = k();
-    return i2 && r4.setAttribute("nonce", i2), n4.insertBefore(r4, s2), r4;
-}, M = function() {
-    function e1(e2) {
-        var t1 = this.element = V(e2);
-        t1.appendChild(document.createTextNode("")), this.sheet = (function(e3) {
-            if (e3.sheet) return e3.sheet;
-            for(var t3 = document.styleSheets, n4 = 0, r4 = t3.length; n4 < r4; n4++){
-                var o3 = t3[n4];
-                if (o3.ownerNode === e3) return o3;
+    }(n), s = (void 0) !== o ? o.nextSibling : null;
+    r.setAttribute(A, "active"), r.setAttribute("data-styled-version", "5.3.1");
+    var i = q();
+    return i && r.setAttribute("nonce", i), n.insertBefore(r, s), r;
+}, $ = function() {
+    function e(e1) {
+        var t2 = this.element = H(e1);
+        t2.appendChild(document.createTextNode("")), this.sheet = (function(e2) {
+            if (e2.sheet) return e2.sheet;
+            for(var t3 = document.styleSheets, n = 0, r2 = t3.length; n < r2; n++){
+                var o = t3[n];
+                if (o.ownerNode === e2) return o;
             }
-            _(17);
-        })(t1), this.length = 0;
+            j(17);
+        })(t2), this.length = 0;
     }
-    var t1 = e1.prototype;
-    return t1.insertRule = function(e2, t3) {
+    var t2 = e.prototype;
+    return t2.insertRule = function(e1, t3) {
         try {
-            return this.sheet.insertRule(t3, e2), this.length++, !0;
-        } catch (e3) {
+            return this.sheet.insertRule(t3, e1), this.length++, !0;
+        } catch (e2) {
             return !1;
         }
-    }, t1.deleteRule = function(e2) {
-        this.sheet.deleteRule(e2), this.length--;
-    }, t1.getRule = function(e2) {
-        var t3 = this.sheet.cssRules[e2];
+    }, t2.deleteRule = function(e1) {
+        this.sheet.deleteRule(e1), this.length--;
+    }, t2.getRule = function(e1) {
+        var t3 = this.sheet.cssRules[e1];
         return (void 0) !== t3 && "string" == typeof t3.cssText ? t3.cssText : "";
-    }, e1;
-}(), B = function() {
-    function e1(e2) {
-        var t1 = this.element = V(e2);
-        this.nodes = t1.childNodes, this.length = 0;
+    }, e;
+}(), W = function() {
+    function e(e1) {
+        var t2 = this.element = H(e1);
+        this.nodes = t2.childNodes, this.length = 0;
     }
-    var t1 = e1.prototype;
-    return t1.insertRule = function(e2, t3) {
-        if (e2 <= this.length && e2 >= 0) {
-            var n4 = document.createTextNode(t3), r4 = this.nodes[e2];
-            return this.element.insertBefore(n4, r4 || null), this.length++, !0;
+    var t2 = e.prototype;
+    return t2.insertRule = function(e1, t3) {
+        if (e1 <= this.length && e1 >= 0) {
+            var n = document.createTextNode(t3), r2 = this.nodes[e1];
+            return this.element.insertBefore(n, r2 || null), this.length++, !0;
         }
         return !1;
-    }, t1.deleteRule = function(e2) {
-        this.element.removeChild(this.nodes[e2]), this.length--;
-    }, t1.getRule = function(e2) {
-        return e2 < this.length ? this.nodes[e2].textContent : "";
-    }, e1;
-}(), z = function() {
-    function e1(e2) {
+    }, t2.deleteRule = function(e1) {
+        this.element.removeChild(this.nodes[e1]), this.length--;
+    }, t2.getRule = function(e1) {
+        return e1 < this.length ? this.nodes[e1].textContent : "";
+    }, e;
+}(), U = function() {
+    function e(e1) {
         this.rules = [], this.length = 0;
     }
-    var t1 = e1.prototype;
-    return t1.insertRule = function(e2, t3) {
-        return e2 <= this.length && (this.rules.splice(e2, 0, t3), this.length++, !0);
-    }, t1.deleteRule = function(e2) {
-        this.rules.splice(e2, 1), this.length--;
-    }, t1.getRule = function(e2) {
-        return e2 < this.length ? this.rules[e2] : "";
-    }, e1;
-}(), L = g, q = {
-    isServer: !g,
-    useCSSOMInjection: !S
-}, G = function() {
-    function e1(e2, t1, n5) {
-        (void 0) === e2 && (e2 = p), (void 0) === t1 && (t1 = {
-        }), this.options = c({
-        }, q, {
-        }, e2), this.gs = t1, this.names = new Map(n5), !this.options.isServer && g && L && (L = !1, (function(e3) {
-            for(var t3 = document.querySelectorAll(R), n6 = 0, r6 = t3.length; n6 < r6; n6++){
-                var o4 = t3[n6];
-                o4 && "active" !== o4.getAttribute(v) && (j(e3, o4), o4.parentNode && o4.parentNode.removeChild(o4));
+    var t2 = e.prototype;
+    return t2.insertRule = function(e1, t3) {
+        return e1 <= this.length && (this.rules.splice(e1, 0, t3), this.length++, !0);
+    }, t2.deleteRule = function(e1) {
+        this.rules.splice(e1, 1), this.length--;
+    }, t2.getRule = function(e1) {
+        return e1 < this.length ? this.rules[e1] : "";
+    }, e;
+}(), J = I, X = {
+    isServer: !I,
+    useCSSOMInjection: !P
+}, Z = function() {
+    function e(e1, t2, n) {
+        (void 0) === e1 && (e1 = E), (void 0) === t2 && (t2 = {
+        }), this.options = v({
+        }, X, {
+        }, e1), this.gs = t2, this.names = new Map(n), this.server = !!e1.isServer, !this.server && I && J && (J = !1, (function(e2) {
+            for(var t3 = document.querySelectorAll(L), n1 = 0, r3 = t3.length; n1 < r3; n1++){
+                var o = t3[n1];
+                o && "active" !== o.getAttribute(A) && (Y(e2, o), o.parentNode && o.parentNode.removeChild(o));
             }
         })(this));
     }
-    e1.registerId = function(e2) {
-        return P(e2);
+    e.registerId = function(e1) {
+        return B(e1);
     };
-    var t1 = e1.prototype;
-    return t1.reconstructWithOptions = function(t3, n5) {
-        return (void 0) === n5 && (n5 = !0), new e1(c({
+    var t2 = e.prototype;
+    return t2.reconstructWithOptions = function(t3, n) {
+        return (void 0) === n && (n = !0), new e(v({
         }, this.options, {
-        }, t3), this.gs, n5 && this.names || void 0);
-    }, t1.allocateGSInstance = function(e2) {
-        return this.gs[e2] = (this.gs[e2] || 0) + 1;
-    }, t1.getTag = function() {
-        var e2, t3, n5, r6, o5;
-        return this.tag || (this.tag = (n5 = (t3 = this.options).isServer, r6 = t3.useCSSOMInjection, o5 = t3.target, e2 = n5 ? new z(o5) : r6 ? new M(o5) : new B(o5), new N(e2)));
-    }, t1.hasNameForId = function(e2, t3) {
-        return this.names.has(e2) && this.names.get(e2).has(t3);
-    }, t1.registerName = function(e2, t3) {
-        if (P(e2), this.names.has(e2)) this.names.get(e2).add(t3);
+        }, t3), this.gs, n && this.names || void 0);
+    }, t2.allocateGSInstance = function(e1) {
+        return this.gs[e1] = (this.gs[e1] || 0) + 1;
+    }, t2.getTag = function() {
+        var e1, t3, n, r3, o;
+        return this.tag || (this.tag = (n = (t3 = this.options).isServer, r3 = t3.useCSSOMInjection, o = t3.target, e1 = n ? new U(o) : r3 ? new $(o) : new W(o), new T(e1)));
+    }, t2.hasNameForId = function(e1, t3) {
+        return this.names.has(e1) && this.names.get(e1).has(t3);
+    }, t2.registerName = function(e1, t3) {
+        if (B(e1), this.names.has(e1)) this.names.get(e1).add(t3);
         else {
-            var n5 = new Set;
-            n5.add(t3), this.names.set(e2, n5);
+            var n = new Set;
+            n.add(t3), this.names.set(e1, n);
         }
-    }, t1.insertRules = function(e2, t3, n6) {
-        this.registerName(e2, t3), this.getTag().insertRules(P(e2), n6);
-    }, t1.clearNames = function(e2) {
-        this.names.has(e2) && this.names.get(e2).clear();
-    }, t1.clearRules = function(e2) {
-        this.getTag().clearGroup(P(e2)), this.clearNames(e2);
-    }, t1.clearTag = function() {
+    }, t2.insertRules = function(e1, t3, n) {
+        this.registerName(e1, t3), this.getTag().insertRules(B(e1), n);
+    }, t2.clearNames = function(e1) {
+        this.names.has(e1) && this.names.get(e1).clear();
+    }, t2.clearRules = function(e1) {
+        this.getTag().clearGroup(B(e1)), this.clearNames(e1);
+    }, t2.clearTag = function() {
         this.tag = void 0;
-    }, t1.toString = function() {
-        return (function(e2) {
-            for(var t3 = e2.getTag(), n6 = t3.length, r6 = "", o5 = 0; o5 < n6; o5++){
-                var s2 = O(o5);
-                if ((void 0) !== s2) {
-                    var i2 = e2.names.get(s2), a2 = t3.getGroup(o5);
-                    if ((void 0) !== i2 && 0 !== a2.length) {
-                        var u2 = v + ".g" + o5 + '[id="' + s2 + '"]', c2 = "";
-                        (void 0) !== i2 && i2.forEach(function(e3) {
-                            e3.length > 0 && (c2 += e3 + ",");
-                        }), r6 += "" + a2 + u2 + '{content:"' + c2 + '"}/*!sc*/\n';
+    }, t2.toString = function() {
+        return (function(e1) {
+            for(var t3 = e1.getTag(), n = t3.length, r3 = "", o = 0; o < n; o++){
+                var s = M(o);
+                if ((void 0) !== s) {
+                    var i = e1.names.get(s), a = t3.getGroup(o);
+                    if (i && a && i.size) {
+                        var c = A + ".g" + o + '[id="' + s + '"]', u = "";
+                        (void 0) !== i && i.forEach(function(e2) {
+                            e2.length > 0 && (u += e2 + ",");
+                        }), r3 += "" + a + c + '{content:"' + u + '"}/*!sc*/\n';
                     }
                 }
             }
-            return r6;
+            return r3;
         })(this);
-    }, e1;
-}(), F = /(a)(d)/gi, Y = function(e1) {
-    return String.fromCharCode(e1 + (e1 > 25 ? 39 : 97));
+    }, e;
+}(), K = /(a)(d)/gi, Q = function(e) {
+    return String.fromCharCode(e + (e > 25 ? 39 : 97));
 };
-function H(e1) {
-    var t1, n6 = "";
-    for(t1 = Math.abs(e1); t1 > 52; t1 = t1 / 52 | 0)n6 = Y(t1 % 52) + n6;
-    return (Y(t1 % 52) + n6).replace(F, "$1-$2");
+function ee(e) {
+    var t2, n = "";
+    for(t2 = Math.abs(e); t2 > 52; t2 = t2 / 52 | 0)n = Q(t2 % 52) + n;
+    return (Q(t2 % 52) + n).replace(K, "$1-$2");
 }
-var $ = function(e1, t1) {
-    for(var n6 = t1.length; n6;)e1 = 33 * e1 ^ t1.charCodeAt(--n6);
-    return e1;
-}, W = function(e1) {
-    return $(5381, e1);
+var te = function(e, t2) {
+    for(var n = t2.length; n;)e = 33 * e ^ t2.charCodeAt(--n);
+    return e;
+}, ne = function(e) {
+    return te(5381, e);
 };
-function U(e1) {
-    for(var t1 = 0; t1 < e1.length; t1 += 1){
-        var n6 = e1[t1];
-        if (f(n6) && !y(n6)) return !1;
+function re(e) {
+    for(var t2 = 0; t2 < e.length; t2 += 1){
+        var n = e[t2];
+        if (b(n) && !N(n)) return !1;
     }
     return !0;
 }
-var J = W("5.3.0"), X = function() {
-    function e1(e2, t1, n7) {
-        this.rules = e2, this.staticRulesId = "", this.isStatic = false, this.componentId = t1, this.baseHash = $(J, t1), this.baseStyle = n7, G.registerId(t1);
+var oe = ne("5.3.1"), se = function() {
+    function e(e1, t2, n) {
+        this.rules = e1, this.staticRulesId = "", this.isStatic = false, this.componentId = t2, this.baseHash = te(oe, t2), this.baseStyle = n, Z.registerId(t2);
     }
-    return e1.prototype.generateAndInjectStyles = function(e2, t1, n7) {
-        var r6 = this.componentId, o5 = [];
-        if (this.baseStyle && o5.push(this.baseStyle.generateAndInjectStyles(e2, t1, n7)), this.isStatic && !n7.hash) {
-            if (this.staticRulesId && t1.hasNameForId(r6, this.staticRulesId)) o5.push(this.staticRulesId);
+    return e.prototype.generateAndInjectStyles = function(e1, t2, n) {
+        var r3 = this.componentId, o = [];
+        if (this.baseStyle && o.push(this.baseStyle.generateAndInjectStyles(e1, t2, n)), this.isStatic && !n.hash) {
+            if (this.staticRulesId && t2.hasNameForId(r3, this.staticRulesId)) o.push(this.staticRulesId);
             else {
-                var s3 = me(this.rules, e2, t1, n7).join(""), i3 = H($(this.baseHash, s3.length) >>> 0);
-                if (!t1.hasNameForId(r6, i3)) {
-                    var a3 = n7(s3, "." + i3, void 0, r6);
-                    t1.insertRules(r6, i3, a3);
+                var s = Ne(this.rules, e1, t2, n).join(""), i = ee(te(this.baseHash, s) >>> 0);
+                if (!t2.hasNameForId(r3, i)) {
+                    var a = n(s, "." + i, void 0, r3);
+                    t2.insertRules(r3, i, a);
                 }
-                o5.push(i3), this.staticRulesId = i3;
+                o.push(i), this.staticRulesId = i;
             }
         } else {
-            for(var u3 = this.rules.length, c3 = $(this.baseHash, n7.hash), l1 = "", d1 = 0; d1 < u3; d1++){
-                var h1 = this.rules[d1];
-                if ("string" == typeof h1) l1 += h1, c3 = $(c3, h1 + d1);
-                else if (h1) {
-                    var p1 = me(h1, e2, t1, n7), f1 = Array.isArray(p1) ? p1.join("") : p1;
-                    c3 = $(c3, f1 + d1), l1 += f1;
+            for(var c = this.rules.length, u = te(this.baseHash, n.hash), l = "", d = 0; d < c; d++){
+                var h = this.rules[d];
+                if ("string" == typeof h) l += h, u = te(u, h + d);
+                else if (h) {
+                    var p = Ne(h, e1, t2, n), f = Array.isArray(p) ? p.join("") : p;
+                    u = te(u, f + d), l += f;
                 }
             }
-            if (l1) {
-                var m1 = H(c3 >>> 0);
-                if (!t1.hasNameForId(r6, m1)) {
-                    var y1 = n7(l1, "." + m1, void 0, r6);
-                    t1.insertRules(r6, m1, y1);
+            if (l) {
+                var m = ee(u >>> 0);
+                if (!t2.hasNameForId(r3, m)) {
+                    var y = n(l, "." + m, void 0, r3);
+                    t2.insertRules(r3, m, y);
                 }
-                o5.push(m1);
+                o.push(m);
             }
         }
-        return o5.join(" ");
-    }, e1;
-}(), Z = /^\s*\/\/.*$/gm, K = [
+        return o.join(" ");
+    }, e;
+}(), ie = /^\s*\/\/.*$/gm, ae = [
     ":",
     "[",
     ".",
     "#"
 ];
-function Q(e1) {
-    var t1, n7, r6, o5, i4 = (void 0) === e1 ? p : e1, a4 = i4.options, u4 = (void 0) === a4 ? p : a4, c4 = i4.plugins, l2 = (void 0) === c4 ? h2 : c4, d2 = new s(u4), f2 = [], m2 = function(e2) {
+function ce(e) {
+    var t2, n, r3, o, s = (void 0) === e ? E : e, i = s.options, a = (void 0) === i ? E : i, c = s.plugins, u = (void 0) === c ? w : c, l = new _stylisDefault.default(a), d = [], h = function(e1) {
         function t3(t4) {
             if (t4) try {
-                e2(t4 + "}");
-            } catch (e3) {
+                e1(t4 + "}");
+            } catch (e2) {
             }
         }
-        return function(n8, r7, o6, s4, i5, a5, u5, c5, l3, d3) {
-            switch(n8){
+        return function(n1, r4, o1, s1, i1, a1, c1, u1, l1, d1) {
+            switch(n1){
                 case 1:
-                    if (0 === l3 && 64 === r7.charCodeAt(0)) return e2(r7 + ";"), "";
+                    if (0 === l1 && 64 === r4.charCodeAt(0)) return e1(r4 + ";"), "";
                     break;
                 case 2:
-                    if (0 === c5) return r7 + "/*|*/";
+                    if (0 === u1) return r4 + "/*|*/";
                     break;
                 case 3:
-                    switch(c5){
+                    switch(u1){
                         case 102:
                         case 112:
-                            return e2(o6[0] + r7), "";
+                            return e1(o1[0] + r4), "";
                         default:
-                            return r7 + (0 === d3 ? "/*|*/" : "");
+                            return r4 + (0 === d1 ? "/*|*/" : "");
                     }
                 case -2:
-                    r7.split("/*|*/}").forEach(t3);
+                    r4.split("/*|*/}").forEach(t3);
             }
         };
-    }(function(e2) {
-        f2.push(e2);
-    }), y2 = function(e2, r7, s4) {
-        return 0 === r7 && -1 !== K.indexOf(s4[n7.length]) || s4.match(o5) ? e2 : "." + t1;
+    }(function(e1) {
+        d.push(e1);
+    }), f = function(e1, r4, s1) {
+        return 0 === r4 && -1 !== ae.indexOf(s1[n.length]) || s1.match(o) ? e1 : "." + t2;
     };
-    function v1(e2, s4, i5, a5) {
-        (void 0) === a5 && (a5 = "&");
-        var u5 = e2.replace(Z, ""), c5 = s4 && i5 ? i5 + " " + s4 + " { " + u5 + " }" : u5;
-        return t1 = a5, n7 = s4, r6 = new RegExp("\\" + n7 + "\\b", "g"), o5 = new RegExp("(\\" + n7 + "\\b){2,}"), d2(i5 || !s4 ? "" : s4, c5);
+    function m(e1, s1, i1, a1) {
+        (void 0) === a1 && (a1 = "&");
+        var c1 = e1.replace(ie, ""), u1 = s1 && i1 ? i1 + " " + s1 + " { " + c1 + " }" : c1;
+        return t2 = a1, n = s1, r3 = new RegExp("\\" + n + "\\b", "g"), o = new RegExp("(\\" + n + "\\b){2,}"), l(i1 || !s1 ? "" : s1, u1);
     }
-    return d2.use([].concat(l2, [
-        function(e2, t3, o6) {
-            2 === e2 && o6.length && o6[0].lastIndexOf(n7) > 0 && (o6[0] = o6[0].replace(r6, y2));
+    return l.use([].concat(u, [
+        function(e1, t3, o1) {
+            2 === e1 && o1.length && o1[0].lastIndexOf(n) > 0 && (o1[0] = o1[0].replace(r3, f));
         },
-        m2,
-        function(e2) {
-            if (-2 === e2) {
-                var t3 = f2;
-                return f2 = [], t3;
+        h,
+        function(e1) {
+            if (-2 === e1) {
+                var t3 = d;
+                return d = [], t3;
             }
         }
-    ])), v1.hash = l2.length ? l2.reduce(function(e2, t4) {
-        return t4.name || _(15), $(e2, t4.name);
-    }, 5381).toString() : "", v1;
+    ])), m.hash = u.length ? u.reduce(function(e1, t4) {
+        return t4.name || j(15), te(e1, t4.name);
+    }, 5381).toString() : "", m;
 }
-var ee = r.createContext(), te = ee.Consumer, ne = r.createContext(), re = (ne.Consumer, new G), oe = Q();
-function se() {
-    return n.useContext(ee) || re;
+var ue = _reactDefault.default.createContext(), le = ue.Consumer, de = _reactDefault.default.createContext(), he = (de.Consumer, new Z), pe = ce();
+function fe() {
+    return _react.useContext(ue) || he;
 }
-function ie() {
-    return n.useContext(ne) || oe;
+function me() {
+    return _react.useContext(de) || pe;
 }
-function ae(e1) {
-    var t1 = n.useState(e1.stylisPlugins), s4 = t1[0], i4 = t1[1], a4 = se(), u4 = n.useMemo(function() {
-        var t4 = a4;
-        return e1.sheet ? t4 = e1.sheet : e1.target && (t4 = t4.reconstructWithOptions({
-            target: e1.target
-        }, !1)), e1.disableCSSOMInjection && (t4 = t4.reconstructWithOptions({
+function ye(e) {
+    var t2 = _react.useState(e.stylisPlugins), n = t2[0], s = t2[1], c = fe(), u = _react.useMemo(function() {
+        var t4 = c;
+        return e.sheet ? t4 = e.sheet : e.target && (t4 = t4.reconstructWithOptions({
+            target: e.target
+        }, !1)), e.disableCSSOMInjection && (t4 = t4.reconstructWithOptions({
             useCSSOMInjection: !1
         })), t4;
     }, [
-        e1.disableCSSOMInjection,
-        e1.sheet,
-        e1.target
-    ]), c4 = n.useMemo(function() {
-        return Q({
+        e.disableCSSOMInjection,
+        e.sheet,
+        e.target
+    ]), l = _react.useMemo(function() {
+        return ce({
             options: {
-                prefix: !e1.disableVendorPrefixes
+                prefix: !e.disableVendorPrefixes
             },
-            plugins: s4
+            plugins: n
         });
     }, [
-        e1.disableVendorPrefixes,
-        s4
+        e.disableVendorPrefixes,
+        n
     ]);
-    return n.useEffect(function() {
-        o(s4, e1.stylisPlugins) || i4(e1.stylisPlugins);
+    return _react.useEffect(function() {
+        _shallowequalDefault.default(n, e.stylisPlugins) || s(e.stylisPlugins);
     }, [
-        e1.stylisPlugins
-    ]), r.createElement(ee.Provider, {
-        value: u4
-    }, r.createElement(ne.Provider, {
-        value: c4
-    }, r.Children.only(e1.children)));
+        e.stylisPlugins
+    ]), _reactDefault.default.createElement(ue.Provider, {
+        value: u
+    }, _reactDefault.default.createElement(de.Provider, {
+        value: l
+    }, _reactDefault.default.Children.only(e.children)));
 }
-var ue = function() {
-    function e1(e2, t1) {
-        var n7 = this;
-        this.inject = function(e3, t4) {
-            (void 0) === t4 && (t4 = oe);
-            var r6 = n7.name + t4.hash;
-            e3.hasNameForId(n7.id, r6) || e3.insertRules(n7.id, r6, t4(n7.rules, r6, "@keyframes"));
+var ve = function() {
+    function e(e1, t2) {
+        var n = this;
+        this.inject = function(e2, t4) {
+            (void 0) === t4 && (t4 = pe);
+            var r3 = n.name + t4.hash;
+            e2.hasNameForId(n.id, r3) || e2.insertRules(n.id, r3, t4(n.rules, r3, "@keyframes"));
         }, this.toString = function() {
-            return _(12, String(n7.name));
-        }, this.name = e2, this.id = "sc-keyframes-" + e2, this.rules = t1;
+            return j(12, String(n.name));
+        }, this.name = e1, this.id = "sc-keyframes-" + e1, this.rules = t2;
     }
-    return e1.prototype.getName = function(e2) {
-        return (void 0) === e2 && (e2 = oe), this.name + e2.hash;
-    }, e1;
-}(), ce = /([A-Z])/, le = /([A-Z])/g, de = /^ms-/, he = function(e1) {
-    return "-" + e1.toLowerCase();
+    return e.prototype.getName = function(e1) {
+        return (void 0) === e1 && (e1 = pe), this.name + e1.hash;
+    }, e;
+}(), ge = /([A-Z])/, Se = /([A-Z])/g, we = /^ms-/, Ee = function(e) {
+    return "-" + e.toLowerCase();
 };
-function pe(e1) {
-    return ce.test(e1) ? e1.replace(le, he).replace(de, "-ms-") : e1;
+function be(e) {
+    return ge.test(e) ? e.replace(Se, Ee).replace(we, "-ms-") : e;
 }
-var fe = function(e1) {
-    return null == e1 || !1 === e1 || "" === e1;
+var _e = function(e) {
+    return null == e || !1 === e || "" === e;
 };
-function me(e1, n7, r6, o5) {
-    if (Array.isArray(e1)) {
-        for(var s4, a4 = [], u4 = 0, c4 = e1.length; u4 < c4; u4 += 1)"" !== (s4 = me(e1[u4], n7, r6, o5)) && (Array.isArray(s4) ? a4.push.apply(a4, s4) : a4.push(s4));
-        return a4;
+function Ne(e, n, r3, o) {
+    if (Array.isArray(e)) {
+        for(var s, i = [], a = 0, c = e.length; a < c; a += 1)"" !== (s = Ne(e[a], n, r3, o)) && (Array.isArray(s) ? i.push.apply(i, s) : i.push(s));
+        return i;
     }
-    if (fe(e1)) return "";
-    if (y(e1)) return "." + e1.styledComponentId;
-    if (f(e1)) {
-        if ("function" != typeof (h3 = e1) || h3.prototype && h3.prototype.isReactComponent || !n7) return e1;
-        var l2 = e1(n7);
-        return t.isElement(l2) && console.warn(m(e1) + " is not a styled component and cannot be referred to via component selector. See https://www.styled-components.com/docs/advanced#referring-to-other-components for more details."), me(l2, n7, r6, o5);
+    if (_e(e)) return "";
+    if (N(e)) return "." + e.styledComponentId;
+    if (b(e)) {
+        if ("function" != typeof (l = e) || l.prototype && l.prototype.isReactComponent || !n) return e;
+        var u = e(n);
+        return _reactIs.isElement(u) && console.warn(_(e) + " is not a styled component and cannot be referred to via component selector. See https://www.styled-components.com/docs/advanced#referring-to-other-components for more details."), Ne(u, n, r3, o);
     }
-    var h3;
-    return e1 instanceof ue ? r6 ? (e1.inject(r6, o5), e1.getName(o5)) : e1 : d2(e1) ? (function e2(t1, n8) {
-        var r7, o6, s5 = [];
-        for(var a5 in t1)t1.hasOwnProperty(a5) && !fe(t1[a5]) && (d2(t1[a5]) ? s5.push.apply(s5, e2(t1[a5], a5)) : f(t1[a5]) ? s5.push(pe(a5) + ":", t1[a5], ";") : s5.push(pe(a5) + ": " + (r7 = a5, null == (o6 = t1[a5]) || "boolean" == typeof o6 || "" === o6 ? "" : "number" != typeof o6 || 0 === o6 || r7 in i ? String(o6).trim() : o6 + "px") + ";"));
-        return n8 ? [
-            n8 + " {"
-        ].concat(s5, [
+    var l;
+    return e instanceof ve ? r3 ? (e.inject(r3, o), e.getName(o)) : e : S(e) ? (function e1(t2, n1) {
+        var r4, o1, s = [];
+        for(var i in t2)t2.hasOwnProperty(i) && !_e(t2[i]) && (Array.isArray(t2[i]) && t2[i].isCss || b(t2[i]) ? s.push(be(i) + ":", t2[i], ";") : S(t2[i]) ? s.push.apply(s, e1(t2[i], i)) : s.push(be(i) + ": " + (r4 = i, null == (o1 = t2[i]) || "boolean" == typeof o1 || "" === o1 ? "" : "number" != typeof o1 || 0 === o1 || r4 in _unitlessDefault.default ? String(o1).trim() : o1 + "px") + ";"));
+        return n1 ? [
+            n1 + " {"
+        ].concat(s, [
             "}"
-        ]) : s5;
-    })(e1) : e1.toString();
+        ]) : s;
+    })(e) : e.toString();
 }
-function ye(e1) {
-    for(var t1 = arguments.length, n7 = new Array(t1 > 1 ? t1 - 1 : 0), r6 = 1; r6 < t1; r6++)n7[r6 - 1] = arguments[r6];
-    return f(e1) || d2(e1) ? me(l(h2, [
-        e1
-    ].concat(n7))) : 0 === n7.length && 1 === e1.length && "string" == typeof e1[0] ? e1 : me(l(e1, n7));
+var Ae = function(e) {
+    return Array.isArray(e) && (e.isCss = !0), e;
+};
+function Ce(e) {
+    for(var t2 = arguments.length, n = new Array(t2 > 1 ? t2 - 1 : 0), r3 = 1; r3 < t2; r3++)n[r3 - 1] = arguments[r3];
+    return b(e) || S(e) ? Ae(Ne(g(w, [
+        e
+    ].concat(n)))) : 0 === n.length && 1 === e.length && "string" == typeof e[0] ? e : Ae(Ne(g(e, n)));
 }
-var ve = /invalid hook call/i, ge = new Set, Se = function(e1, t1) {
-    var r6 = "The component " + e1 + (t1 ? ' with the id of "' + t1 + '"' : "") + " has been created dynamically.\nYou may see this warning because you've called styled inside another component.\nTo resolve this only create new StyledComponents outside of any render method and function component.";
+var Ie = /invalid hook call/i, Pe = new Set, Oe = function(e, t2) {
+    var n = "The component " + e + (t2 ? ' with the id of "' + t2 + '"' : "") + " has been created dynamically.\nYou may see this warning because you've called styled inside another component.\nTo resolve this only create new StyledComponents outside of any render method and function component.", r3 = console.error;
     try {
-        n.useRef(), ge.has(r6) || (console.warn(r6), ge.add(r6));
-    } catch (e2) {
-        ve.test(e2.message) && ge.delete(r6);
+        var o = !0;
+        console.error = function(e1) {
+            if (Ie.test(e1)) o = !1, Pe.delete(n);
+            else {
+                for(var t4 = arguments.length, s = new Array(t4 > 1 ? t4 - 1 : 0), i = 1; i < t4; i++)s[i - 1] = arguments[i];
+                r3.apply(void 0, [
+                    e1
+                ].concat(s));
+            }
+        }, _react.useRef(), o && !Pe.has(n) && (console.warn(n), Pe.add(n));
+    } catch (e1) {
+        Ie.test(e1.message) && Pe.delete(n);
+    } finally{
+        console.error = r3;
     }
-}, we = function(e1, t1, n7) {
-    return (void 0) === n7 && (n7 = p), e1.theme !== n7.theme && e1.theme || t1 || n7.theme;
-}, Ee = /[!"#$%&'()*+,./:;<=>?@[\\\]^`{|}~-]+/g, be = /(^-|-$)/g;
-function _e(e1) {
-    return e1.replace(Ee, "-").replace(be, "");
+}, Re = function(e, t2, n) {
+    return (void 0) === n && (n = E), e.theme !== n.theme && e.theme || t2 || n.theme;
+}, De = /[!"#$%&'()*+,./:;<=>?@[\\\]^`{|}~-]+/g, je = /(^-|-$)/g;
+function Te(e) {
+    return e.replace(De, "-").replace(je, "");
 }
-var Ne = function(e1) {
-    return H(W(e1) >>> 0);
+var ke = function(e) {
+    return ee(ne(e) >>> 0);
 };
-function Ce(e1) {
-    return "string" == typeof e1 && e1.charAt(0) === e1.charAt(0).toLowerCase();
+function xe(e) {
+    return "string" == typeof e && e.charAt(0) === e.charAt(0).toLowerCase();
 }
-var Ae = function(e1) {
-    return "function" == typeof e1 || "object" == typeof e1 && null !== e1 && !Array.isArray(e1);
-}, Ie = function(e1) {
-    return "__proto__" !== e1 && "constructor" !== e1 && "prototype" !== e1;
+var Ve = function(e) {
+    return "function" == typeof e || "object" == typeof e && null !== e && !Array.isArray(e);
+}, Be = function(e) {
+    return "__proto__" !== e && "constructor" !== e && "prototype" !== e;
 };
-function Pe(e1, t1, n7) {
-    var r6 = e1[n7];
-    Ae(t1) && Ae(r6) ? Oe(r6, t1) : e1[n7] = t1;
+function Me(e, t2, n) {
+    var r3 = e[n];
+    Ve(t2) && Ve(r3) ? ze(r3, t2) : e[n] = t2;
 }
-function Oe(e1) {
-    for(var t1 = arguments.length, n7 = new Array(t1 > 1 ? t1 - 1 : 0), r6 = 1; r6 < t1; r6++)n7[r6 - 1] = arguments[r6];
-    for(var o5 = 0, s5 = n7; o5 < s5.length; o5++){
-        var i4 = s5[o5];
-        if (Ae(i4)) for(var a5 in i4)Ie(a5) && Pe(e1, i4[a5], a5);
+function ze(e) {
+    for(var t2 = arguments.length, n = new Array(t2 > 1 ? t2 - 1 : 0), r3 = 1; r3 < t2; r3++)n[r3 - 1] = arguments[r3];
+    for(var o = 0, s = n; o < s.length; o++){
+        var i = s[o];
+        if (Ve(i)) for(var a in i)Be(a) && Me(e, i[a], a);
     }
-    return e1;
+    return e;
 }
-var xe = r.createContext(), Re = xe.Consumer, De = {
-};
-function Te(e1, t1, o5) {
-    var s5 = y(e1), i5 = !Ce(e1), l3 = t1.attrs, d2 = (void 0) === l3 ? h2 : l3, v1 = t1.componentId, g1 = (void 0) === v1 ? function(e2, t4) {
-        var n7 = "string" != typeof e2 ? "sc" : _e(e2);
-        De[n7] = (De[n7] || 0) + 1;
-        var r6 = n7 + "-" + Ne("5.3.0" + n7 + De[n7]);
-        return t4 ? t4 + "-" + r6 : r6;
-    }(t1.displayName, t1.parentComponentId) : v1, S1 = t1.displayName, w1 = (void 0) === S1 ? function(e2) {
-        return Ce(e2) ? "styled." + e2 : "Styled(" + m(e2) + ")";
-    }(e1) : S1, E1 = t1.displayName && t1.componentId ? _e(t1.displayName) + "-" + t1.componentId : t1.componentId || g1, b1 = s5 && e1.attrs ? Array.prototype.concat(e1.attrs, d2).filter(Boolean) : d2, _1 = t1.shouldForwardProp;
-    s5 && e1.shouldForwardProp && (_1 = t1.shouldForwardProp ? function(n7, r6, o6) {
-        return e1.shouldForwardProp(n7, r6, o6) && t1.shouldForwardProp(n7, r6, o6);
-    } : e1.shouldForwardProp);
-    var N1, C1 = new X(o5, E1, s5 ? e1.componentStyle : void 0), A1 = C1.isStatic && 0 === d2.length, I1 = function(e2, t4) {
-        return (function(e3, t5, r6, o6) {
-            var s6 = e3.attrs, i6 = e3.componentStyle, u5 = e3.defaultProps, l4 = e3.foldedComponentIds, d3 = e3.shouldForwardProp, h3 = e3.styledComponentId, m2 = e3.target;
-            n.useDebugValue(h3);
-            var y2 = function(e4, t6, n7) {
-                (void 0) === e4 && (e4 = p);
-                var r7 = c({
-                }, t6, {
-                    theme: e4
-                }), o7 = {
-                };
-                return n7.forEach(function(e5) {
-                    var t7, n8, s7, i7 = e5;
-                    for(t7 in f(i7) && (i7 = i7(r7)), i7)r7[t7] = o7[t7] = "className" === t7 ? (n8 = o7[t7], s7 = i7[t7], n8 && s7 ? n8 + " " + s7 : n8 || s7) : i7[t7];
-                }), [
-                    r7,
-                    o7
-                ];
-            }(we(t5, n.useContext(xe), u5) || p, t5, s6), v2 = y2[0], g2 = y2[1], S2 = function(e4, t6, r7, o7) {
-                var s7 = se(), i7 = ie(), a6 = t6 ? e4.generateAndInjectStyles(p, s7, i7) : e4.generateAndInjectStyles(r7, s7, i7);
-                return n.useDebugValue(a6), !t6 && o7 && o7(a6), a6;
-            }(i6, o6, v2, e3.warnTooManyClasses), w2 = r6, E2 = g2.$as || t5.$as || g2.as || t5.as || m2, b2 = Ce(E2), _2 = g2 !== t5 ? c({
+var Le = _reactDefault.default.createContext(), Ge = Le.Consumer;
+function Fe(e) {
+    var t2 = _react.useContext(Le), n = _react.useMemo(function() {
+        return (function(e1, t5) {
+            if (!e1) return j(14);
+            if (b(e1)) {
+                var n1 = e1(t5);
+                return null !== n1 && !Array.isArray(n1) && "object" == typeof n1 ? n1 : j(7);
+            }
+            return Array.isArray(e1) || "object" != typeof e1 ? j(8) : t5 ? v({
             }, t5, {
-            }, g2) : t5, N2 = {
+            }, e1) : e1;
+        })(e.theme, t2);
+    }, [
+        e.theme,
+        t2
+    ]);
+    return e.children ? _reactDefault.default.createElement(Le.Provider, {
+        value: n
+    }, e.children) : null;
+}
+var Ye = {
+};
+function qe(e, t2, n2) {
+    var o = N(e), i = !xe(e), a = t2.attrs, c = (void 0) === a ? w : a, d = t2.componentId, h = (void 0) === d ? function(e1, t5) {
+        var n3 = "string" != typeof e1 ? "sc" : Te(e1);
+        Ye[n3] = (Ye[n3] || 0) + 1;
+        var r3 = n3 + "-" + ke("5.3.1" + n3 + Ye[n3]);
+        return t5 ? t5 + "-" + r3 : r3;
+    }(t2.displayName, t2.parentComponentId) : d, p = t2.displayName, f = (void 0) === p ? function(e1) {
+        return xe(e1) ? "styled." + e1 : "Styled(" + _(e1) + ")";
+    }(e) : p, g1 = t2.displayName && t2.componentId ? Te(t2.displayName) + "-" + t2.componentId : t2.componentId || h, S1 = o && e.attrs ? Array.prototype.concat(e.attrs, c).filter(Boolean) : c, A1 = t2.shouldForwardProp;
+    o && e.shouldForwardProp && (A1 = t2.shouldForwardProp ? function(n3, r3, o1) {
+        return e.shouldForwardProp(n3, r3, o1) && t2.shouldForwardProp(n3, r3, o1);
+    } : e.shouldForwardProp);
+    var C1, I1 = new se(n2, g1, o ? e.componentStyle : void 0), P1 = I1.isStatic && 0 === c.length, O1 = function(e1, t5) {
+        return (function(e2, t6, n3, r3) {
+            var o1 = e2.attrs, i1 = e2.componentStyle, a1 = e2.defaultProps, c1 = e2.foldedComponentIds, d1 = e2.shouldForwardProp, h1 = e2.styledComponentId, p1 = e2.target;
+            _react.useDebugValue(h1);
+            var f1 = function(e3, t7, n4) {
+                (void 0) === e3 && (e3 = E);
+                var r4 = v({
+                }, t7, {
+                    theme: e3
+                }), o2 = {
+                };
+                return n4.forEach(function(e4) {
+                    var t8, n5, s, i2 = e4;
+                    for(t8 in b(i2) && (i2 = i2(r4)), i2)r4[t8] = o2[t8] = "className" === t8 ? (n5 = o2[t8], s = i2[t8], n5 && s ? n5 + " " + s : n5 || s) : i2[t8];
+                }), [
+                    r4,
+                    o2
+                ];
+            }(Re(t6, _react.useContext(Le), a1) || E, t6, o1), y = f1[0], g2 = f1[1], S2 = function(e3, t7, n4, r4) {
+                var o2 = fe(), s = me(), i2 = t7 ? e3.generateAndInjectStyles(E, o2, s) : e3.generateAndInjectStyles(n4, o2, s);
+                return _react.useDebugValue(i2), !t7 && r4 && r4(i2), i2;
+            }(i1, r3, y, e2.warnTooManyClasses), w1 = n3, _1 = g2.$as || t6.$as || g2.as || t6.as || p1, N1 = xe(_1), A2 = g2 !== t6 ? v({
+            }, t6, {
+            }, g2) : t6, C2 = {
             };
-            for(var C2 in _2)"$" !== C2[0] && "as" !== C2 && ("forwardedAs" === C2 ? N2.as = _2[C2] : (d3 ? d3(C2, a, E2) : !b2 || a(C2)) && (N2[C2] = _2[C2]));
-            return t5.style && g2.style !== t5.style && (N2.style = c({
-            }, t5.style, {
-            }, g2.style)), N2.className = Array.prototype.concat(l4, h3, S2 !== h3 ? S2 : null, t5.className, g2.className).filter(Boolean).join(" "), N2.ref = w2, n.createElement(E2, N2);
-        })(N1, e2, t4, A1);
+            for(var I2 in A2)"$" !== I2[0] && "as" !== I2 && ("forwardedAs" === I2 ? C2.as = A2[I2] : (d1 ? d1(I2, _isPropValidDefault.default, _1) : !N1 || _isPropValidDefault.default(I2)) && (C2[I2] = A2[I2]));
+            return t6.style && g2.style !== t6.style && (C2.style = v({
+            }, t6.style, {
+            }, g2.style)), C2.className = Array.prototype.concat(c1, h1, S2 !== h1 ? S2 : null, t6.className, g2.className).filter(Boolean).join(" "), C2.ref = w1, _react.createElement(_1, C2);
+        })(C1, e1, t5, P1);
     };
-    return I1.displayName = w1, (N1 = r.forwardRef(I1)).attrs = b1, N1.componentStyle = C1, N1.displayName = w1, N1.shouldForwardProp = _1, N1.foldedComponentIds = s5 ? Array.prototype.concat(e1.foldedComponentIds, e1.styledComponentId) : h2, N1.styledComponentId = E1, N1.target = s5 ? e1.target : e1, N1.withComponent = function(e2) {
-        var n7 = t1.componentId, r6 = function(e3, t4) {
-            if (null == e3) return {
+    return O1.displayName = f, (C1 = _reactDefault.default.forwardRef(O1)).attrs = S1, C1.componentStyle = I1, C1.displayName = f, C1.shouldForwardProp = A1, C1.foldedComponentIds = o ? Array.prototype.concat(e.foldedComponentIds, e.styledComponentId) : w, C1.styledComponentId = g1, C1.target = o ? e.target : e, C1.withComponent = function(e1) {
+        var r3 = t2.componentId, o1 = function(e2, t5) {
+            if (null == e2) return {
             };
-            var n8, r7, o6 = {
-            }, s6 = Object.keys(e3);
-            for(r7 = 0; r7 < s6.length; r7++)n8 = s6[r7], t4.indexOf(n8) >= 0 || (o6[n8] = e3[n8]);
-            return o6;
-        }(t1, [
+            var n3, r4, o2 = {
+            }, s = Object.keys(e2);
+            for(r4 = 0; r4 < s.length; r4++)n3 = s[r4], t5.indexOf(n3) >= 0 || (o2[n3] = e2[n3]);
+            return o2;
+        }(t2, [
             "componentId"
-        ]), s6 = n7 && n7 + "-" + (Ce(e2) ? e2 : _e(m(e2)));
-        return Te(e2, c({
-        }, r6, {
-            attrs: b1,
-            componentId: s6
-        }), o5);
-    }, Object.defineProperty(N1, "defaultProps", {
+        ]), s = r3 && r3 + "-" + (xe(e1) ? e1 : Te(_(e1)));
+        return qe(e1, v({
+        }, o1, {
+            attrs: S1,
+            componentId: s
+        }), n2);
+    }, Object.defineProperty(C1, "defaultProps", {
         get: function() {
             return this._foldedDefaultProps;
         },
-        set: function(t4) {
-            this._foldedDefaultProps = s5 ? Oe({
-            }, e1.defaultProps, t4) : t4;
+        set: function(t5) {
+            this._foldedDefaultProps = o ? ze({
+            }, e.defaultProps, t5) : t5;
         }
-    }), Se(w1, E1), N1.warnTooManyClasses = (function(e2, t4) {
-        var n7 = {
-        }, r6 = !1;
-        return function(o6) {
-            if (!r6 && (n7[o6] = !0, Object.keys(n7).length >= 200)) {
-                var s6 = t4 ? ' with the id of "' + t4 + '"' : "";
-                console.warn("Over 200 classes were generated for component " + e2 + s6 + ".\nConsider using the attrs method, together with a style object for frequently changed styles.\nExample:\n  const Component = styled.div.attrs(props => ({\n    style: {\n      background: props.background,\n    },\n  }))`width: 100%;`\n\n  <Component />"), r6 = !0, n7 = {
+    }), Oe(f, g1), C1.warnTooManyClasses = (function(e1, t5) {
+        var n3 = {
+        }, r3 = !1;
+        return function(o1) {
+            if (!r3 && (n3[o1] = !0, Object.keys(n3).length >= 200)) {
+                var s = t5 ? ' with the id of "' + t5 + '"' : "";
+                console.warn("Over 200 classes were generated for component " + e1 + s + ".\nConsider using the attrs method, together with a style object for frequently changed styles.\nExample:\n  const Component = styled.div.attrs(props => ({\n    style: {\n      background: props.background,\n    },\n  }))`width: 100%;`\n\n  <Component />"), r3 = !0, n3 = {
                 };
             }
         };
-    })(w1, E1), N1.toString = function() {
-        return "." + N1.styledComponentId;
-    }, i5 && u(N1, e1, {
+    })(f, g1), C1.toString = function() {
+        return "." + C1.styledComponentId;
+    }, i && _hoistNonReactStaticsDefault.default(C1, e, {
         attrs: !0,
         componentStyle: !0,
         displayName: !0,
@@ -28590,25 +28558,25 @@ function Te(e1, t1, o5) {
         styledComponentId: !0,
         target: !0,
         withComponent: !0
-    }), N1;
+    }), C1;
 }
-var je = function(e1) {
-    return (function e2(n7, r6, o5) {
-        if ((void 0) === o5 && (o5 = p), !t.isValidElementType(r6)) return _(1, String(r6));
-        var s5 = function() {
-            return n7(r6, o5, ye.apply(void 0, arguments));
+var He = function(e) {
+    return (function e1(t2, r3, o) {
+        if ((void 0) === o && (o = E), !_reactIs.isValidElementType(r3)) return j(1, String(r3));
+        var s = function() {
+            return t2(r3, o, Ce.apply(void 0, arguments));
         };
-        return s5.withConfig = function(t1) {
-            return e2(n7, r6, c({
-            }, o5, {
-            }, t1));
-        }, s5.attrs = function(t1) {
-            return e2(n7, r6, c({
-            }, o5, {
-                attrs: Array.prototype.concat(o5.attrs, t1).filter(Boolean)
+        return s.withConfig = function(n2) {
+            return e1(t2, r3, v({
+            }, o, {
+            }, n2));
+        }, s.attrs = function(n2) {
+            return e1(t2, r3, v({
+            }, o, {
+                attrs: Array.prototype.concat(o.attrs, n2).filter(Boolean)
             }));
-        }, s5;
-    })(Te, e1);
+        }, s;
+    })(qe, e);
 };
 [
     "a",
@@ -28747,291 +28715,129 @@ var je = function(e1) {
     "text",
     "textPath",
     "tspan"
-].forEach(function(e1) {
-    je[e1] = je(e1);
+].forEach(function(e) {
+    He[e] = He(e);
 });
-var ke = function() {
-    function e1(e2, t1) {
-        this.rules = e2, this.componentId = t1, this.isStatic = U(e2), G.registerId(this.componentId + 1);
+var $e = function() {
+    function e(e1, t2) {
+        this.rules = e1, this.componentId = t2, this.isStatic = re(e1), Z.registerId(this.componentId + 1);
     }
-    var t1 = e1.prototype;
-    return t1.createStyles = function(e2, t4, n7, r6) {
-        var o5 = r6(me(this.rules, t4, n7, r6).join(""), ""), s5 = this.componentId + e2;
-        n7.insertRules(s5, s5, o5);
-    }, t1.removeStyles = function(e2, t4) {
-        t4.clearRules(this.componentId + e2);
-    }, t1.renderStyles = function(e2, t4, n7, r6) {
-        e2 > 2 && G.registerId(this.componentId + e2), this.removeStyles(e2, n7), this.createStyles(e2, t4, n7, r6);
-    }, e1;
-}(), Ve = function() {
-    function e1() {
-        var e2 = this;
+    var t2 = e.prototype;
+    return t2.createStyles = function(e1, t5, n2, r3) {
+        var o = r3(Ne(this.rules, t5, n2, r3).join(""), ""), s = this.componentId + e1;
+        n2.insertRules(s, s, o);
+    }, t2.removeStyles = function(e1, t5) {
+        t5.clearRules(this.componentId + e1);
+    }, t2.renderStyles = function(e1, t5, n2, r3) {
+        e1 > 2 && Z.registerId(this.componentId + e1), this.removeStyles(e1, n2), this.createStyles(e1, t5, n2, r3);
+    }, e;
+}();
+function We(e) {
+    for(var t2 = arguments.length, n2 = new Array(t2 > 1 ? t2 - 1 : 0), o = 1; o < t2; o++)n2[o - 1] = arguments[o];
+    var i = Ce.apply(void 0, [
+        e
+    ].concat(n2)), a = "sc-global-" + ke(JSON.stringify(i)), u = new $e(i, a);
+    function l(e1) {
+        var t5 = fe(), n3 = me(), o1 = _react.useContext(Le), l1 = _react.useRef(t5.allocateGSInstance(a)).current;
+        return _reactDefault.default.Children.count(e1.children) && console.warn("The global style component " + a + " was given child JSX. createGlobalStyle does not render children."), i.some(function(e2) {
+            return "string" == typeof e2 && -1 !== e2.indexOf("@import");
+        }) && console.warn("Please do not use @import CSS syntax in createGlobalStyle at this time, as the CSSOM APIs we use in production do not handle it well. Instead, we recommend using a library such as react-helmet to inject a typical <link> meta tag to the stylesheet, or simply embedding it manually in your index.html <head> section for a simpler app."), t5.server && h(l1, e1, t5, o1, n3), _react.useLayoutEffect(function() {
+            if (!t5.server) return h(l1, e1, t5, o1, n3), function() {
+                return u.removeStyles(l1, t5);
+            };
+        }, [
+            l1,
+            e1,
+            t5,
+            o1,
+            n3
+        ]), null;
+    }
+    function h(e1, t5, n3, r3, o1) {
+        if (u.isStatic) u.renderStyles(e1, O, n3, o1);
+        else {
+            var s = v({
+            }, t5, {
+                theme: Re(t5, r3, l.defaultProps)
+            });
+            u.renderStyles(e1, s, n3, o1);
+        }
+    }
+    return Oe(a), _reactDefault.default.memo(l);
+}
+function Ue(e) {
+    "undefined" != typeof navigator && "ReactNative" === navigator.product && console.warn("`keyframes` cannot be used on ReactNative, only on the web. To do animation in ReactNative please use Animated.");
+    for(var t2 = arguments.length, n2 = new Array(t2 > 1 ? t2 - 1 : 0), r3 = 1; r3 < t2; r3++)n2[r3 - 1] = arguments[r3];
+    var o = Ce.apply(void 0, [
+        e
+    ].concat(n2)).join(""), s = ke(o);
+    return new ve(s, o);
+}
+var Je = function() {
+    function e() {
+        var e1 = this;
         this._emitSheetCSS = function() {
-            var t1 = e2.instance.toString(), n7 = k();
+            var t2 = e1.instance.toString();
+            if (!t2) return "";
+            var n2 = q();
             return "<style " + [
-                n7 && 'nonce="' + n7 + '"',
-                v + '="true"',
-                'data-styled-version="5.3.0"'
-            ].filter(Boolean).join(" ") + ">" + t1 + "</style>";
+                n2 && 'nonce="' + n2 + '"',
+                A + '="true"',
+                'data-styled-version="5.3.1"'
+            ].filter(Boolean).join(" ") + ">" + t2 + "</style>";
         }, this.getStyleTags = function() {
-            return e2.sealed ? _(2) : e2._emitSheetCSS();
+            return e1.sealed ? j(2) : e1._emitSheetCSS();
         }, this.getStyleElement = function() {
-            var t1;
-            if (e2.sealed) return _(2);
-            var n7 = ((t1 = {
-            })[v] = "", t1["data-styled-version"] = "5.3.0", t1.dangerouslySetInnerHTML = {
-                __html: e2.instance.toString()
-            }, t1), o5 = k();
-            return o5 && (n7.nonce = o5), [
-                r.createElement("style", c({
-                }, n7, {
+            var t2;
+            if (e1.sealed) return j(2);
+            var n2 = ((t2 = {
+            })[A] = "", t2["data-styled-version"] = "5.3.1", t2.dangerouslySetInnerHTML = {
+                __html: e1.instance.toString()
+            }, t2), o = q();
+            return o && (n2.nonce = o), [
+                _reactDefault.default.createElement("style", v({
+                }, n2, {
                     key: "sc-0-0"
                 }))
             ];
         }, this.seal = function() {
-            e2.sealed = !0;
-        }, this.instance = new G({
+            e1.sealed = !0;
+        }, this.instance = new Z({
             isServer: !0
         }), this.sealed = !1;
     }
-    var t1 = e1.prototype;
-    return t1.collectStyles = function(e2) {
-        return this.sealed ? _(2) : r.createElement(ae, {
+    var t2 = e.prototype;
+    return t2.collectStyles = function(e1) {
+        return this.sealed ? j(2) : _reactDefault.default.createElement(ye, {
             sheet: this.instance
-        }, e2);
-    }, t1.interleaveWithNodeStream = function(e2) {
-        return _(3);
-    }, e1;
-}(), Me = {
-    StyleSheet: G,
-    masterSheet: re
-};
-"undefined" != typeof navigator && "ReactNative" === navigator.product && console.warn("It looks like you've imported 'styled-components' on React Native.\nPerhaps you're looking to import 'styled-components/native'?\nRead more about this at https://www.styled-components.com/docs/basics#react-native"), window["__styled-components-init__"] = window["__styled-components-init__"] || 0, 1 === window["__styled-components-init__"] && console.warn("It looks like there are several instances of 'styled-components' initialized in this application. This may cause dynamic styles to not render properly, errors during the rehydration process, a missing theme prop, and makes your application bigger without good reason.\n\nSee https://s-c.sh/2BAXzed for more info."), window["__styled-components-init__"] += 1, exports.ServerStyleSheet = Ve, exports.StyleSheetConsumer = te, exports.StyleSheetContext = ee, exports.StyleSheetManager = ae, exports.ThemeConsumer = Re, exports.ThemeContext = xe, exports.ThemeProvider = function(e1) {
-    var t1 = n.useContext(xe), o5 = n.useMemo(function() {
-        return (function(e2, t4) {
-            if (!e2) return _(14);
-            if (f(e2)) {
-                var n7 = e2(t4);
-                return null !== n7 && !Array.isArray(n7) && "object" == typeof n7 ? n7 : _(7);
-            }
-            return Array.isArray(e2) || "object" != typeof e2 ? _(8) : t4 ? c({
-            }, t4, {
-            }, e2) : e2;
-        })(e1.theme, t1);
-    }, [
-        e1.theme,
-        t1
-    ]);
-    return e1.children ? r.createElement(xe.Provider, {
-        value: o5
-    }, e1.children) : null;
-}, exports.__PRIVATE__ = Me, exports.createGlobalStyle = function(e1) {
-    for(var t1 = arguments.length, o5 = new Array(t1 > 1 ? t1 - 1 : 0), s5 = 1; s5 < t1; s5++)o5[s5 - 1] = arguments[s5];
-    var i5 = ye.apply(void 0, [
-        e1
-    ].concat(o5)), a6 = "sc-global-" + Ne(JSON.stringify(i5)), u5 = new ke(i5, a6);
-    function l3(e2) {
-        var t4 = se(), o6 = ie(), s7 = n.useContext(xe), c5 = n.useRef(t4.allocateGSInstance(a6)).current;
-        return r.Children.count(e2.children) && console.warn("The global style component " + a6 + " was given child JSX. createGlobalStyle does not render children."), i5.some(function(e3) {
-            return "string" == typeof e3 && -1 !== e3.indexOf("@import");
-        }) && console.warn("Please do not use @import CSS syntax in createGlobalStyle at this time, as the CSSOM APIs we use in production do not handle it well. Instead, we recommend using a library such as react-helmet to inject a typical <link> meta tag to the stylesheet, or simply embedding it manually in your index.html <head> section for a simpler app."), n.useLayoutEffect(function() {
-            return d3(c5, e2, t4, s7, o6), function() {
-                return u5.removeStyles(c5, t4);
-            };
-        }, [
-            c5,
-            e2,
-            t4,
-            s7,
-            o6
-        ]), null;
-    }
-    function d3(e2, t4, n8, r6, o6) {
-        if (u5.isStatic) u5.renderStyles(e2, w, n8, o6);
-        else {
-            var s7 = c({
-            }, t4, {
-                theme: we(t4, r6, l3.defaultProps)
-            });
-            u5.renderStyles(e2, s7, n8, o6);
-        }
-    }
-    return Se(a6), r.memo(l3);
-}, exports.css = ye, exports.default = je, exports.isStyledComponent = y, exports.keyframes = function(e1) {
-    "undefined" != typeof navigator && "ReactNative" === navigator.product && console.warn("`keyframes` cannot be used on ReactNative, only on the web. To do animation in ReactNative please use Animated.");
-    for(var t1 = arguments.length, n8 = new Array(t1 > 1 ? t1 - 1 : 0), r6 = 1; r6 < t1; r6++)n8[r6 - 1] = arguments[r6];
-    var o5 = ye.apply(void 0, [
-        e1
-    ].concat(n8)).join(""), s5 = Ne(o5);
-    return new ue(s5, o5);
-}, exports.useTheme = function() {
-    return n.useContext(xe);
-}, exports.version = "5.3.0", exports.withTheme = function(e1) {
-    var t1 = r.forwardRef(function(t4, o5) {
-        var s5 = n.useContext(xe), i5 = e1.defaultProps, a6 = we(t4, s5, i5);
-        return (void 0) === a6 && console.warn('[withTheme] You are not using a ThemeProvider nor passing a theme prop or a theme in defaultProps in component class "' + m(e1) + '"'), r.createElement(e1, c({
-        }, t4, {
-            theme: a6,
-            ref: o5
+        }, e1);
+    }, t2.interleaveWithNodeStream = function(e1) {
+        return j(3);
+    }, e;
+}(), Xe = function(e) {
+    var t2 = _reactDefault.default.forwardRef(function(t5, n2) {
+        var o = _react.useContext(Le), i = e.defaultProps, a = Re(t5, o, i);
+        return (void 0) === a && console.warn('[withTheme] You are not using a ThemeProvider nor passing a theme prop or a theme in defaultProps in component class "' + _(e) + '"'), _reactDefault.default.createElement(e, v({
+        }, t5, {
+            theme: a,
+            ref: n2
         }));
     });
-    return u(t1, e1), t1.displayName = "WithTheme(" + m(e1) + ")", t1;
+    return _hoistNonReactStaticsDefault.default(t2, e), t2.displayName = "WithTheme(" + _(e) + ")", t2;
+}, Ze = function() {
+    return _react.useContext(Le);
+}, Ke = {
+    StyleSheet: Z,
+    masterSheet: he
 };
+"undefined" != typeof navigator && "ReactNative" === navigator.product && console.warn("It looks like you've imported 'styled-components' on React Native.\nPerhaps you're looking to import 'styled-components/native'?\nRead more about this at https://www.styled-components.com/docs/basics#react-native"), "undefined" != typeof window && (window["__styled-components-init__"] = window["__styled-components-init__"] || 0, 1 === window["__styled-components-init__"] && console.warn("It looks like there are several instances of 'styled-components' initialized in this application. This may cause dynamic styles to not render properly, errors during the rehydration process, a missing theme prop, and makes your application bigger without good reason.\n\nSee https://s-c.sh/2BAXzed for more info."), window["__styled-components-init__"] += 1);
+exports.default = He;
 
-},{"process":"a7BHg","react-is":"8vt9H","react":"juP7B","shallowequal":"ajUmY","@emotion/stylis":"b4Nk2","@emotion/unitless":"5gZgo","@emotion/is-prop-valid":"1k7f1","hoist-non-react-statics":"dL3Vu"}],"a7BHg":[function(require,module,exports) {
-// shim for using process in browser
-var process = module.exports = {
-};
-// cached from whatever global is present so that test runners that stub it
-// don't break things.  But we need to wrap it in a try catch in case it is
-// wrapped in strict mode code which doesn't define any globals.  It's inside a
-// function because try/catches deoptimize in certain engines.
-var cachedSetTimeout;
-var cachedClearTimeout;
-function defaultSetTimout() {
-    throw new Error('setTimeout has not been defined');
-}
-function defaultClearTimeout() {
-    throw new Error('clearTimeout has not been defined');
-}
-(function() {
-    try {
-        if (typeof setTimeout === 'function') cachedSetTimeout = setTimeout;
-        else cachedSetTimeout = defaultSetTimout;
-    } catch (e) {
-        cachedSetTimeout = defaultSetTimout;
-    }
-    try {
-        if (typeof clearTimeout === 'function') cachedClearTimeout = clearTimeout;
-        else cachedClearTimeout = defaultClearTimeout;
-    } catch (e) {
-        cachedClearTimeout = defaultClearTimeout;
-    }
-})();
-function runTimeout(fun) {
-    if (cachedSetTimeout === setTimeout) //normal enviroments in sane situations
-    return setTimeout(fun, 0);
-    // if setTimeout wasn't available but was latter defined
-    if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
-        cachedSetTimeout = setTimeout;
-        return setTimeout(fun, 0);
-    }
-    try {
-        // when when somebody has screwed with setTimeout but no I.E. maddness
-        return cachedSetTimeout(fun, 0);
-    } catch (e) {
-        try {
-            // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
-            return cachedSetTimeout.call(null, fun, 0);
-        } catch (e1) {
-            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
-            return cachedSetTimeout.call(this, fun, 0);
-        }
-    }
-}
-function runClearTimeout(marker) {
-    if (cachedClearTimeout === clearTimeout) //normal enviroments in sane situations
-    return clearTimeout(marker);
-    // if clearTimeout wasn't available but was latter defined
-    if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
-        cachedClearTimeout = clearTimeout;
-        return clearTimeout(marker);
-    }
-    try {
-        // when when somebody has screwed with setTimeout but no I.E. maddness
-        return cachedClearTimeout(marker);
-    } catch (e) {
-        try {
-            // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
-            return cachedClearTimeout.call(null, marker);
-        } catch (e1) {
-            // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
-            // Some versions of I.E. have different rules for clearTimeout vs setTimeout
-            return cachedClearTimeout.call(this, marker);
-        }
-    }
-}
-var queue = [];
-var draining = false;
-var currentQueue;
-var queueIndex = -1;
-function cleanUpNextTick() {
-    if (!draining || !currentQueue) return;
-    draining = false;
-    if (currentQueue.length) queue = currentQueue.concat(queue);
-    else queueIndex = -1;
-    if (queue.length) drainQueue();
-}
-function drainQueue() {
-    if (draining) return;
-    var timeout = runTimeout(cleanUpNextTick);
-    draining = true;
-    var len = queue.length;
-    while(len){
-        currentQueue = queue;
-        queue = [];
-        while((++queueIndex) < len)if (currentQueue) currentQueue[queueIndex].run();
-        queueIndex = -1;
-        len = queue.length;
-    }
-    currentQueue = null;
-    draining = false;
-    runClearTimeout(timeout);
-}
-process.nextTick = function(fun) {
-    var args = new Array(arguments.length - 1);
-    if (arguments.length > 1) for(var i = 1; i < arguments.length; i++)args[i - 1] = arguments[i];
-    queue.push(new Item(fun, args));
-    if (queue.length === 1 && !draining) runTimeout(drainQueue);
-};
-// v8 likes predictible objects
-function Item(fun, array) {
-    this.fun = fun;
-    this.array = array;
-}
-Item.prototype.run = function() {
-    this.fun.apply(null, this.array);
-};
-process.title = 'browser';
-process.browser = true;
-process.env = {
-};
-process.argv = [];
-process.version = ''; // empty string to avoid regexp issues
-process.versions = {
-};
-function noop() {
-}
-process.on = noop;
-process.addListener = noop;
-process.once = noop;
-process.off = noop;
-process.removeListener = noop;
-process.removeAllListeners = noop;
-process.emit = noop;
-process.prependListener = noop;
-process.prependOnceListener = noop;
-process.listeners = function(name) {
-    return [];
-};
-process.binding = function(name) {
-    throw new Error('process.binding is not supported');
-};
-process.cwd = function() {
-    return '/';
-};
-process.chdir = function(dir) {
-    throw new Error('process.chdir is not supported');
-};
-process.umask = function() {
-    return 0;
-};
-
-},{}],"8vt9H":[function(require,module,exports) {
+},{"react-is":"5wFcP","react":"6TuXu","shallowequal":"4HLJz","@emotion/stylis":"6rquW","@emotion/unitless":"kXMxY","@emotion/is-prop-valid":"b2akg","hoist-non-react-statics":"jfzb6","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"5wFcP":[function(require,module,exports) {
 'use strict';
 module.exports = require('./cjs/react-is.development.js');
 
-},{"./cjs/react-is.development.js":"g9eiD"}],"g9eiD":[function(require,module,exports) {
+},{"./cjs/react-is.development.js":"dxS2U"}],"dxS2U":[function(require,module,exports) {
 /** @license React v17.0.2
  * react-is.development.js
  *
@@ -29220,7 +29026,7 @@ module.exports = require('./cjs/react-is.development.js');
     exports.typeOf = typeOf;
 })();
 
-},{}],"ajUmY":[function(require,module,exports) {
+},{}],"4HLJz":[function(require,module,exports) {
 //
 module.exports = function shallowEqual(objA, objB, compare, compareContext) {
     var ret = compare ? compare.call(compareContext, objA, objB) : void 0;
@@ -29243,11 +29049,9 @@ module.exports = function shallowEqual(objA, objB, compare, compareContext) {
     return true;
 };
 
-},{}],"b4Nk2":[function(require,module,exports) {
-'use strict';
-Object.defineProperty(exports, '__esModule', {
-    value: true
-});
+},{}],"6rquW":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
 function stylis_min(W) {
     function M(d, c, e, h, a) {
         for(var m = 0, b = 0, v = 0, n = 0, q, g, x = 0, K = 0, k, u = k = q = 0, l = 0, r = 0, I = 0, t = 0, B = e.length, J = B - 1, y, f = '', p = '', F = '', G = '', C; l < B;){
@@ -29699,11 +29503,9 @@ function stylis_min(W) {
 }
 exports.default = stylis_min;
 
-},{}],"5gZgo":[function(require,module,exports) {
-'use strict';
-Object.defineProperty(exports, '__esModule', {
-    value: true
-});
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"kXMxY":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
 var unitlessKeys = {
     animationIterationCount: 1,
     borderImageOutset: 1,
@@ -29754,26 +29556,20 @@ var unitlessKeys = {
 };
 exports.default = unitlessKeys;
 
-},{}],"1k7f1":[function(require,module,exports) {
-'use strict';
-Object.defineProperty(exports, '__esModule', {
-    value: true
-});
-function _interopDefault(ex) {
-    return ex && typeof ex === 'object' && 'default' in ex ? ex['default'] : ex;
-}
-var memoize = _interopDefault(require('@emotion/memoize'));
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"b2akg":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _memoize = require("@emotion/memoize");
+var _memoizeDefault = parcelHelpers.interopDefault(_memoize);
 var reactPropsRegex = /^((children|dangerouslySetInnerHTML|key|ref|autoFocus|defaultValue|defaultChecked|innerHTML|suppressContentEditableWarning|suppressHydrationWarning|valueLink|accept|acceptCharset|accessKey|action|allow|allowUserMedia|allowPaymentRequest|allowFullScreen|allowTransparency|alt|async|autoComplete|autoPlay|capture|cellPadding|cellSpacing|challenge|charSet|checked|cite|classID|className|cols|colSpan|content|contentEditable|contextMenu|controls|controlsList|coords|crossOrigin|data|dateTime|decoding|default|defer|dir|disabled|disablePictureInPicture|download|draggable|encType|form|formAction|formEncType|formMethod|formNoValidate|formTarget|frameBorder|headers|height|hidden|high|href|hrefLang|htmlFor|httpEquiv|id|inputMode|integrity|is|keyParams|keyType|kind|label|lang|list|loading|loop|low|marginHeight|marginWidth|max|maxLength|media|mediaGroup|method|min|minLength|multiple|muted|name|nonce|noValidate|open|optimum|pattern|placeholder|playsInline|poster|preload|profile|radioGroup|readOnly|referrerPolicy|rel|required|reversed|role|rows|rowSpan|sandbox|scope|scoped|scrolling|seamless|selected|shape|size|sizes|slot|span|spellCheck|src|srcDoc|srcLang|srcSet|start|step|style|summary|tabIndex|target|title|type|useMap|value|width|wmode|wrap|about|datatype|inlist|prefix|property|resource|typeof|vocab|autoCapitalize|autoCorrect|autoSave|color|inert|itemProp|itemScope|itemType|itemID|itemRef|on|results|security|unselectable|accentHeight|accumulate|additive|alignmentBaseline|allowReorder|alphabetic|amplitude|arabicForm|ascent|attributeName|attributeType|autoReverse|azimuth|baseFrequency|baselineShift|baseProfile|bbox|begin|bias|by|calcMode|capHeight|clip|clipPathUnits|clipPath|clipRule|colorInterpolation|colorInterpolationFilters|colorProfile|colorRendering|contentScriptType|contentStyleType|cursor|cx|cy|d|decelerate|descent|diffuseConstant|direction|display|divisor|dominantBaseline|dur|dx|dy|edgeMode|elevation|enableBackground|end|exponent|externalResourcesRequired|fill|fillOpacity|fillRule|filter|filterRes|filterUnits|floodColor|floodOpacity|focusable|fontFamily|fontSize|fontSizeAdjust|fontStretch|fontStyle|fontVariant|fontWeight|format|from|fr|fx|fy|g1|g2|glyphName|glyphOrientationHorizontal|glyphOrientationVertical|glyphRef|gradientTransform|gradientUnits|hanging|horizAdvX|horizOriginX|ideographic|imageRendering|in|in2|intercept|k|k1|k2|k3|k4|kernelMatrix|kernelUnitLength|kerning|keyPoints|keySplines|keyTimes|lengthAdjust|letterSpacing|lightingColor|limitingConeAngle|local|markerEnd|markerMid|markerStart|markerHeight|markerUnits|markerWidth|mask|maskContentUnits|maskUnits|mathematical|mode|numOctaves|offset|opacity|operator|order|orient|orientation|origin|overflow|overlinePosition|overlineThickness|panose1|paintOrder|pathLength|patternContentUnits|patternTransform|patternUnits|pointerEvents|points|pointsAtX|pointsAtY|pointsAtZ|preserveAlpha|preserveAspectRatio|primitiveUnits|r|radius|refX|refY|renderingIntent|repeatCount|repeatDur|requiredExtensions|requiredFeatures|restart|result|rotate|rx|ry|scale|seed|shapeRendering|slope|spacing|specularConstant|specularExponent|speed|spreadMethod|startOffset|stdDeviation|stemh|stemv|stitchTiles|stopColor|stopOpacity|strikethroughPosition|strikethroughThickness|string|stroke|strokeDasharray|strokeDashoffset|strokeLinecap|strokeLinejoin|strokeMiterlimit|strokeOpacity|strokeWidth|surfaceScale|systemLanguage|tableValues|targetX|targetY|textAnchor|textDecoration|textRendering|textLength|to|transform|u1|u2|underlinePosition|underlineThickness|unicode|unicodeBidi|unicodeRange|unitsPerEm|vAlphabetic|vHanging|vIdeographic|vMathematical|values|vectorEffect|version|vertAdvY|vertOriginX|vertOriginY|viewBox|viewTarget|visibility|widths|wordSpacing|writingMode|x|xHeight|x1|x2|xChannelSelector|xlinkActuate|xlinkArcrole|xlinkHref|xlinkRole|xlinkShow|xlinkTitle|xlinkType|xmlBase|xmlns|xmlnsXlink|xmlLang|xmlSpace|y|y1|y2|yChannelSelector|z|zoomAndPan|for|class|autofocus)|(([Dd][Aa][Tt][Aa]|[Aa][Rr][Ii][Aa]|x)-.*))$/; // https://esbench.com/bench/5bfee68a4cd7e6009ef61d23
-var index = memoize(function(prop) {
+var index = _memoizeDefault.default(function(prop) {
     return reactPropsRegex.test(prop) || prop.charCodeAt(0) === 111 && prop.charCodeAt(1) === 110 && prop.charCodeAt(2) < 91;
 });
 exports.default = index;
 
-},{"@emotion/memoize":"aNVL1"}],"aNVL1":[function(require,module,exports) {
-'use strict';
-Object.defineProperty(exports, '__esModule', {
-    value: true
-});
+},{"@emotion/memoize":"kGuNb","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"kGuNb":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
 function memoize(fn) {
     var cache = {
     };
@@ -29784,17 +29580,17 @@ function memoize(fn) {
 }
 exports.default = memoize;
 
-},{}],"3Rx77":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"4pWYW":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _about = require("./About");
 parcelHelpers.exportAll(_about, exports);
 
-},{"./About":"iGick","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN"}],"iGick":[function(require,module,exports) {
-var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{"./About":"42fNk","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"42fNk":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$92d7 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
-helpers.prelude(module);
+$parcel$ReactRefreshHelpers$92d7.prelude(module);
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -29811,12 +29607,254 @@ _c = About;
 var _c;
 $RefreshReg$(_c, "About");
 
-  helpers.postlude(module);
+  $parcel$ReactRefreshHelpers$92d7.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"juP7B","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6e8vO","../style/style":"lx0sh"}],"6e8vO":[function(require,module,exports) {
+},{"react":"6TuXu","../style/style":"iwicS","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"iwicS":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Body", ()=>Body
+);
+parcelHelpers.export(exports, "InfoBlock", ()=>InfoBlock
+);
+parcelHelpers.export(exports, "Section", ()=>Section
+);
+parcelHelpers.export(exports, "Title1", ()=>Title1
+);
+parcelHelpers.export(exports, "Title2", ()=>Title2
+);
+parcelHelpers.export(exports, "Title3", ()=>Title3
+);
+parcelHelpers.export(exports, "Text", ()=>Text1
+);
+parcelHelpers.export(exports, "SectionBody", ()=>SectionBody
+);
+parcelHelpers.export(exports, "TechList", ()=>TechList
+);
+parcelHelpers.export(exports, "TechItem", ()=>TechItem
+);
+parcelHelpers.export(exports, "TechText", ()=>TechText
+);
+parcelHelpers.export(exports, "ProjectWrapper", ()=>ProjectWrapper
+);
+parcelHelpers.export(exports, "ProjectBody", ()=>ProjectBody
+);
+parcelHelpers.export(exports, "ProjectList", ()=>ProjectList
+);
+parcelHelpers.export(exports, "ProjectListItem", ()=>ProjectListItem
+);
+parcelHelpers.export(exports, "ProjectDescription", ()=>ProjectDescription
+);
+parcelHelpers.export(exports, "ProjectBio", ()=>ProjectBio
+);
+parcelHelpers.export(exports, "ProjectLinkItems", ()=>ProjectLinkItems
+);
+parcelHelpers.export(exports, "ProjectLink", ()=>ProjectLink
+);
+parcelHelpers.export(exports, "ProjectLinkList", ()=>ProjectLinkList
+);
+parcelHelpers.export(exports, "ProjectImgContainer", ()=>ProjectImgContainer
+);
+parcelHelpers.export(exports, "ProjectImg", ()=>ProjectImg
+);
+parcelHelpers.export(exports, "Resources", ()=>Resources
+);
+parcelHelpers.export(exports, "ResourcesBody", ()=>ResourcesBody
+);
+parcelHelpers.export(exports, "ResourcesBio", ()=>ResourcesBio
+);
+parcelHelpers.export(exports, "ResourcesList", ()=>ResourcesList
+);
+parcelHelpers.export(exports, "ResourcesListItem", ()=>ResourcesListItem
+);
+parcelHelpers.export(exports, "ResourceImg", ()=>ResourceImg
+);
+parcelHelpers.export(exports, "ResourcesImgContainer", ()=>ResourcesImgContainer
+);
+var _styledComponents = require("styled-components"); // General
+var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
+const Body = _styledComponentsDefault.default.div.withConfig({
+    displayName: "style__Body",
+    componentId: "sc-1uen8k0-0"
+})([
+    "display:flex;width:100%;"
+]);
+const InfoBlock = _styledComponentsDefault.default.div.withConfig({
+    displayName: "style__InfoBlock",
+    componentId: "sc-1uen8k0-1"
+})([
+    "width:100%;padding:100px 0;background:",
+    ";margin:0;display:grid;grid-template-columns:repeat(1,1fr);@media (min-width:768px){grid-template-columns:repeat(2,1fr);}"
+], (props)=>props.bg || "var(--bg-accent)"
+);
+const Section = _styledComponentsDefault.default.section.withConfig({
+    displayName: "style__Section",
+    componentId: "sc-1uen8k0-2"
+})([
+    "margin:0;padding:0 50px;display:flex;flex-direction:column;justify-content:center;@media (min-width:768px){align-items:flex-start;}@media (min-width:1200px){padding:0 150px;}"
+]);
+const Title1 = _styledComponentsDefault.default.h1.withConfig({
+    displayName: "style__Title1",
+    componentId: "sc-1uen8k0-3"
+})([
+    "color:var(--dark);font-size:50px;text-align:center;@media (min-width:768px){text-align:left;}"
+]);
+const Title2 = _styledComponentsDefault.default.h2.withConfig({
+    displayName: "style__Title2",
+    componentId: "sc-1uen8k0-4"
+})([
+    "color:var(--dark);font-size:40px;padding:3rem 0;text-align:left;@media (min-width:768px){text-align:left;}"
+]);
+const Title3 = _styledComponentsDefault.default.h3.withConfig({
+    displayName: "style__Title3",
+    componentId: "sc-1uen8k0-5"
+})([
+    "color:var(--dark);font-size:30px;text-align:left;@media (min-width:768px){text-align:left;}"
+]);
+const Text1 = _styledComponentsDefault.default.div.withConfig({
+    displayName: "style__Text",
+    componentId: "sc-1uen8k0-6"
+})([
+    "line-height:1.25rem;margin-top:1rem;margin-bottom:1rem;"
+]);
+const SectionBody = _styledComponentsDefault.default.div.withConfig({
+    displayName: "style__SectionBody",
+    componentId: "sc-1uen8k0-7"
+})([
+    "margin-top:20px;display:flex;flex-direction:column;width:100%;"
+]); //Sections
+const TechList = _styledComponentsDefault.default.ul.withConfig({
+    displayName: "style__TechList",
+    componentId: "sc-1uen8k0-8"
+})([
+    "width:50%;display:flex;flex-direction:column;justify-content:center;"
+]);
+const TechItem = _styledComponentsDefault.default.li.withConfig({
+    displayName: "style__TechItem",
+    componentId: "sc-1uen8k0-9"
+})([
+    "display:flex;justify-content:center;margin:10px 0;background:var(--white);border-radius:4px;box-shadow:2px 2px 2px var(--dark);"
+]);
+const TechText = _styledComponentsDefault.default.p.withConfig({
+    displayName: "style__TechText",
+    componentId: "sc-1uen8k0-10"
+})([
+    "padding:15px 0;text-align:center;min-width:10em;"
+]); //Project
+const ProjectWrapper = _styledComponentsDefault.default.div.withConfig({
+    displayName: "style__ProjectWrapper",
+    componentId: "sc-1uen8k0-11"
+})([
+    "display:flex;align-items:center;"
+]);
+const ProjectBody = _styledComponentsDefault.default.div.withConfig({
+    displayName: "style__ProjectBody",
+    componentId: "sc-1uen8k0-12"
+})([
+    "width:100%;background:",
+    ";padding:0 0 100px 0;"
+], (props)=>props.bg || "var(--bg-accent)"
+);
+const ProjectList = _styledComponentsDefault.default.ul.withConfig({
+    displayName: "style__ProjectList",
+    componentId: "sc-1uen8k0-13"
+})([
+    "padding:0 50px;@media (min-width:1200px){padding:0 150px;}"
+]);
+const ProjectListItem = _styledComponentsDefault.default.li.withConfig({
+    displayName: "style__ProjectListItem",
+    componentId: "sc-1uen8k0-14"
+})([
+    "display:grid;grid-template-columns:repeat(1,1fr);@media (min-width:768px){grid-template-columns:repeat(2,1fr);}"
+]);
+const ProjectDescription = _styledComponentsDefault.default.div.withConfig({
+    displayName: "style__ProjectDescription",
+    componentId: "sc-1uen8k0-15"
+})([
+    "width:75%;@media (max-width:768px){margin-top:10px;width:100%;padding:0;}"
+]);
+const ProjectBio = _styledComponentsDefault.default.div.withConfig({
+    displayName: "style__ProjectBio",
+    componentId: "sc-1uen8k0-16"
+})([
+    "margin-top:10px;width:75%;@media (min-width:768px){margin-top:10px;width:100%;}"
+]);
+const ProjectLinkItems = _styledComponentsDefault.default.li.withConfig({
+    displayName: "style__ProjectLinkItems",
+    componentId: "sc-1uen8k0-17"
+})([
+    "margin-left:1rem;&:first-child{margin-left:0px;}"
+]);
+const ProjectLink = _styledComponentsDefault.default.a.withConfig({
+    displayName: "style__ProjectLink",
+    componentId: "sc-1uen8k0-18"
+})([
+    "color:var(--text-color);text-decoration:none;border-bottom:2px solid var(--white);margin-bottom:10px;&:hover{color:#707070;cursor:pointer;}"
+]);
+const ProjectLinkList = _styledComponentsDefault.default.ul.withConfig({
+    displayName: "style__ProjectLinkList",
+    componentId: "sc-1uen8k0-19"
+})([
+    "display:flex;flex-direction:row;margin-top:20px;"
+]);
+const ProjectImgContainer = _styledComponentsDefault.default.div.withConfig({
+    displayName: "style__ProjectImgContainer",
+    componentId: "sc-1uen8k0-20"
+})([
+    "width:100%;margin-left:auto;margin-right:auto;margin-top:20px;@media (min-width:768px){margin-left:0;margin-right:0;margin-top:0;}"
+]);
+const ProjectImg = _styledComponentsDefault.default.img.withConfig({
+    displayName: "style__ProjectImg",
+    componentId: "sc-1uen8k0-21"
+})([
+    "width:100%;border-radius:5px;overflow:hidden;"
+]); //Resources
+const Resources = _styledComponentsDefault.default.div.withConfig({
+    displayName: "style__Resources",
+    componentId: "sc-1uen8k0-22"
+})([
+    "background:var(--bg-accent);min-height:400px;display:flex;align-items:center;padding:40px;"
+]);
+const ResourcesBody = _styledComponentsDefault.default.div.withConfig({
+    displayName: "style__ResourcesBody",
+    componentId: "sc-1uen8k0-23"
+})([
+    "margin-left:auto;margin-right:auto;display:flex;flex-direction:column;width:100%;@media (min-width:768px){}"
+]);
+const ResourcesBio = _styledComponentsDefault.default.div.withConfig({
+    displayName: "style__ResourcesBio",
+    componentId: "sc-1uen8k0-24"
+})([
+    "width:75%;margin-left:auto;margin-right:auto;@media (max-width:768px){width:100%;}"
+]);
+const ResourcesList = _styledComponentsDefault.default.ul.withConfig({
+    displayName: "style__ResourcesList",
+    componentId: "sc-1uen8k0-25"
+})([
+    "display:grid;grid-template-columns:repeat(2,1fr);padding:20px;"
+]);
+const ResourcesListItem = _styledComponentsDefault.default.li.withConfig({
+    displayName: "style__ResourcesListItem",
+    componentId: "sc-1uen8k0-26"
+})([
+    "width:100%;overflow:hidden;border-radius:15px;"
+]);
+const ResourceImg = _styledComponentsDefault.default.img.withConfig({
+    displayName: "style__ResourceImg",
+    componentId: "sc-1uen8k0-27"
+})([
+    "width:100%;transition-duration:300ms;border-radius:15px;overflow:hidden;&:hover{transform:scale(1.2);overflow:hidden;}"
+]);
+const ResourcesImgContainer = _styledComponentsDefault.default.div.withConfig({
+    displayName: "style__ResourcesImgContainer",
+    componentId: "sc-1uen8k0-28"
+})([
+    "width:100%;@media (min-width:768px){width:50%;}"
+]);
+
+},{"styled-components":"gkt6C","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"5V79J":[function(require,module,exports) {
 "use strict";
 var Refresh = require('react-refresh/runtime');
 function debounce(func, delay) {
@@ -29936,259 +29974,110 @@ function registerExportsForReactRefresh(module) {
     }
 }
 
-},{"react-refresh/runtime":"fi779"}],"lx0sh":[function(require,module,exports) {
+},{"react-refresh/runtime":"fNmB3"}],"hPV5G":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Body", ()=>Body
-);
-parcelHelpers.export(exports, "InfoBlock", ()=>InfoBlock
-);
-parcelHelpers.export(exports, "Section", ()=>Section
-);
-parcelHelpers.export(exports, "Title1", ()=>Title1
-);
-parcelHelpers.export(exports, "Title2", ()=>Title2
-);
-parcelHelpers.export(exports, "Title3", ()=>Title3
-);
-parcelHelpers.export(exports, "Text", ()=>Text1
-);
-parcelHelpers.export(exports, "SectionBody", ()=>SectionBody
-);
-parcelHelpers.export(exports, "TechList", ()=>TechList
-);
-parcelHelpers.export(exports, "TechItem", ()=>TechItem
-);
-parcelHelpers.export(exports, "TechText", ()=>TechText
-);
-parcelHelpers.export(exports, "ProjectWrapper", ()=>ProjectWrapper
-);
-parcelHelpers.export(exports, "ProjectBody", ()=>ProjectBody
-);
-parcelHelpers.export(exports, "ProjectList", ()=>ProjectList
-);
-parcelHelpers.export(exports, "ProjectListItem", ()=>ProjectListItem
-);
-parcelHelpers.export(exports, "ProjectDescription", ()=>ProjectDescription
-);
-parcelHelpers.export(exports, "ProjectBio", ()=>ProjectBio
-);
-parcelHelpers.export(exports, "ProjectLinkItems", ()=>ProjectLinkItems
-);
-parcelHelpers.export(exports, "ProjectLink", ()=>ProjectLink
-);
-parcelHelpers.export(exports, "ProjectLinkList", ()=>ProjectLinkList
-);
-parcelHelpers.export(exports, "ProjectImgContainer", ()=>ProjectImgContainer
-);
-parcelHelpers.export(exports, "ProjectImg", ()=>ProjectImg
-);
-parcelHelpers.export(exports, "Resources", ()=>Resources
-);
-parcelHelpers.export(exports, "ResourcesBody", ()=>ResourcesBody
-);
-parcelHelpers.export(exports, "ResourcesBio", ()=>ResourcesBio
-);
-parcelHelpers.export(exports, "ResourcesList", ()=>ResourcesList
-);
-parcelHelpers.export(exports, "ResourcesListItem", ()=>ResourcesListItem
-);
-parcelHelpers.export(exports, "ResourceImg", ()=>ResourceImg
-);
-parcelHelpers.export(exports, "ResourcesImgContainer", ()=>ResourcesImgContainer
-);
-var _styledComponents = require("styled-components"); // General
-var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
-const Body = _styledComponentsDefault.default.div.withConfig({
-    displayName: "style__Body",
-    componentId: "sc-1uen8k0-0"
-})([
-    "display:flex;width:100%;"
-]);
-const InfoBlock = _styledComponentsDefault.default.div.withConfig({
-    displayName: "style__InfoBlock",
-    componentId: "sc-1uen8k0-1"
-})([
-    "width:100%;padding:100px 0;background:",
-    ";margin:0;display:grid;grid-template-columns:repeat(1,1fr);@media (min-width:768px){grid-template-columns:repeat(2,1fr);}"
-], (props)=>props.bg || "var(--bg-accent)"
-);
-const Section = _styledComponentsDefault.default.section.withConfig({
-    displayName: "style__Section",
-    componentId: "sc-1uen8k0-2"
-})([
-    "margin:0;padding:0 50px;display:flex;flex-direction:column;justify-content:center;@media (min-width:768px){padding:0 150px;align-items:flex-start;}"
-]);
-const Title1 = _styledComponentsDefault.default.h1.withConfig({
-    displayName: "style__Title1",
-    componentId: "sc-1uen8k0-3"
-})([
-    "font-size:50px;text-align:center;@media (min-width:768px){text-align:left;}"
-]);
-const Title2 = _styledComponentsDefault.default.h2.withConfig({
-    displayName: "style__Title2",
-    componentId: "sc-1uen8k0-4"
-})([
-    "font-size:40px;padding:3rem 0;text-align:left;@media (min-width:768px){text-align:left;}"
-]);
-const Title3 = _styledComponentsDefault.default.h3.withConfig({
-    displayName: "style__Title3",
-    componentId: "sc-1uen8k0-5"
-})([
-    "font-size:30px;text-align:left;@media (min-width:768px){text-align:left;}"
-]);
-const Text1 = _styledComponentsDefault.default.div.withConfig({
-    displayName: "style__Text",
-    componentId: "sc-1uen8k0-6"
-})([
-    "line-height:1.25rem;margin-top:1rem;margin-bottom:1rem;"
-]);
-const SectionBody = _styledComponentsDefault.default.div.withConfig({
-    displayName: "style__SectionBody",
-    componentId: "sc-1uen8k0-7"
-})([
-    "margin-top:20px;display:flex;flex-direction:column;width:100%;"
-]); //Sections
-const TechList = _styledComponentsDefault.default.ul.withConfig({
-    displayName: "style__TechList",
-    componentId: "sc-1uen8k0-8"
-})([
-    "width:50%;display:flex;flex-direction:column;justify-content:center;"
-]);
-const TechItem = _styledComponentsDefault.default.li.withConfig({
-    displayName: "style__TechItem",
-    componentId: "sc-1uen8k0-9"
-})([
-    "margin:10px 0;background:var(--white);border-radius:4px;"
-]);
-const TechText = _styledComponentsDefault.default.p.withConfig({
-    displayName: "style__TechText",
-    componentId: "sc-1uen8k0-10"
-})([
-    "padding:15px 0;text-align:center;min-width:10em;"
-]); //Project
-const ProjectWrapper = _styledComponentsDefault.default.div.withConfig({
-    displayName: "style__ProjectWrapper",
-    componentId: "sc-1uen8k0-11"
-})([
-    "display:flex;align-items:center;"
-]);
-const ProjectBody = _styledComponentsDefault.default.div.withConfig({
-    displayName: "style__ProjectBody",
-    componentId: "sc-1uen8k0-12"
-})([
-    "width:100%;background:",
-    ";padding:0 0 100px 0;"
-], (props)=>props.bg || "var(--bg-accent)"
-);
-const ProjectList = _styledComponentsDefault.default.ul.withConfig({
-    displayName: "style__ProjectList",
-    componentId: "sc-1uen8k0-13"
-})([
-    "padding:0 50px;@media (min-width:768px){padding:0 150px;}"
-]);
-const ProjectListItem = _styledComponentsDefault.default.li.withConfig({
-    displayName: "style__ProjectListItem",
-    componentId: "sc-1uen8k0-14"
-})([
-    "display:grid;grid-template-columns:repeat(1,1fr);@media (min-width:768px){grid-template-columns:repeat(2,1fr);}"
-]);
-const ProjectDescription = _styledComponentsDefault.default.div.withConfig({
-    displayName: "style__ProjectDescription",
-    componentId: "sc-1uen8k0-15"
-})([
-    "width:75%;@media (max-width:768px){margin-top:10px;width:100%;padding:0;}"
-]);
-const ProjectBio = _styledComponentsDefault.default.div.withConfig({
-    displayName: "style__ProjectBio",
-    componentId: "sc-1uen8k0-16"
-})([
-    "margin-top:10px;width:75%;@media (min-width:768px){margin-top:10px;width:100%;}"
-]);
-const ProjectLinkItems = _styledComponentsDefault.default.li.withConfig({
-    displayName: "style__ProjectLinkItems",
-    componentId: "sc-1uen8k0-17"
-})([
-    "margin-left:1rem;&:first-child{margin-left:0px;}"
-]);
-const ProjectLink = _styledComponentsDefault.default.a.withConfig({
-    displayName: "style__ProjectLink",
-    componentId: "sc-1uen8k0-18"
-})([
-    "color:var(--text-color);text-decoration:none;border-bottom:2px solid var(--white);margin-bottom:10px;&:hover{color:#707070;cursor:pointer;}"
-]);
-const ProjectLinkList = _styledComponentsDefault.default.ul.withConfig({
-    displayName: "style__ProjectLinkList",
-    componentId: "sc-1uen8k0-19"
-})([
-    "display:flex;flex-direction:row;margin-top:20px;"
-]);
-const ProjectImgContainer = _styledComponentsDefault.default.div.withConfig({
-    displayName: "style__ProjectImgContainer",
-    componentId: "sc-1uen8k0-20"
-})([
-    "width:100%;margin-left:auto;margin-right:auto;margin-top:20px;@media (min-width:768px){margin-left:0;margin-right:0;margin-top:0;}"
-]);
-const ProjectImg = _styledComponentsDefault.default.img.withConfig({
-    displayName: "style__ProjectImg",
-    componentId: "sc-1uen8k0-21"
-})([
-    "width:100%;border-radius:5px;overflow:hidden;"
-]); //Resources
-const Resources = _styledComponentsDefault.default.div.withConfig({
-    displayName: "style__Resources",
-    componentId: "sc-1uen8k0-22"
-})([
-    "background:var(--bg-accent);min-height:400px;display:flex;align-items:center;padding:40px;"
-]);
-const ResourcesBody = _styledComponentsDefault.default.div.withConfig({
-    displayName: "style__ResourcesBody",
-    componentId: "sc-1uen8k0-23"
-})([
-    "margin-left:auto;margin-right:auto;display:flex;flex-direction:column;width:100%;@media (min-width:768px){}"
-]);
-const ResourcesBio = _styledComponentsDefault.default.div.withConfig({
-    displayName: "style__ResourcesBio",
-    componentId: "sc-1uen8k0-24"
-})([
-    "width:75%;margin-left:auto;margin-right:auto;@media (max-width:768px){width:100%;}"
-]);
-const ResourcesList = _styledComponentsDefault.default.ul.withConfig({
-    displayName: "style__ResourcesList",
-    componentId: "sc-1uen8k0-25"
-})([
-    "display:grid;grid-template-columns:repeat(2,1fr);padding:20px;"
-]);
-const ResourcesListItem = _styledComponentsDefault.default.li.withConfig({
-    displayName: "style__ResourcesListItem",
-    componentId: "sc-1uen8k0-26"
-})([
-    "width:100%;overflow:hidden;border-radius:15px;"
-]);
-const ResourceImg = _styledComponentsDefault.default.img.withConfig({
-    displayName: "style__ResourceImg",
-    componentId: "sc-1uen8k0-27"
-})([
-    "width:100%;transition-duration:300ms;border-radius:15px;overflow:hidden;&:hover{transform:scale(1.2);overflow:hidden;}"
-]);
-const ResourcesImgContainer = _styledComponentsDefault.default.div.withConfig({
-    displayName: "style__ResourcesImgContainer",
-    componentId: "sc-1uen8k0-28"
-})([
-    "width:100%;@media (min-width:768px){width:50%;}"
-]);
+var _bio = require("./Bio");
+parcelHelpers.exportAll(_bio, exports);
 
-},{"styled-components":"gqYCY","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN"}],"3QoBt":[function(require,module,exports) {
+},{"./Bio":"77qqR","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"77qqR":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$00b3 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$00b3.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Bio", ()=>Bio
+);
+var _styledComponents = require("styled-components");
+var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _style = require("../style/style");
+const Bio = (props)=>{
+    return(/*#__PURE__*/ _reactDefault.default.createElement(_style.InfoBlock, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.Section, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.Title3, null, "Michael Hegner"), /*#__PURE__*/ _reactDefault.default.createElement(_StyledP, {
+        $_css: "margin-top:0.75rem;"
+    }, "Looking for new challenges!"), /*#__PURE__*/ _reactDefault.default.createElement(_style.Text, null, "I'm a full stack developer with a background in audio engineering. I love problem solving and making applications to make my life easier. You can find some examples of my work on my github or below.")), /*#__PURE__*/ _reactDefault.default.createElement(_style.Section, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.TechList, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.TechItem, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.TechText, null, "MongoDB")), /*#__PURE__*/ _reactDefault.default.createElement(_style.TechItem, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.TechText, null, "Express")), /*#__PURE__*/ _reactDefault.default.createElement(_style.TechItem, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.TechText, null, "React")), /*#__PURE__*/ _reactDefault.default.createElement(_style.TechItem, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.TechText, null, "Node"))))));
+};
+_c = Bio;
+var _StyledP = _styledComponentsDefault.default("p").withConfig({
+    displayName: "Bio___StyledP",
+    componentId: "sc-1eezgdg-0"
+})([
+    "",
+    ""
+], (p)=>p.$_css
+);
+_c1 = _StyledP;
+var _c, _c1;
+$RefreshReg$(_c, "Bio");
+$RefreshReg$(_c1, "_StyledP");
+
+  $parcel$ReactRefreshHelpers$00b3.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"styled-components":"gkt6C","react":"6TuXu","../style/style":"iwicS","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"bsCn5":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _footer = require("./Footer");
+parcelHelpers.exportAll(_footer, exports);
+
+},{"./Footer":"27P3Y","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"27P3Y":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$80b2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$80b2.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Footer", ()=>Footer
+);
+var _styledComponents = require("styled-components");
+var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+const Footer = (props)=>{
+    return(/*#__PURE__*/ _reactDefault.default.createElement(_StyledFooter, {
+        $_css: "display:flex;justify-content:center; align-items:flex-end;padding:10px; "
+    }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
+        className: "footer"
+    }, "\xA9 Michael Hegner 2021 All Rights Resereved")));
+};
+_c = Footer;
+var _StyledFooter = _styledComponentsDefault.default("footer").withConfig({
+    displayName: "Footer___StyledFooter",
+    componentId: "sc-1ck72d2-0"
+})([
+    "",
+    ""
+], (p)=>p.$_css
+);
+_c1 = _StyledFooter;
+var _c, _c1;
+$RefreshReg$(_c, "Footer");
+$RefreshReg$(_c1, "_StyledFooter");
+
+  $parcel$ReactRefreshHelpers$80b2.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"styled-components":"gkt6C","react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"eFG88":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _projects = require("./Projects");
 parcelHelpers.exportAll(_projects, exports);
 
-},{"./Projects":"i1WCA","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN"}],"i1WCA":[function(require,module,exports) {
-var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{"./Projects":"35xNZ","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"35xNZ":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$13d9 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
-helpers.prelude(module);
+$parcel$ReactRefreshHelpers$13d9.prelude(module);
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -30231,15 +30120,6 @@ chevRight.defaultProps = {
     xmlns: "http://www.w3.org/2000/svg",
     viewBox: "0 0 24 24"
 };
-var _StyledProjectImg = _styledComponentsDefault.default(_style.ProjectImg).withConfig({
-    displayName: "Projects___StyledProjectImg",
-    componentId: "ato3y0-0"
-})([
-    "",
-    ""
-], (p)=>p._css
-);
-_c = _StyledProjectImg;
 const Projects = (props)=>{
     _s();
     const [image, setImage] = _react.useState(_homepagePngDefault.default);
@@ -30266,36 +30146,52 @@ const Projects = (props)=>{
     }, "Back-End Repo"))))), /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectWrapper, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ProjectImgContainer, null, /*#__PURE__*/ _reactDefault.default.createElement(_StyledProjectImg, {
         src: image,
         alt: "ProProject Studio",
-        _css: "width:100%;border-radius:5px;overflow:hidden"
+        $_css: "width:100%;border-radius:5px;overflow:hidden"
     })))))));
 };
 _s(Projects, "7bPY3mPvB8dJ+yWRTUg38884CUs=");
-_c1 = Projects;
+_c = Projects;
+var _StyledProjectImg = _styledComponentsDefault.default(_style.ProjectImg).withConfig({
+    displayName: "Projects___StyledProjectImg",
+    componentId: "sc-ato3y0-0"
+})([
+    "",
+    ""
+], (p)=>p.$_css
+);
+_c1 = _StyledProjectImg;
 var _c, _c1;
-$RefreshReg$(_c, "_StyledProjectImg");
-$RefreshReg$(_c1, "Projects");
+$RefreshReg$(_c, "Projects");
+$RefreshReg$(_c1, "_StyledProjectImg");
 
-  helpers.postlude(module);
+  $parcel$ReactRefreshHelpers$13d9.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"styled-components":"gqYCY","react":"juP7B","url:../../../public/homepage.png":"9tKu6","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6e8vO","url:../../../public/pps-example1.png":"lRi4u","url:../../../public/pps-example2.png":"fqsiz","../style/style":"lx0sh"}],"9tKu6":[function(require,module,exports) {
-module.exports = require('./bundle-url').getBundleURL() + "homepage.62b0ddaf.png";
+},{"styled-components":"gkt6C","react":"6TuXu","../style/style":"iwicS","url:../../../public/homepage.png":"loD9Q","url:../../../public/pps-example1.png":"4opyL","url:../../../public/pps-example2.png":"8ruhg","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"loD9Q":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "homepage.830e549a.png";
 
-},{"./bundle-url":"kGdAt"}],"kGdAt":[function(require,module,exports) {
+},{"./helpers/bundle-url":"8YnfL"}],"8YnfL":[function(require,module,exports) {
 "use strict";
-/* globals document:readonly */ var bundleURL = null;
-function getBundleURLCached() {
-    if (!bundleURL) bundleURL = getBundleURL();
-    return bundleURL;
+var bundleURL = {
+};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
 }
 function getBundleURL() {
     try {
         throw new Error();
     } catch (err) {
         var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
-        if (matches) return getBaseURL(matches[0]);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
     }
     return '/';
 }
@@ -30303,7 +30199,7 @@ function getBaseURL(url) {
     return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
 } // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
 function getOrigin(url) {
-    let matches = ('' + url).match(/(https?|file|ftp):\/\/[^/]+/);
+    var matches = ('' + url).match(/(https?|file|ftp):\/\/[^/]+/);
     if (!matches) throw new Error('Origin not found');
     return matches[0];
 }
@@ -30311,13 +30207,161 @@ exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
 exports.getOrigin = getOrigin;
 
-},{}],"lRi4u":[function(require,module,exports) {
-module.exports = require('./bundle-url').getBundleURL() + "pps-example1.47610a73.png";
+},{}],"4opyL":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "pps-example1.2ca174a3.png";
 
-},{"./bundle-url":"kGdAt"}],"fqsiz":[function(require,module,exports) {
-module.exports = require('./bundle-url').getBundleURL() + "pps-example2.2f13fbdf.png";
+},{"./helpers/bundle-url":"8YnfL"}],"8ruhg":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "pps-example2.7a32e79a.png";
 
-},{"./bundle-url":"kGdAt"}],"b7lZC":[function(require,module,exports) {
+},{"./helpers/bundle-url":"8YnfL"}],"iRBXD":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _resources = require("./Resources");
+parcelHelpers.exportAll(_resources, exports);
+
+},{"./Resources":"kUwqM","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"kUwqM":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$25e8 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$25e8.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Resource", ()=>Resource
+);
+var _styledComponents = require("styled-components");
+var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _style = require("../style/style");
+var _w3Png = require("url:../../../public/w3.png");
+var _w3PngDefault = parcelHelpers.interopDefault(_w3Png);
+var _htmlattPng = require("url:../../../public/htmlatt.png");
+var _htmlattPngDefault = parcelHelpers.interopDefault(_htmlattPng);
+var _jwJpeg = require("url:../../../public/jw.jpeg");
+var _jwJpegDefault = parcelHelpers.interopDefault(_jwJpeg);
+var _logoPng = require("url:../../../public/logo.png");
+var _logoPngDefault = parcelHelpers.interopDefault(_logoPng);
+const Resource = (props)=>{
+    return(/*#__PURE__*/ _reactDefault.default.createElement(_style.Resources, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ResourcesBio, null, /*#__PURE__*/ _reactDefault.default.createElement(_StyledH, {
+        $_css: "font-size:20px;"
+    }, "I learn from:"), /*#__PURE__*/ _reactDefault.default.createElement("div", null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ResourcesList, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ResourcesListItem, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ResourcesImgContainer, null, /*#__PURE__*/ _reactDefault.default.createElement("a", {
+        href: "https://syntax.fm/"
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_style.ResourceImg, {
+        src: _logoPngDefault.default,
+        alt: "Syntax podcast"
+    })))), /*#__PURE__*/ _reactDefault.default.createElement(_style.ResourcesListItem, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ResourcesImgContainer, null, /*#__PURE__*/ _reactDefault.default.createElement("a", {
+        href: "https://www.w3schools.com/"
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_style.ResourceImg, {
+        src: _w3PngDefault.default,
+        alt: "w3 Schools"
+    })))), /*#__PURE__*/ _reactDefault.default.createElement(_style.ResourcesListItem, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ResourcesImgContainer, null, /*#__PURE__*/ _reactDefault.default.createElement("a", {
+        href: "https://podcast.htmlallthethings.com/"
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_style.ResourceImg, {
+        src: _htmlattPngDefault.default,
+        alt: "html all the things podcast"
+    })))), /*#__PURE__*/ _reactDefault.default.createElement(_style.ResourcesListItem, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ResourcesImgContainer, null, /*#__PURE__*/ _reactDefault.default.createElement("a", {
+        href: "https://jasonwatmore.com/"
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_style.ResourceImg, {
+        src: _jwJpegDefault.default,
+        alt: "Jason Watmore"
+    })))))))));
+};
+_c = Resource;
+var _StyledH = _styledComponentsDefault.default("h4").withConfig({
+    displayName: "Resources___StyledH",
+    componentId: "sc-1ihn4re-0"
+})([
+    "",
+    ""
+], (p)=>p.$_css
+);
+_c1 = _StyledH;
+var _c, _c1;
+$RefreshReg$(_c, "Resource");
+$RefreshReg$(_c1, "_StyledH");
+
+  $parcel$ReactRefreshHelpers$25e8.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"styled-components":"gkt6C","react":"6TuXu","../style/style":"iwicS","url:../../../public/w3.png":"aBEIR","url:../../../public/htmlatt.png":"61aIr","url:../../../public/jw.jpeg":"lOvor","url:../../../public/logo.png":"a8AKE","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"aBEIR":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "w3.7b7c7fb2.png";
+
+},{"./helpers/bundle-url":"8YnfL"}],"61aIr":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "htmlatt.caa43b8d.png";
+
+},{"./helpers/bundle-url":"8YnfL"}],"lOvor":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "jw.c10fe589.jpeg";
+
+},{"./helpers/bundle-url":"8YnfL"}],"a8AKE":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "logo.045470bb.png";
+
+},{"./helpers/bundle-url":"8YnfL"}],"3MJTm":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _title = require("./Title");
+parcelHelpers.exportAll(_title, exports);
+
+},{"./Title":"lxOAv","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"lxOAv":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$13c6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$13c6.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Title", ()=>Title
+);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _style = require("./style");
+const Title = (props)=>{
+    return(/*#__PURE__*/ _reactDefault.default.createElement(_style.TitleSection, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.Name, null, "Michael Hegner"), /*#__PURE__*/ _reactDefault.default.createElement(_style.Position, null, "Full Stack Developer")));
+};
+_c = Title;
+var _c;
+$RefreshReg$(_c, "Title");
+
+  $parcel$ReactRefreshHelpers$13c6.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"6TuXu","./style":"kiwVM","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"kiwVM":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Name", ()=>Name
+);
+parcelHelpers.export(exports, "Position", ()=>Position
+);
+parcelHelpers.export(exports, "TitleSection", ()=>TitleSection
+);
+var _styledComponents = require("styled-components");
+var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
+const Name = _styledComponentsDefault.default.h1.withConfig({
+    displayName: "style__Name",
+    componentId: "sc-2iaba3-0"
+})([
+    "font-size:4rem;text-align:center;"
+]);
+const Position = _styledComponentsDefault.default.h2.withConfig({
+    displayName: "style__Position",
+    componentId: "sc-2iaba3-1"
+})([
+    "font-size:2rem;text-align:center;"
+]);
+const TitleSection = _styledComponentsDefault.default.div.withConfig({
+    displayName: "style__TitleSection",
+    componentId: "sc-2iaba3-2"
+})([
+    "background:var(--bg);min-width:100%;min-height:400px;display:flex;flex-direction:column;justify-content:center;align-items:center;"
+]);
+
+},{"styled-components":"gkt6C","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"1SMb4":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Main", ()=>Main
@@ -30352,7 +30396,7 @@ const Logo = _styledComponentsDefault.default.div.withConfig({
     displayName: "style__Logo",
     componentId: "sc-16dtlqw-2"
 })([
-    "display:flex;align-items:center;"
+    "display:flex;align-items:center;a{font-weight:500;font-size:1.5rem;}"
 ]);
 const NavList = _styledComponentsDefault.default.ul.withConfig({
     displayName: "style__NavList",
@@ -30383,234 +30427,7 @@ const NavLink = _styledComponentsDefault.default.a.withConfig({
     "color:var(--white);text-decoration:none;font-size:var(--font-size);font-weight:300;"
 ]);
 
-},{"styled-components":"gqYCY","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN"}],"ctkft":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _bio = require("./Bio");
-parcelHelpers.exportAll(_bio, exports);
-
-},{"./Bio":"c4Axg","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN"}],"c4Axg":[function(require,module,exports) {
-var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-helpers.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Bio", ()=>Bio
-);
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _style = require("../style/style");
-const Bio = (props)=>{
-    return(/*#__PURE__*/ _reactDefault.default.createElement(_style.InfoBlock, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.Section, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.Title3, null, "Michael Hegner"), /*#__PURE__*/ _reactDefault.default.createElement(_style.Text, null, "MERN Full Stack Web Developer with a background in Audio Engineering and a passion for problem solving. Experienced with creative troubleshooting under pressure. Valued for a detailed approach to learning new skills and an adaptable mindset, switching between tasks quickly and efficiently.")), /*#__PURE__*/ _reactDefault.default.createElement(_style.Section, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.TechList, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.TechItem, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.TechText, null, "MongoDB")), /*#__PURE__*/ _reactDefault.default.createElement(_style.TechItem, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.TechText, null, "Express")), /*#__PURE__*/ _reactDefault.default.createElement(_style.TechItem, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.TechText, null, "React")), /*#__PURE__*/ _reactDefault.default.createElement(_style.TechItem, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.TechText, null, "Node"))))));
-};
-_c = Bio;
-var _c;
-$RefreshReg$(_c, "Bio");
-
-  helpers.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react":"juP7B","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6e8vO","../style/style":"lx0sh"}],"6sPhD":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _footer = require("./Footer");
-parcelHelpers.exportAll(_footer, exports);
-
-},{"./Footer":"adKu9","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN"}],"adKu9":[function(require,module,exports) {
-var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-helpers.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Footer", ()=>Footer
-);
-var _styledComponents = require("styled-components");
-var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _StyledFooter = _styledComponentsDefault.default("footer").withConfig({
-    displayName: "Footer___StyledFooter",
-    componentId: "sc-1ck72d2-0"
-})([
-    "",
-    ""
-], (p)=>p._css
-);
-_c = _StyledFooter;
-const Footer = (props)=>{
-    return(/*#__PURE__*/ _reactDefault.default.createElement(_StyledFooter, {
-        _css: "display:flex;justify-content:center; align-items:flex-end;padding:10px; "
-    }, /*#__PURE__*/ _reactDefault.default.createElement("p", {
-        className: "footer"
-    }, "\xA9 Michael Hegner 2021 All Rights Resereved")));
-};
-_c1 = Footer;
-var _c, _c1;
-$RefreshReg$(_c, "_StyledFooter");
-$RefreshReg$(_c1, "Footer");
-
-  helpers.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"styled-components":"gqYCY","react":"juP7B","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6e8vO"}],"gIUS3":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _resources = require("./Resources");
-parcelHelpers.exportAll(_resources, exports);
-
-},{"./Resources":"eeNXc","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN"}],"eeNXc":[function(require,module,exports) {
-var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-helpers.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Resource", ()=>Resource
-);
-var _styledComponents = require("styled-components");
-var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _style = require("../style/style");
-var _w3Png = require("url:../../../public/w3.png");
-var _w3PngDefault = parcelHelpers.interopDefault(_w3Png);
-var _htmlattPng = require("url:../../../public/htmlatt.png");
-var _htmlattPngDefault = parcelHelpers.interopDefault(_htmlattPng);
-var _jwJpeg = require("url:../../../public/jw.jpeg");
-var _jwJpegDefault = parcelHelpers.interopDefault(_jwJpeg);
-var _logoPng = require("url:../../../public/logo.png");
-var _logoPngDefault = parcelHelpers.interopDefault(_logoPng);
-var _StyledH = _styledComponentsDefault.default("h4").withConfig({
-    displayName: "Resources___StyledH",
-    componentId: "sc-1ihn4re-0"
-})([
-    "",
-    ""
-], (p)=>p._css
-);
-_c = _StyledH;
-const Resource = (props)=>{
-    return(/*#__PURE__*/ _reactDefault.default.createElement(_style.Resources, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ResourcesBio, null, /*#__PURE__*/ _reactDefault.default.createElement(_StyledH, {
-        _css: "font-size:20px;"
-    }, "I learn from:"), /*#__PURE__*/ _reactDefault.default.createElement("div", null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ResourcesList, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ResourcesListItem, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ResourcesImgContainer, null, /*#__PURE__*/ _reactDefault.default.createElement("a", {
-        href: "https://syntax.fm/"
-    }, /*#__PURE__*/ _reactDefault.default.createElement(_style.ResourceImg, {
-        src: _logoPngDefault.default,
-        alt: "Syntax podcast"
-    })))), /*#__PURE__*/ _reactDefault.default.createElement(_style.ResourcesListItem, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ResourcesImgContainer, null, /*#__PURE__*/ _reactDefault.default.createElement("a", {
-        href: "https://www.w3schools.com/"
-    }, /*#__PURE__*/ _reactDefault.default.createElement(_style.ResourceImg, {
-        src: _w3PngDefault.default,
-        alt: "w3 Schools"
-    })))), /*#__PURE__*/ _reactDefault.default.createElement(_style.ResourcesListItem, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ResourcesImgContainer, null, /*#__PURE__*/ _reactDefault.default.createElement("a", {
-        href: "https://podcast.htmlallthethings.com/"
-    }, /*#__PURE__*/ _reactDefault.default.createElement(_style.ResourceImg, {
-        src: _htmlattPngDefault.default,
-        alt: "html all the things podcast"
-    })))), /*#__PURE__*/ _reactDefault.default.createElement(_style.ResourcesListItem, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.ResourcesImgContainer, null, /*#__PURE__*/ _reactDefault.default.createElement("a", {
-        href: "https://jasonwatmore.com/"
-    }, /*#__PURE__*/ _reactDefault.default.createElement(_style.ResourceImg, {
-        src: _jwJpegDefault.default,
-        alt: "Jason Watmore"
-    })))))))));
-};
-_c1 = Resource;
-var _c, _c1;
-$RefreshReg$(_c, "_StyledH");
-$RefreshReg$(_c1, "Resource");
-
-  helpers.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react":"juP7B","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6e8vO","styled-components":"gqYCY","url:../../../public/htmlatt.png":"bAfzj","url:../../../public/jw.jpeg":"bL9US","url:../../../public/logo.png":"ZJUkd","url:../../../public/w3.png":"c2unq","../style/style":"lx0sh"}],"bAfzj":[function(require,module,exports) {
-module.exports = require('./bundle-url').getBundleURL() + "htmlatt.68f4e58f.png";
-
-},{"./bundle-url":"kGdAt"}],"bL9US":[function(require,module,exports) {
-module.exports = require('./bundle-url').getBundleURL() + "jw.08107012.jpeg";
-
-},{"./bundle-url":"kGdAt"}],"ZJUkd":[function(require,module,exports) {
-module.exports = require('./bundle-url').getBundleURL() + "logo.65be624e.png";
-
-},{"./bundle-url":"kGdAt"}],"c2unq":[function(require,module,exports) {
-module.exports = require('./bundle-url').getBundleURL() + "w3.fb7d5dc8.png";
-
-},{"./bundle-url":"kGdAt"}],"eOqF1":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _title = require("./Title");
-parcelHelpers.exportAll(_title, exports);
-
-},{"./Title":"f7iYT","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN"}],"f7iYT":[function(require,module,exports) {
-var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-helpers.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Title", ()=>Title
-);
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _style = require("./style");
-const Title = (props)=>{
-    return(/*#__PURE__*/ _reactDefault.default.createElement(_style.TitleSection, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.Name, null, "Michael Hegner"), /*#__PURE__*/ _reactDefault.default.createElement(_style.Position, null, "Full Stack Developer")));
-};
-_c = Title;
-var _c;
-$RefreshReg$(_c, "Title");
-
-  helpers.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react":"juP7B","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6e8vO","./style":"3VRHT"}],"3VRHT":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Name", ()=>Name
-);
-parcelHelpers.export(exports, "Position", ()=>Position
-);
-parcelHelpers.export(exports, "TitleSection", ()=>TitleSection
-);
-var _styledComponents = require("styled-components");
-var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
-const Name = _styledComponentsDefault.default.h1.withConfig({
-    displayName: "style__Name",
-    componentId: "sc-2iaba3-0"
-})([
-    "font-size:4rem;text-align:center;"
-]);
-const Position = _styledComponentsDefault.default.h2.withConfig({
-    displayName: "style__Position",
-    componentId: "sc-2iaba3-1"
-})([
-    "font-size:2rem;text-align:center;"
-]);
-const TitleSection = _styledComponentsDefault.default.div.withConfig({
-    displayName: "style__TitleSection",
-    componentId: "sc-2iaba3-2"
-})([
-    "background:var(--bg);min-width:100%;min-height:400px;display:flex;flex-direction:column;justify-content:center;align-items:center;"
-]);
-
-},{"styled-components":"gqYCY","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN"}],"1EbxM":[function(require,module,exports) {
+},{"styled-components":"gkt6C","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"byhfl":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _burger = require("./burger/Burger");
@@ -30618,11 +30435,11 @@ parcelHelpers.exportAll(_burger, exports);
 var _menu = require("./menu/Menu");
 parcelHelpers.exportAll(_menu, exports);
 
-},{"./burger/Burger":"chVg3","./menu/Menu":"ku7Qk","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN"}],"chVg3":[function(require,module,exports) {
-var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{"./burger/Burger":"94wLv","./menu/Menu":"dQpgW","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"94wLv":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$3d92 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
-helpers.prelude(module);
+$parcel$ReactRefreshHelpers$3d92.prelude(module);
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -30648,12 +30465,12 @@ Burger.propTypes = {
 var _c;
 $RefreshReg$(_c, "Burger");
 
-  helpers.postlude(module);
+  $parcel$ReactRefreshHelpers$3d92.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"juP7B","prop-types":"jEh18","./style":"deFZy","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6e8vO"}],"deFZy":[function(require,module,exports) {
+},{"react":"6TuXu","prop-types":"1tgq3","./style":"hl9qW","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"hl9qW":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "StyledBurger", ()=>StyledBurger
@@ -30662,7 +30479,7 @@ var _styledComponents = require("styled-components");
 var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
 const StyledBurger = _styledComponentsDefault.default.button.withConfig({
     displayName: "style__StyledBurger",
-    componentId: "y5ilio-0"
+    componentId: "sc-y5ilio-0"
 })([
     "display:flex;flex-direction:column;justify-content:space-around;width:2rem;height:2rem;background:transparent;border:none;cursor:pointer;padding:0;z-index:10;&:focus{outline:none;}div{width:2rem;height:0.05rem;background:",
     ";transition:all 0.3s linear;position:relative;transform-origin:1px;:first-child{transform:",
@@ -30677,11 +30494,11 @@ const StyledBurger = _styledComponentsDefault.default.button.withConfig({
 , (props)=>props.open ? "rotate(-45deg)" : "rotate(0)"
 );
 
-},{"styled-components":"gqYCY","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN"}],"ku7Qk":[function(require,module,exports) {
-var helpers = require("../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{"styled-components":"gkt6C","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"dQpgW":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$7a45 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
-helpers.prelude(module);
+$parcel$ReactRefreshHelpers$7a45.prelude(module);
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -30715,42 +30532,6 @@ Linkedin.defaultProps = {
     xmlns: "http://www.w3.org/2000/svg",
     viewBox: "0 0 24 24"
 };
-var _StyledSpan = _styledComponentsDefault.default("span").withConfig({
-    displayName: "Menu___StyledSpan",
-    componentId: "hcsrke-0"
-})([
-    "",
-    ""
-], (p)=>p._css
-);
-_c2 = _StyledSpan;
-var _StyledGithub = _styledComponentsDefault.default(Github).withConfig({
-    displayName: "Menu___StyledGithub",
-    componentId: "hcsrke-1"
-})([
-    "",
-    ""
-], (p)=>p._css2
-);
-_c3 = _StyledGithub;
-var _StyledSpan2 = _styledComponentsDefault.default("span").withConfig({
-    displayName: "Menu___StyledSpan2",
-    componentId: "hcsrke-2"
-})([
-    "",
-    ""
-], (p)=>p._css3
-);
-_c4 = _StyledSpan2;
-var _StyledLinkedin = _styledComponentsDefault.default(Linkedin).withConfig({
-    displayName: "Menu___StyledLinkedin",
-    componentId: "hcsrke-3"
-})([
-    "",
-    ""
-], (p)=>p._css4
-);
-_c5 = _StyledLinkedin;
 const Menu = ({ open  })=>{
     return(/*#__PURE__*/ _reactDefault.default.createElement(_style.StyledMenu, {
         open: open
@@ -30760,39 +30541,75 @@ const Menu = ({ open  })=>{
     }, /*#__PURE__*/ _reactDefault.default.createElement(_StyledSpan, {
         role: "img",
         "aria-label": "github",
-        _css: "margin-right:10px;"
+        $_css: "margin-right:10px;"
     }, /*#__PURE__*/ _reactDefault.default.createElement(_StyledGithub, {
-        _css2: "height:1.5rem;width:1.5rem;"
+        $_css2: "height:1.5rem;width:1.5rem;"
     })), /*#__PURE__*/ _reactDefault.default.createElement("span", null, "Github")), /*#__PURE__*/ _reactDefault.default.createElement("a", {
         href: "https://www.linkedin.com/in/michaelhegner/",
         target: "_none"
     }, /*#__PURE__*/ _reactDefault.default.createElement(_StyledSpan2, {
         role: "img",
         "aria-label": "linkedin",
-        _css3: "margin-right:10px;"
+        $_css3: "margin-right:10px;"
     }, /*#__PURE__*/ _reactDefault.default.createElement(_StyledLinkedin, {
-        _css4: "height:1.5rem;width:1.5rem;"
+        $_css4: "height:1.5rem;width:1.5rem;"
     })), /*#__PURE__*/ _reactDefault.default.createElement("span", null, "LinkedIn"))));
 };
-_c6 = Menu;
+_c2 = Menu;
 Menu.propTypes = {
     open: _propTypes.bool.isRequired
 };
+var _StyledSpan = _styledComponentsDefault.default("span").withConfig({
+    displayName: "Menu___StyledSpan",
+    componentId: "sc-hcsrke-0"
+})([
+    "",
+    ""
+], (p)=>p.$_css
+);
+_c3 = _StyledSpan;
+var _StyledGithub = _styledComponentsDefault.default(Github).withConfig({
+    displayName: "Menu___StyledGithub",
+    componentId: "sc-hcsrke-1"
+})([
+    "",
+    ""
+], (p)=>p.$_css2
+);
+_c4 = _StyledGithub;
+var _StyledSpan2 = _styledComponentsDefault.default("span").withConfig({
+    displayName: "Menu___StyledSpan2",
+    componentId: "sc-hcsrke-2"
+})([
+    "",
+    ""
+], (p)=>p.$_css3
+);
+_c5 = _StyledSpan2;
+var _StyledLinkedin = _styledComponentsDefault.default(Linkedin).withConfig({
+    displayName: "Menu___StyledLinkedin",
+    componentId: "sc-hcsrke-3"
+})([
+    "",
+    ""
+], (p)=>p.$_css4
+);
+_c6 = _StyledLinkedin;
 var _c, _c1, _c2, _c3, _c4, _c5, _c6;
 $RefreshReg$(_c, "Github");
 $RefreshReg$(_c1, "Linkedin");
-$RefreshReg$(_c2, "_StyledSpan");
-$RefreshReg$(_c3, "_StyledGithub");
-$RefreshReg$(_c4, "_StyledSpan2");
-$RefreshReg$(_c5, "_StyledLinkedin");
-$RefreshReg$(_c6, "Menu");
+$RefreshReg$(_c2, "Menu");
+$RefreshReg$(_c3, "_StyledSpan");
+$RefreshReg$(_c4, "_StyledGithub");
+$RefreshReg$(_c5, "_StyledSpan2");
+$RefreshReg$(_c6, "_StyledLinkedin");
 
-  helpers.postlude(module);
+  $parcel$ReactRefreshHelpers$7a45.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"juP7B","prop-types":"jEh18","./style":"5cHAN","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN","../../../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"6e8vO","styled-components":"gqYCY"}],"5cHAN":[function(require,module,exports) {
+},{"styled-components":"gkt6C","react":"6TuXu","prop-types":"1tgq3","./style":"jzZP7","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"jzZP7":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "StyledMenu", ()=>StyledMenu
@@ -30801,22 +30618,24 @@ var _styledComponents = require("styled-components");
 var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
 const StyledMenu = _styledComponentsDefault.default.nav.withConfig({
     displayName: "style__StyledMenu",
-    componentId: "mkxfsi-0"
+    componentId: "sc-mkxfsi-0"
 })([
-    "display:flex;flex-direction:column;justify-content:center;align-items:center;background:var(--white);height:100vh;text-align:left;padding:2rem;position:absolute;top:0;left:0;transition:transform 0.3s ease-in-out;transform:",
-    ";@media (max-width:600px){width:100%;}a{display:flex;width:50%;font-size:2rem;text-transform:uppercase;margin:2rem 0;font-weight:400;letter-spacing:0.5rem;color:var(--dark);text-decoration:none;border-bottom:1px solid transparent;@media (max-width:600px){font-size:1.5rem;text-align:left;}a span{margin:2rem;}&:hover{border-bottom:1px solid var(--warn);}}"
+    "display:flex;flex-direction:column;justify-content:center;background:var(--white);height:100vh;text-align:left;position:absolute;top:0;left:0;transition:transform 0.3s ease-in-out;transform:",
+    ";@media (max-width:768px){width:100%;}a{position:relative;left:15%;font-size:2rem;text-transform:uppercase;margin:2rem 0;font-weight:400;letter-spacing:0.5rem;color:var(--dark);text-decoration:none;border-bottom:1px solid transparent;@media (max-width:600px){font-size:1.5rem;text-align:left;}a span{margin:2rem;}&:hover{border-bottom:1px solid var(--warn);}}"
 ], ({ open  })=>open ? "translateX(0)" : "translateX(-100%)"
 );
 
-},{"styled-components":"gqYCY","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN"}],"8illH":[function(require,module,exports) {
+},{"styled-components":"gkt6C","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"eQeeq":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "GlobalStyles", ()=>GlobalStyles
 );
 var _styledComponents = require("styled-components");
-const GlobalStyles = _styledComponents.createGlobalStyle`\n  *, *::after, *::before {\n    font-family: "Roboto Mono", monospace;\n    box-sizing: border-box;\n  }\n:root {\n  --white: #fbfbff;\n  --grey-blue-lt: #a6b6c7;\n  --grey-blue-drk: #9eadbe;\n  --slate: #363635;\n  --dark-blue: #303a46;\n  --red: #db3069;\n  --red2: #d11149;\n  --yellow: #ffcb47;\n  --yellow2: #e6c229;\n  --khaki: #bbb193;\n  --indigo: #6610f2;\n  --pumpkin: #f17105;\n  --bg: var(--grey-blue-lt);\n  --bg-accent: var(--grey-blue-drk);\n  --bg-footer: var(--slate);\n  --dark: var(--slate);\n  --danger: var(--red);\n  --warn: var(--yellow);\n  --bland: var(--khaki);\n  --font-size: 18px;\n  --text-color: var(--dark);\n  --section-bg: var(--indigo);\n}\n\n\n.app {\n  min-height: 100%;\n  width: 100%;\n}\n\nfooter {\n  background-color: var(--bg-footer);\n}\n\nfooter p {\n  font-family: "Roboto Mono", monospace;\n  font-weight: 200;\n  color: var(--white);\n}\n\n\n\n  body {\n    min-height: 100vh;\n    text-rendering: optimizeLegibility;\n  }\n  `;
+const GlobalStyles = _styledComponents.createGlobalStyle([
+    "html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;vertical-align:baseline;}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}body{line-height:1;}ol,ul{list-style:none;}blockquote,q{quotes:none;}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}table{border-collapse:collapse;border-spacing:0;}*,*::after,*::before{font-family:\"Roboto Mono\",monospace;box-sizing:border-box;}:root{--white:#fbfbff;--grey-blue-lt:#a6b6c7;--grey-blue-drk:#9eadbe;--slate:#363635;--dark-blue:#303a46;--red:#db3069;--red2:#d11149;--yellow:#ffcb47;--yellow2:#e6c229;--khaki:#bbb193;--indigo:#6610f2;--pumpkin:#f17105;--bg:var(--grey-blue-lt);--bg-accent:var(--grey-blue-drk);--bg-footer:var(--slate);--dark:var(--slate);--danger:var(--red);--warn:var(--yellow);--bland:var(--khaki);--font-size:18px;--text-color:var(--dark);--section-bg:var(--indigo);}h1,h2,h3,h4,h5,h6,ol,ul{margin-block-start:0;margin-block-end:0;}body{margin:0;padding:0;min-height:100vh;text-rendering:optimizeLegibility;}ol,ul{list-style:none;}footer{background-color:var(--bg-footer);}footer p{font-family:\"Roboto Mono\",monospace;font-weight:200;color:var(--white);font-size:0.75rem;}.app{min-height:100%;width:100%;}"
+]);
 
-},{"styled-components":"gqYCY","@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN"}],"3nQyE":[function(require,module,exports) {
+},{"styled-components":"gkt6C","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"jQC7B":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "theme", ()=>theme
@@ -30828,6 +30647,6 @@ const theme = {
     mobile: "576px"
 };
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"kcMTN"}]},["bk2Y7","6qa0z","hFylh"], "hFylh", "parcelRequire21c5")
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}]},["2rAXy","6a0zu","dLPEP"], "dLPEP", "parcelRequire21c5")
 
-//# sourceMappingURL=index.bae34397.js.map
+//# sourceMappingURL=index.6701a6e1.js.map
