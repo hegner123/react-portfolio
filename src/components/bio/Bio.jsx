@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   InfoBlock,
   TechList,
@@ -9,7 +9,43 @@ import {
   Text,
 } from "../style/style";
 
+import anime from "animejs/lib/anime.es.js";
+
 export const Bio = (props) => {
+  useEffect(() => {
+    anime({
+      targets: ".animation",
+      translateX: 50,
+    });
+  }, []);
+
+  function handleAnimationEnter(element) {
+    anime({
+      targets: `.${element}`,
+      translateX: 5,
+    });
+  }
+
+  function handleAnimationLeave(element) {
+    anime({
+      targets: `.${element}`,
+      translateX: -5,
+    });
+  }
+  function handleAnimationClick(element) {
+    anime({
+      targets: `.${element}`,
+      translateX: [
+        2, -2, 3, -3, 4, -4, 5, -5, 6, -6, 7, -7, 8, -8, 7, -7, 6, -6, 5, -5, 4,
+        -4, 3, -3, 2, -2, 0,
+      ],
+      duration: 100,
+      easing: "easeInOutBounce",
+    });
+
+    element.animation.play();
+  }
+
   return (
     <InfoBlock>
       <Section>
@@ -22,17 +58,33 @@ export const Bio = (props) => {
         </Text>
       </Section>
       <Section>
-        <TechList>
-          <TechItem>
+        <TechList className="animation">
+          <TechItem
+            onMouseEnter={(e) => handleAnimationEnter(e.target.classList[2])}
+            onMouseLeave={(e) => handleAnimationLeave(e.target.classList[2])}
+            onClick={(e) => handleAnimationClick(e.target.classList[2])}
+            className="mongo">
             <TechText>MongoDB</TechText>
           </TechItem>
-          <TechItem>
+          <TechItem
+            onMouseEnter={(e) => handleAnimationEnter(e.target.classList[2])}
+            onMouseLeave={(e) => handleAnimationLeave(e.target.classList[2])}
+            onClick={(e) => handleAnimationClick(e.target.classList[2])}
+            className="express">
             <TechText>Express</TechText>
           </TechItem>
-          <TechItem>
+          <TechItem
+            onMouseEnter={(e) => handleAnimationEnter(e.target.classList[2])}
+            onMouseLeave={(e) => handleAnimationLeave(e.target.classList[2])}
+            onClick={(e) => handleAnimationClick(e.target.classList[2])}
+            className="react">
             <TechText>React</TechText>
           </TechItem>
-          <TechItem>
+          <TechItem
+            onMouseOver={(e) => handleAnimationEnter(e.target.classList[2])}
+            onMouseLeave={(e) => handleAnimationLeave(e.target.classList[2])}
+            onClick={(e) => handleAnimationClick(e.target.classList[2])}
+            className="node">
             <TechText>Node</TechText>
           </TechItem>
         </TechList>

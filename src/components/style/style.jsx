@@ -61,7 +61,7 @@ export const Title3 = styled.h3`
   }
 `;
 
-export const Text = styled.div`
+export const Text = styled.p`
   line-height: 1.25rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -97,6 +97,7 @@ export const TechText = styled.p`
   padding: 15px 0;
   text-align: center;
   min-width: 10em;
+  pointer-events: none;
 `;
 
 //Project

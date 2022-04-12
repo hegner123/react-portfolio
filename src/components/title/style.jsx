@@ -6,8 +6,13 @@ export const Name = styled.h1`
 `;
 
 export const Position = styled.h2`
+  padding-top: 2rem;
   font-size: 2rem;
   text-align: center;
+  width: 75%;
+  @media (min-width: 900px) {
+    width: 100%;
+  }
 `;
 
 export const TitleSection = styled.div`
@@ -18,4 +23,7 @@ export const TitleSection = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  div {
+    max-width: 75%;
+  }
 `;

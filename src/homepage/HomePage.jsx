@@ -5,28 +5,17 @@ import { Footer } from "../components/footer";
 import { Projects } from "../components/projects";
 import { Resource } from "../components/resources";
 import { Title } from "../components/title";
-import { Main, NavBar, NavList, NavItem, MenuBar, NavLink, Logo } from "./style";
-import styled, { keyframes } from "styled-components";
+import {
+  Main,
+  NavBar,
+  NavList,
+  NavItem,
+  MenuBar,
+  NavLink,
+  Logo,
+} from "./style";
+
 import { Burger, Menu } from "../components/";
-
-const rotate = keyframes`
-
-from {
-  transform: rotate(0deg);
-}
-
-to {
-  transform: rotate(360deg);
-}
-`;
-
-// Here we create a component that will rotate everything we pass in over two seconds
-const Rotate = styled.div`
-  display: inline-block;
-  animation: ${rotate} 2s linear infinite;
-  padding: 2rem 1rem;
-  font-size: 1.2rem;
-`;
 
 export const HomePage = () => {
   const [isOpen, setOpen] = useState(false);
@@ -49,8 +38,7 @@ export const HomePage = () => {
               <NavItem desktop>
                 <NavLink
                   href="https://www.linkedin.com/in/michaelhegner/"
-                  target="_none"
-                >
+                  target="_none">
                   LinkedIn
                 </NavLink>
               </NavItem>

@@ -27840,16 +27840,6 @@ var _title = require("../components/title");
 var _style = require("./style");
 var _ = require("../components/");
 var _s = $RefreshSig$();
-const rotate = _styledComponents.keyframes([
-    "from{transform:rotate(0deg);}to{transform:rotate(360deg);}"
-]); // Here we create a component that will rotate everything we pass in over two seconds
-const Rotate = _styledComponentsDefault.default.div.withConfig({
-    displayName: "HomePage__Rotate",
-    componentId: "sc-12bfo3c-0"
-})([
-    "display:inline-block;animation:",
-    " 2s linear infinite;padding:2rem 1rem;font-size:1.2rem;"
-], rotate);
 const HomePage = ()=>{
     _s();
     const [isOpen, setOpen] = _react.useState(false);
@@ -27882,7 +27872,7 @@ _s(HomePage, "WPi2qa4HrijmrT7XyqmH7MkbZuo=");
 _c = HomePage;
 var _StyledNavLink = _styledComponentsDefault.default(_style.NavLink).withConfig({
     displayName: "HomePage___StyledNavLink",
-    componentId: "sc-12bfo3c-1"
+    componentId: "sc-12bfo3c-0"
 })([
     "",
     ""
@@ -27891,7 +27881,7 @@ var _StyledNavLink = _styledComponentsDefault.default(_style.NavLink).withConfig
 _c1 = _StyledNavLink;
 var _StyledMain = _styledComponentsDefault.default(_style.Main).withConfig({
     displayName: "HomePage___StyledMain",
-    componentId: "sc-12bfo3c-2"
+    componentId: "sc-12bfo3c-1"
 })([
     "",
     ""
@@ -29713,7 +29703,7 @@ const Title3 = _styledComponentsDefault.default.h3.withConfig({
 })([
     "color:var(--dark);font-size:30px;text-align:left;@media (min-width:768px){text-align:left;}"
 ]);
-const Text1 = _styledComponentsDefault.default.div.withConfig({
+const Text1 = _styledComponentsDefault.default.p.withConfig({
     displayName: "style__Text",
     componentId: "sc-1uen8k0-6"
 })([
@@ -29741,7 +29731,7 @@ const TechText = _styledComponentsDefault.default.p.withConfig({
     displayName: "style__TechText",
     componentId: "sc-1uen8k0-10"
 })([
-    "padding:15px 0;text-align:center;min-width:10em;"
+    "padding:15px 0;text-align:center;min-width:10em;pointer-events:none;"
 ]); //Project
 const ProjectWrapper = _styledComponentsDefault.default.div.withConfig({
     displayName: "style__ProjectWrapper",
@@ -29996,11 +29986,105 @@ var _styledComponentsDefault = parcelHelpers.interopDefault(_styledComponents);
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _style = require("../style/style");
+var _animeEsJs = require("animejs/lib/anime.es.js");
+var _animeEsJsDefault = parcelHelpers.interopDefault(_animeEsJs);
+var _s = $RefreshSig$();
 const Bio = (props)=>{
+    _s();
+    _react.useEffect(()=>{
+        _animeEsJsDefault.default({
+            targets: ".animation",
+            translateX: 50
+        });
+    }, []);
+    function handleAnimationEnter(element) {
+        _animeEsJsDefault.default({
+            targets: `.${element}`,
+            translateX: 5
+        });
+    }
+    function handleAnimationLeave(element) {
+        _animeEsJsDefault.default({
+            targets: `.${element}`,
+            translateX: -5
+        });
+    }
+    function handleAnimationClick(element) {
+        _animeEsJsDefault.default({
+            targets: `.${element}`,
+            translateX: [
+                2,
+                -2,
+                3,
+                -3,
+                4,
+                -4,
+                5,
+                -5,
+                6,
+                -6,
+                7,
+                -7,
+                8,
+                -8,
+                7,
+                -7,
+                6,
+                -6,
+                5,
+                -5,
+                4,
+                -4,
+                3,
+                -3,
+                2,
+                -2,
+                0
+            ],
+            duration: 100,
+            easing: "easeInOutBounce"
+        });
+        element.animation.play();
+    }
     return(/*#__PURE__*/ _reactDefault.default.createElement(_style.InfoBlock, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.Section, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.Title3, null, "Michael Hegner"), /*#__PURE__*/ _reactDefault.default.createElement(_StyledP, {
         $_css: "margin-top:0.75rem;"
-    }, "Looking for new challenges!"), /*#__PURE__*/ _reactDefault.default.createElement(_style.Text, null, "I'm a full stack developer with a background in audio engineering. I love problem solving and making applications to make my life easier. You can find some examples of my work on my github or below.")), /*#__PURE__*/ _reactDefault.default.createElement(_style.Section, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.TechList, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.TechItem, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.TechText, null, "MongoDB")), /*#__PURE__*/ _reactDefault.default.createElement(_style.TechItem, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.TechText, null, "Express")), /*#__PURE__*/ _reactDefault.default.createElement(_style.TechItem, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.TechText, null, "React")), /*#__PURE__*/ _reactDefault.default.createElement(_style.TechItem, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.TechText, null, "Node"))))));
+    }, "Looking for new challenges!"), /*#__PURE__*/ _reactDefault.default.createElement(_style.Text, null, "I'm a full stack developer with a background in audio engineering. I love problem solving and making applications to make my life easier. You can find some examples of my work on my github or below.")), /*#__PURE__*/ _reactDefault.default.createElement(_style.Section, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.TechList, {
+        className: "animation"
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_style.TechItem, {
+        onMouseEnter: (e)=>handleAnimationEnter(e.target.classList[2])
+        ,
+        onMouseLeave: (e)=>handleAnimationLeave(e.target.classList[2])
+        ,
+        onClick: (e)=>handleAnimationClick(e.target.classList[2])
+        ,
+        className: "mongo"
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_style.TechText, null, "MongoDB")), /*#__PURE__*/ _reactDefault.default.createElement(_style.TechItem, {
+        onMouseEnter: (e)=>handleAnimationEnter(e.target.classList[2])
+        ,
+        onMouseLeave: (e)=>handleAnimationLeave(e.target.classList[2])
+        ,
+        onClick: (e)=>handleAnimationClick(e.target.classList[2])
+        ,
+        className: "express"
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_style.TechText, null, "Express")), /*#__PURE__*/ _reactDefault.default.createElement(_style.TechItem, {
+        onMouseEnter: (e)=>handleAnimationEnter(e.target.classList[2])
+        ,
+        onMouseLeave: (e)=>handleAnimationLeave(e.target.classList[2])
+        ,
+        onClick: (e)=>handleAnimationClick(e.target.classList[2])
+        ,
+        className: "react"
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_style.TechText, null, "React")), /*#__PURE__*/ _reactDefault.default.createElement(_style.TechItem, {
+        onMouseOver: (e)=>handleAnimationEnter(e.target.classList[2])
+        ,
+        onMouseLeave: (e)=>handleAnimationLeave(e.target.classList[2])
+        ,
+        onClick: (e)=>handleAnimationClick(e.target.classList[2])
+        ,
+        className: "node"
+    }, /*#__PURE__*/ _reactDefault.default.createElement(_style.TechText, null, "Node"))))));
 };
+_s(Bio, "OD7bBpZva5O2jO+Puf00hKivP7c=");
 _c = Bio;
 var _StyledP = _styledComponentsDefault.default("p").withConfig({
     displayName: "Bio___StyledP",
@@ -30020,7 +30104,1295 @@ $RefreshReg$(_c1, "_StyledP");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"styled-components":"gkt6C","react":"6TuXu","../style/style":"iwicS","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"bsCn5":[function(require,module,exports) {
+},{"styled-components":"gkt6C","react":"6TuXu","../style/style":"iwicS","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","animejs/lib/anime.es.js":"o7RAv"}],"o7RAv":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+/*
+ * anime.js v3.2.1
+ * (c) 2020 Julian Garnier
+ * Released under the MIT license
+ * animejs.com
+ */ // Defaults
+var defaultInstanceSettings = {
+    update: null,
+    begin: null,
+    loopBegin: null,
+    changeBegin: null,
+    change: null,
+    changeComplete: null,
+    loopComplete: null,
+    complete: null,
+    loop: 1,
+    direction: 'normal',
+    autoplay: true,
+    timelineOffset: 0
+};
+var defaultTweenSettings = {
+    duration: 1000,
+    delay: 0,
+    endDelay: 0,
+    easing: 'easeOutElastic(1, .5)',
+    round: 0
+};
+var validTransforms = [
+    'translateX',
+    'translateY',
+    'translateZ',
+    'rotate',
+    'rotateX',
+    'rotateY',
+    'rotateZ',
+    'scale',
+    'scaleX',
+    'scaleY',
+    'scaleZ',
+    'skew',
+    'skewX',
+    'skewY',
+    'perspective',
+    'matrix',
+    'matrix3d'
+];
+// Caching
+var cache = {
+    CSS: {
+    },
+    springs: {
+    }
+};
+// Utils
+function minMax(val, min, max) {
+    return Math.min(Math.max(val, min), max);
+}
+function stringContains(str, text) {
+    return str.indexOf(text) > -1;
+}
+function applyArguments(func, args) {
+    return func.apply(null, args);
+}
+var is = {
+    arr: function(a) {
+        return Array.isArray(a);
+    },
+    obj: function(a) {
+        return stringContains(Object.prototype.toString.call(a), 'Object');
+    },
+    pth: function(a) {
+        return is.obj(a) && a.hasOwnProperty('totalLength');
+    },
+    svg: function(a) {
+        return a instanceof SVGElement;
+    },
+    inp: function(a) {
+        return a instanceof HTMLInputElement;
+    },
+    dom: function(a) {
+        return a.nodeType || is.svg(a);
+    },
+    str: function(a) {
+        return typeof a === 'string';
+    },
+    fnc: function(a) {
+        return typeof a === 'function';
+    },
+    und: function(a) {
+        return typeof a === 'undefined';
+    },
+    nil: function(a) {
+        return is.und(a) || a === null;
+    },
+    hex: function(a) {
+        return /(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i.test(a);
+    },
+    rgb: function(a) {
+        return /^rgb/.test(a);
+    },
+    hsl: function(a) {
+        return /^hsl/.test(a);
+    },
+    col: function(a) {
+        return is.hex(a) || is.rgb(a) || is.hsl(a);
+    },
+    key: function(a) {
+        return !defaultInstanceSettings.hasOwnProperty(a) && !defaultTweenSettings.hasOwnProperty(a) && a !== 'targets' && a !== 'keyframes';
+    }
+};
+// Easings
+function parseEasingParameters(string) {
+    var match = /\(([^)]+)\)/.exec(string);
+    return match ? match[1].split(',').map(function(p) {
+        return parseFloat(p);
+    }) : [];
+}
+// Spring solver inspired by Webkit Copyright © 2016 Apple Inc. All rights reserved. https://webkit.org/demos/spring/spring.js
+function spring(string, duration) {
+    var params = parseEasingParameters(string);
+    var mass = minMax(is.und(params[0]) ? 1 : params[0], 0.1, 100);
+    var stiffness = minMax(is.und(params[1]) ? 100 : params[1], 0.1, 100);
+    var damping = minMax(is.und(params[2]) ? 10 : params[2], 0.1, 100);
+    var velocity = minMax(is.und(params[3]) ? 0 : params[3], 0.1, 100);
+    var w0 = Math.sqrt(stiffness / mass);
+    var zeta = damping / (2 * Math.sqrt(stiffness * mass));
+    var wd = zeta < 1 ? w0 * Math.sqrt(1 - zeta * zeta) : 0;
+    var a = 1;
+    var b = zeta < 1 ? (zeta * w0 + -velocity) / wd : -velocity + w0;
+    function solver(t) {
+        var progress = duration ? duration * t / 1000 : t;
+        if (zeta < 1) progress = Math.exp(-progress * zeta * w0) * (a * Math.cos(wd * progress) + b * Math.sin(wd * progress));
+        else progress = (a + b * progress) * Math.exp(-progress * w0);
+        if (t === 0 || t === 1) return t;
+        return 1 - progress;
+    }
+    function getDuration() {
+        var cached = cache.springs[string];
+        if (cached) return cached;
+        var frame = 1 / 6;
+        var elapsed = 0;
+        var rest = 0;
+        while(true){
+            elapsed += frame;
+            if (solver(elapsed) === 1) {
+                rest++;
+                if (rest >= 16) break;
+            } else rest = 0;
+        }
+        var duration1 = elapsed * frame * 1000;
+        cache.springs[string] = duration1;
+        return duration1;
+    }
+    return duration ? solver : getDuration;
+}
+// Basic steps easing implementation https://developer.mozilla.org/fr/docs/Web/CSS/transition-timing-function
+function steps(steps1) {
+    if (steps1 === void 0) steps1 = 10;
+    return function(t) {
+        return Math.ceil(minMax(t, 0.000001, 1) * steps1) * (1 / steps1);
+    };
+}
+// BezierEasing https://github.com/gre/bezier-easing
+var bezier = function() {
+    var kSplineTableSize = 11;
+    var kSampleStepSize = 1 / (kSplineTableSize - 1);
+    function A(aA1, aA2) {
+        return 1 - 3 * aA2 + 3 * aA1;
+    }
+    function B(aA1, aA2) {
+        return 3 * aA2 - 6 * aA1;
+    }
+    function C(aA1) {
+        return 3 * aA1;
+    }
+    function calcBezier(aT, aA1, aA2) {
+        return ((A(aA1, aA2) * aT + B(aA1, aA2)) * aT + C(aA1)) * aT;
+    }
+    function getSlope(aT, aA1, aA2) {
+        return 3 * A(aA1, aA2) * aT * aT + 2 * B(aA1, aA2) * aT + C(aA1);
+    }
+    function binarySubdivide(aX, aA, aB, mX1, mX2) {
+        var currentX, currentT, i = 0;
+        do {
+            currentT = aA + (aB - aA) / 2;
+            currentX = calcBezier(currentT, mX1, mX2) - aX;
+            if (currentX > 0) aB = currentT;
+            else aA = currentT;
+        }while (Math.abs(currentX) > 0.0000001 && (++i) < 10)
+        return currentT;
+    }
+    function newtonRaphsonIterate(aX, aGuessT, mX1, mX2) {
+        for(var i = 0; i < 4; ++i){
+            var currentSlope = getSlope(aGuessT, mX1, mX2);
+            if (currentSlope === 0) return aGuessT;
+            var currentX = calcBezier(aGuessT, mX1, mX2) - aX;
+            aGuessT -= currentX / currentSlope;
+        }
+        return aGuessT;
+    }
+    function bezier1(mX1, mY1, mX2, mY2) {
+        if (!(0 <= mX1 && mX1 <= 1 && 0 <= mX2 && mX2 <= 1)) return;
+        var sampleValues = new Float32Array(kSplineTableSize);
+        if (mX1 !== mY1 || mX2 !== mY2) for(var i = 0; i < kSplineTableSize; ++i)sampleValues[i] = calcBezier(i * kSampleStepSize, mX1, mX2);
+        function getTForX(aX) {
+            var intervalStart = 0;
+            var currentSample = 1;
+            var lastSample = kSplineTableSize - 1;
+            for(; currentSample !== lastSample && sampleValues[currentSample] <= aX; ++currentSample)intervalStart += kSampleStepSize;
+            --currentSample;
+            var dist = (aX - sampleValues[currentSample]) / (sampleValues[currentSample + 1] - sampleValues[currentSample]);
+            var guessForT = intervalStart + dist * kSampleStepSize;
+            var initialSlope = getSlope(guessForT, mX1, mX2);
+            if (initialSlope >= 0.001) return newtonRaphsonIterate(aX, guessForT, mX1, mX2);
+            else if (initialSlope === 0) return guessForT;
+            else return binarySubdivide(aX, intervalStart, intervalStart + kSampleStepSize, mX1, mX2);
+        }
+        return function(x) {
+            if (mX1 === mY1 && mX2 === mY2) return x;
+            if (x === 0 || x === 1) return x;
+            return calcBezier(getTForX(x), mY1, mY2);
+        };
+    }
+    return bezier1;
+}();
+var penner = function() {
+    // Based on jQuery UI's implemenation of easing equations from Robert Penner (http://www.robertpenner.com/easing)
+    var eases = {
+        linear: function() {
+            return function(t) {
+                return t;
+            };
+        }
+    };
+    var functionEasings = {
+        Sine: function() {
+            return function(t) {
+                return 1 - Math.cos(t * Math.PI / 2);
+            };
+        },
+        Circ: function() {
+            return function(t) {
+                return 1 - Math.sqrt(1 - t * t);
+            };
+        },
+        Back: function() {
+            return function(t) {
+                return t * t * (3 * t - 2);
+            };
+        },
+        Bounce: function() {
+            return function(t) {
+                var pow2, b = 4;
+                while(t < ((pow2 = Math.pow(2, --b)) - 1) / 11);
+                return 1 / Math.pow(4, 3 - b) - 7.5625 * Math.pow((pow2 * 3 - 2) / 22 - t, 2);
+            };
+        },
+        Elastic: function(amplitude, period) {
+            if (amplitude === void 0) amplitude = 1;
+            if (period === void 0) period = 0.5;
+            var a = minMax(amplitude, 1, 10);
+            var p = minMax(period, 0.1, 2);
+            return function(t) {
+                return t === 0 || t === 1 ? t : -a * Math.pow(2, 10 * (t - 1)) * Math.sin((t - 1 - p / (Math.PI * 2) * Math.asin(1 / a)) * (Math.PI * 2) / p);
+            };
+        }
+    };
+    var baseEasings = [
+        'Quad',
+        'Cubic',
+        'Quart',
+        'Quint',
+        'Expo'
+    ];
+    baseEasings.forEach(function(name, i) {
+        functionEasings[name] = function() {
+            return function(t) {
+                return Math.pow(t, i + 2);
+            };
+        };
+    });
+    Object.keys(functionEasings).forEach(function(name) {
+        var easeIn = functionEasings[name];
+        eases['easeIn' + name] = easeIn;
+        eases['easeOut' + name] = function(a, b) {
+            return function(t) {
+                return 1 - easeIn(a, b)(1 - t);
+            };
+        };
+        eases['easeInOut' + name] = function(a, b) {
+            return function(t) {
+                return t < 0.5 ? easeIn(a, b)(t * 2) / 2 : 1 - easeIn(a, b)(t * -2 + 2) / 2;
+            };
+        };
+        eases['easeOutIn' + name] = function(a, b) {
+            return function(t) {
+                return t < 0.5 ? (1 - easeIn(a, b)(1 - t * 2)) / 2 : (easeIn(a, b)(t * 2 - 1) + 1) / 2;
+            };
+        };
+    });
+    return eases;
+}();
+function parseEasings(easing, duration) {
+    if (is.fnc(easing)) return easing;
+    var name = easing.split('(')[0];
+    var ease = penner[name];
+    var args = parseEasingParameters(easing);
+    switch(name){
+        case 'spring':
+            return spring(easing, duration);
+        case 'cubicBezier':
+            return applyArguments(bezier, args);
+        case 'steps':
+            return applyArguments(steps, args);
+        default:
+            return applyArguments(ease, args);
+    }
+}
+// Strings
+function selectString(str) {
+    try {
+        var nodes = document.querySelectorAll(str);
+        return nodes;
+    } catch (e) {
+        return;
+    }
+}
+// Arrays
+function filterArray(arr, callback) {
+    var len = arr.length;
+    var thisArg = arguments.length >= 2 ? arguments[1] : void 0;
+    var result = [];
+    for(var i = 0; i < len; i++)if (i in arr) {
+        var val = arr[i];
+        if (callback.call(thisArg, val, i, arr)) result.push(val);
+    }
+    return result;
+}
+function flattenArray(arr) {
+    return arr.reduce(function(a, b) {
+        return a.concat(is.arr(b) ? flattenArray(b) : b);
+    }, []);
+}
+function toArray(o) {
+    if (is.arr(o)) return o;
+    if (is.str(o)) o = selectString(o) || o;
+    if (o instanceof NodeList || o instanceof HTMLCollection) return [].slice.call(o);
+    return [
+        o
+    ];
+}
+function arrayContains(arr, val) {
+    return arr.some(function(a) {
+        return a === val;
+    });
+}
+// Objects
+function cloneObject(o) {
+    var clone = {
+    };
+    for(var p in o)clone[p] = o[p];
+    return clone;
+}
+function replaceObjectProps(o1, o2) {
+    var o = cloneObject(o1);
+    for(var p in o1)o[p] = o2.hasOwnProperty(p) ? o2[p] : o1[p];
+    return o;
+}
+function mergeObjects(o1, o2) {
+    var o = cloneObject(o1);
+    for(var p in o2)o[p] = is.und(o1[p]) ? o2[p] : o1[p];
+    return o;
+}
+// Colors
+function rgbToRgba(rgbValue) {
+    var rgb = /rgb\((\d+,\s*[\d]+,\s*[\d]+)\)/g.exec(rgbValue);
+    return rgb ? "rgba(" + rgb[1] + ",1)" : rgbValue;
+}
+function hexToRgba(hexValue) {
+    var rgx = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
+    var hex = hexValue.replace(rgx, function(m, r, g, b) {
+        return r + r + g + g + b + b;
+    });
+    var rgb = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    var r = parseInt(rgb[1], 16);
+    var g = parseInt(rgb[2], 16);
+    var b = parseInt(rgb[3], 16);
+    return "rgba(" + r + "," + g + "," + b + ",1)";
+}
+function hslToRgba(hslValue) {
+    var hsl = /hsl\((\d+),\s*([\d.]+)%,\s*([\d.]+)%\)/g.exec(hslValue) || /hsla\((\d+),\s*([\d.]+)%,\s*([\d.]+)%,\s*([\d.]+)\)/g.exec(hslValue);
+    var h = parseInt(hsl[1], 10) / 360;
+    var s = parseInt(hsl[2], 10) / 100;
+    var l = parseInt(hsl[3], 10) / 100;
+    var a = hsl[4] || 1;
+    function hue2rgb(p, q, t) {
+        if (t < 0) t += 1;
+        if (t > 1) t -= 1;
+        if (t < 1 / 6) return p + (q - p) * 6 * t;
+        if (t < 0.5) return q;
+        if (t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6;
+        return p;
+    }
+    var r, g, b;
+    if (s == 0) r = g = b = l;
+    else {
+        var q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+        var p = 2 * l - q;
+        r = hue2rgb(p, q, h + 1 / 3);
+        g = hue2rgb(p, q, h);
+        b = hue2rgb(p, q, h - 1 / 3);
+    }
+    return "rgba(" + r * 255 + "," + g * 255 + "," + b * 255 + "," + a + ")";
+}
+function colorToRgb(val) {
+    if (is.rgb(val)) return rgbToRgba(val);
+    if (is.hex(val)) return hexToRgba(val);
+    if (is.hsl(val)) return hslToRgba(val);
+}
+// Units
+function getUnit(val) {
+    var split = /[+-]?\d*\.?\d+(?:\.\d+)?(?:[eE][+-]?\d+)?(%|px|pt|em|rem|in|cm|mm|ex|ch|pc|vw|vh|vmin|vmax|deg|rad|turn)?$/.exec(val);
+    if (split) return split[1];
+}
+function getTransformUnit(propName) {
+    if (stringContains(propName, 'translate') || propName === 'perspective') return 'px';
+    if (stringContains(propName, 'rotate') || stringContains(propName, 'skew')) return 'deg';
+}
+// Values
+function getFunctionValue(val, animatable) {
+    if (!is.fnc(val)) return val;
+    return val(animatable.target, animatable.id, animatable.total);
+}
+function getAttribute(el, prop) {
+    return el.getAttribute(prop);
+}
+function convertPxToUnit(el, value, unit) {
+    var valueUnit = getUnit(value);
+    if (arrayContains([
+        unit,
+        'deg',
+        'rad',
+        'turn'
+    ], valueUnit)) return value;
+    var cached = cache.CSS[value + unit];
+    if (!is.und(cached)) return cached;
+    var baseline = 100;
+    var tempEl = document.createElement(el.tagName);
+    var parentEl = el.parentNode && el.parentNode !== document ? el.parentNode : document.body;
+    parentEl.appendChild(tempEl);
+    tempEl.style.position = 'absolute';
+    tempEl.style.width = baseline + unit;
+    var factor = baseline / tempEl.offsetWidth;
+    parentEl.removeChild(tempEl);
+    var convertedUnit = factor * parseFloat(value);
+    cache.CSS[value + unit] = convertedUnit;
+    return convertedUnit;
+}
+function getCSSValue(el, prop, unit) {
+    if (prop in el.style) {
+        var uppercasePropName = prop.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
+        var value = el.style[prop] || getComputedStyle(el).getPropertyValue(uppercasePropName) || '0';
+        return unit ? convertPxToUnit(el, value, unit) : value;
+    }
+}
+function getAnimationType(el, prop) {
+    if (is.dom(el) && !is.inp(el) && (!is.nil(getAttribute(el, prop)) || is.svg(el) && el[prop])) return 'attribute';
+    if (is.dom(el) && arrayContains(validTransforms, prop)) return 'transform';
+    if (is.dom(el) && prop !== 'transform' && getCSSValue(el, prop)) return 'css';
+    if (el[prop] != null) return 'object';
+}
+function getElementTransforms(el) {
+    if (!is.dom(el)) return;
+    var str = el.style.transform || '';
+    var reg = /(\w+)\(([^)]*)\)/g;
+    var transforms = new Map();
+    var m;
+    while(m = reg.exec(str))transforms.set(m[1], m[2]);
+    return transforms;
+}
+function getTransformValue(el, propName, animatable, unit) {
+    var defaultVal = stringContains(propName, 'scale') ? 1 : 0 + getTransformUnit(propName);
+    var value = getElementTransforms(el).get(propName) || defaultVal;
+    if (animatable) {
+        animatable.transforms.list.set(propName, value);
+        animatable.transforms['last'] = propName;
+    }
+    return unit ? convertPxToUnit(el, value, unit) : value;
+}
+function getOriginalTargetValue(target, propName, unit, animatable) {
+    switch(getAnimationType(target, propName)){
+        case 'transform':
+            return getTransformValue(target, propName, animatable, unit);
+        case 'css':
+            return getCSSValue(target, propName, unit);
+        case 'attribute':
+            return getAttribute(target, propName);
+        default:
+            return target[propName] || 0;
+    }
+}
+function getRelativeValue(to, from) {
+    var operator = /^(\*=|\+=|-=)/.exec(to);
+    if (!operator) return to;
+    var u = getUnit(to) || 0;
+    var x = parseFloat(from);
+    var y = parseFloat(to.replace(operator[0], ''));
+    switch(operator[0][0]){
+        case '+':
+            return x + y + u;
+        case '-':
+            return x - y + u;
+        case '*':
+            return x * y + u;
+    }
+}
+function validateValue(val, unit) {
+    if (is.col(val)) return colorToRgb(val);
+    if (/\s/g.test(val)) return val;
+    var originalUnit = getUnit(val);
+    var unitLess = originalUnit ? val.substr(0, val.length - originalUnit.length) : val;
+    if (unit) return unitLess + unit;
+    return unitLess;
+}
+// getTotalLength() equivalent for circle, rect, polyline, polygon and line shapes
+// adapted from https://gist.github.com/SebLambla/3e0550c496c236709744
+function getDistance(p1, p2) {
+    return Math.sqrt(Math.pow(p2.x - p1.x, 2) + Math.pow(p2.y - p1.y, 2));
+}
+function getCircleLength(el) {
+    return Math.PI * 2 * getAttribute(el, 'r');
+}
+function getRectLength(el) {
+    return getAttribute(el, 'width') * 2 + getAttribute(el, 'height') * 2;
+}
+function getLineLength(el) {
+    return getDistance({
+        x: getAttribute(el, 'x1'),
+        y: getAttribute(el, 'y1')
+    }, {
+        x: getAttribute(el, 'x2'),
+        y: getAttribute(el, 'y2')
+    });
+}
+function getPolylineLength(el) {
+    var points = el.points;
+    var totalLength = 0;
+    var previousPos;
+    for(var i = 0; i < points.numberOfItems; i++){
+        var currentPos = points.getItem(i);
+        if (i > 0) totalLength += getDistance(previousPos, currentPos);
+        previousPos = currentPos;
+    }
+    return totalLength;
+}
+function getPolygonLength(el) {
+    var points = el.points;
+    return getPolylineLength(el) + getDistance(points.getItem(points.numberOfItems - 1), points.getItem(0));
+}
+// Path animation
+function getTotalLength(el) {
+    if (el.getTotalLength) return el.getTotalLength();
+    switch(el.tagName.toLowerCase()){
+        case 'circle':
+            return getCircleLength(el);
+        case 'rect':
+            return getRectLength(el);
+        case 'line':
+            return getLineLength(el);
+        case 'polyline':
+            return getPolylineLength(el);
+        case 'polygon':
+            return getPolygonLength(el);
+    }
+}
+function setDashoffset(el) {
+    var pathLength = getTotalLength(el);
+    el.setAttribute('stroke-dasharray', pathLength);
+    return pathLength;
+}
+// Motion path
+function getParentSvgEl(el) {
+    var parentEl = el.parentNode;
+    while(is.svg(parentEl)){
+        if (!is.svg(parentEl.parentNode)) break;
+        parentEl = parentEl.parentNode;
+    }
+    return parentEl;
+}
+function getParentSvg(pathEl, svgData) {
+    var svg = svgData || {
+    };
+    var parentSvgEl = svg.el || getParentSvgEl(pathEl);
+    var rect = parentSvgEl.getBoundingClientRect();
+    var viewBoxAttr = getAttribute(parentSvgEl, 'viewBox');
+    var width = rect.width;
+    var height = rect.height;
+    var viewBox = svg.viewBox || (viewBoxAttr ? viewBoxAttr.split(' ') : [
+        0,
+        0,
+        width,
+        height
+    ]);
+    return {
+        el: parentSvgEl,
+        viewBox: viewBox,
+        x: viewBox[0] / 1,
+        y: viewBox[1] / 1,
+        w: width,
+        h: height,
+        vW: viewBox[2],
+        vH: viewBox[3]
+    };
+}
+function getPath(path, percent) {
+    var pathEl = is.str(path) ? selectString(path)[0] : path;
+    var p = percent || 100;
+    return function(property) {
+        return {
+            property: property,
+            el: pathEl,
+            svg: getParentSvg(pathEl),
+            totalLength: getTotalLength(pathEl) * (p / 100)
+        };
+    };
+}
+function getPathProgress(path, progress, isPathTargetInsideSVG) {
+    function point(offset) {
+        if (offset === void 0) offset = 0;
+        var l = progress + offset >= 1 ? progress + offset : 0;
+        return path.el.getPointAtLength(l);
+    }
+    var svg = getParentSvg(path.el, path.svg);
+    var p = point();
+    var p0 = point(-1);
+    var p1 = point(1);
+    var scaleX = isPathTargetInsideSVG ? 1 : svg.w / svg.vW;
+    var scaleY = isPathTargetInsideSVG ? 1 : svg.h / svg.vH;
+    switch(path.property){
+        case 'x':
+            return (p.x - svg.x) * scaleX;
+        case 'y':
+            return (p.y - svg.y) * scaleY;
+        case 'angle':
+            return Math.atan2(p1.y - p0.y, p1.x - p0.x) * 180 / Math.PI;
+    }
+}
+// Decompose value
+function decomposeValue(val, unit) {
+    // const rgx = /-?\d*\.?\d+/g; // handles basic numbers
+    // const rgx = /[+-]?\d+(?:\.\d+)?(?:[eE][+-]?\d+)?/g; // handles exponents notation
+    var rgx = /[+-]?\d*\.?\d+(?:\.\d+)?(?:[eE][+-]?\d+)?/g; // handles exponents notation
+    var value = validateValue(is.pth(val) ? val.totalLength : val, unit) + '';
+    return {
+        original: value,
+        numbers: value.match(rgx) ? value.match(rgx).map(Number) : [
+            0
+        ],
+        strings: is.str(val) || unit ? value.split(rgx) : []
+    };
+}
+// Animatables
+function parseTargets(targets) {
+    var targetsArray = targets ? flattenArray(is.arr(targets) ? targets.map(toArray) : toArray(targets)) : [];
+    return filterArray(targetsArray, function(item, pos, self) {
+        return self.indexOf(item) === pos;
+    });
+}
+function getAnimatables(targets) {
+    var parsed = parseTargets(targets);
+    return parsed.map(function(t, i) {
+        return {
+            target: t,
+            id: i,
+            total: parsed.length,
+            transforms: {
+                list: getElementTransforms(t)
+            }
+        };
+    });
+}
+// Properties
+function normalizePropertyTweens(prop, tweenSettings) {
+    var settings = cloneObject(tweenSettings);
+    // Override duration if easing is a spring
+    if (/^spring/.test(settings.easing)) settings.duration = spring(settings.easing);
+    if (is.arr(prop)) {
+        var l = prop.length;
+        var isFromTo = l === 2 && !is.obj(prop[0]);
+        if (!isFromTo) // Duration divided by the number of tweens
+        {
+            if (!is.fnc(tweenSettings.duration)) settings.duration = tweenSettings.duration / l;
+        } else // Transform [from, to] values shorthand to a valid tween value
+        prop = {
+            value: prop
+        };
+    }
+    var propArray = is.arr(prop) ? prop : [
+        prop
+    ];
+    return propArray.map(function(v, i) {
+        var obj = is.obj(v) && !is.pth(v) ? v : {
+            value: v
+        };
+        // Default delay value should only be applied to the first tween
+        if (is.und(obj.delay)) obj.delay = !i ? tweenSettings.delay : 0;
+        // Default endDelay value should only be applied to the last tween
+        if (is.und(obj.endDelay)) obj.endDelay = i === propArray.length - 1 ? tweenSettings.endDelay : 0;
+        return obj;
+    }).map(function(k) {
+        return mergeObjects(k, settings);
+    });
+}
+function flattenKeyframes(keyframes) {
+    var propertyNames = filterArray(flattenArray(keyframes.map(function(key) {
+        return Object.keys(key);
+    })), function(p) {
+        return is.key(p);
+    }).reduce(function(a, b) {
+        if (a.indexOf(b) < 0) a.push(b);
+        return a;
+    }, []);
+    var properties = {
+    };
+    var loop = function(i) {
+        var propName = propertyNames[i];
+        properties[propName] = keyframes.map(function(key) {
+            var newKey = {
+            };
+            for(var p in key){
+                if (is.key(p)) {
+                    if (p == propName) newKey.value = key[p];
+                } else newKey[p] = key[p];
+            }
+            return newKey;
+        });
+    };
+    for(var i = 0; i < propertyNames.length; i++)loop(i);
+    return properties;
+}
+function getProperties(tweenSettings, params) {
+    var properties = [];
+    var keyframes = params.keyframes;
+    if (keyframes) params = mergeObjects(flattenKeyframes(keyframes), params);
+    for(var p in params)if (is.key(p)) properties.push({
+        name: p,
+        tweens: normalizePropertyTweens(params[p], tweenSettings)
+    });
+    return properties;
+}
+// Tweens
+function normalizeTweenValues(tween, animatable) {
+    var t = {
+    };
+    for(var p in tween){
+        var value = getFunctionValue(tween[p], animatable);
+        if (is.arr(value)) {
+            value = value.map(function(v) {
+                return getFunctionValue(v, animatable);
+            });
+            if (value.length === 1) value = value[0];
+        }
+        t[p] = value;
+    }
+    t.duration = parseFloat(t.duration);
+    t.delay = parseFloat(t.delay);
+    return t;
+}
+function normalizeTweens(prop, animatable) {
+    var previousTween;
+    return prop.tweens.map(function(t) {
+        var tween = normalizeTweenValues(t, animatable);
+        var tweenValue = tween.value;
+        var to = is.arr(tweenValue) ? tweenValue[1] : tweenValue;
+        var toUnit = getUnit(to);
+        var originalValue = getOriginalTargetValue(animatable.target, prop.name, toUnit, animatable);
+        var previousValue = previousTween ? previousTween.to.original : originalValue;
+        var from = is.arr(tweenValue) ? tweenValue[0] : previousValue;
+        var fromUnit = getUnit(from) || getUnit(originalValue);
+        var unit = toUnit || fromUnit;
+        if (is.und(to)) to = previousValue;
+        tween.from = decomposeValue(from, unit);
+        tween.to = decomposeValue(getRelativeValue(to, from), unit);
+        tween.start = previousTween ? previousTween.end : 0;
+        tween.end = tween.start + tween.delay + tween.duration + tween.endDelay;
+        tween.easing = parseEasings(tween.easing, tween.duration);
+        tween.isPath = is.pth(tweenValue);
+        tween.isPathTargetInsideSVG = tween.isPath && is.svg(animatable.target);
+        tween.isColor = is.col(tween.from.original);
+        if (tween.isColor) tween.round = 1;
+        previousTween = tween;
+        return tween;
+    });
+}
+// Tween progress
+var setProgressValue = {
+    css: function(t, p, v) {
+        return t.style[p] = v;
+    },
+    attribute: function(t, p, v) {
+        return t.setAttribute(p, v);
+    },
+    object: function(t, p, v) {
+        return t[p] = v;
+    },
+    transform: function(t, p, v, transforms, manual) {
+        transforms.list.set(p, v);
+        if (p === transforms.last || manual) {
+            var str = '';
+            transforms.list.forEach(function(value, prop) {
+                str += prop + "(" + value + ") ";
+            });
+            t.style.transform = str;
+        }
+    }
+};
+// Set Value helper
+function setTargetsValue(targets, properties) {
+    var animatables = getAnimatables(targets);
+    animatables.forEach(function(animatable) {
+        for(var property in properties){
+            var value = getFunctionValue(properties[property], animatable);
+            var target = animatable.target;
+            var valueUnit = getUnit(value);
+            var originalValue = getOriginalTargetValue(target, property, valueUnit, animatable);
+            var unit = valueUnit || getUnit(originalValue);
+            var to = getRelativeValue(validateValue(value, unit), originalValue);
+            var animType = getAnimationType(target, property);
+            setProgressValue[animType](target, property, to, animatable.transforms, true);
+        }
+    });
+}
+// Animations
+function createAnimation(animatable, prop) {
+    var animType = getAnimationType(animatable.target, prop.name);
+    if (animType) {
+        var tweens = normalizeTweens(prop, animatable);
+        var lastTween = tweens[tweens.length - 1];
+        return {
+            type: animType,
+            property: prop.name,
+            animatable: animatable,
+            tweens: tweens,
+            duration: lastTween.end,
+            delay: tweens[0].delay,
+            endDelay: lastTween.endDelay
+        };
+    }
+}
+function getAnimations(animatables, properties) {
+    return filterArray(flattenArray(animatables.map(function(animatable) {
+        return properties.map(function(prop) {
+            return createAnimation(animatable, prop);
+        });
+    })), function(a) {
+        return !is.und(a);
+    });
+}
+// Create Instance
+function getInstanceTimings(animations, tweenSettings) {
+    var animLength = animations.length;
+    var getTlOffset = function(anim) {
+        return anim.timelineOffset ? anim.timelineOffset : 0;
+    };
+    var timings = {
+    };
+    timings.duration = animLength ? Math.max.apply(Math, animations.map(function(anim) {
+        return getTlOffset(anim) + anim.duration;
+    })) : tweenSettings.duration;
+    timings.delay = animLength ? Math.min.apply(Math, animations.map(function(anim) {
+        return getTlOffset(anim) + anim.delay;
+    })) : tweenSettings.delay;
+    timings.endDelay = animLength ? timings.duration - Math.max.apply(Math, animations.map(function(anim) {
+        return getTlOffset(anim) + anim.duration - anim.endDelay;
+    })) : tweenSettings.endDelay;
+    return timings;
+}
+var instanceID = 0;
+function createNewInstance(params) {
+    var instanceSettings = replaceObjectProps(defaultInstanceSettings, params);
+    var tweenSettings = replaceObjectProps(defaultTweenSettings, params);
+    var properties = getProperties(tweenSettings, params);
+    var animatables = getAnimatables(params.targets);
+    var animations = getAnimations(animatables, properties);
+    var timings = getInstanceTimings(animations, tweenSettings);
+    var id = instanceID;
+    instanceID++;
+    return mergeObjects(instanceSettings, {
+        id: id,
+        children: [],
+        animatables: animatables,
+        animations: animations,
+        duration: timings.duration,
+        delay: timings.delay,
+        endDelay: timings.endDelay
+    });
+}
+// Core
+var activeInstances = [];
+var engine = function() {
+    var raf;
+    function play() {
+        if (!raf && (!isDocumentHidden() || !anime.suspendWhenDocumentHidden) && activeInstances.length > 0) raf = requestAnimationFrame(step);
+    }
+    function step(t) {
+        // memo on algorithm issue:
+        // dangerous iteration over mutable `activeInstances`
+        // (that collection may be updated from within callbacks of `tick`-ed animation instances)
+        var activeInstancesLength = activeInstances.length;
+        var i = 0;
+        while(i < activeInstancesLength){
+            var activeInstance = activeInstances[i];
+            if (!activeInstance.paused) {
+                activeInstance.tick(t);
+                i++;
+            } else {
+                activeInstances.splice(i, 1);
+                activeInstancesLength--;
+            }
+        }
+        raf = i > 0 ? requestAnimationFrame(step) : undefined;
+    }
+    function handleVisibilityChange() {
+        if (!anime.suspendWhenDocumentHidden) return;
+        if (isDocumentHidden()) // suspend ticks
+        raf = cancelAnimationFrame(raf);
+        else {
+            // first adjust animations to consider the time that ticks were suspended
+            activeInstances.forEach(function(instance) {
+                return instance._onDocumentVisibility();
+            });
+            engine();
+        }
+    }
+    if (typeof document !== 'undefined') document.addEventListener('visibilitychange', handleVisibilityChange);
+    return play;
+}();
+function isDocumentHidden() {
+    return !!document && document.hidden;
+}
+// Public Instance
+function anime(params) {
+    if (params === void 0) params = {
+    };
+    var startTime = 0, lastTime = 0, now = 0;
+    var children, childrenLength = 0;
+    var resolve = null;
+    function makePromise(instance) {
+        var promise = window.Promise && new Promise(function(_resolve) {
+            return resolve = _resolve;
+        });
+        instance.finished = promise;
+        return promise;
+    }
+    var instance = createNewInstance(params);
+    var promise = makePromise(instance);
+    function toggleInstanceDirection() {
+        var direction = instance.direction;
+        if (direction !== 'alternate') instance.direction = direction !== 'normal' ? 'normal' : 'reverse';
+        instance.reversed = !instance.reversed;
+        children.forEach(function(child) {
+            return child.reversed = instance.reversed;
+        });
+    }
+    function adjustTime(time) {
+        return instance.reversed ? instance.duration - time : time;
+    }
+    function resetTime() {
+        startTime = 0;
+        lastTime = adjustTime(instance.currentTime) * (1 / anime.speed);
+    }
+    function seekChild(time, child) {
+        if (child) child.seek(time - child.timelineOffset);
+    }
+    function syncInstanceChildren(time) {
+        if (!instance.reversePlayback) for(var i = 0; i < childrenLength; i++)seekChild(time, children[i]);
+        else for(var i$1 = childrenLength; i$1--;)seekChild(time, children[i$1]);
+    }
+    function setAnimationsProgress(insTime) {
+        var i = 0;
+        var animations = instance.animations;
+        var animationsLength = animations.length;
+        while(i < animationsLength){
+            var anim = animations[i];
+            var animatable = anim.animatable;
+            var tweens = anim.tweens;
+            var tweenLength = tweens.length - 1;
+            var tween = tweens[tweenLength];
+            // Only check for keyframes if there is more than one tween
+            if (tweenLength) tween = filterArray(tweens, function(t) {
+                return insTime < t.end;
+            })[0] || tween;
+            var elapsed = minMax(insTime - tween.start - tween.delay, 0, tween.duration) / tween.duration;
+            var eased = isNaN(elapsed) ? 1 : tween.easing(elapsed);
+            var strings = tween.to.strings;
+            var round = tween.round;
+            var numbers = [];
+            var toNumbersLength = tween.to.numbers.length;
+            var progress = void 0;
+            for(var n = 0; n < toNumbersLength; n++){
+                var value = void 0;
+                var toNumber = tween.to.numbers[n];
+                var fromNumber = tween.from.numbers[n] || 0;
+                if (!tween.isPath) value = fromNumber + eased * (toNumber - fromNumber);
+                else value = getPathProgress(tween.value, eased * toNumber, tween.isPathTargetInsideSVG);
+                if (round) {
+                    if (!(tween.isColor && n > 2)) value = Math.round(value * round) / round;
+                }
+                numbers.push(value);
+            }
+            // Manual Array.reduce for better performances
+            var stringsLength = strings.length;
+            if (!stringsLength) progress = numbers[0];
+            else {
+                progress = strings[0];
+                for(var s = 0; s < stringsLength; s++){
+                    var a = strings[s];
+                    var b = strings[s + 1];
+                    var n$1 = numbers[s];
+                    if (!isNaN(n$1)) {
+                        if (!b) progress += n$1 + ' ';
+                        else progress += n$1 + b;
+                    }
+                }
+            }
+            setProgressValue[anim.type](animatable.target, anim.property, progress, animatable.transforms);
+            anim.currentValue = progress;
+            i++;
+        }
+    }
+    function setCallback(cb) {
+        if (instance[cb] && !instance.passThrough) instance[cb](instance);
+    }
+    function countIteration() {
+        if (instance.remaining && instance.remaining !== true) instance.remaining--;
+    }
+    function setInstanceProgress(engineTime) {
+        var insDuration = instance.duration;
+        var insDelay = instance.delay;
+        var insEndDelay = insDuration - instance.endDelay;
+        var insTime = adjustTime(engineTime);
+        instance.progress = minMax(insTime / insDuration * 100, 0, 100);
+        instance.reversePlayback = insTime < instance.currentTime;
+        if (children) syncInstanceChildren(insTime);
+        if (!instance.began && instance.currentTime > 0) {
+            instance.began = true;
+            setCallback('begin');
+        }
+        if (!instance.loopBegan && instance.currentTime > 0) {
+            instance.loopBegan = true;
+            setCallback('loopBegin');
+        }
+        if (insTime <= insDelay && instance.currentTime !== 0) setAnimationsProgress(0);
+        if (insTime >= insEndDelay && instance.currentTime !== insDuration || !insDuration) setAnimationsProgress(insDuration);
+        if (insTime > insDelay && insTime < insEndDelay) {
+            if (!instance.changeBegan) {
+                instance.changeBegan = true;
+                instance.changeCompleted = false;
+                setCallback('changeBegin');
+            }
+            setCallback('change');
+            setAnimationsProgress(insTime);
+        } else if (instance.changeBegan) {
+            instance.changeCompleted = true;
+            instance.changeBegan = false;
+            setCallback('changeComplete');
+        }
+        instance.currentTime = minMax(insTime, 0, insDuration);
+        if (instance.began) setCallback('update');
+        if (engineTime >= insDuration) {
+            lastTime = 0;
+            countIteration();
+            if (!instance.remaining) {
+                instance.paused = true;
+                if (!instance.completed) {
+                    instance.completed = true;
+                    setCallback('loopComplete');
+                    setCallback('complete');
+                    if (!instance.passThrough && 'Promise' in window) {
+                        resolve();
+                        promise = makePromise(instance);
+                    }
+                }
+            } else {
+                startTime = now;
+                setCallback('loopComplete');
+                instance.loopBegan = false;
+                if (instance.direction === 'alternate') toggleInstanceDirection();
+            }
+        }
+    }
+    instance.reset = function() {
+        var direction = instance.direction;
+        instance.passThrough = false;
+        instance.currentTime = 0;
+        instance.progress = 0;
+        instance.paused = true;
+        instance.began = false;
+        instance.loopBegan = false;
+        instance.changeBegan = false;
+        instance.completed = false;
+        instance.changeCompleted = false;
+        instance.reversePlayback = false;
+        instance.reversed = direction === 'reverse';
+        instance.remaining = instance.loop;
+        children = instance.children;
+        childrenLength = children.length;
+        for(var i = childrenLength; i--;)instance.children[i].reset();
+        if (instance.reversed && instance.loop !== true || direction === 'alternate' && instance.loop === 1) instance.remaining++;
+        setAnimationsProgress(instance.reversed ? instance.duration : 0);
+    };
+    // internal method (for engine) to adjust animation timings before restoring engine ticks (rAF)
+    instance._onDocumentVisibility = resetTime;
+    // Set Value helper
+    instance.set = function(targets, properties) {
+        setTargetsValue(targets, properties);
+        return instance;
+    };
+    instance.tick = function(t) {
+        now = t;
+        if (!startTime) startTime = now;
+        setInstanceProgress((now + (lastTime - startTime)) * anime.speed);
+    };
+    instance.seek = function(time) {
+        setInstanceProgress(adjustTime(time));
+    };
+    instance.pause = function() {
+        instance.paused = true;
+        resetTime();
+    };
+    instance.play = function() {
+        if (!instance.paused) return;
+        if (instance.completed) instance.reset();
+        instance.paused = false;
+        activeInstances.push(instance);
+        resetTime();
+        engine();
+    };
+    instance.reverse = function() {
+        toggleInstanceDirection();
+        instance.completed = instance.reversed ? false : true;
+        resetTime();
+    };
+    instance.restart = function() {
+        instance.reset();
+        instance.play();
+    };
+    instance.remove = function(targets) {
+        var targetsArray = parseTargets(targets);
+        removeTargetsFromInstance(targetsArray, instance);
+    };
+    instance.reset();
+    if (instance.autoplay) instance.play();
+    return instance;
+}
+// Remove targets from animation
+function removeTargetsFromAnimations(targetsArray, animations) {
+    for(var a = animations.length; a--;)if (arrayContains(targetsArray, animations[a].animatable.target)) animations.splice(a, 1);
+}
+function removeTargetsFromInstance(targetsArray, instance) {
+    var animations = instance.animations;
+    var children = instance.children;
+    removeTargetsFromAnimations(targetsArray, animations);
+    for(var c = children.length; c--;){
+        var child = children[c];
+        var childAnimations = child.animations;
+        removeTargetsFromAnimations(targetsArray, childAnimations);
+        if (!childAnimations.length && !child.children.length) children.splice(c, 1);
+    }
+    if (!animations.length && !children.length) instance.pause();
+}
+function removeTargetsFromActiveInstances(targets) {
+    var targetsArray = parseTargets(targets);
+    for(var i = activeInstances.length; i--;){
+        var instance = activeInstances[i];
+        removeTargetsFromInstance(targetsArray, instance);
+    }
+}
+// Stagger helpers
+function stagger(val, params) {
+    if (params === void 0) params = {
+    };
+    var direction = params.direction || 'normal';
+    var easing = params.easing ? parseEasings(params.easing) : null;
+    var grid = params.grid;
+    var axis = params.axis;
+    var fromIndex = params.from || 0;
+    var fromFirst = fromIndex === 'first';
+    var fromCenter = fromIndex === 'center';
+    var fromLast = fromIndex === 'last';
+    var isRange = is.arr(val);
+    var val1 = isRange ? parseFloat(val[0]) : parseFloat(val);
+    var val2 = isRange ? parseFloat(val[1]) : 0;
+    var unit = getUnit(isRange ? val[1] : val) || 0;
+    var start = params.start || 0 + (isRange ? val1 : 0);
+    var values = [];
+    var maxValue = 0;
+    return function(el, i, t) {
+        if (fromFirst) fromIndex = 0;
+        if (fromCenter) fromIndex = (t - 1) / 2;
+        if (fromLast) fromIndex = t - 1;
+        if (!values.length) {
+            for(var index = 0; index < t; index++){
+                if (!grid) values.push(Math.abs(fromIndex - index));
+                else {
+                    var fromX = !fromCenter ? fromIndex % grid[0] : (grid[0] - 1) / 2;
+                    var fromY = !fromCenter ? Math.floor(fromIndex / grid[0]) : (grid[1] - 1) / 2;
+                    var toX = index % grid[0];
+                    var toY = Math.floor(index / grid[0]);
+                    var distanceX = fromX - toX;
+                    var distanceY = fromY - toY;
+                    var value = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
+                    if (axis === 'x') value = -distanceX;
+                    if (axis === 'y') value = -distanceY;
+                    values.push(value);
+                }
+                maxValue = Math.max.apply(Math, values);
+            }
+            if (easing) values = values.map(function(val3) {
+                return easing(val3 / maxValue) * maxValue;
+            });
+            if (direction === 'reverse') values = values.map(function(val3) {
+                return axis ? val3 < 0 ? val3 * -1 : -val3 : Math.abs(maxValue - val3);
+            });
+        }
+        var spacing = isRange ? (val2 - val1) / maxValue : val1;
+        return start + spacing * (Math.round(values[i] * 100) / 100) + unit;
+    };
+}
+// Timeline
+function timeline(params) {
+    if (params === void 0) params = {
+    };
+    var tl = anime(params);
+    tl.duration = 0;
+    tl.add = function(instanceParams, timelineOffset) {
+        var tlIndex = activeInstances.indexOf(tl);
+        var children = tl.children;
+        if (tlIndex > -1) activeInstances.splice(tlIndex, 1);
+        function passThrough(ins) {
+            ins.passThrough = true;
+        }
+        for(var i = 0; i < children.length; i++)passThrough(children[i]);
+        var insParams = mergeObjects(instanceParams, replaceObjectProps(defaultTweenSettings, params));
+        insParams.targets = insParams.targets || params.targets;
+        var tlDuration = tl.duration;
+        insParams.autoplay = false;
+        insParams.direction = tl.direction;
+        insParams.timelineOffset = is.und(timelineOffset) ? tlDuration : getRelativeValue(timelineOffset, tlDuration);
+        passThrough(tl);
+        tl.seek(insParams.timelineOffset);
+        var ins = anime(insParams);
+        passThrough(ins);
+        children.push(ins);
+        var timings = getInstanceTimings(children, params);
+        tl.delay = timings.delay;
+        tl.endDelay = timings.endDelay;
+        tl.duration = timings.duration;
+        tl.seek(0);
+        tl.reset();
+        if (tl.autoplay) tl.play();
+        return tl;
+    };
+    return tl;
+}
+anime.version = '3.2.1';
+anime.speed = 1;
+// TODO:#review: naming, documentation
+anime.suspendWhenDocumentHidden = true;
+anime.running = activeInstances;
+anime.remove = removeTargetsFromActiveInstances;
+anime.get = getOriginalTargetValue;
+anime.set = setTargetsValue;
+anime.convertPx = convertPxToUnit;
+anime.path = getPath;
+anime.setDashoffset = setDashoffset;
+anime.stagger = stagger;
+anime.timeline = timeline;
+anime.easing = parseEasings;
+anime.penner = penner;
+anime.random = function(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+exports.default = anime;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"bsCn5":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _footer = require("./Footer");
@@ -30319,19 +31691,95 @@ parcelHelpers.export(exports, "Title", ()=>Title
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _style = require("./style");
-const Title = (props)=>{
-    return(/*#__PURE__*/ _reactDefault.default.createElement(_style.TitleSection, null, /*#__PURE__*/ _reactDefault.default.createElement(_style.Name, null, "Michael Hegner"), /*#__PURE__*/ _reactDefault.default.createElement(_style.Position, null, "Full Stack Developer")));
+var _animeEsJs = require("animejs/lib/anime.es.js");
+var _animeEsJsDefault = parcelHelpers.interopDefault(_animeEsJs);
+var _s = $RefreshSig$();
+var MichaelHegner = function MichaelHegner1(props) {
+    return(/*#__PURE__*/ _reactDefault.default.createElement("svg", props, /*#__PURE__*/ _reactDefault.default.createElement("path", {
+        d: "M51.88 7.336v44.928H40.936V25.32L30.888 52.264h-8.832L11.944 25.256v27.008H1V7.336h12.928L26.536 38.44l12.48-31.104H51.88Z",
+        stroke: "#000"
+    }), /*#__PURE__*/ _reactDefault.default.createElement("path", {
+        d: "M53.734 12.84c-1.92 0-3.499-.555-4.736-1.664-1.195-1.152-1.792-2.56-1.792-4.224 0-1.707.597-3.115 1.792-4.224C50.235 1.576 51.814 1 53.734 1c1.877 0 3.413.576 4.608 1.728 1.237 1.11 1.856 2.517 1.856 4.224 0 1.664-.619 3.072-1.856 4.224-1.195 1.11-2.73 1.664-4.608 1.664Zm5.44 3.712v35.712H48.23V16.552h10.944Z",
+        stroke: "#000"
+    }), /*#__PURE__*/ _reactDefault.default.createElement("path", {
+        d: "M53.409 34.408c0-3.712.747-6.955 2.24-9.728 1.536-2.773 3.648-4.907 6.336-6.4 2.73-1.493 5.845-2.24 9.344-2.24 4.48 0 8.213 1.173 11.2 3.52 3.03 2.347 5.013 5.653 5.952 9.92H76.833c-.981-2.73-2.88-4.096-5.696-4.096-2.005 0-3.605.79-4.8 2.368-1.195 1.536-1.792 3.755-1.792 6.656s.597 5.141 1.792 6.72c1.195 1.536 2.795 2.304 4.8 2.304 2.816 0 4.715-1.365 5.696-4.096h11.648c-.939 4.181-2.923 7.467-5.952 9.856-3.03 2.39-6.763 3.584-11.2 3.584-3.499 0-6.613-.747-9.344-2.24-2.688-1.493-4.8-3.627-6.336-6.4-1.493-2.773-2.24-6.016-2.24-9.728Z",
+        stroke: "#000"
+    }), /*#__PURE__*/ _reactDefault.default.createElement("path", {
+        d: "M104.767 16.168c4.096 0 7.381 1.365 9.856 4.096 2.475 2.688 3.712 6.4 3.712 11.136v20.864h-10.88V32.872c0-2.39-.619-4.245-1.856-5.568-1.237-1.323-2.901-1.984-4.992-1.984-2.09 0-3.755.661-4.992 1.984s-1.856 3.179-1.856 5.568v19.392H82.815V4.904h10.944v16.448c1.11-1.579 2.624-2.837 4.544-3.776 1.92-.939 4.075-1.408 6.464-1.408Z",
+        stroke: "#000"
+    }), /*#__PURE__*/ _reactDefault.default.createElement("path", {
+        d: "M112.244 34.344c0-3.67.683-6.89 2.048-9.664 1.408-2.773 3.307-4.907 5.696-6.4 2.389-1.493 5.056-2.24 8-2.24 2.517 0 4.715.512 6.592 1.536 1.92 1.024 3.392 2.368 4.416 4.032v-5.056h10.944v35.712h-10.944v-5.056c-1.067 1.664-2.56 3.008-4.48 4.032-1.877 1.024-4.075 1.536-6.592 1.536-2.901 0-5.547-.747-7.936-2.24-2.389-1.536-4.288-3.69-5.696-6.464-1.365-2.816-2.048-6.059-2.048-9.728Zm26.752.064c0-2.73-.768-4.885-2.304-6.464-1.493-1.579-3.328-2.368-5.504-2.368-2.176 0-4.032.79-5.568 2.368-1.493 1.536-2.24 3.67-2.24 6.4 0 2.73.747 4.907 2.24 6.528 1.536 1.579 3.392 2.368 5.568 2.368 2.176 0 4.011-.79 5.504-2.368 1.536-1.579 2.304-3.733 2.304-6.464Z",
+        stroke: "#000"
+    }), /*#__PURE__*/ _reactDefault.default.createElement("path", {
+        d: "M180.001 33.832c0 1.024-.064 2.09-.192 3.2h-24.768c.171 2.219.875 3.925 2.112 5.12 1.28 1.152 2.838 1.728 4.672 1.728 2.731 0 4.63-1.152 5.696-3.456h11.648a15.779 15.779 0 0 1-3.263 6.336c-1.536 1.877-3.478 3.35-5.825 4.416-2.346 1.067-4.97 1.6-7.872 1.6-3.498 0-6.613-.747-9.344-2.24-2.73-1.493-4.864-3.627-6.4-6.4-1.536-2.773-2.304-6.016-2.304-9.728 0-3.712.747-6.955 2.24-9.728 1.536-2.773 3.67-4.907 6.4-6.4 2.731-1.493 5.867-2.24 9.408-2.24 3.456 0 6.528.725 9.216 2.176 2.688 1.45 4.779 3.52 6.272 6.208 1.536 2.688 2.304 5.824 2.304 9.408Zm-11.2-2.88c0-1.877-.64-3.37-1.92-4.48-1.28-1.11-2.88-1.664-4.8-1.664-1.834 0-3.391.533-4.671 1.6-1.238 1.067-2.006 2.581-2.305 4.544h13.696Z",
+        stroke: "#000"
+    }), /*#__PURE__*/ _reactDefault.default.createElement("path", {
+        d: "M185.199 4.904v47.36h-10.944V4.904h10.944Z",
+        stroke: "#000"
+    }), /*#__PURE__*/ _reactDefault.default.createElement("path", {
+        d: "M222.564 7.336v44.928H211.62V33.768h-17.024v18.496h-10.944V7.336h10.944v17.6h17.024v-17.6h10.944Z",
+        stroke: "#000"
+    }), /*#__PURE__*/ _reactDefault.default.createElement("path", {
+        d: "M252.609 33.832c0 1.024-.064 2.09-.192 3.2h-24.768c.171 2.219.875 3.925 2.112 5.12 1.28 1.152 2.837 1.728 4.672 1.728 2.731 0 4.629-1.152 5.696-3.456h11.648a15.768 15.768 0 0 1-3.264 6.336c-1.536 1.877-3.477 3.35-5.824 4.416-2.347 1.067-4.971 1.6-7.872 1.6-3.499 0-6.613-.747-9.344-2.24-2.731-1.493-4.864-3.627-6.4-6.4-1.536-2.773-2.304-6.016-2.304-9.728 0-3.712.747-6.955 2.24-9.728 1.536-2.773 3.669-4.907 6.4-6.4 2.731-1.493 5.867-2.24 9.408-2.24 3.456 0 6.528.725 9.216 2.176 2.688 1.45 4.779 3.52 6.272 6.208 1.536 2.688 2.304 5.824 2.304 9.408Zm-11.2-2.88c0-1.877-.64-3.37-1.92-4.48-1.28-1.11-2.88-1.664-4.8-1.664-1.835 0-3.392.533-4.672 1.6-1.237 1.067-2.005 2.581-2.304 4.544h13.696Z",
+        stroke: "#000"
+    }), /*#__PURE__*/ _reactDefault.default.createElement("path", {
+        d: "M260.431 16.04c2.517 0 4.714.512 6.591 1.536 1.92 1.024 3.393 2.368 4.417 4.032v-5.056h10.944V52.2c0 3.285-.662 6.25-1.985 8.896-1.28 2.688-3.263 4.821-5.951 6.4-2.646 1.579-5.953 2.368-9.921 2.368-5.29 0-9.578-1.259-12.864-3.776-3.285-2.475-5.162-5.845-5.632-10.112h10.816c.342 1.365 1.153 2.432 2.433 3.2 1.28.81 2.858 1.216 4.735 1.216 2.262 0 4.054-.661 5.377-1.984 1.365-1.28 2.048-3.35 2.048-6.208v-5.056c-1.067 1.664-2.539 3.03-4.417 4.096-1.877 1.024-4.074 1.536-6.591 1.536-2.944 0-5.611-.747-8.001-2.24-2.389-1.536-4.288-3.69-5.696-6.464-1.365-2.816-2.048-6.059-2.048-9.728 0-3.67.683-6.89 2.048-9.664 1.408-2.773 3.307-4.907 5.696-6.4 2.39-1.493 5.057-2.24 8.001-2.24Zm11.008 18.368c0-2.73-.769-4.885-2.305-6.464-1.493-1.579-3.328-2.368-5.504-2.368-2.176 0-4.032.79-5.568 2.368-1.493 1.536-2.24 3.67-2.24 6.4 0 2.73.747 4.907 2.24 6.528 1.536 1.579 3.392 2.368 5.568 2.368 2.176 0 4.011-.79 5.504-2.368 1.536-1.579 2.305-3.733 2.305-6.464Z",
+        stroke: "#000"
+    }), /*#__PURE__*/ _reactDefault.default.createElement("path", {
+        d: "M300.54 16.168c4.181 0 7.509 1.365 9.984 4.096 2.517 2.688 3.776 6.4 3.776 11.136v20.864h-10.88V32.872c0-2.39-.619-4.245-1.856-5.568-1.237-1.323-2.901-1.984-4.992-1.984s-3.755.661-4.992 1.984-1.856 3.179-1.856 5.568v19.392H278.78V16.552h10.944v4.736c1.109-1.579 2.603-2.816 4.48-3.712 1.877-.939 3.989-1.408 6.336-1.408Z",
+        stroke: "#000"
+    }), /*#__PURE__*/ _reactDefault.default.createElement("path", {
+        d: "M344.049 33.832c0 1.024-.064 2.09-.192 3.2h-24.768c.171 2.219.875 3.925 2.112 5.12 1.28 1.152 2.837 1.728 4.672 1.728 2.731 0 4.629-1.152 5.696-3.456h11.648a15.768 15.768 0 0 1-3.264 6.336c-1.536 1.877-3.477 3.35-5.824 4.416-2.347 1.067-4.971 1.6-7.872 1.6-3.499 0-6.613-.747-9.344-2.24-2.731-1.493-4.864-3.627-6.4-6.4-1.536-2.773-2.304-6.016-2.304-9.728 0-3.712.747-6.955 2.24-9.728 1.536-2.773 3.669-4.907 6.4-6.4 2.731-1.493 5.867-2.24 9.408-2.24 3.456 0 6.528.725 9.216 2.176 2.688 1.45 4.779 3.52 6.272 6.208 1.536 2.688 2.304 5.824 2.304 9.408Zm-11.2-2.88c0-1.877-.64-3.37-1.92-4.48-1.28-1.11-2.88-1.664-4.8-1.664-1.835 0-3.392.533-4.672 1.6-1.237 1.067-2.005 2.581-2.304 4.544h13.696Z",
+        stroke: "#000"
+    }), /*#__PURE__*/ _reactDefault.default.createElement("path", {
+        d: "M349.246 22.504c1.28-1.963 2.881-3.499 4.801-4.608 1.92-1.152 4.053-1.728 6.4-1.728v11.584h-3.008c-2.731 0-4.779.597-6.145 1.792-1.365 1.152-2.048 3.2-2.048 6.144v16.576h-10.944V16.552h10.944v5.952Z",
+        stroke: "#000"
+    })));
 };
-_c = Title;
-var _c;
-$RefreshReg$(_c, "Title");
+_c = MichaelHegner;
+MichaelHegner.defaultProps = {
+    viewBox: "0 0 361 71",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg"
+};
+const Title = (props)=>{
+    _s();
+    _react.useEffect(()=>{
+        titleAnimation();
+    }, []);
+    function titleAnimation() {
+        _animeEsJsDefault.default({
+            targets: " .title path",
+            strokeDashoffset: [
+                _animeEsJsDefault.default.setDashoffset,
+                0
+            ],
+            easing: "easeInOutSine",
+            duration: 1500,
+            delay: function(el, i) {
+                return i * 250;
+            },
+            direction: "alternate",
+            loop: false
+        });
+    }
+    return(/*#__PURE__*/ _reactDefault.default.createElement(_style.TitleSection, null, /*#__PURE__*/ _reactDefault.default.createElement("div", null, /*#__PURE__*/ _reactDefault.default.createElement(MichaelHegner, {
+        className: "title",
+        onClick: titleAnimation
+    }), /*#__PURE__*/ _reactDefault.default.createElement(_style.Position, null, "Full Stack Developer"))));
+};
+_s(Title, "OD7bBpZva5O2jO+Puf00hKivP7c=");
+_c1 = Title;
+var _c, _c1;
+$RefreshReg$(_c, "MichaelHegner");
+$RefreshReg$(_c1, "Title");
 
   $parcel$ReactRefreshHelpers$13c6.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"6TuXu","./style":"kiwVM","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"kiwVM":[function(require,module,exports) {
+},{"react":"6TuXu","./style":"kiwVM","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","animejs/lib/anime.es.js":"o7RAv"}],"kiwVM":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Name", ()=>Name
@@ -30352,13 +31800,13 @@ const Position = _styledComponentsDefault.default.h2.withConfig({
     displayName: "style__Position",
     componentId: "sc-2iaba3-1"
 })([
-    "font-size:2rem;text-align:center;"
+    "padding-top:2rem;font-size:2rem;text-align:center;width:75%;@media (min-width:900px){width:100%;}"
 ]);
 const TitleSection = _styledComponentsDefault.default.div.withConfig({
     displayName: "style__TitleSection",
     componentId: "sc-2iaba3-2"
 })([
-    "background:var(--bg);min-width:100%;min-height:400px;display:flex;flex-direction:column;justify-content:center;align-items:center;"
+    "background:var(--bg);min-width:100%;min-height:400px;display:flex;flex-direction:column;justify-content:center;align-items:center;div{max-width:75%;}"
 ]);
 
 },{"styled-components":"gkt6C","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc"}],"1SMb4":[function(require,module,exports) {

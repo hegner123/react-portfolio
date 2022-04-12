@@ -1,11 +1,34 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { TitleSection, Name, Position } from "./style";
+import MichaelHegner from "./michaelhegner.svg";
 
+import anime from "animejs/lib/anime.es.js";
 export const Title = (props) => {
+  useEffect(() => {
+    titleAnimation();
+  }, []);
+
+  function titleAnimation() {
+    anime({
+      targets: " .title path",
+      strokeDashoffset: [anime.setDashoffset, 0],
+      easing: "easeInOutSine",
+      duration: 1500,
+      delay: function (el, i) {
+        return i * 250;
+      },
+      direction: "alternate",
+      loop: false,
+    });
+  }
+
   return (
     <TitleSection>
-      <Name>Michael Hegner</Name>
-      <Position>Full Stack Developer</Position>
+      <div>
+        <MichaelHegner className="title" onClick={titleAnimation} />
+
+        <Position>Full Stack Developer</Position>
+      </div>
     </TitleSection>
   );
 };
